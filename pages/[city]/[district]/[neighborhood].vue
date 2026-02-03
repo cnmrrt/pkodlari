@@ -17,15 +17,8 @@ const districtItem = computed(() => cityItem.value?.districts[districtSlug.value
 const neighItem = computed(() => districtItem.value?.neighborhoods[neighborhoodSlug.value]);
 
 useHead({
-  title: computed(() => neighItem.value ? `${titleCase(neighItem.value.name)} Posta Kodu` : 'Posta Kodu Bulunamadı'),
-  meta: [
-    {
-      name: 'description',
-      content: computed(() => {
-        if (!cityItem.value || !districtItem.value || !neighItem.value) return '';
-        return `${titleCase(cityItem.value.name)} ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı ${titleCase(neighItem.value.name)}'nin posta kodunu görmek için tıklayın!`;
-      })
-    }
+  link: [
+    { rel: 'canonical', href: computed(() => `https://pkodlari.com/${citySlug.value}/${districtSlug.value}/${neighborhoodSlug.value}`) }
   ],
   script: [
     computed(() => {
@@ -65,6 +58,21 @@ useHead({
         }
     })
   ]
+});
+
+useSeoMeta({
+  title: computed(() => neighItem.value ? `${titleCase(neighItem.value.name)} Posta Kodu` : 'Posta Kodu Bulunamadı'),
+  description: computed(() => {
+    if (!cityItem.value || !districtItem.value || !neighItem.value) return '';
+    return `${titleCase(cityItem.value.name)} ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı ${titleCase(neighItem.value.name)}'nin posta kodunu görmek için tıklayın!`;
+  }),
+  ogTitle: computed(() => neighItem.value ? `${titleCase(neighItem.value.name)} Posta Kodu` : 'Posta Kodu Bulunamadı'),
+  ogDescription: computed(() => {
+    if (!cityItem.value || !districtItem.value || !neighItem.value) return '';
+    return `${titleCase(cityItem.value.name)} ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı ${titleCase(neighItem.value.name)}'nin posta kodunu görmek için tıklayın!`;
+  }),
+  ogType: 'website',
+  ogUrl: computed(() => `https://pkodlari.com/${citySlug.value}/${districtSlug.value}/${neighborhoodSlug.value}`)
 });
 
 const isValid = computed(() => !!neighItem.value);

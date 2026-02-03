@@ -14,7 +14,7 @@ const findValue = (obj: any, possibleKeys: string[]) => {
 
 // Use useAsyncData for SSR-friendly data fetching
 const { data: postalData } = await useAsyncData<PostalData>('postal-data', async () => {
-  const response = await $fetch<any>('https://pkodlari.com/pk.json');
+  const response = await $fetch<any>('/api/postal-data');
   
   const transformed: PostalData = {};
   const entries = Array.isArray(response) ? response : Object.values(response);

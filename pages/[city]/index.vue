@@ -11,15 +11,8 @@ const citySlug = computed(() => route.params.city as string);
 const cityItem = computed(() => postalData?.value?.[citySlug.value]);
 
 useHead({
-  title: computed(() => cityItem.value ? `${titleCase(cityItem.value.name)} Posta Kodları` : 'Şehir Bulunamadı'),
-  meta: [
-    {
-      name: 'description',
-      content: computed(() => {
-        if (!cityItem.value) return '';
-        return `${titleCase(cityItem.value.name)} iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!`;
-      })
-    }
+  link: [
+    { rel: 'canonical', href: computed(() => `https://pkodlari.com/${citySlug.value}`) }
   ],
   script: [
     computed(() => {
@@ -47,6 +40,21 @@ useHead({
         }
     })
   ]
+});
+
+useSeoMeta({
+  title: computed(() => cityItem.value ? `${titleCase(cityItem.value.name)} Posta Kodları` : 'Şehir Bulunamadı'),
+  description: computed(() => {
+    if (!cityItem.value) return '';
+    return `${titleCase(cityItem.value.name)} iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!`;
+  }),
+  ogTitle: computed(() => cityItem.value ? `${titleCase(cityItem.value.name)} Posta Kodları` : 'Şehir Bulunamadı'),
+  ogDescription: computed(() => {
+    if (!cityItem.value) return '';
+    return `${titleCase(cityItem.value.name)} iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!`;
+  }),
+  ogType: 'website',
+  ogUrl: computed(() => `https://pkodlari.com/${citySlug.value}`)
 });
 
 const districts = computed(() => {

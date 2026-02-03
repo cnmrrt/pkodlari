@@ -7,7 +7,19 @@ import type { PostalData } from '~/types';
 const postalData = inject<Ref<PostalData | null>>('postalData');
 
 useHead({
-  title: 'Türkiye Posta Kodları'
+  link: [
+    { rel: 'canonical', href: 'https://pkodlari.com/' }
+  ]
+});
+
+useSeoMeta({
+  title: 'Türkiye Posta Kodları',
+  description: 'Türkiye\'deki tüm il, ilçe ve mahallelerin güncel posta kodlarını hızlıca bulun ve kopyalayın.',
+  ogTitle: 'Türkiye Posta Kodları',
+  ogDescription: 'Türkiye\'deki tüm il, ilçe ve mahallelerin güncel posta kodlarını hızlıca bulun ve kopyalayın.',
+  ogType: 'website',
+  ogUrl: 'https://pkodlari.com/',
+  ogSiteName: 'Posta Kodu Rehberi'
 });
 
 const cityList = computed(() => {

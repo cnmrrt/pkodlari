@@ -1,7 +1,7 @@
 import { defineSitemapEventHandler } from '#imports'
 
 export default defineSitemapEventHandler(async () => {
-    const response = await $fetch<any>('https://pkodlari.com/pk.json');
+    const response = await $fetch<any>('/api/postal-data');
 
     const urls: any[] = [];
     const entries = Array.isArray(response) ? response : Object.values(response);

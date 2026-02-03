@@ -1,10 +1,11 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
 import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, createError, getQuery as getQuery$1, readBody, getRequestProtocol, getRequestHost, setHeader, getHeader, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, getRouterParam, getResponseStatusText } from 'file:///Users/mac/Desktop/pkodlari/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
-import { resolve as resolve$1, dirname, join } from 'node:path';
+import path, { resolve as resolve$1, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
 import { escapeHtml } from 'file:///Users/mac/Desktop/pkodlari/node_modules/@vue/shared/dist/shared.cjs.js';
+import fs, { promises } from 'node:fs';
 import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///Users/mac/Desktop/pkodlari/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import { parseURL, withoutBase, joinURL, getQuery, withQuery, hasProtocol, withHttps, withTrailingSlash, decodePath, withLeadingSlash, withoutTrailingSlash, joinRelativeURL, parsePath, stringifyQuery, parseQuery, encodePath, stringifyParsedURL, withBase } from 'file:///Users/mac/Desktop/pkodlari/node_modules/ufo/dist/index.mjs';
 import { renderToString } from 'file:///Users/mac/Desktop/pkodlari/node_modules/vue/server-renderer/index.mjs';
@@ -30,7 +31,6 @@ import { toValue, isVNode, isRef } from 'file:///Users/mac/Desktop/pkodlari/node
 import { AsyncLocalStorage } from 'node:async_hooks';
 import { stringify, uneval } from 'file:///Users/mac/Desktop/pkodlari/node_modules/devalue/index.js';
 import { captureRawStackTrace, parseRawStackTrace } from 'file:///Users/mac/Desktop/pkodlari/node_modules/errx/dist/index.js';
-import { promises } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname as dirname$1, resolve as resolve$2 } from 'file:///Users/mac/Desktop/pkodlari/node_modules/pathe/dist/index.mjs';
 import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///Users/mac/Desktop/pkodlari/node_modules/unhead/dist/server.mjs';
@@ -699,10 +699,6 @@ const _inlineRuntimeConfig = {
         "include": [],
         "exclude": [
           "/_**",
-          "/_nuxt/**",
-          "/_nuxt/**",
-          "/_nuxt/**",
-          "/_nuxt/**",
           "/_nuxt/**"
         ],
         "includeAppSources": true
@@ -2332,16 +2328,16 @@ _qgnnCHrZlWPgzzo12TqBfRKMJXRZbG41bj6QsUaDJg
 const assets = {
   "/index.mjs": {
     "type": "text/javascript; charset=utf-8",
-    "etag": "\"3149b-SFlK+BHpqbH+HfIJLEI83DGH578\"",
-    "mtime": "2026-02-03T13:51:16.710Z",
-    "size": 201883,
+    "etag": "\"311d8-aVYpNl5BwqUoEVWhnbXuPTZ7oTk\"",
+    "mtime": "2026-02-03T14:59:29.119Z",
+    "size": 201176,
     "path": "index.mjs"
   },
   "/index.mjs.map": {
     "type": "application/json",
-    "etag": "\"cceda-it2rcj3kCR1ijFwkk1pcKzNGGBM\"",
-    "mtime": "2026-02-03T13:34:05.893Z",
-    "size": 839386,
+    "etag": "\"cd257-YHWOjC8Thnq8kkWJ7665RTLJY60\"",
+    "mtime": "2026-02-03T14:59:29.120Z",
+    "size": 840279,
     "path": "index.mjs.map"
   }
 };
@@ -4940,11 +4936,13 @@ async function sitemapXmlEventHandler(e) {
 
 const _OnFYYK = defineEventHandler(sitemapXmlEventHandler);
 
+const _lazy_FYxi9K = () => Promise.resolve().then(function () { return postalData$1; });
 const _lazy_9MwzEP = () => Promise.resolve().then(function () { return sitemapUrls$1; });
 const _lazy_FLF44k = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
   { route: '', handler: __kamDj, lazy: false, middleware: true, method: undefined },
+  { route: '/api/postal-data', handler: _lazy_FYxi9K, lazy: true, middleware: false, method: undefined },
   { route: '/api/sitemap-urls', handler: _lazy_9MwzEP, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_error', handler: _lazy_FLF44k, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
@@ -5331,10 +5329,27 @@ const childSources = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProper
   sources: sources
 }, Symbol.toStringTag, { value: 'Module' }));
 
+const postalData = defineEventHandler(async (event) => {
+  const filePath = path.join(process.cwd(), "public", "pk.json");
+  if (fs.existsSync(filePath)) {
+    const data = fs.readFileSync(filePath, "utf-8");
+    return JSON.parse(data);
+  }
+  throw createError({
+    statusCode: 404,
+    statusMessage: "Postal data not found"
+  });
+});
+
+const postalData$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: postalData
+}, Symbol.toStringTag, { value: 'Module' }));
+
 const defineSitemapEventHandler = defineEventHandler;
 
 const sitemapUrls = defineSitemapEventHandler(async () => {
-  const response = await $fetch("https://pkodlari.com/pk.json");
+  const response = await $fetch("/api/postal-data");
   const urls = [];
   const entries = Array.isArray(response) ? response : Object.values(response);
   const slugify = (s) => {

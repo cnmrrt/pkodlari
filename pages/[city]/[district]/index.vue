@@ -15,15 +15,8 @@ const cityItem = computed(() => postalData?.value?.[citySlug.value]);
 const districtItem = computed(() => cityItem.value?.districts[districtSlug.value]);
 
 useHead({
-  title: computed(() => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodları` : 'İlçe Bulunamadı'),
-  meta: [
-    {
-      name: 'description',
-      content: computed(() => {
-        if (!cityItem.value || !districtItem.value) return '';
-        return `${titleCase(cityItem.value.name)} ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!`;
-      })
-    }
+  link: [
+    { rel: 'canonical', href: computed(() => `https://pkodlari.com/${citySlug.value}/${districtSlug.value}`) }
   ],
   script: [
     computed(() => {
@@ -57,6 +50,21 @@ useHead({
         }
     })
   ]
+});
+
+useSeoMeta({
+  title: computed(() => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodları` : 'İlçe Bulunamadı'),
+  description: computed(() => {
+    if (!cityItem.value || !districtItem.value) return '';
+    return `${titleCase(cityItem.value.name)} ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!`;
+  }),
+  ogTitle: computed(() => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodları` : 'İlçe Bulunamadı'),
+  ogDescription: computed(() => {
+    if (!cityItem.value || !districtItem.value) return '';
+    return `${titleCase(cityItem.value.name)} ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!`;
+  }),
+  ogType: 'website',
+  ogUrl: computed(() => `https://pkodlari.com/${citySlug.value}/${districtSlug.value}`)
 });
 
 const isValid = computed(() => !!districtItem.value);

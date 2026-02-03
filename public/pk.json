@@ -99460,7 +99460,8 @@
         "mahalle": "Çengelköy Mahallesi",
         "plaka": "34",
         "postaKodu": 34680,
-        "semt": "Çengelköy"
+        "semt": "Çengelköy",
+        "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12035.587406141378!2d29.05205287804494!3d41.0493847237472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac9cc172c65f3%3A0x8f58e90c589aa48!2zw4dlbmdlbGvDtnksIDM0NjgwIMOcc2vDvGRhci_EsHN0YW5idWw!5e0!3m2!1sen!2str!4v1770135922590!5m2!1sen!2str' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>"
     },
     {
         "il": "İstanbul",

@@ -22,6 +22,9 @@ useSeoMeta({
   ogSiteName: 'Posta Kodu Rehberi'
 });
 
+
+
+
 const cityList = computed(() => {
   if (!postalData?.value) return [];
   return Object.values(postalData.value).sort((a, b) => a.name.localeCompare(b.name, 'tr'));

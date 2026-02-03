@@ -1,11 +1,10 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
 import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, createError, getQuery as getQuery$1, readBody, getRequestProtocol, getRequestHost, setHeader, getHeader, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, getRouterParam, getResponseStatusText } from 'file:///Users/mac/Desktop/pkodlari/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
-import path, { resolve as resolve$1, dirname, join } from 'node:path';
+import { resolve as resolve$1, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
 import { escapeHtml } from 'file:///Users/mac/Desktop/pkodlari/node_modules/@vue/shared/dist/shared.cjs.js';
-import fs, { promises } from 'node:fs';
 import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///Users/mac/Desktop/pkodlari/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import { parseURL, withoutBase, joinURL, getQuery, withQuery, hasProtocol, withHttps, withTrailingSlash, decodePath, withLeadingSlash, withoutTrailingSlash, joinRelativeURL, parsePath, stringifyQuery, parseQuery, encodePath, stringifyParsedURL, withBase } from 'file:///Users/mac/Desktop/pkodlari/node_modules/ufo/dist/index.mjs';
 import { renderToString } from 'file:///Users/mac/Desktop/pkodlari/node_modules/vue/server-renderer/index.mjs';
@@ -31,6 +30,7 @@ import { toValue, isVNode, isRef } from 'file:///Users/mac/Desktop/pkodlari/node
 import { AsyncLocalStorage } from 'node:async_hooks';
 import { stringify, uneval } from 'file:///Users/mac/Desktop/pkodlari/node_modules/devalue/index.js';
 import { captureRawStackTrace, parseRawStackTrace } from 'file:///Users/mac/Desktop/pkodlari/node_modules/errx/dist/index.js';
+import { promises } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname as dirname$1, resolve as resolve$2 } from 'file:///Users/mac/Desktop/pkodlari/node_modules/pathe/dist/index.mjs';
 import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///Users/mac/Desktop/pkodlari/node_modules/unhead/dist/server.mjs';
@@ -699,6 +699,7 @@ const _inlineRuntimeConfig = {
         "include": [],
         "exclude": [
           "/_**",
+          "/_nuxt/**",
           "/_nuxt/**"
         ],
         "includeAppSources": true
@@ -2328,16 +2329,16 @@ _qgnnCHrZlWPgzzo12TqBfRKMJXRZbG41bj6QsUaDJg
 const assets = {
   "/index.mjs": {
     "type": "text/javascript; charset=utf-8",
-    "etag": "\"31040-k0os4F3ph05wru4NkIoGLSHnMJo\"",
-    "mtime": "2026-02-03T16:23:44.149Z",
-    "size": 200768,
+    "etag": "\"315da-xcXCPyuJFDD1mTDuiXiutWFqrPk\"",
+    "mtime": "2026-02-03T18:22:25.305Z",
+    "size": 202202,
     "path": "index.mjs"
   },
   "/index.mjs.map": {
     "type": "application/json",
-    "etag": "\"cd248-gbl8UzjGGKIYY1nGJKbAbBWZZnU\"",
-    "mtime": "2026-02-03T16:23:44.149Z",
-    "size": 840264,
+    "etag": "\"ce7ee-A02RBXtnvx4X/25bw6ml237sStg\"",
+    "mtime": "2026-02-03T18:22:25.306Z",
+    "size": 845806,
     "path": "index.mjs.map"
   }
 };
@@ -4936,13 +4937,11 @@ async function sitemapXmlEventHandler(e) {
 
 const _OnFYYK = defineEventHandler(sitemapXmlEventHandler);
 
-const _lazy_FYxi9K = () => Promise.resolve().then(function () { return postalData$1; });
 const _lazy_9MwzEP = () => Promise.resolve().then(function () { return sitemapUrls$1; });
 const _lazy_FLF44k = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
   { route: '', handler: __kamDj, lazy: false, middleware: true, method: undefined },
-  { route: '/api/postal-data', handler: _lazy_FYxi9K, lazy: true, middleware: false, method: undefined },
   { route: '/api/sitemap-urls', handler: _lazy_9MwzEP, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_error', handler: _lazy_FLF44k, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
@@ -5329,61 +5328,20 @@ const childSources = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProper
   sources: sources
 }, Symbol.toStringTag, { value: 'Module' }));
 
-const postalData = defineEventHandler(async (event) => {
-  const filePath = path.join(process.cwd(), "public", "pk.json");
-  if (fs.existsSync(filePath)) {
-    const data = fs.readFileSync(filePath, "utf-8");
-    return JSON.parse(data);
-  }
-  throw createError({
-    statusCode: 404,
-    statusMessage: "Postal data not found"
-  });
-});
-
-const postalData$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-  __proto__: null,
-  default: postalData
-}, Symbol.toStringTag, { value: 'Module' }));
-
 const defineSitemapEventHandler = defineEventHandler;
 
 const sitemapUrls = defineSitemapEventHandler(async () => {
-  const response = await $fetch("/api/postal-data");
+  const postalData = await $fetch("/api/postal-data");
   const urls = [];
-  const entries = Array.isArray(response) ? response : Object.values(response);
-  const slugify = (s) => {
-    return String(s).toLocaleLowerCase("tr").replace(/[ıığüşöç]/g, (m) => ({ "\u0131": "i", "\u011F": "g", "\xFC": "u", "\u015F": "s", "\xF6": "o", "\xE7": "c" })[m] || m).replace(/[^a-z0-9\s-]/g, "").trim().replace(/\s+/g, "-");
-  };
-  const cities = /* @__PURE__ */ new Set();
-  const districts = /* @__PURE__ */ new Set();
-  const neighborhoods = /* @__PURE__ */ new Set();
-  const findValue = (obj, possibleKeys) => {
-    if (!obj || typeof obj !== "object") return null;
-    const normalize = (s) => s.toLocaleLowerCase("tr").replace(/\s+/g, "").replace(/[ıığüşöç]/g, (m) => ({ "\u0131": "i", "\u011F": "g", "\xFC": "u", "\u015F": "s", "\xF6": "o", "\xE7": "c" })[m] || m);
-    const normalizedPossible = possibleKeys.map(normalize);
-    for (const key of Object.keys(obj)) {
-      if (normalizedPossible.includes(normalize(key))) return obj[key];
-    }
-    return null;
-  };
-  entries.forEach((item) => {
-    if (!item || typeof item !== "object") return;
-    const city = findValue(item, ["il", "city", "\u0130L", "\u015Fehir"]);
-    const dist = findValue(item, ["ilce", "district", "\u0130L\xC7E", "\u0130l\xE7e"]);
-    const neigh = findValue(item, ["mahalle", "neighborhood", "semt", "MAHALLE"]);
-    if (city) {
-      const citySlug = slugify(String(city).trim());
-      const distSlug = slugify(String(dist || "MERKEZ").trim());
-      const neighSlug = slugify(String(neigh || "MERKEZ").trim());
-      cities.add(`/${citySlug}`);
-      districts.add(`/${citySlug}/${distSlug}`);
-      neighborhoods.add(`/${citySlug}/${distSlug}/${neighSlug}`);
-    }
+  Object.entries(postalData).forEach(([citySlug, cityItem]) => {
+    urls.push({ loc: `/${citySlug}`, changefreq: "monthly", priority: 0.8 });
+    Object.entries(cityItem.districts).forEach(([distSlug, distItem]) => {
+      urls.push({ loc: `/${citySlug}/${distSlug}`, changefreq: "monthly", priority: 0.6 });
+      Object.keys(distItem.neighborhoods).forEach((neighSlug) => {
+        urls.push({ loc: `/${citySlug}/${distSlug}/${neighSlug}`, changefreq: "monthly", priority: 0.5 });
+      });
+    });
   });
-  cities.forEach((url) => urls.push({ loc: url, changefreq: "monthly", priority: 0.8 }));
-  districts.forEach((url) => urls.push({ loc: url, changefreq: "monthly", priority: 0.6 }));
-  neighborhoods.forEach((url) => urls.push({ loc: url, changefreq: "monthly", priority: 0.5 }));
   return urls;
 });
 

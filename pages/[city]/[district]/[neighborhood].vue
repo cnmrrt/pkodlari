@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { inject, computed, ref } from 'vue';
 import type { Ref } from 'vue';
-import { ChevronRight, MapPin, Check, Copy, Info, Share2 } from 'lucide-vue-next';
+import { ChevronRight, MapPin, Check, Copy, Share2 } from 'lucide-vue-next';
 import type { PostalData } from '~/types';
+import { titleCase } from '~/utils/slugify';
 
 const route = useRoute();
 const postalData = inject<Ref<PostalData | null>>('postalData');
@@ -160,20 +161,6 @@ const share = () => {
     <div class="bg-red-50 text-red-600 p-6 rounded-xl border border-red-100">
         <h2 class="font-bold text-lg mb-2">Veri Bulunamadı!</h2>
         <p class="text-sm mb-4">Aradığınız mahalle bilgisine ulaşılamadı. Lütfen adresi kontrol edin.</p>
-        
-        <div class="text-left text-xs font-mono bg-white p-4 rounded border border-red-100 overflow-auto max-h-64">
-            <p><strong>URL Params:</strong> {{ route.params }}</p>
-            <p><strong>City Valid:</strong> {{ !!cityItem ? 'YES' : 'NO' }} ({{ citySlug }})</p>
-            <p><strong>District Valid:</strong> {{ !!districtItem ? 'YES' : 'NO' }} ({{ districtSlug }})</p>
-            <p><strong>Neighborhood Request:</strong> "{{ neighborhoodSlug }}"</p>
-            <div v-if="districtItem">
-                <p><strong>Available Neighborhoods (First 5):</strong></p>
-                <ul>
-                    <li v-for="key in Object.keys(districtItem.neighborhoods).slice(0, 5)" :key="key">{{ key }}</li>
-                </ul>
-            </div>
-        </div>
-        
         <NuxtLink to="/" class="mt-6 inline-block text-red-700 underline">Ana Sayfaya Dön</NuxtLink>
     </div>
   </div>

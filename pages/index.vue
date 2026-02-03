@@ -3,7 +3,9 @@ import { inject, computed } from 'vue';
 import type { Ref } from 'vue';
 import { Loader2 } from 'lucide-vue-next';
 import type { PostalData } from '~/types';
+import { titleCase } from '~/utils/slugify';
 
+// Inject postalData provided by app.vue
 const postalData = inject<Ref<PostalData | null>>('postalData');
 
 useHead({
@@ -21,9 +23,6 @@ useSeoMeta({
   ogUrl: 'https://pkodlari.com/',
   ogSiteName: 'Posta Kodu Rehberi'
 });
-
-
-
 
 const cityList = computed(() => {
   if (!postalData?.value) return [];

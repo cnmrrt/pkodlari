@@ -3,6 +3,7 @@ import { inject, computed } from 'vue';
 import type { Ref } from 'vue';
 import { ArrowLeft, ChevronRight, MapPin } from 'lucide-vue-next';
 import type { PostalData } from '~/types';
+import { titleCase } from '~/utils/slugify';
 
 const route = useRoute();
 const postalData = inject<Ref<PostalData | null>>('postalData');
@@ -59,7 +60,6 @@ useSeoMeta({
 
 const districts = computed(() => {
   if (!cityItem.value) return [];
-  // Return entries so we have slug and item
   return Object.entries(cityItem.value.districts).sort(([, a], [, b]) => a.name.localeCompare(b.name, 'tr'));
 });
 

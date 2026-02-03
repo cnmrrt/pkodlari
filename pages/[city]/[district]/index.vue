@@ -3,6 +3,7 @@ import { inject, computed, ref } from 'vue';
 import type { Ref } from 'vue';
 import { ArrowLeft, Search, ChevronRight, MapPin } from 'lucide-vue-next';
 import type { PostalData } from '~/types';
+import { titleCase } from '~/utils/slugify';
 
 const route = useRoute();
 const postalData = inject<Ref<PostalData | null>>('postalData');

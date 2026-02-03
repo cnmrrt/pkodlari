@@ -1,10 +1,11 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
 import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, createError, getQuery as getQuery$1, readBody, getRequestProtocol, getRequestHost, setHeader, getHeader, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, getRouterParam, getResponseStatusText } from 'file:///Users/mac/Desktop/pkodlari/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
-import { resolve as resolve$1, dirname, join } from 'node:path';
+import path, { resolve as resolve$1, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
 import { escapeHtml } from 'file:///Users/mac/Desktop/pkodlari/node_modules/@vue/shared/dist/shared.cjs.js';
+import fs, { promises } from 'node:fs';
 import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///Users/mac/Desktop/pkodlari/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import { parseURL, withoutBase, joinURL, getQuery, withQuery, hasProtocol, withHttps, withTrailingSlash, decodePath, withLeadingSlash, withoutTrailingSlash, joinRelativeURL, parsePath, stringifyQuery, parseQuery, encodePath, stringifyParsedURL, withBase } from 'file:///Users/mac/Desktop/pkodlari/node_modules/ufo/dist/index.mjs';
 import { renderToString } from 'file:///Users/mac/Desktop/pkodlari/node_modules/vue/server-renderer/index.mjs';
@@ -30,7 +31,6 @@ import { toValue, isVNode, isRef } from 'file:///Users/mac/Desktop/pkodlari/node
 import { AsyncLocalStorage } from 'node:async_hooks';
 import { stringify, uneval } from 'file:///Users/mac/Desktop/pkodlari/node_modules/devalue/index.js';
 import { captureRawStackTrace, parseRawStackTrace } from 'file:///Users/mac/Desktop/pkodlari/node_modules/errx/dist/index.js';
-import { promises } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname as dirname$1, resolve as resolve$2 } from 'file:///Users/mac/Desktop/pkodlari/node_modules/pathe/dist/index.mjs';
 import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///Users/mac/Desktop/pkodlari/node_modules/unhead/dist/server.mjs';
@@ -699,7 +699,6 @@ const _inlineRuntimeConfig = {
         "include": [],
         "exclude": [
           "/_**",
-          "/_nuxt/**",
           "/_nuxt/**"
         ],
         "includeAppSources": true
@@ -2329,16 +2328,16 @@ _qgnnCHrZlWPgzzo12TqBfRKMJXRZbG41bj6QsUaDJg
 const assets = {
   "/index.mjs": {
     "type": "text/javascript; charset=utf-8",
-    "etag": "\"315da-xcXCPyuJFDD1mTDuiXiutWFqrPk\"",
-    "mtime": "2026-02-03T18:22:25.305Z",
-    "size": 202202,
+    "etag": "\"307be-aclb0UHrN3PC/ayomvtRoieUfWk\"",
+    "mtime": "2026-02-03T18:58:17.094Z",
+    "size": 198590,
     "path": "index.mjs"
   },
   "/index.mjs.map": {
     "type": "application/json",
-    "etag": "\"ce7ee-A02RBXtnvx4X/25bw6ml237sStg\"",
-    "mtime": "2026-02-03T18:22:25.306Z",
-    "size": 845806,
+    "etag": "\"cb5d9-j3y4Osz/VbGJDOmWRl01Ty5xGhU\"",
+    "mtime": "2026-02-03T18:58:17.094Z",
+    "size": 832985,
     "path": "index.mjs.map"
   }
 };
@@ -4937,11 +4936,13 @@ async function sitemapXmlEventHandler(e) {
 
 const _OnFYYK = defineEventHandler(sitemapXmlEventHandler);
 
+const _lazy_FYxi9K = () => Promise.resolve().then(function () { return postalData$1; });
 const _lazy_9MwzEP = () => Promise.resolve().then(function () { return sitemapUrls$1; });
 const _lazy_FLF44k = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
   { route: '', handler: __kamDj, lazy: false, middleware: true, method: undefined },
+  { route: '/api/postal-data', handler: _lazy_FYxi9K, lazy: true, middleware: false, method: undefined },
   { route: '/api/sitemap-urls', handler: _lazy_9MwzEP, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_error', handler: _lazy_FLF44k, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
@@ -5326,6 +5327,92 @@ const sources = {};
 const childSources = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   sources: sources
+}, Symbol.toStringTag, { value: 'Module' }));
+
+let cachedPostalData = null;
+const slugify = (s) => {
+  return String(s).toLocaleLowerCase("tr").replace(/[ıığüşöç]/g, (m) => ({ "\u0131": "i", "\u011F": "g", "\xFC": "u", "\u015F": "s", "\xF6": "o", "\xE7": "c" })[m] || m).replace(/[^a-z0-9\s-]/g, "").trim().replace(/\s+/g, "-");
+};
+const findValue = (obj, possibleKeys) => {
+  if (!obj || typeof obj !== "object") return null;
+  const normalize = (s) => s.toLocaleLowerCase("tr").replace(/\s+/g, "").replace(/[ıığüşöç]/g, (m) => ({ "\u0131": "i", "\u011F": "g", "\xFC": "u", "\u015F": "s", "\xF6": "o", "\xE7": "c" })[m] || m);
+  const normalizedPossible = possibleKeys.map(normalize);
+  for (const key of Object.keys(obj)) {
+    if (normalizedPossible.includes(normalize(key))) return obj[key];
+  }
+  return null;
+};
+const postalData = defineEventHandler(async () => {
+  if (cachedPostalData) {
+    return cachedPostalData;
+  }
+  try {
+    const filePath = path.join(process.cwd(), "public", "pk.json");
+    if (!fs.existsSync(filePath)) {
+      throw createError({
+        statusCode: 404,
+        statusMessage: "postal data file (pk.json) not found in public directory"
+      });
+    }
+    const rawData = fs.readFileSync(filePath, "utf-8");
+    const data = JSON.parse(rawData);
+    const entries = Array.isArray(data) ? data : Object.values(data);
+    const transformed = {};
+    entries.forEach((item) => {
+      if (!item || typeof item !== "object") return;
+      const city = findValue(item, ["il", "city", "\u0130L", "\u015Fehir"]);
+      const dist = findValue(item, ["ilce", "district", "\u0130L\xC7E", "\u0130l\xE7e"]);
+      const neigh = findValue(item, ["mahalle", "neighborhood", "semt", "MAHALLE"]);
+      const zip = findValue(item, ["posta_kodu", "zip", "pk", "POSTA KODU", "PK"]);
+      const map = findValue(item, ["harita", "map", "iframe", "google_map", "embed"]);
+      if (city) {
+        const cityStr = String(city).trim().toLocaleUpperCase("tr");
+        const distStr = String(dist || "MERKEZ").trim().toLocaleUpperCase("tr");
+        const neighStr = String(neigh || "MERKEZ").trim().toLocaleUpperCase("tr");
+        const citySlug = slugify(cityStr);
+        const distSlug = slugify(distStr);
+        const neighSlug = slugify(neighStr);
+        const codeStr = String(zip || "00000").trim();
+        const mapStr = map ? String(map) : void 0;
+        if (!transformed[citySlug]) {
+          transformed[citySlug] = {
+            name: cityStr,
+            districts: {}
+          };
+        }
+        if (!transformed[citySlug].districts[distSlug]) {
+          transformed[citySlug].districts[distSlug] = {
+            name: distStr,
+            neighborhoods: {}
+          };
+        }
+        transformed[citySlug].districts[distSlug].neighborhoods[neighSlug] = {
+          name: neighStr,
+          zipCode: codeStr,
+          mapCode: mapStr
+        };
+        if (mapStr && !transformed[citySlug].mapCode) {
+          transformed[citySlug].mapCode = mapStr;
+        }
+        if (mapStr && !transformed[citySlug].districts[distSlug].mapCode) {
+          transformed[citySlug].districts[distSlug].mapCode = mapStr;
+        }
+      }
+    });
+    cachedPostalData = transformed;
+    return transformed;
+  } catch (error) {
+    console.error("Error loading postal data:", error);
+    throw createError({
+      statusCode: 500,
+      statusMessage: "Failed to load postal data: " + error.message
+    });
+  }
+});
+
+const postalData$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: postalData
 }, Symbol.toStringTag, { value: 'Module' }));
 
 const defineSitemapEventHandler = defineEventHandler;

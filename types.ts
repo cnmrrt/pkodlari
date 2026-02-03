@@ -1,29 +1,29 @@
-
-export interface Neighborhood {
-  "Mahalle": string;
-  "Posta Kodu": string;
+export interface NeighborhoodItem {
+  name: string;
+  zipCode: string;
 }
 
-export interface DistrictData {
-  [neighborhoodName: string]: Neighborhood[];
+export interface DistrictItem {
+  name: string;
+  neighborhoods: { [neighSlug: string]: NeighborhoodItem };
 }
 
-export interface CityData {
-  [districtName: string]: DistrictData | Neighborhood[] | any;
+export interface CityItem {
+  name: string;
+  districts: { [distSlug: string]: DistrictItem };
 }
 
 export interface PostalData {
-  [cityName: string]: {
-    [districtName: string]: {
-      [neighborhoodName: string]: string;
-    }
-  };
+  [citySlug: string]: CityItem;
 }
 
 export interface SearchResult {
   city: string;
+  citySlug: string;
   district: string;
+  districtSlug: string;
   neighborhood: string;
+  neighborhoodSlug: string;
   zipCode: string;
   type: 'city' | 'district' | 'neighborhood';
 }

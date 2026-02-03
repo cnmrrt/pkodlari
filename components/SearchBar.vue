@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { RouterLink } from 'vue-router';
 import { Search, MapPin, Map, Building2 } from 'lucide-vue-next';
-import { PostalData, SearchResult } from '../types';
+import { PostalData, SearchResult } from '~/types';
 
 const props = defineProps<{
   data: PostalData | null
@@ -13,20 +12,57 @@ const isFocused = ref(false);
 
 const results = computed(() => {
   if (!props.data || query.value.length < 2) return [];
-  const lowerQuery = query.value.toLocaleLowerCase('tr');
+  // Normalize query for searching - using same logic as data prep if needed, 
+  // but here we want to match AGAINST the Turkish names, so we might want 
+  // to just lowercase the query and match against lowercase names.
+  const lowerQuery = query.value.toLocaleLowerCase('tr'); 
+  const slugifiedQuery = slugify(query.value); // For code matching
+
   const items: SearchResult[] = [];
   
-  Object.entries(props.data).forEach(([city, districts]) => {
-    if (city.toLocaleLowerCase('tr').includes(lowerQuery)) items.push({ city, district: '', neighborhood: '', zipCode: '', type: 'city' });
-    Object.entries(districts).forEach(([dist, neighs]) => {
-      // @ts-ignore
-      if (dist.toLocaleLowerCase('tr').includes(lowerQuery)) items.push({ city, district: dist, neighborhood: '', zipCode: '', type: 'district' });
-      // @ts-ignore
-      Object.entries(neighs).forEach(([n, code]) => {
-        // @ts-ignore
-        if (n.toLocaleLowerCase('tr').includes(lowerQuery) || code.includes(query.value)) {
-           // @ts-ignore
-          items.push({ city, district: dist, neighborhood: n, zipCode: code, type: 'neighborhood' });
+  Object.entries(props.data).forEach(([citySlug, cityItem]) => {
+    // Search in City Name
+    if (cityItem.name.toLocaleLowerCase('tr').includes(lowerQuery)) {
+        items.push({ 
+            city: cityItem.name, 
+            citySlug: citySlug,
+            district: '', 
+            districtSlug: '',
+            neighborhood: '', 
+            neighborhoodSlug: '',
+            zipCode: '', 
+            type: 'city' 
+        });
+    }
+
+    Object.entries(cityItem.districts).forEach(([distSlug, distItem]) => {
+      // Search in District Name
+      if (distItem.name.toLocaleLowerCase('tr').includes(lowerQuery)) {
+          items.push({ 
+              city: cityItem.name, 
+              citySlug: citySlug,
+              district: distItem.name, 
+              districtSlug: distSlug,
+              neighborhood: '', 
+              neighborhoodSlug: '',
+              zipCode: '', 
+              type: 'district' 
+          });
+      }
+
+      Object.entries(distItem.neighborhoods).forEach(([neighSlug, neighItem]) => {
+        // Search in Neighborhood Name or Zip Code
+        if (neighItem.name.toLocaleLowerCase('tr').includes(lowerQuery) || neighItem.zipCode.includes(query.value)) {
+          items.push({ 
+              city: cityItem.name, 
+              citySlug: citySlug,
+              district: distItem.name, 
+              districtSlug: distSlug,
+              neighborhood: neighItem.name, 
+              neighborhoodSlug: neighSlug,
+              zipCode: neighItem.zipCode, 
+              type: 'neighborhood' 
+          });
         }
       });
     });
@@ -62,10 +98,10 @@ const onBlur = () => {
     
     <div v-if="isFocused && query.length >= 2" class="absolute top-full left-0 right-0 mt-2 bg-white border border-slate-200 rounded-xl shadow-xl z-[60] overflow-hidden">
       <div v-if="results.length > 0" class="divide-y divide-slate-100">
-        <RouterLink
+        <NuxtLink
           v-for="(res, i) in results"
           :key="i"
-          :to="res.type === 'city' ? `/city/${res.city}` : res.type === 'district' ? `/city/${res.city}/${res.district}` : `/city/${res.city}/${res.district}/${res.neighborhood}`"
+          :to="res.type === 'city' ? `/city/${res.citySlug}` : res.type === 'district' ? `/city/${res.citySlug}/${res.districtSlug}` : `/city/${res.citySlug}/${res.districtSlug}/${res.neighborhoodSlug}`"
           class="flex items-center gap-4 p-4 hover:bg-slate-50 transition-colors"
         >
           <div class="text-slate-400">
@@ -78,7 +114,7 @@ const onBlur = () => {
             <div class="text-[10px] text-slate-400 uppercase font-medium">{{ [res.city, res.district].filter(Boolean).join(' / ') }}</div>
           </div>
           <div v-if="res.zipCode" class="mono text-xs font-bold text-slate-900 bg-slate-100 px-2 py-1 rounded">{{ res.zipCode }}</div>
-        </RouterLink>
+        </NuxtLink>
       </div>
       <div v-else class="p-8 text-center text-slate-400 text-sm">Sonuç bulunamadı</div>
     </div>

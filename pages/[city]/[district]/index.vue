@@ -16,6 +16,15 @@ const districtItem = computed(() => cityItem.value?.districts[districtSlug.value
 
 useHead({
   title: computed(() => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodları` : 'İlçe Bulunamadı'),
+  meta: [
+    {
+      name: 'description',
+      content: computed(() => {
+        if (!cityItem.value || !districtItem.value) return '';
+        return `${titleCase(cityItem.value.name)} ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!`;
+      })
+    }
+  ],
   script: [
     computed(() => {
         if (!cityItem.value || !districtItem.value) return {};

@@ -18,6 +18,15 @@ const neighItem = computed(() => districtItem.value?.neighborhoods[neighborhoodS
 
 useHead({
   title: computed(() => neighItem.value ? `${titleCase(neighItem.value.name)} Posta Kodu` : 'Posta Kodu Bulunamadı'),
+  meta: [
+    {
+      name: 'description',
+      content: computed(() => {
+        if (!cityItem.value || !districtItem.value || !neighItem.value) return '';
+        return `${titleCase(cityItem.value.name)} ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı ${titleCase(neighItem.value.name)}'nin posta kodunu görmek için tıklayın!`;
+      })
+    }
+  ],
   script: [
     computed(() => {
         if (!cityItem.value || !districtItem.value || !neighItem.value) return {};

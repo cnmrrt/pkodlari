@@ -1,7 +1,7 @@
 import { defineSitemapEventHandler } from '#imports'
 
 export default defineSitemapEventHandler(async () => {
-    const response = await $fetch<any>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/postakodlari.json');
+    const response = await $fetch<any>('https://pkodlari.com/pk.json');
 
     const urls: any[] = [];
     const entries = Array.isArray(response) ? response : Object.values(response);

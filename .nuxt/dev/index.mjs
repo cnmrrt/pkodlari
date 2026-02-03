@@ -2329,7 +2329,22 @@ _HuxVMMSI8euTafnCNL5bR1eUG9gE_Kc3LdGuc6hk94,
 _qgnnCHrZlWPgzzo12TqBfRKMJXRZbG41bj6QsUaDJg
 ];
 
-const assets = {};
+const assets = {
+  "/index.mjs": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"3149b-SFlK+BHpqbH+HfIJLEI83DGH578\"",
+    "mtime": "2026-02-03T13:51:16.710Z",
+    "size": 201883,
+    "path": "index.mjs"
+  },
+  "/index.mjs.map": {
+    "type": "application/json",
+    "etag": "\"cceda-it2rcj3kCR1ijFwkk1pcKzNGGBM\"",
+    "mtime": "2026-02-03T13:34:05.893Z",
+    "size": 839386,
+    "path": "index.mjs.map"
+  }
+};
 
 function readAsset (id) {
   const serverDir = dirname$1(fileURLToPath(globalThis._importMeta_.url));
@@ -5319,7 +5334,7 @@ const childSources = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProper
 const defineSitemapEventHandler = defineEventHandler;
 
 const sitemapUrls = defineSitemapEventHandler(async () => {
-  const response = await $fetch("https://words-from-life-5cb26-default-rtdb.firebaseio.com/postakodlari.json");
+  const response = await $fetch("https://pkodlari.com/pk.json");
   const urls = [];
   const entries = Array.isArray(response) ? response : Object.values(response);
   const slugify = (s) => {

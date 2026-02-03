@@ -701,6 +701,7 @@ const _inlineRuntimeConfig = {
           "/_**",
           "/_nuxt/**",
           "/_nuxt/**",
+          "/_nuxt/**",
           "/_nuxt/**"
         ],
         "includeAppSources": true
@@ -2225,7 +2226,7 @@ const _HuxVMMSI8euTafnCNL5bR1eUG9gE_Kc3LdGuc6hk94 = defineNitroPlugin(async (nit
 
 const rootDir = "/Users/mac/Desktop/pkodlari";
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap"}],"style":[{"innerHTML":"\n            body { \n                font-family: 'Inter', sans-serif;\n                background-color: #f8fafc;\n                color: #1e293b;\n                -webkit-font-smoothing: antialiased;\n            }\n            .mono { font-family: 'JetBrains Mono', monospace; }\n            .soft-card {\n                background: #ffffff;\n                border: 1px solid #e2e8f0;\n                box-shadow: 0 1px 3px rgba(0,0,0,0.02);\n                transition: all 0.2s ease;\n            }\n            .soft-card:hover {\n                border-color: #cbd5e1;\n                box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);\n                transform: translateY(-2px);\n            }\n          "}],"script":[{"src":"https://cdn.tailwindcss.com"}],"noscript":[],"title":"Posta Kodu Rehberi"};
+const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[{"rel":"icon","type":"image/svg+xml","href":"/favicon.svg"},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap"}],"style":[{"innerHTML":"\n            body { \n                font-family: 'Inter', sans-serif;\n                background-color: #f8fafc;\n                color: #1e293b;\n                -webkit-font-smoothing: antialiased;\n            }\n            .mono { font-family: 'JetBrains Mono', monospace; }\n            .soft-card {\n                background: #ffffff;\n                border: 1px solid #e2e8f0;\n                box-shadow: 0 1px 3px rgba(0,0,0,0.02);\n                transition: all 0.2s ease;\n            }\n            .soft-card:hover {\n                border-color: #cbd5e1;\n                box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);\n                transform: translateY(-2px);\n            }\n          "}],"script":[{"src":"https://cdn.tailwindcss.com"}],"noscript":[],"title":"Posta Kodu Rehberi"};
 
 const appRootTag = "div";
 

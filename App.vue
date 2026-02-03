@@ -25,6 +25,7 @@ const { data: postalData } = await useAsyncData<PostalData>('postal-data', async
     const dist = findValue(item, ['ilce', 'district', 'İLÇE', 'İlçe']);
     const neigh = findValue(item, ['mahalle', 'neighborhood', 'semt', 'MAHALLE']);
     const zip = findValue(item, ['posta_kodu', 'zip', 'pk', 'POSTA KODU', 'PK']);
+    const map = findValue(item, ['harita', 'map', 'iframe', 'google_map', 'embed']);
 
     if (city) {
       const cityStr = String(city).trim().toLocaleUpperCase('tr');
@@ -36,6 +37,7 @@ const { data: postalData } = await useAsyncData<PostalData>('postal-data', async
       const neighSlug = slugify(neighStr);
       
       const codeStr = String(zip || "00000").trim();
+      const mapStr = map ? String(map) : undefined;
 
       if (!transformed[citySlug]) {
         transformed[citySlug] = {
@@ -43,16 +45,35 @@ const { data: postalData } = await useAsyncData<PostalData>('postal-data', async
             districts: {}
         };
       }
+      // If we have a map and it seems to be for the city (no district/neigh specified in source - though logic forces them, 
+      // but assuming if we found a row with just city, dist/neigh would be 'MERKEZ' or empty in source).
+      // Actually, relying on source layout. If a specific map is bound to this item, we assign it to the most specific entity.
+      
       if (!transformed[citySlug].districts[distSlug]) {
         transformed[citySlug].districts[distSlug] = {
             name: distStr,
             neighborhoods: {}
         };
       }
+      
       transformed[citySlug].districts[distSlug].neighborhoods[neighSlug] = {
           name: neighStr,
-          zipCode: codeStr
+          zipCode: codeStr,
+          mapCode: mapStr
       };
+
+      // Opportunistic: if map exists and we are at a "summary" level row, we might want to assign to parent.
+      // But typical postal code data is one row per neighborhood. 
+      // User request: "if json has map element for each data". 
+      // We will propagate it up if needed, but for now lets store it on the leaf.
+      // If the user meant "city map" is a separate column in every row, then we get 100 copies.
+      // We can assign to city/district if they don't have one yet?
+      if (mapStr && !transformed[citySlug].mapCode) {
+          transformed[citySlug].mapCode = mapStr; 
+      }
+      if (mapStr && !transformed[citySlug].districts[distSlug].mapCode) {
+          transformed[citySlug].districts[distSlug].mapCode = mapStr;
+      }
     }
   });
   return transformed;

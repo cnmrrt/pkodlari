@@ -92,7 +92,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
           ssrRenderList(results.value, (res, i) => {
             _push(ssrRenderComponent(_component_NuxtLink, {
               key: i,
-              to: res.type === "city" ? `/city/${res.citySlug}` : res.type === "district" ? `/city/${res.citySlug}/${res.districtSlug}` : `/city/${res.citySlug}/${res.districtSlug}/${res.neighborhoodSlug}`,
+              to: res.type === "city" ? `/${res.citySlug}` : res.type === "district" ? `/${res.citySlug}/${res.districtSlug}` : `/${res.citySlug}/${res.districtSlug}/${res.neighborhoodSlug}`,
               class: "flex items-center gap-4 p-4 hover:bg-slate-50 transition-colors"
             }, {
               default: withCtx((_, _push2, _parent2, _scopeId) => {
@@ -183,7 +183,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         ssrRenderList(unref(postalData), (cityItem, slug) => {
           _push(ssrRenderComponent(_component_NuxtLink, {
             key: slug,
-            to: `/city/${slug}`,
+            to: `/${slug}`,
             class: "soft-card p-4 rounded-xl text-center"
           }, {
             default: withCtx((_, _push2, _parent2, _scopeId) => {
@@ -212,4 +212,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index-CASLklX1.mjs.map
+//# sourceMappingURL=index-Tf-sTnLD.mjs.map

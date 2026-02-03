@@ -1,0 +1,1 @@
+import{p as a,q as s,x as r,l as u,y as o}from"./BlgiKgNC.js";function i(e){const t=e||s();return t?.ssrContext?.head||t?.runWithContext(()=>{if(r())return u(o)})}function c(e,t={}){const n=i(t.nuxt);if(n)return a(e,{head:n,...t})}export{c as u};

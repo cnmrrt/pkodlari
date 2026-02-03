@@ -396,22 +396,22 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-CASLklX1.mjs')
+    component: () => import('./index-Tf-sTnLD.mjs')
   },
   {
-    name: "city-city",
-    path: "/city/:city()",
-    component: () => import('./index-Bp6uboWQ.mjs')
+    name: "city",
+    path: "/:city()",
+    component: () => import('./index-DxUL5B6L.mjs')
   },
   {
-    name: "city-city-district",
-    path: "/city/:city()/:district()",
-    component: () => import('./index-BnGWTOvo.mjs')
+    name: "city-district",
+    path: "/:city()/:district()",
+    component: () => import('./index-CChtgCam.mjs')
   },
   {
-    name: "city-city-district-neighborhood",
-    path: "/city/:city()/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-CFrYjDRf.mjs')
+    name: "city-district-neighborhood",
+    path: "/:city()/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-W6Uf87Tc.mjs')
   }
 ];
 const ROUTE_KEY_PARENTHESES_RE = /(:\w+)\([^)]+\)/g;
@@ -1526,6 +1526,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
         const dist = findValue(item, ["ilce", "district", "İLÇE", "İlçe"]);
         const neigh = findValue(item, ["mahalle", "neighborhood", "semt", "MAHALLE"]);
         const zip = findValue(item, ["posta_kodu", "zip", "pk", "POSTA KODU", "PK"]);
+        const map = findValue(item, ["harita", "map", "iframe", "google_map", "embed"]);
         if (city) {
           const cityStr = String(city).trim().toLocaleUpperCase("tr");
           const distStr = String(dist || "MERKEZ").trim().toLocaleUpperCase("tr");
@@ -1534,6 +1535,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
           const distSlug = slugify(distStr);
           const neighSlug = slugify(neighStr);
           const codeStr = String(zip || "00000").trim();
+          const mapStr = map ? String(map) : void 0;
           if (!transformed[citySlug]) {
             transformed[citySlug] = {
               name: cityStr,
@@ -1548,8 +1550,15 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
           }
           transformed[citySlug].districts[distSlug].neighborhoods[neighSlug] = {
             name: neighStr,
-            zipCode: codeStr
+            zipCode: codeStr,
+            mapCode: mapStr
           };
+          if (mapStr && !transformed[citySlug].mapCode) {
+            transformed[citySlug].mapCode = mapStr;
+          }
+          if (mapStr && !transformed[citySlug].districts[distSlug].mapCode) {
+            transformed[citySlug].districts[distSlug].mapCode = mapStr;
+          }
         }
       });
       return transformed;

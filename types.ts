@@ -1,16 +1,19 @@
 export interface NeighborhoodItem {
   name: string;
   zipCode: string;
+  mapCode?: string;
 }
 
 export interface DistrictItem {
   name: string;
   neighborhoods: { [neighSlug: string]: NeighborhoodItem };
+  mapCode?: string;
 }
 
 export interface CityItem {
   name: string;
   districts: { [distSlug: string]: DistrictItem };
+  mapCode?: string;
 }
 
 export interface PostalData {

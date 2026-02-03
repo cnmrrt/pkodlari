@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { inject, computed, Ref } from 'vue';
-import { ArrowLeft, ChevronRight } from 'lucide-vue-next';
+import { ArrowLeft, ChevronRight, MapPin } from 'lucide-vue-next';
 import { PostalData } from '~/types';
 
 const route = useRoute();
@@ -10,7 +10,33 @@ const citySlug = computed(() => route.params.city as string);
 const cityItem = computed(() => postalData?.value?.[citySlug.value]);
 
 useHead({
-  title: computed(() => cityItem.value ? `${cityItem.value.name} Posta Kodları | Rehber` : 'Şehir Bulunamadı')
+  title: computed(() => cityItem.value ? `${cityItem.value.name} Posta Kodları | Rehber` : 'Şehir Bulunamadı'),
+  script: [
+    computed(() => {
+        if (!cityItem.value) return {};
+        return {
+            type: 'application/ld+json',
+            children: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Anasayfa",
+                        "item": `https://postakodu.com/`
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": cityItem.value.name,
+                        "item": `https://postakodu.com/${citySlug.value}`
+                    }
+                ]
+            })
+        }
+    })
+  ]
 });
 
 const districts = computed(() => {
@@ -36,7 +62,7 @@ const isValid = computed(() => !!cityItem.value);
       <NuxtLink
         v-for="([distSlug, distItem]) in districts"
         :key="distSlug"
-        :to="`/city/${citySlug}/${distSlug}`"
+        :to="`/${citySlug}/${distSlug}`"
         class="soft-card p-6 rounded-xl flex items-center justify-between"
       >
         <div>
@@ -45,6 +71,15 @@ const isValid = computed(() => !!cityItem.value);
         </div>
         <ChevronRight class="w-5 h-5 text-slate-300" />
       </NuxtLink>
+    </div>
+
+    <div v-if="cityItem.mapCode" class="mt-12 bg-white border border-slate-200 rounded-[2rem] p-4 md:p-6 shadow-sm overflow-hidden">
+       <div class="mb-4 flex items-center gap-2 px-2">
+           <MapPin class="w-4 h-4 text-slate-400" />
+           <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wide">Konum</h3>
+       </div>
+       <div v-if="cityItem.mapCode.trim().startsWith('<')" v-html="cityItem.mapCode" class="w-full aspect-video rounded-2xl overflow-hidden [&>iframe]:w-full [&>iframe]:h-full"></div>
+       <iframe v-else :src="cityItem.mapCode" class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100" loading="lazy"></iframe>
     </div>
   </div>
 </template>

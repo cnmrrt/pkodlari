@@ -1,6 +1,6 @@
 import { u as useRoute, _ as __nuxt_component_0 } from './server.mjs';
 import { defineComponent, inject, ref, computed, mergeProps, withCtx, createTextVNode, unref, toDisplayString, useSSRContext } from 'vue';
-import { ssrRenderAttrs, ssrRenderComponent, ssrInterpolate, ssrRenderClass, ssrRenderList } from 'vue/server-renderer';
+import { ssrRenderAttrs, ssrRenderComponent, ssrInterpolate, ssrRenderClass, ssrRenderAttr, ssrRenderList } from 'vue/server-renderer';
 import { ChevronRight, MapPin, Check, Copy, Info, Share2 } from 'lucide-vue-next';
 import { u as useHead } from './v3-B2IqmCl5.mjs';
 import '../nitro/nitro.mjs';
@@ -48,6 +48,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     });
     const isValid = computed(() => !!neighItem.value);
     return (_ctx, _push, _parent, _attrs) => {
+      var _a;
       const _component_NuxtLink = __nuxt_component_0;
       if (isValid.value) {
         _push(`<div${ssrRenderAttrs(mergeProps({ class: "animate-in fade-in duration-500 max-w-2xl mx-auto py-8" }, _attrs))}><nav class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-8 overflow-x-auto whitespace-nowrap pb-2">`);
@@ -68,7 +69,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         }, _parent));
         _push(ssrRenderComponent(unref(ChevronRight), { class: "w-3 h-3" }, null, _parent));
         _push(ssrRenderComponent(_component_NuxtLink, {
-          to: `/city/${citySlug.value}`,
+          to: `/${citySlug.value}`,
           class: "hover:text-slate-900 transition-colors"
         }, {
           default: withCtx((_, _push2, _parent2, _scopeId) => {
@@ -84,7 +85,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         }, _parent));
         _push(ssrRenderComponent(unref(ChevronRight), { class: "w-3 h-3" }, null, _parent));
         _push(ssrRenderComponent(_component_NuxtLink, {
-          to: `/city/${citySlug.value}/${districtSlug.value}`,
+          to: `/${citySlug.value}/${districtSlug.value}`,
           class: "hover:text-slate-900 transition-colors"
         }, {
           default: withCtx((_, _push2, _parent2, _scopeId) => {
@@ -110,7 +111,21 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         _push(ssrRenderComponent(unref(Info), { class: "w-5 h-5 text-blue-500 mt-0.5" }, null, _parent));
         _push(`<div><h4 class="text-sm font-bold text-slate-900 mb-1">Adres Yaz\u0131m\u0131 \xD6rne\u011Fi</h4><div class="text-sm text-slate-600 leading-relaxed italic">${ssrInterpolate(neighItem.value.name)} Mah. No:1 D:1<br> ${ssrInterpolate(neighItem.value.zipCode)} ${ssrInterpolate(districtItem.value.name)}/${ssrInterpolate(cityItem.value.name)}</div></div></div></div></div><div class="mt-8 flex justify-center"><button class="flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-colors font-bold text-xs uppercase tracking-widest">`);
         _push(ssrRenderComponent(unref(Share2), { class: "w-4 h-4" }, null, _parent));
-        _push(` PAYLA\u015E </button></div></div>`);
+        _push(` PAYLA\u015E </button></div>`);
+        if (neighItem.value.mapCode) {
+          _push(`<div class="mt-12 bg-white border border-slate-200 rounded-[2rem] p-4 md:p-6 shadow-sm overflow-hidden"><div class="mb-4 flex items-center gap-2 px-2">`);
+          _push(ssrRenderComponent(unref(MapPin), { class: "w-4 h-4 text-slate-400" }, null, _parent));
+          _push(`<h3 class="font-bold text-slate-900 text-sm uppercase tracking-wide">Konum</h3></div>`);
+          if (neighItem.value.mapCode.trim().startsWith("<")) {
+            _push(`<div class="w-full aspect-video rounded-2xl overflow-hidden [&amp;&gt;iframe]:w-full [&amp;&gt;iframe]:h-full">${(_a = neighItem.value.mapCode) != null ? _a : ""}</div>`);
+          } else {
+            _push(`<iframe${ssrRenderAttr("src", neighItem.value.mapCode)} class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100" loading="lazy"></iframe>`);
+          }
+          _push(`</div>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`</div>`);
       } else {
         _push(`<div${ssrRenderAttrs(mergeProps({ class: "max-w-2xl mx-auto py-12 text-center text-slate-500" }, _attrs))}><div class="bg-red-50 text-red-600 p-6 rounded-xl border border-red-100"><h2 class="font-bold text-lg mb-2">Veri Bulunamad\u0131!</h2><p class="text-sm mb-4">Arad\u0131\u011F\u0131n\u0131z mahalle bilgisine ula\u015F\u0131lamad\u0131. L\xFCtfen adresi kontrol edin.</p><div class="text-left text-xs font-mono bg-white p-4 rounded border border-red-100 overflow-auto max-h-64"><p><strong>URL Params:</strong> ${ssrInterpolate(unref(route).params)}</p><p><strong>City Valid:</strong> ${ssrInterpolate(!!cityItem.value ? "YES" : "NO")} (${ssrInterpolate(citySlug.value)})</p><p><strong>District Valid:</strong> ${ssrInterpolate(!!districtItem.value ? "YES" : "NO")} (${ssrInterpolate(districtSlug.value)})</p><p><strong>Neighborhood Request:</strong> &quot;${ssrInterpolate(neighborhoodSlug.value)}&quot;</p>`);
         if (districtItem.value) {
@@ -146,9 +161,9 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
 const _sfc_setup = _sfc_main.setup;
 _sfc_main.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/city/[city]/[district]/[neighborhood].vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/[city]/[district]/[neighborhood].vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=_neighborhood_-CFrYjDRf.mjs.map
+//# sourceMappingURL=_neighborhood_-W6Uf87Tc.mjs.map

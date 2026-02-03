@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { inject, computed, ref, Ref } from 'vue';
-import { ArrowLeft, Search, ChevronRight } from 'lucide-vue-next';
+import { ArrowLeft, Search, ChevronRight, MapPin } from 'lucide-vue-next';
 import { PostalData } from '~/types';
 
 const route = useRoute();
@@ -14,7 +14,39 @@ const cityItem = computed(() => postalData?.value?.[citySlug.value]);
 const districtItem = computed(() => cityItem.value?.districts[districtSlug.value]);
 
 useHead({
-  title: computed(() => districtItem.value ? `${districtItem.value.name} Posta Kodları | Rehber` : 'İlçe Bulunamadı')
+  title: computed(() => districtItem.value ? `${districtItem.value.name} Posta Kodları | Rehber` : 'İlçe Bulunamadı'),
+  script: [
+    computed(() => {
+        if (!cityItem.value || !districtItem.value) return {};
+        return {
+            type: 'application/ld+json',
+            children: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Anasayfa",
+                        "item": `https://postakodu.com/`
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": cityItem.value.name,
+                        "item": `https://postakodu.com/${citySlug.value}`
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": districtItem.value.name,
+                        "item": `https://postakodu.com/${citySlug.value}/${districtSlug.value}`
+                    }
+                ]
+            })
+        }
+    })
+  ]
 });
 
 const isValid = computed(() => !!districtItem.value);
@@ -32,7 +64,7 @@ const neighs = computed(() => {
   <div v-if="isValid" class="animate-in fade-in duration-500 max-w-4xl mx-auto">
     <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
       <div class="flex items-center gap-4">
-        <NuxtLink :to="`/city/${citySlug}`" class="text-slate-400 hover:text-slate-900 transition-colors"><ArrowLeft class="w-5 h-5" /></NuxtLink>
+        <NuxtLink :to="`/${citySlug}`" class="text-slate-400 hover:text-slate-900 transition-colors"><ArrowLeft class="w-5 h-5" /></NuxtLink>
         <div>
           <h1 class="text-3xl font-bold text-slate-900 uppercase tracking-tight">{{ districtItem.name }} Posta Kodları</h1>
           <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">{{ cityItem.name }}</p>
@@ -53,7 +85,7 @@ const neighs = computed(() => {
       <NuxtLink 
         v-for="([nSlug, nItem]) in neighs"
         :key="nSlug"
-        :to="`/city/${citySlug}/${districtSlug}/${nSlug}`"
+        :to="`/${citySlug}/${districtSlug}/${nSlug}`"
         class="soft-card p-5 flex items-center justify-between group"
       >
         <div class="min-w-0 pr-4">
@@ -66,6 +98,15 @@ const neighs = computed(() => {
         </div>
       </NuxtLink>
       <div v-if="neighs.length === 0" class="col-span-full p-12 text-center text-slate-400 text-sm">Sonuç bulunamadı</div>
+    </div>
+
+    <div v-if="districtItem.mapCode" class="mt-12 bg-white border border-slate-200 rounded-[2rem] p-4 md:p-6 shadow-sm overflow-hidden">
+       <div class="mb-4 flex items-center gap-2 px-2">
+           <MapPin class="w-4 h-4 text-slate-400" />
+           <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wide">Konum</h3>
+       </div>
+       <div v-if="districtItem.mapCode.trim().startsWith('<')" v-html="districtItem.mapCode" class="w-full aspect-video rounded-2xl overflow-hidden [&>iframe]:w-full [&>iframe]:h-full"></div>
+       <iframe v-else :src="districtItem.mapCode" class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100" loading="lazy"></iframe>
     </div>
   </div>
 </template>

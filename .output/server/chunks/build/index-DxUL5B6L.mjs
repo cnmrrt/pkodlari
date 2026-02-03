@@ -1,7 +1,7 @@
 import { u as useRoute, _ as __nuxt_component_0 } from './server.mjs';
 import { defineComponent, inject, computed, mergeProps, withCtx, unref, createVNode, toDisplayString, useSSRContext } from 'vue';
-import { ssrRenderAttrs, ssrRenderComponent, ssrInterpolate, ssrRenderList } from 'vue/server-renderer';
-import { ArrowLeft, ChevronRight } from 'lucide-vue-next';
+import { ssrRenderAttrs, ssrRenderComponent, ssrInterpolate, ssrRenderList, ssrRenderAttr } from 'vue/server-renderer';
+import { ArrowLeft, ChevronRight, MapPin } from 'lucide-vue-next';
 import { u as useHead } from './v3-B2IqmCl5.mjs';
 import '../nitro/nitro.mjs';
 import 'node:http';
@@ -41,6 +41,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     });
     const isValid = computed(() => !!cityItem.value);
     return (_ctx, _push, _parent, _attrs) => {
+      var _a;
       const _component_NuxtLink = __nuxt_component_0;
       if (isValid.value) {
         _push(`<div${ssrRenderAttrs(mergeProps({ class: "animate-in fade-in duration-500 max-w-4xl mx-auto" }, _attrs))}><div class="mb-10 flex items-center gap-4">`);
@@ -63,7 +64,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         ssrRenderList(districts.value, ([distSlug, distItem]) => {
           _push(ssrRenderComponent(_component_NuxtLink, {
             key: distSlug,
-            to: `/city/${citySlug.value}/${distSlug}`,
+            to: `/${citySlug.value}/${distSlug}`,
             class: "soft-card p-6 rounded-xl flex items-center justify-between"
           }, {
             default: withCtx((_, _push2, _parent2, _scopeId) => {
@@ -83,7 +84,21 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
             _: 2
           }, _parent));
         });
-        _push(`<!--]--></div></div>`);
+        _push(`<!--]--></div>`);
+        if (cityItem.value.mapCode) {
+          _push(`<div class="mt-12 bg-white border border-slate-200 rounded-[2rem] p-4 md:p-6 shadow-sm overflow-hidden"><div class="mb-4 flex items-center gap-2 px-2">`);
+          _push(ssrRenderComponent(unref(MapPin), { class: "w-4 h-4 text-slate-400" }, null, _parent));
+          _push(`<h3 class="font-bold text-slate-900 text-sm uppercase tracking-wide">Konum</h3></div>`);
+          if (cityItem.value.mapCode.trim().startsWith("<")) {
+            _push(`<div class="w-full aspect-video rounded-2xl overflow-hidden [&amp;&gt;iframe]:w-full [&amp;&gt;iframe]:h-full">${(_a = cityItem.value.mapCode) != null ? _a : ""}</div>`);
+          } else {
+            _push(`<iframe${ssrRenderAttr("src", cityItem.value.mapCode)} class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100" loading="lazy"></iframe>`);
+          }
+          _push(`</div>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`</div>`);
       } else {
         _push(`<!---->`);
       }
@@ -93,9 +108,9 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
 const _sfc_setup = _sfc_main.setup;
 _sfc_main.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/city/[city]/index.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/[city]/index.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index-Bp6uboWQ.mjs.map
+//# sourceMappingURL=index-DxUL5B6L.mjs.map

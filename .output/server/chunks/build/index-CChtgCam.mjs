@@ -1,7 +1,7 @@
 import { u as useRoute, _ as __nuxt_component_0 } from './server.mjs';
 import { defineComponent, inject, ref, computed, mergeProps, withCtx, unref, createVNode, toDisplayString, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrInterpolate, ssrRenderAttr, ssrRenderList } from 'vue/server-renderer';
-import { ArrowLeft, Search, ChevronRight } from 'lucide-vue-next';
+import { ArrowLeft, Search, ChevronRight, MapPin } from 'lucide-vue-next';
 import { u as useHead } from './v3-B2IqmCl5.mjs';
 import '../nitro/nitro.mjs';
 import 'node:http';
@@ -48,11 +48,12 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       return items.filter(([, n]) => n.name.toLocaleLowerCase("tr").includes(filter.value.toLocaleLowerCase("tr"))).sort(([, a], [, b]) => a.name.localeCompare(b.name, "tr"));
     });
     return (_ctx, _push, _parent, _attrs) => {
+      var _a;
       const _component_NuxtLink = __nuxt_component_0;
       if (isValid.value) {
         _push(`<div${ssrRenderAttrs(mergeProps({ class: "animate-in fade-in duration-500 max-w-4xl mx-auto" }, _attrs))}><div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6"><div class="flex items-center gap-4">`);
         _push(ssrRenderComponent(_component_NuxtLink, {
-          to: `/city/${citySlug.value}`,
+          to: `/${citySlug.value}`,
           class: "text-slate-400 hover:text-slate-900 transition-colors"
         }, {
           default: withCtx((_, _push2, _parent2, _scopeId) => {
@@ -72,7 +73,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         ssrRenderList(neighs.value, ([nSlug, nItem]) => {
           _push(ssrRenderComponent(_component_NuxtLink, {
             key: nSlug,
-            to: `/city/${citySlug.value}/${districtSlug.value}/${nSlug}`,
+            to: `/${citySlug.value}/${districtSlug.value}/${nSlug}`,
             class: "soft-card p-5 flex items-center justify-between group"
           }, {
             default: withCtx((_, _push2, _parent2, _scopeId) => {
@@ -102,7 +103,21 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         } else {
           _push(`<!---->`);
         }
-        _push(`</div></div>`);
+        _push(`</div>`);
+        if (districtItem.value.mapCode) {
+          _push(`<div class="mt-12 bg-white border border-slate-200 rounded-[2rem] p-4 md:p-6 shadow-sm overflow-hidden"><div class="mb-4 flex items-center gap-2 px-2">`);
+          _push(ssrRenderComponent(unref(MapPin), { class: "w-4 h-4 text-slate-400" }, null, _parent));
+          _push(`<h3 class="font-bold text-slate-900 text-sm uppercase tracking-wide">Konum</h3></div>`);
+          if (districtItem.value.mapCode.trim().startsWith("<")) {
+            _push(`<div class="w-full aspect-video rounded-2xl overflow-hidden [&amp;&gt;iframe]:w-full [&amp;&gt;iframe]:h-full">${(_a = districtItem.value.mapCode) != null ? _a : ""}</div>`);
+          } else {
+            _push(`<iframe${ssrRenderAttr("src", districtItem.value.mapCode)} class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100" loading="lazy"></iframe>`);
+          }
+          _push(`</div>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`</div>`);
       } else {
         _push(`<!---->`);
       }
@@ -112,9 +127,9 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
 const _sfc_setup = _sfc_main.setup;
 _sfc_main.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/city/[city]/[district]/index.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/[city]/[district]/index.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index-BnGWTOvo.mjs.map
+//# sourceMappingURL=index-CChtgCam.mjs.map

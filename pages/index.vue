@@ -31,7 +31,7 @@ const cityList = computed(() => {
       <NuxtLink
         v-for="(cityItem, slug) in postalData"
         :key="slug"
-        :to="`/city/${slug}`"
+        :to="`/${slug}`"
         class="soft-card p-4 rounded-xl text-center"
       >
         <div class="font-semibold text-slate-900 text-sm truncate uppercase">{{ cityItem.name }}</div>

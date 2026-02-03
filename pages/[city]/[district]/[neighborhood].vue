@@ -16,7 +16,45 @@ const districtItem = computed(() => cityItem.value?.districts[districtSlug.value
 const neighItem = computed(() => districtItem.value?.neighborhoods[neighborhoodSlug.value]);
 
 useHead({
-  title: computed(() => neighItem.value ? `${neighItem.value.name} Posta Kodu | Rehber` : 'Posta Kodu Bulunamadı')
+  title: computed(() => neighItem.value ? `${neighItem.value.name} Posta Kodu | Rehber` : 'Posta Kodu Bulunamadı'),
+  script: [
+    computed(() => {
+        if (!cityItem.value || !districtItem.value || !neighItem.value) return {};
+        return {
+            type: 'application/ld+json',
+            children: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Anasayfa",
+                        "item": `https://postakodu.com/`
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": cityItem.value.name,
+                        "item": `https://postakodu.com/${citySlug.value}`
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": districtItem.value.name,
+                        "item": `https://postakodu.com/${citySlug.value}/${districtSlug.value}`
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "name": neighItem.value.name,
+                        "item": `https://postakodu.com/${citySlug.value}/${districtSlug.value}/${neighborhoodSlug.value}`
+                    }
+                ]
+            })
+        }
+    })
+  ]
 });
 
 const isValid = computed(() => !!neighItem.value);
@@ -46,9 +84,9 @@ const share = () => {
     <nav class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-8 overflow-x-auto whitespace-nowrap pb-2">
       <NuxtLink to="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</NuxtLink>
       <ChevronRight class="w-3 h-3" />
-      <NuxtLink :to="`/city/${citySlug}`" class="hover:text-slate-900 transition-colors">{{ cityItem.name }}</NuxtLink>
+      <NuxtLink :to="`/${citySlug}`" class="hover:text-slate-900 transition-colors">{{ cityItem.name }}</NuxtLink>
       <ChevronRight class="w-3 h-3" />
-      <NuxtLink :to="`/city/${citySlug}/${districtSlug}`" class="hover:text-slate-900 transition-colors">{{ districtItem.name }}</NuxtLink>
+      <NuxtLink :to="`/${citySlug}/${districtSlug}`" class="hover:text-slate-900 transition-colors">{{ districtItem.name }}</NuxtLink>
     </nav>
 
     <div class="bg-white border border-slate-200 rounded-[2rem] p-8 md:p-12 shadow-sm">
@@ -101,6 +139,15 @@ const share = () => {
       >
         <Share2 class="w-4 h-4" /> PAYLAŞ
       </button>
+    </div>
+
+    <div v-if="neighItem.mapCode" class="mt-12 bg-white border border-slate-200 rounded-[2rem] p-4 md:p-6 shadow-sm overflow-hidden">
+       <div class="mb-4 flex items-center gap-2 px-2">
+           <MapPin class="w-4 h-4 text-slate-400" />
+           <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wide">Konum</h3>
+       </div>
+       <div v-if="neighItem.mapCode.trim().startsWith('<')" v-html="neighItem.mapCode" class="w-full aspect-video rounded-2xl overflow-hidden [&>iframe]:w-full [&>iframe]:h-full"></div>
+       <iframe v-else :src="neighItem.mapCode" class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100" loading="lazy"></iframe>
     </div>
   </div>
 

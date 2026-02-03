@@ -1,8 +1,8 @@
-import { _ as __nuxt_component_0 } from './server.mjs';
+import { _ as __nuxt_component_0, t as titleCase } from './server.mjs';
 import { defineComponent, inject, computed, unref, mergeProps, withCtx, createVNode, toDisplayString, ref, openBlock, createBlock, createCommentVNode, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrRenderList, ssrInterpolate, ssrRenderClass, ssrRenderAttr } from 'vue/server-renderer';
 import { Loader2, Search, Map, Building2, MapPin } from 'lucide-vue-next';
-import { u as useHead } from './v3-B2IqmCl5.mjs';
+import { u as useHead } from './v3-DLUJbLmb.mjs';
 import '../nitro/nitro.mjs';
 import 'node:http';
 import 'node:https';
@@ -104,7 +104,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
                   } else {
                     _push2(ssrRenderComponent(unref(MapPin), { class: "w-4 h-4" }, null, _parent2, _scopeId));
                   }
-                  _push2(`</div><div class="flex-1"${_scopeId}><div class="font-semibold text-sm text-slate-900"${_scopeId}>${ssrInterpolate(res.neighborhood || res.district || res.city)}</div><div class="text-[10px] text-slate-400 uppercase font-medium"${_scopeId}>${ssrInterpolate([res.city, res.district].filter(Boolean).join(" / "))}</div></div>`);
+                  _push2(`</div><div class="flex-1"${_scopeId}><div class="font-semibold text-sm text-slate-900"${_scopeId}>${ssrInterpolate(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(res.neighborhood || res.district || res.city))}</div><div class="text-[10px] text-slate-400 uppercase font-medium"${_scopeId}>${ssrInterpolate([("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(res.city), ("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(res.district)].filter(Boolean).join(" / "))}</div></div>`);
                   if (res.zipCode) {
                     _push2(`<div class="mono text-xs font-bold text-slate-900 bg-slate-100 px-2 py-1 rounded"${_scopeId}>${ssrInterpolate(res.zipCode)}</div>`);
                   } else {
@@ -125,8 +125,8 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
                       }))
                     ]),
                     createVNode("div", { class: "flex-1" }, [
-                      createVNode("div", { class: "font-semibold text-sm text-slate-900" }, toDisplayString(res.neighborhood || res.district || res.city), 1),
-                      createVNode("div", { class: "text-[10px] text-slate-400 uppercase font-medium" }, toDisplayString([res.city, res.district].filter(Boolean).join(" / ")), 1)
+                      createVNode("div", { class: "font-semibold text-sm text-slate-900" }, toDisplayString(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(res.neighborhood || res.district || res.city)), 1),
+                      createVNode("div", { class: "text-[10px] text-slate-400 uppercase font-medium" }, toDisplayString([("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(res.city), ("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(res.district)].filter(Boolean).join(" / ")), 1)
                     ]),
                     res.zipCode ? (openBlock(), createBlock("div", {
                       key: 0,
@@ -187,10 +187,10 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           }, {
             default: withCtx((_, _push2, _parent2, _scopeId) => {
               if (_push2) {
-                _push2(`<div class="font-semibold text-slate-900 text-sm truncate uppercase"${_scopeId}>${ssrInterpolate(cityItem.name)}</div><div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider"${_scopeId}>${ssrInterpolate(Object.keys(cityItem.districts || {}).length)} \u0130L\xC7E </div>`);
+                _push2(`<div class="font-semibold text-slate-900 text-sm truncate"${_scopeId}>${ssrInterpolate(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(cityItem.name))}</div><div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider"${_scopeId}>${ssrInterpolate(Object.keys(cityItem.districts || {}).length)} \u0130L\xC7E </div>`);
               } else {
                 return [
-                  createVNode("div", { class: "font-semibold text-slate-900 text-sm truncate uppercase" }, toDisplayString(cityItem.name), 1),
+                  createVNode("div", { class: "font-semibold text-slate-900 text-sm truncate" }, toDisplayString(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(cityItem.name)), 1),
                   createVNode("div", { class: "text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider" }, toDisplayString(Object.keys(cityItem.districts || {}).length) + " \u0130L\xC7E ", 1)
                 ];
               }
@@ -211,4 +211,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index-B-NowZgl.mjs.map
+//# sourceMappingURL=index-d4Cyx6NX.mjs.map

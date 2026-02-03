@@ -6,3 +6,11 @@ export const slugify = (s: string) => {
         .trim()
         .replace(/\s+/g, '-');
 };
+
+export const titleCase = (s: string) => {
+    if (!s) return '';
+    // Use regex to find words and capitalize first letters, including those after slashes or other non-alpha chars
+    return s.toLocaleLowerCase('tr').replace(/(^|[^a-züığüşöçı])([a-züığüşöçı])/g, (match, p1, p2) =>
+        p1 + p2.toLocaleUpperCase('tr')
+    );
+};

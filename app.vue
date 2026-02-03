@@ -86,7 +86,7 @@ provide('postalData', postalData);
 <template>
   <div>
     <Header />
-    <main class="max-w-5xl mx-auto px-6 py-12">
+    <main class="max-w-5xl mx-auto px-6 py-8">
       <NuxtPage />
     </main>
     <footer class="py-12 text-center text-slate-400 text-xs font-medium border-t border-slate-200 mt-20">

@@ -1,8 +1,8 @@
-import { u as useRoute, _ as __nuxt_component_0 } from './server.mjs';
+import { u as useRoute, t as titleCase, _ as __nuxt_component_0 } from './server.mjs';
 import { defineComponent, inject, ref, computed, mergeProps, withCtx, createTextVNode, unref, toDisplayString, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrInterpolate, ssrRenderClass, ssrRenderAttr, ssrRenderList } from 'vue/server-renderer';
-import { ChevronRight, MapPin, Check, Copy, Info, Share2 } from 'lucide-vue-next';
-import { u as useHead } from './v3-B2IqmCl5.mjs';
+import { ChevronRight, MapPin, Check, Copy, Share2 } from 'lucide-vue-next';
+import { u as useHead } from './v3-DLUJbLmb.mjs';
 import '../nitro/nitro.mjs';
 import 'node:http';
 import 'node:https';
@@ -44,7 +44,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       return (_a = districtItem.value) == null ? void 0 : _a.neighborhoods[neighborhoodSlug.value];
     });
     useHead({
-      title: computed(() => neighItem.value ? `${neighItem.value.name} Posta Kodu | Rehber` : "Posta Kodu Bulunamad\u0131"),
+      title: computed(() => neighItem.value ? `${titleCase(neighItem.value.name)} Posta Kodu` : "Posta Kodu Bulunamad\u0131"),
       script: [
         computed(() => {
           if (!cityItem.value || !districtItem.value || !neighItem.value) return {};
@@ -63,19 +63,19 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                 {
                   "@type": "ListItem",
                   "position": 2,
-                  "name": cityItem.value.name,
+                  "name": titleCase(cityItem.value.name),
                   "item": `https://postakodu.com/${citySlug.value}`
                 },
                 {
                   "@type": "ListItem",
                   "position": 3,
-                  "name": districtItem.value.name,
+                  "name": titleCase(districtItem.value.name),
                   "item": `https://postakodu.com/${citySlug.value}/${districtSlug.value}`
                 },
                 {
                   "@type": "ListItem",
                   "position": 4,
-                  "name": neighItem.value.name,
+                  "name": titleCase(neighItem.value.name),
                   "item": `https://postakodu.com/${citySlug.value}/${districtSlug.value}/${neighborhoodSlug.value}`
                 }
               ]
@@ -112,10 +112,10 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         }, {
           default: withCtx((_, _push2, _parent2, _scopeId) => {
             if (_push2) {
-              _push2(`${ssrInterpolate(cityItem.value.name)}`);
+              _push2(`${ssrInterpolate(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(cityItem.value.name))}`);
             } else {
               return [
-                createTextVNode(toDisplayString(cityItem.value.name), 1)
+                createTextVNode(toDisplayString(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(cityItem.value.name)), 1)
               ];
             }
           }),
@@ -128,10 +128,10 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         }, {
           default: withCtx((_, _push2, _parent2, _scopeId) => {
             if (_push2) {
-              _push2(`${ssrInterpolate(districtItem.value.name)}`);
+              _push2(`${ssrInterpolate(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(districtItem.value.name))}`);
             } else {
               return [
-                createTextVNode(toDisplayString(districtItem.value.name), 1)
+                createTextVNode(toDisplayString(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(districtItem.value.name)), 1)
               ];
             }
           }),
@@ -139,15 +139,13 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         }, _parent));
         _push(`</nav><div class="bg-white border border-slate-200 rounded-[2rem] p-8 md:p-12 shadow-sm"><div class="text-center mb-10"><div class="inline-flex p-3 bg-slate-50 rounded-2xl mb-6">`);
         _push(ssrRenderComponent(unref(MapPin), { class: "w-6 h-6 text-slate-900" }, null, _parent));
-        _push(`</div><h1 class="text-4xl font-bold text-slate-900 mb-2 uppercase tracking-tight">${ssrInterpolate(neighItem.value.name)}</h1><p class="text-slate-500 font-medium uppercase tracking-widest text-sm">${ssrInterpolate(districtItem.value.name)}, ${ssrInterpolate(cityItem.value.name)}</p></div><div class="bg-slate-50 rounded-3xl p-8 text-center relative overflow-hidden"><div class="relative z-10"><p class="text-xs font-bold text-slate-400 uppercase tracking-[0.3em] mb-4">POSTA KODU</p><div class="mono text-7xl font-bold text-slate-900 mb-8">${ssrInterpolate(neighItem.value.zipCode)}</div><button class="${ssrRenderClass([copied.value ? "bg-green-600 text-white" : "bg-slate-900 text-white hover:bg-slate-800", "flex items-center gap-2 mx-auto px-8 py-4 rounded-2xl font-bold text-sm transition-all active:scale-95"])}">`);
+        _push(`</div><h1 class="text-4xl font-bold text-slate-900 mb-2 tracking-tight">${ssrInterpolate(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(neighItem.value.name))}</h1><p class="text-slate-500 font-medium uppercase tracking-widest text-sm">${ssrInterpolate(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(districtItem.value.name))}, ${ssrInterpolate(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(cityItem.value.name))}</p></div><div class="bg-slate-50 rounded-3xl p-8 text-center relative overflow-hidden"><div class="relative z-10"><p class="text-xs font-bold text-slate-400 uppercase tracking-[0.3em] mb-4">POSTA KODU</p><div class="mono text-7xl font-bold text-slate-900 mb-8">${ssrInterpolate(neighItem.value.zipCode)}</div><button class="${ssrRenderClass([copied.value ? "bg-green-600 text-white" : "bg-slate-900 text-white hover:bg-slate-800", "flex items-center gap-2 mx-auto px-8 py-4 rounded-2xl font-bold text-sm transition-all active:scale-95"])}">`);
         if (copied.value) {
           _push(ssrRenderComponent(unref(Check), { class: "w-4 h-4" }, null, _parent));
         } else {
           _push(ssrRenderComponent(unref(Copy), { class: "w-4 h-4" }, null, _parent));
         }
-        _push(` ${ssrInterpolate(copied.value ? "KOPYALANDI" : "KODU KOPYALA")}</button></div><div class="absolute -bottom-10 -right-10 mono text-[12rem] font-black text-slate-200/50 select-none">${ssrInterpolate(neighItem.value.zipCode.substring(0, 2))}</div></div><div class="mt-12 grid grid-cols-1 gap-4"><div class="flex items-start gap-4 p-5 bg-blue-50/50 rounded-2xl border border-blue-100">`);
-        _push(ssrRenderComponent(unref(Info), { class: "w-5 h-5 text-blue-500 mt-0.5" }, null, _parent));
-        _push(`<div><h4 class="text-sm font-bold text-slate-900 mb-1">Adres Yaz\u0131m\u0131 \xD6rne\u011Fi</h4><div class="text-sm text-slate-600 leading-relaxed italic">${ssrInterpolate(neighItem.value.name)} Mah. No:1 D:1<br> ${ssrInterpolate(neighItem.value.zipCode)} ${ssrInterpolate(districtItem.value.name)}/${ssrInterpolate(cityItem.value.name)}</div></div></div></div></div><div class="mt-8 flex justify-center"><button class="flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-colors font-bold text-xs uppercase tracking-widest">`);
+        _push(` ${ssrInterpolate(copied.value ? "KOPYALANDI" : "KODU KOPYALA")}</button></div><div class="absolute -bottom-10 -right-10 mono text-[12rem] font-black text-slate-200/50 select-none">${ssrInterpolate(neighItem.value.zipCode.substring(0, 2))}</div></div></div><div class="mt-8 flex justify-center"><button class="flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-colors font-bold text-xs uppercase tracking-widest">`);
         _push(ssrRenderComponent(unref(Share2), { class: "w-4 h-4" }, null, _parent));
         _push(` PAYLA\u015E </button></div>`);
         if (neighItem.value.mapCode) {
@@ -204,4 +202,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=_neighborhood_-DObLQy5N.mjs.map
+//# sourceMappingURL=_neighborhood_-CZsQc2b0.mjs.map

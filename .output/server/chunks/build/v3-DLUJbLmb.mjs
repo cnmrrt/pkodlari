@@ -1,5 +1,5 @@
 import { hasInjectionContext, inject } from 'vue';
-import { t as tryUseNuxtApp } from './server.mjs';
+import { a as tryUseNuxtApp } from './server.mjs';
 import { u as useHead$1, h as headSymbol } from '../routes/renderer.mjs';
 
 function injectHead(nuxtApp) {
@@ -19,4 +19,4 @@ function useHead(input, options = {}) {
 }
 
 export { useHead as u };
-//# sourceMappingURL=v3-B2IqmCl5.mjs.map
+//# sourceMappingURL=v3-DLUJbLmb.mjs.map

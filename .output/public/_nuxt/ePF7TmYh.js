@@ -1,1 +1,0 @@
-import{p as s,q as a,s as r,l as u,x as o}from"./MdZ-YvTk.js";function i(e){const t=e||a();return t?.ssrContext?.head||t?.runWithContext(()=>{if(r())return u(o)})}function c(e,t={}){const n=i(t.nuxt);if(n)return s(e,{head:n,...t})}export{c as u};

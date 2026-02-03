@@ -396,22 +396,22 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-B-NowZgl.mjs')
+    component: () => import('./index-d4Cyx6NX.mjs')
   },
   {
     name: "city",
     path: "/:city()",
-    component: () => import('./index-C1E1sfoJ.mjs')
+    component: () => import('./index-BROD5Gyo.mjs')
   },
   {
     name: "city-district",
     path: "/:city()/:district()",
-    component: () => import('./index-CB_nOeBx.mjs')
+    component: () => import('./index-DaJ7qcKZ.mjs')
   },
   {
     name: "city-district-neighborhood",
     path: "/:city()/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-DObLQy5N.mjs')
+    component: () => import('./_neighborhood_-CZsQc2b0.mjs')
   }
 ];
 const ROUTE_KEY_PARENTHESES_RE = /(:\w+)\([^)]+\)/g;
@@ -1502,6 +1502,13 @@ function mergeAbortSignals(signals, cleanupSignal, timeout) {
 const slugify = (s) => {
   return String(s).toLocaleLowerCase("tr").replace(/[ıığüşöç]/g, (m) => ({ "ı": "i", "ğ": "g", "ü": "u", "ş": "s", "ö": "o", "ç": "c" })[m] || m).replace(/[^a-z0-9\s-]/g, "").trim().replace(/\s+/g, "-");
 };
+const titleCase = (s) => {
+  if (!s) return "";
+  return s.toLocaleLowerCase("tr").replace(
+    /(^|[^a-züığüşöçı])([a-züığüşöçı])/g,
+    (match, p1, p2) => p1 + p2.toLocaleUpperCase("tr")
+  );
+};
 const _sfc_main$2 = /* @__PURE__ */ defineComponent({
   __name: "app",
   __ssrInlineRender: true,
@@ -1569,7 +1576,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
       const _component_NuxtPage = __nuxt_component_1;
       _push(`<div${ssrRenderAttrs(_attrs)}>`);
       _push(ssrRenderComponent(_component_Header, null, null, _parent));
-      _push(`<main class="max-w-5xl mx-auto px-6 py-12">`);
+      _push(`<main class="max-w-5xl mx-auto px-6 py-8">`);
       _push(ssrRenderComponent(_component_NuxtPage, null, null, _parent));
       _push(`</main><footer class="py-12 text-center text-slate-400 text-xs font-medium border-t border-slate-200 mt-20"> Posta Kodu Rehberi © ${ssrInterpolate((/* @__PURE__ */ new Date()).getFullYear())} — Tüm hakları saklıdır. </footer></div>`);
     };
@@ -1595,8 +1602,8 @@ const _sfc_main$1 = {
     const statusText = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
     const description = _error.message || _error.toString();
     const stack = void 0;
-    const _Error404 = defineAsyncComponent(() => import('./error-404-D3mCVatS.mjs'));
-    const _Error = defineAsyncComponent(() => import('./error-500-BBlUsZ0k.mjs'));
+    const _Error404 = defineAsyncComponent(() => import('./error-404-8-XlKSNp.mjs'));
+    const _Error = defineAsyncComponent(() => import('./error-500-BTZQV9a-.mjs'));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {
       _push(ssrRenderComponent(unref(ErrorTemplate), mergeProps({ status: unref(status), statusText: unref(statusText), statusCode: unref(status), statusMessage: unref(statusText), description: unref(description), stack: unref(stack) }, _attrs), null, _parent));
@@ -1677,5 +1684,5 @@ let entry;
 }
 const entry_default = ((ssrContext) => entry(ssrContext));
 
-export { __nuxt_component_0 as _, entry_default as default, tryUseNuxtApp as t, useRoute as u };
+export { __nuxt_component_0 as _, tryUseNuxtApp as a, entry_default as default, titleCase as t, useRoute as u };
 //# sourceMappingURL=server.mjs.map

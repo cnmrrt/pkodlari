@@ -17,7 +17,7 @@ const districtItem = computed(() => cityItem.value?.districts[districtSlug.value
 const neighItem = computed(() => districtItem.value?.neighborhoods[neighborhoodSlug.value]);
 
 useHead({
-  title: computed(() => neighItem.value ? `${neighItem.value.name} Posta Kodu | Rehber` : 'Posta Kodu Bulunamadı'),
+  title: computed(() => neighItem.value ? `${titleCase(neighItem.value.name)} Posta Kodu` : 'Posta Kodu Bulunamadı'),
   script: [
     computed(() => {
         if (!cityItem.value || !districtItem.value || !neighItem.value) return {};
@@ -36,19 +36,19 @@ useHead({
                     {
                         "@type": "ListItem",
                         "position": 2,
-                        "name": cityItem.value.name,
+                        "name": titleCase(cityItem.value.name),
                         "item": `https://postakodu.com/${citySlug.value}`
                     },
                     {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": districtItem.value.name,
+                        "name": titleCase(districtItem.value.name),
                         "item": `https://postakodu.com/${citySlug.value}/${districtSlug.value}`
                     },
                     {
                         "@type": "ListItem",
                         "position": 4,
-                        "name": neighItem.value.name,
+                        "name": titleCase(neighItem.value.name),
                         "item": `https://postakodu.com/${citySlug.value}/${districtSlug.value}/${neighborhoodSlug.value}`
                     }
                 ]
@@ -71,8 +71,8 @@ const copyToClipboard = () => {
 const share = () => {
     if (navigator.share && neighItem.value) {
         navigator.share({
-        title: `${neighItem.value.name} Posta Kodu`,
-        text: `${cityItem.value.name}, ${districtItem.value.name}, ${neighItem.value.name} mahallesinin posta kodu: ${neighItem.value.zipCode}`,
+        title: `${titleCase(neighItem.value.name)} Posta Kodu`,
+        text: `${titleCase(cityItem.value.name)}, ${titleCase(districtItem.value.name)}, ${titleCase(neighItem.value.name)} mahallesinin posta kodu: ${neighItem.value.zipCode}`,
         url: window.location.href,
         });
     }
@@ -80,14 +80,14 @@ const share = () => {
 </script>
 
 <template>
-  <div v-if="isValid" class="animate-in fade-in duration-500 max-w-2xl mx-auto py-8">
+  <div v-if="isValid" class="animate-in fade-in duration-500 max-w-2xl mx-auto">
     <!-- Breadcrumbs -->
     <nav class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-8 overflow-x-auto whitespace-nowrap pb-2">
       <NuxtLink to="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</NuxtLink>
       <ChevronRight class="w-3 h-3" />
-      <NuxtLink :to="`/${citySlug}`" class="hover:text-slate-900 transition-colors">{{ cityItem.name }}</NuxtLink>
+      <NuxtLink :to="`/${citySlug}`" class="hover:text-slate-900 transition-colors">{{ titleCase(cityItem.name) }}</NuxtLink>
       <ChevronRight class="w-3 h-3" />
-      <NuxtLink :to="`/${citySlug}/${districtSlug}`" class="hover:text-slate-900 transition-colors">{{ districtItem.name }}</NuxtLink>
+      <NuxtLink :to="`/${citySlug}/${districtSlug}`" class="hover:text-slate-900 transition-colors">{{ titleCase(districtItem.name) }}</NuxtLink>
     </nav>
 
     <div class="bg-white border border-slate-200 rounded-[2rem] p-8 md:p-12 shadow-sm">
@@ -95,8 +95,8 @@ const share = () => {
         <div class="inline-flex p-3 bg-slate-50 rounded-2xl mb-6">
           <MapPin class="w-6 h-6 text-slate-900" />
         </div>
-        <h1 class="text-4xl font-bold text-slate-900 mb-2 uppercase tracking-tight">{{ neighItem.name }}</h1>
-        <p class="text-slate-500 font-medium uppercase tracking-widest text-sm">{{ districtItem.name }}, {{ cityItem.name }}</p>
+        <h1 class="text-4xl font-bold text-slate-900 mb-2 tracking-tight">{{ titleCase(neighItem.name) }}</h1>
+        <p class="text-slate-500 font-medium uppercase tracking-widest text-sm">{{ titleCase(districtItem.name) }}, {{ titleCase(cityItem.name) }}</p>
       </div>
 
       <div class="bg-slate-50 rounded-3xl p-8 text-center relative overflow-hidden">
@@ -116,19 +116,6 @@ const share = () => {
         <!-- Decorative background number -->
         <div class="absolute -bottom-10 -right-10 mono text-[12rem] font-black text-slate-200/50 select-none">
           {{ neighItem.zipCode.substring(0, 2) }}
-        </div>
-      </div>
-
-      <div class="mt-12 grid grid-cols-1 gap-4">
-        <div class="flex items-start gap-4 p-5 bg-blue-50/50 rounded-2xl border border-blue-100">
-          <Info class="w-5 h-5 text-blue-500 mt-0.5" />
-          <div>
-            <h4 class="text-sm font-bold text-slate-900 mb-1">Adres Yazımı Örneği</h4>
-            <div class="text-sm text-slate-600 leading-relaxed italic">
-                {{ neighItem.name }} Mah. No:1 D:1<br />
-                {{ neighItem.zipCode }} {{ districtItem.name }}/{{ cityItem.name }}
-            </div>
-          </div>
         </div>
       </div>
     </div>

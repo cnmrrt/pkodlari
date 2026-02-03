@@ -1,8 +1,8 @@
-import { u as useRoute, _ as __nuxt_component_0 } from './server.mjs';
+import { u as useRoute, t as titleCase, _ as __nuxt_component_0 } from './server.mjs';
 import { defineComponent, inject, ref, computed, mergeProps, withCtx, unref, createVNode, toDisplayString, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrInterpolate, ssrRenderAttr, ssrRenderList } from 'vue/server-renderer';
 import { ArrowLeft, Search, ChevronRight, MapPin } from 'lucide-vue-next';
-import { u as useHead } from './v3-B2IqmCl5.mjs';
+import { u as useHead } from './v3-DLUJbLmb.mjs';
 import '../nitro/nitro.mjs';
 import 'node:http';
 import 'node:https';
@@ -39,7 +39,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       return (_a = cityItem.value) == null ? void 0 : _a.districts[districtSlug.value];
     });
     useHead({
-      title: computed(() => districtItem.value ? `${districtItem.value.name} Posta Kodlar\u0131 | Rehber` : "\u0130l\xE7e Bulunamad\u0131"),
+      title: computed(() => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodlar\u0131` : "\u0130l\xE7e Bulunamad\u0131"),
       script: [
         computed(() => {
           if (!cityItem.value || !districtItem.value) return {};
@@ -58,13 +58,13 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                 {
                   "@type": "ListItem",
                   "position": 2,
-                  "name": cityItem.value.name,
+                  "name": titleCase(cityItem.value.name),
                   "item": `https://postakodu.com/${citySlug.value}`
                 },
                 {
                   "@type": "ListItem",
                   "position": 3,
-                  "name": districtItem.value.name,
+                  "name": titleCase(districtItem.value.name),
                   "item": `https://postakodu.com/${citySlug.value}/${districtSlug.value}`
                 }
               ]
@@ -99,7 +99,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           }),
           _: 1
         }, _parent));
-        _push(`<div><h1 class="text-3xl font-bold text-slate-900 uppercase tracking-tight">${ssrInterpolate(districtItem.value.name)} Posta Kodlar\u0131</h1><p class="text-slate-500 text-sm font-medium uppercase tracking-wider">${ssrInterpolate(cityItem.value.name)}</p></div></div><div class="relative w-full md:w-64">`);
+        _push(`<div><h1 class="text-3xl font-bold text-slate-900 tracking-tight">${ssrInterpolate(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(districtItem.value.name))} Posta Kodlar\u0131</h1><p class="text-slate-500 text-sm font-medium uppercase tracking-wider">${ssrInterpolate(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(cityItem.value.name))}</p></div></div><div class="relative w-full md:w-64">`);
         _push(ssrRenderComponent(unref(Search), { class: "absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" }, null, _parent));
         _push(`<input type="text" placeholder="Mahallelerde ara..." class="w-full pl-9 pr-4 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-slate-400 transition-all text-sm"${ssrRenderAttr("value", filter.value)}></div></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><!--[-->`);
         ssrRenderList(neighs.value, ([nSlug, nItem]) => {
@@ -110,13 +110,13 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           }, {
             default: withCtx((_, _push2, _parent2, _scopeId) => {
               if (_push2) {
-                _push2(`<div class="min-w-0 pr-4"${_scopeId}><h4 class="font-semibold text-slate-900 uppercase truncate text-base"${_scopeId}>${ssrInterpolate(nItem.name)}</h4><p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"${_scopeId}>MAHALLE</p></div><div class="flex items-center gap-3"${_scopeId}><span class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"${_scopeId}>${ssrInterpolate(nItem.zipCode)}</span>`);
+                _push2(`<div class="min-w-0 pr-4"${_scopeId}><h4 class="font-semibold text-slate-900 truncate text-base"${_scopeId}>${ssrInterpolate(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(nItem.name))}</h4><p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"${_scopeId}>MAHALLE</p></div><div class="flex items-center gap-3"${_scopeId}><span class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"${_scopeId}>${ssrInterpolate(nItem.zipCode)}</span>`);
                 _push2(ssrRenderComponent(unref(ChevronRight), { class: "w-4 h-4 text-slate-300 group-hover:text-slate-500 transition-colors" }, null, _parent2, _scopeId));
                 _push2(`</div>`);
               } else {
                 return [
                   createVNode("div", { class: "min-w-0 pr-4" }, [
-                    createVNode("h4", { class: "font-semibold text-slate-900 uppercase truncate text-base" }, toDisplayString(nItem.name), 1),
+                    createVNode("h4", { class: "font-semibold text-slate-900 truncate text-base" }, toDisplayString(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(nItem.name)), 1),
                     createVNode("p", { class: "text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5" }, "MAHALLE")
                   ]),
                   createVNode("div", { class: "flex items-center gap-3" }, [
@@ -164,4 +164,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index-CB_nOeBx.mjs.map
+//# sourceMappingURL=index-DaJ7qcKZ.mjs.map

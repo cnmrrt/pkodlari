@@ -2,7 +2,7 @@ import { _ as __nuxt_component_0 } from './server.mjs';
 import { useSSRContext, mergeProps, withCtx, createTextVNode, toDisplayString } from 'vue';
 import { ssrRenderAttrs, ssrInterpolate, ssrRenderComponent } from 'vue/server-renderer';
 import { _ as _export_sfc } from './_plugin-vue_export-helper-1tPrXgE0.mjs';
-import { u as useHead } from './v3-B2IqmCl5.mjs';
+import { u as useHead } from './v3-DLUJbLmb.mjs';
 import '../nitro/nitro.mjs';
 import 'node:http';
 import 'node:https';
@@ -97,4 +97,4 @@ _sfc_main.setup = (props, ctx) => {
 const error404 = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-1bd9e11a"]]);
 
 export { error404 as default };
-//# sourceMappingURL=error-404-D3mCVatS.mjs.map
+//# sourceMappingURL=error-404-8-XlKSNp.mjs.map

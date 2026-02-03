@@ -108,8 +108,8 @@ const onBlur = () => {
             <MapPin v-else class="w-4 h-4" />
           </div>
           <div class="flex-1">
-            <div class="font-semibold text-sm text-slate-900">{{ res.neighborhood || res.district || res.city }}</div>
-            <div class="text-[10px] text-slate-400 uppercase font-medium">{{ [res.city, res.district].filter(Boolean).join(' / ') }}</div>
+            <div class="font-semibold text-sm text-slate-900">{{ titleCase(res.neighborhood || res.district || res.city) }}</div>
+            <div class="text-[10px] text-slate-400 uppercase font-medium">{{ [titleCase(res.city), titleCase(res.district)].filter(Boolean).join(' / ') }}</div>
           </div>
           <div v-if="res.zipCode" class="mono text-xs font-bold text-slate-900 bg-slate-100 px-2 py-1 rounded">{{ res.zipCode }}</div>
         </NuxtLink>

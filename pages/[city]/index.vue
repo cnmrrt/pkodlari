@@ -11,7 +11,7 @@ const citySlug = computed(() => route.params.city as string);
 const cityItem = computed(() => postalData?.value?.[citySlug.value]);
 
 useHead({
-  title: computed(() => cityItem.value ? `${cityItem.value.name} Posta Kodları | Rehber` : 'Şehir Bulunamadı'),
+  title: computed(() => cityItem.value ? `${titleCase(cityItem.value.name)} Posta Kodları` : 'Şehir Bulunamadı'),
   script: [
     computed(() => {
         if (!cityItem.value) return {};
@@ -30,7 +30,7 @@ useHead({
                     {
                         "@type": "ListItem",
                         "position": 2,
-                        "name": cityItem.value.name,
+                        "name": titleCase(cityItem.value.name),
                         "item": `https://postakodu.com/${citySlug.value}`
                     }
                 ]
@@ -54,7 +54,7 @@ const isValid = computed(() => !!cityItem.value);
     <div class="mb-10 flex items-center gap-4">
       <NuxtLink to="/" class="text-slate-400 hover:text-slate-900 transition-colors"><ArrowLeft class="w-5 h-5" /></NuxtLink>
       <div>
-        <h1 class="text-3xl font-bold text-slate-900 uppercase tracking-tight">{{ cityItem.name }} Posta Kodları</h1>
+        <h1 class="text-3xl font-bold text-slate-900 tracking-tight">{{ titleCase(cityItem.name) }} Posta Kodları</h1>
         <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">{{ districts.length }} İLÇE</p>
       </div>
     </div>
@@ -67,7 +67,7 @@ const isValid = computed(() => !!cityItem.value);
         class="soft-card p-6 rounded-xl flex items-center justify-between"
       >
         <div>
-          <h3 class="font-bold text-slate-900 uppercase text-lg">{{ distItem.name }}</h3>
+          <h3 class="font-bold text-slate-900 text-lg">{{ titleCase(distItem.name) }}</h3>
           <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">{{ Object.keys(distItem.neighborhoods || {}).length }} mahalle</p>
         </div>
         <ChevronRight class="w-5 h-5 text-slate-300" />

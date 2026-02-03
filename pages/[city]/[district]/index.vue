@@ -15,7 +15,7 @@ const cityItem = computed(() => postalData?.value?.[citySlug.value]);
 const districtItem = computed(() => cityItem.value?.districts[districtSlug.value]);
 
 useHead({
-  title: computed(() => districtItem.value ? `${districtItem.value.name} Posta Kodları | Rehber` : 'İlçe Bulunamadı'),
+  title: computed(() => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodları` : 'İlçe Bulunamadı'),
   script: [
     computed(() => {
         if (!cityItem.value || !districtItem.value) return {};
@@ -34,13 +34,13 @@ useHead({
                     {
                         "@type": "ListItem",
                         "position": 2,
-                        "name": cityItem.value.name,
+                        "name": titleCase(cityItem.value.name),
                         "item": `https://postakodu.com/${citySlug.value}`
                     },
                     {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": districtItem.value.name,
+                        "name": titleCase(districtItem.value.name),
                         "item": `https://postakodu.com/${citySlug.value}/${districtSlug.value}`
                     }
                 ]
@@ -67,8 +67,8 @@ const neighs = computed(() => {
       <div class="flex items-center gap-4">
         <NuxtLink :to="`/${citySlug}`" class="text-slate-400 hover:text-slate-900 transition-colors"><ArrowLeft class="w-5 h-5" /></NuxtLink>
         <div>
-          <h1 class="text-3xl font-bold text-slate-900 uppercase tracking-tight">{{ districtItem.name }} Posta Kodları</h1>
-          <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">{{ cityItem.name }}</p>
+          <h1 class="text-3xl font-bold text-slate-900 tracking-tight">{{ titleCase(districtItem.name) }} Posta Kodları</h1>
+          <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">{{ titleCase(cityItem.name) }}</p>
         </div>
       </div>
       <div class="relative w-full md:w-64">
@@ -90,7 +90,7 @@ const neighs = computed(() => {
         class="soft-card p-5 flex items-center justify-between group"
       >
         <div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 uppercase truncate text-base">{{ nItem.name }}</h4>
+          <h4 class="font-semibold text-slate-900 truncate text-base">{{ titleCase(nItem.name) }}</h4>
           <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5">MAHALLE</p>
         </div>
         <div class="flex items-center gap-3">

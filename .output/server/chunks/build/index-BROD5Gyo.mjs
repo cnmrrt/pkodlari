@@ -1,8 +1,8 @@
-import { u as useRoute, _ as __nuxt_component_0 } from './server.mjs';
+import { u as useRoute, t as titleCase, _ as __nuxt_component_0 } from './server.mjs';
 import { defineComponent, inject, computed, mergeProps, withCtx, unref, createVNode, toDisplayString, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrInterpolate, ssrRenderList, ssrRenderAttr } from 'vue/server-renderer';
 import { ArrowLeft, ChevronRight, MapPin } from 'lucide-vue-next';
-import { u as useHead } from './v3-B2IqmCl5.mjs';
+import { u as useHead } from './v3-DLUJbLmb.mjs';
 import '../nitro/nitro.mjs';
 import 'node:http';
 import 'node:https';
@@ -33,7 +33,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       return (_a = postalData == null ? void 0 : postalData.value) == null ? void 0 : _a[citySlug.value];
     });
     useHead({
-      title: computed(() => cityItem.value ? `${cityItem.value.name} Posta Kodlar\u0131 | Rehber` : "\u015Eehir Bulunamad\u0131"),
+      title: computed(() => cityItem.value ? `${titleCase(cityItem.value.name)} Posta Kodlar\u0131` : "\u015Eehir Bulunamad\u0131"),
       script: [
         computed(() => {
           if (!cityItem.value) return {};
@@ -52,7 +52,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                 {
                   "@type": "ListItem",
                   "position": 2,
-                  "name": cityItem.value.name,
+                  "name": titleCase(cityItem.value.name),
                   "item": `https://postakodu.com/${citySlug.value}`
                 }
               ]
@@ -86,7 +86,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           }),
           _: 1
         }, _parent));
-        _push(`<div><h1 class="text-3xl font-bold text-slate-900 uppercase tracking-tight">${ssrInterpolate(cityItem.value.name)} Posta Kodlar\u0131</h1><p class="text-slate-500 text-sm font-medium uppercase tracking-wider">${ssrInterpolate(districts.value.length)} \u0130L\xC7E</p></div></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><!--[-->`);
+        _push(`<div><h1 class="text-3xl font-bold text-slate-900 tracking-tight">${ssrInterpolate(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(cityItem.value.name))} Posta Kodlar\u0131</h1><p class="text-slate-500 text-sm font-medium uppercase tracking-wider">${ssrInterpolate(districts.value.length)} \u0130L\xC7E</p></div></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><!--[-->`);
         ssrRenderList(districts.value, ([distSlug, distItem]) => {
           _push(ssrRenderComponent(_component_NuxtLink, {
             key: distSlug,
@@ -95,12 +95,12 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           }, {
             default: withCtx((_, _push2, _parent2, _scopeId) => {
               if (_push2) {
-                _push2(`<div${_scopeId}><h3 class="font-bold text-slate-900 uppercase text-lg"${_scopeId}>${ssrInterpolate(distItem.name)}</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider"${_scopeId}>${ssrInterpolate(Object.keys(distItem.neighborhoods || {}).length)} mahalle</p></div>`);
+                _push2(`<div${_scopeId}><h3 class="font-bold text-slate-900 text-lg"${_scopeId}>${ssrInterpolate(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(distItem.name))}</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider"${_scopeId}>${ssrInterpolate(Object.keys(distItem.neighborhoods || {}).length)} mahalle</p></div>`);
                 _push2(ssrRenderComponent(unref(ChevronRight), { class: "w-5 h-5 text-slate-300" }, null, _parent2, _scopeId));
               } else {
                 return [
                   createVNode("div", null, [
-                    createVNode("h3", { class: "font-bold text-slate-900 uppercase text-lg" }, toDisplayString(distItem.name), 1),
+                    createVNode("h3", { class: "font-bold text-slate-900 text-lg" }, toDisplayString(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(distItem.name)), 1),
                     createVNode("p", { class: "text-xs text-slate-400 font-medium uppercase tracking-wider" }, toDisplayString(Object.keys(distItem.neighborhoods || {}).length) + " mahalle", 1)
                   ]),
                   createVNode(unref(ChevronRight), { class: "w-5 h-5 text-slate-300" })
@@ -139,4 +139,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index-C1E1sfoJ.mjs.map
+//# sourceMappingURL=index-BROD5Gyo.mjs.map

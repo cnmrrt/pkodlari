@@ -396,22 +396,22 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-Tf-sTnLD.mjs')
+    component: () => import('./index-B-NowZgl.mjs')
   },
   {
     name: "city",
     path: "/:city()",
-    component: () => import('./index-DxUL5B6L.mjs')
+    component: () => import('./index-C1E1sfoJ.mjs')
   },
   {
     name: "city-district",
     path: "/:city()/:district()",
-    component: () => import('./index-CChtgCam.mjs')
+    component: () => import('./index-CB_nOeBx.mjs')
   },
   {
     name: "city-district-neighborhood",
     path: "/:city()/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-W6Uf87Tc.mjs')
+    component: () => import('./_neighborhood_-DObLQy5N.mjs')
   }
 ];
 const ROUTE_KEY_PARENTHESES_RE = /(:\w+)\([^)]+\)/g;
@@ -1677,5 +1677,5 @@ let entry;
 }
 const entry_default = ((ssrContext) => entry(ssrContext));
 
-export { __nuxt_component_0 as _, entry_default as default, slugify as s, tryUseNuxtApp as t, useRoute as u };
+export { __nuxt_component_0 as _, entry_default as default, tryUseNuxtApp as t, useRoute as u };
 //# sourceMappingURL=server.mjs.map

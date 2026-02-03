@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { inject, computed, ref, Ref } from 'vue';
+import { inject, computed, ref } from 'vue';
+import type { Ref } from 'vue';
 import { ChevronRight, MapPin, Check, Copy, Info, Share2 } from 'lucide-vue-next';
-import { PostalData } from '~/types';
+import type { PostalData } from '~/types';
 
 const route = useRoute();
 const postalData = inject<Ref<PostalData | null>>('postalData');

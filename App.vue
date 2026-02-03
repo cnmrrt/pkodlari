@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { provide } from 'vue';
-import { PostalData } from './types';
+import type { PostalData } from './types';
 
 const findValue = (obj: any, possibleKeys: string[]) => {
   if (!obj || typeof obj !== 'object') return null;

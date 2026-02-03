@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { Search, MapPin, Map, Building2 } from 'lucide-vue-next';
-import { PostalData, SearchResult } from '~/types';
+import type { PostalData, SearchResult } from '~/types';
 
 const props = defineProps<{
   data: PostalData | null
@@ -12,11 +12,9 @@ const isFocused = ref(false);
 
 const results = computed(() => {
   if (!props.data || query.value.length < 2) return [];
-  // Normalize query for searching - using same logic as data prep if needed, 
-  // but here we want to match AGAINST the Turkish names, so we might want 
-  // to just lowercase the query and match against lowercase names.
+  // Normalize query for searching
   const lowerQuery = query.value.toLocaleLowerCase('tr'); 
-  const slugifiedQuery = slugify(query.value); // For code matching
+
 
   const items: SearchResult[] = [];
   

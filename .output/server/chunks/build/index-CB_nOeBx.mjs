@@ -39,7 +39,39 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       return (_a = cityItem.value) == null ? void 0 : _a.districts[districtSlug.value];
     });
     useHead({
-      title: computed(() => districtItem.value ? `${districtItem.value.name} Posta Kodlar\u0131 | Rehber` : "\u0130l\xE7e Bulunamad\u0131")
+      title: computed(() => districtItem.value ? `${districtItem.value.name} Posta Kodlar\u0131 | Rehber` : "\u0130l\xE7e Bulunamad\u0131"),
+      script: [
+        computed(() => {
+          if (!cityItem.value || !districtItem.value) return {};
+          return {
+            type: "application/ld+json",
+            children: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Anasayfa",
+                  "item": `https://postakodu.com/`
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": cityItem.value.name,
+                  "item": `https://postakodu.com/${citySlug.value}`
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": districtItem.value.name,
+                  "item": `https://postakodu.com/${citySlug.value}/${districtSlug.value}`
+                }
+              ]
+            })
+          };
+        })
+      ]
     });
     const isValid = computed(() => !!districtItem.value);
     const neighs = computed(() => {
@@ -132,4 +164,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index-CChtgCam.mjs.map
+//# sourceMappingURL=index-CB_nOeBx.mjs.map

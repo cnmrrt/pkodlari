@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { inject, computed, Ref } from 'vue';
+import { inject, computed } from 'vue';
+import type { Ref } from 'vue';
 import { Loader2 } from 'lucide-vue-next';
-import { PostalData } from '~/types';
+import type { PostalData } from '~/types';
 
 const postalData = inject<Ref<PostalData | null>>('postalData');
 

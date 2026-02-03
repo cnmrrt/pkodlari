@@ -33,7 +33,33 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       return (_a = postalData == null ? void 0 : postalData.value) == null ? void 0 : _a[citySlug.value];
     });
     useHead({
-      title: computed(() => cityItem.value ? `${cityItem.value.name} Posta Kodlar\u0131 | Rehber` : "\u015Eehir Bulunamad\u0131")
+      title: computed(() => cityItem.value ? `${cityItem.value.name} Posta Kodlar\u0131 | Rehber` : "\u015Eehir Bulunamad\u0131"),
+      script: [
+        computed(() => {
+          if (!cityItem.value) return {};
+          return {
+            type: "application/ld+json",
+            children: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Anasayfa",
+                  "item": `https://postakodu.com/`
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": cityItem.value.name,
+                  "item": `https://postakodu.com/${citySlug.value}`
+                }
+              ]
+            })
+          };
+        })
+      ]
     });
     const districts = computed(() => {
       if (!cityItem.value) return [];
@@ -113,4 +139,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index-DxUL5B6L.mjs.map
+//# sourceMappingURL=index-C1E1sfoJ.mjs.map

@@ -44,7 +44,45 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       return (_a = districtItem.value) == null ? void 0 : _a.neighborhoods[neighborhoodSlug.value];
     });
     useHead({
-      title: computed(() => neighItem.value ? `${neighItem.value.name} Posta Kodu | Rehber` : "Posta Kodu Bulunamad\u0131")
+      title: computed(() => neighItem.value ? `${neighItem.value.name} Posta Kodu | Rehber` : "Posta Kodu Bulunamad\u0131"),
+      script: [
+        computed(() => {
+          if (!cityItem.value || !districtItem.value || !neighItem.value) return {};
+          return {
+            type: "application/ld+json",
+            children: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Anasayfa",
+                  "item": `https://postakodu.com/`
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": cityItem.value.name,
+                  "item": `https://postakodu.com/${citySlug.value}`
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": districtItem.value.name,
+                  "item": `https://postakodu.com/${citySlug.value}/${districtSlug.value}`
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 4,
+                  "name": neighItem.value.name,
+                  "item": `https://postakodu.com/${citySlug.value}/${districtSlug.value}/${neighborhoodSlug.value}`
+                }
+              ]
+            })
+          };
+        })
+      ]
     });
     const isValid = computed(() => !!neighItem.value);
     return (_ctx, _push, _parent, _attrs) => {
@@ -166,4 +204,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=_neighborhood_-W6Uf87Tc.mjs.map
+//# sourceMappingURL=_neighborhood_-DObLQy5N.mjs.map

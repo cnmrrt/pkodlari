@@ -1,4 +1,4 @@
-import { _ as __nuxt_component_0, s as slugify } from './server.mjs';
+import { _ as __nuxt_component_0 } from './server.mjs';
 import { defineComponent, inject, computed, unref, mergeProps, withCtx, createVNode, toDisplayString, ref, openBlock, createBlock, createCommentVNode, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrRenderList, ssrInterpolate, ssrRenderClass, ssrRenderAttr } from 'vue/server-renderer';
 import { Loader2, Search, Map, Building2, MapPin } from 'lucide-vue-next';
@@ -34,7 +34,6 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
     const results = computed(() => {
       if (!props.data || query.value.length < 2) return [];
       const lowerQuery = query.value.toLocaleLowerCase("tr");
-      slugify(query.value);
       const items = [];
       Object.entries(props.data).forEach(([citySlug, cityItem]) => {
         if (cityItem.name.toLocaleLowerCase("tr").includes(lowerQuery)) {
@@ -212,4 +211,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index-Tf-sTnLD.mjs.map
+//# sourceMappingURL=index-B-NowZgl.mjs.map

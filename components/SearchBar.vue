@@ -2,7 +2,6 @@
 import { ref, computed } from 'vue';
 import { Search, MapPin, Map, Building2 } from 'lucide-vue-next';
 import type { PostalData, SearchResult } from '~/types';
-import { titleCase } from '~/utils/slugify';
 
 const props = defineProps<{
   data: PostalData | null
@@ -13,11 +12,12 @@ const isFocused = ref(false);
 
 const results = computed(() => {
   if (!props.data || query.value.length < 2) return [];
+  // Normalize query for searching
   const lowerQuery = query.value.toLocaleLowerCase('tr'); 
+
 
   const items: SearchResult[] = [];
   
-  // Directly searching in the structured data
   Object.entries(props.data).forEach(([citySlug, cityItem]) => {
     // Search in City Name
     if (cityItem.name.toLocaleLowerCase('tr').includes(lowerQuery)) {
@@ -65,7 +65,7 @@ const results = computed(() => {
       });
     });
   });
-  return items.slice(0, 10);
+  return items.slice(0, 6);
 });
 
 const onFocus = () => {
@@ -95,7 +95,7 @@ const onBlur = () => {
     </div>
     
     <div v-if="isFocused && query.length >= 2" class="absolute top-full left-0 right-0 mt-2 bg-white border border-slate-200 rounded-xl shadow-xl z-[60] overflow-hidden">
-      <div v-if="results.length > 0" class="divide-y divide-slate-100 max-h-[400px] overflow-y-auto">
+      <div v-if="results.length > 0" class="divide-y divide-slate-100">
         <NuxtLink
           v-for="(res, i) in results"
           :key="i"
@@ -107,7 +107,7 @@ const onBlur = () => {
             <Building2 v-else-if="res.type === 'district'" class="w-4 h-4" />
             <MapPin v-else class="w-4 h-4" />
           </div>
-          <div class="flex-1 text-left">
+          <div class="flex-1">
             <div class="font-semibold text-sm text-slate-900">{{ titleCase(res.neighborhood || res.district || res.city) }}</div>
             <div class="text-[10px] text-slate-400 uppercase font-medium">{{ [titleCase(res.city), titleCase(res.district)].filter(Boolean).join(' / ') }}</div>
           </div>

@@ -3,25 +3,11 @@ import { inject, computed } from 'vue';
 import type { Ref } from 'vue';
 import { Loader2 } from 'lucide-vue-next';
 import type { PostalData } from '~/types';
-import { titleCase } from '~/utils/slugify';
 
-// Inject postalData provided by app.vue
 const postalData = inject<Ref<PostalData | null>>('postalData');
 
 useHead({
-  link: [
-    { rel: 'canonical', href: 'https://pkodlari.com/' }
-  ]
-});
-
-useSeoMeta({
-  title: 'Türkiye Posta Kodları',
-  description: 'Türkiye\'deki tüm il, ilçe ve mahallelerin güncel posta kodlarını hızlıca bulun ve kopyalayın.',
-  ogTitle: 'Türkiye Posta Kodları',
-  ogDescription: 'Türkiye\'deki tüm il, ilçe ve mahallelerin güncel posta kodlarını hızlıca bulun ve kopyalayın.',
-  ogType: 'website',
-  ogUrl: 'https://pkodlari.com/',
-  ogSiteName: 'Posta Kodu Rehberi'
+  title: 'Türkiye Posta Kodları'
 });
 
 const cityList = computed(() => {

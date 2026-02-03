@@ -1,1 +1,0 @@
-import{p as s,q as u,s as r,x as o,l as c,y as i}from"./BDc12Nfi.js";function a(t){const e=t||r();return e?.ssrContext?.head||e?.runWithContext(()=>{if(o())return c(i)})}function d(t,e={}){const n=a(e.nuxt);if(n)return s(t,{head:n,...e})}function f(t,e={}){const n=a(e.nuxt);if(n)return u(t,{head:n,...e})}export{f as a,d as u};

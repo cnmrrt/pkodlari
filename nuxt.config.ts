@@ -1,15 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    modules: ['@nuxtjs/sitemap'],
-    site: {
-        url: 'https://pkodlari.com',
-        name: 'Posta Kodu Rehberi',
-    },
-    sitemap: {
-        sources: [
-            '/api/sitemap-urls'
-        ],
-    },
     compatibilityDate: '2024-04-03',
     devtools: { enabled: true },
     app: {
@@ -19,12 +9,11 @@ export default defineNuxtConfig({
                 { src: 'https://cdn.tailwindcss.com' }
             ],
             link: [
-                { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
                 { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap' }
             ],
             style: [
                 {
-                    innerHTML: `
+                    children: `
             body { 
                 font-family: 'Inter', sans-serif;
                 background-color: #f8fafc;

@@ -3,29 +3,11 @@ import type { Serialize, Simplify } from "nitropack/types";
 declare module "nitropack/types" {
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T
   interface InternalApi {
-    '/api/postal-data': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/postal-data').default>>>>
-    }
-    '/api/sitemap-urls': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/sitemap-urls').default>>>>
-    }
     '/__nuxt_error': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/nitro-server/dist/runtime/handlers/renderer').default>>>>
     }
     '/__nuxt_island/**': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/#internal/nuxt/island-renderer').default>>>>
-    }
-    '/__site-config__/debug.json': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-site-config/dist/runtime/server/routes/__site-config__/debug').default>>>>
-    }
-    '/__sitemap__/debug.json': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/sitemap/dist/runtime/server/routes/__sitemap__/debug').default>>>>
-    }
-    '/__sitemap__/style.xsl': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/sitemap/dist/runtime/server/routes/sitemap.xsl').default>>>>
-    }
-    '/sitemap.xml': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/sitemap/dist/runtime/server/routes/sitemap.xml').default>>>>
     }
   }
 }

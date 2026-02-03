@@ -12,6 +12,15 @@ const cityItem = computed(() => postalData?.value?.[citySlug.value]);
 
 useHead({
   title: computed(() => cityItem.value ? `${titleCase(cityItem.value.name)} Posta Kodları` : 'Şehir Bulunamadı'),
+  meta: [
+    {
+      name: 'description',
+      content: computed(() => {
+        if (!cityItem.value) return '';
+        return `${titleCase(cityItem.value.name)} iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!`;
+      })
+    }
+  ],
   script: [
     computed(() => {
         if (!cityItem.value) return {};

@@ -1,5 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    modules: ['@nuxtjs/sitemap'],
+    site: {
+        url: 'https://postakodu.com',
+        name: 'Posta Kodu Rehberi',
+    },
+    sitemap: {
+        sources: [
+            '/api/sitemap-urls'
+        ],
+    },
     compatibilityDate: '2024-04-03',
     devtools: { enabled: true },
     app: {
@@ -13,7 +23,7 @@ export default defineNuxtConfig({
             ],
             style: [
                 {
-                    children: `
+                    innerHTML: `
             body { 
                 font-family: 'Inter', sans-serif;
                 background-color: #f8fafc;

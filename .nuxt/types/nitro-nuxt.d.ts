@@ -3,6 +3,7 @@
 /// <reference path="app.config.d.ts" />
 /// <reference path="runtime-config.d.ts" />
 /// <reference types="/Users/mac/Desktop/pkodlari/node_modules/@nuxt/nitro-server/dist/index.mjs" />
+/// <reference path="../module/nuxt-site-config.d.ts" />
 /// <reference path="nitro-middleware.d.ts" />
 /// <reference path="./schema.d.ts" />
 

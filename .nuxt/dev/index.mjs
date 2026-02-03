@@ -702,6 +702,7 @@ const _inlineRuntimeConfig = {
           "/_nuxt/**",
           "/_nuxt/**",
           "/_nuxt/**",
+          "/_nuxt/**",
           "/_nuxt/**"
         ],
         "includeAppSources": true
@@ -724,7 +725,7 @@ const _inlineRuntimeConfig = {
       {
         "_priority": -3,
         "_context": "nuxt-site-config:config",
-        "url": "https://postakodu.com",
+        "url": "https://pkodlari.com",
         "name": "Posta Kodu Rehberi"
       }
     ],

@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
     modules: ['@nuxtjs/sitemap'],
     site: {
-        url: 'https://postakodu.com',
+        url: 'https://pkodlari.com',
         name: 'Posta Kodu Rehberi',
     },
     sitemap: {

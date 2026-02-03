@@ -40,25 +40,25 @@ useHead({
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Anasayfa",
-                        "item": `https://postakodu.com/`
+                        "item": `https://pkodlari.com/`
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": titleCase(cityItem.value.name),
-                        "item": `https://postakodu.com/${citySlug.value}`
+                        "item": `https://pkodlari.com/${citySlug.value}`
                     },
                     {
                         "@type": "ListItem",
                         "position": 3,
                         "name": titleCase(districtItem.value.name),
-                        "item": `https://postakodu.com/${citySlug.value}/${districtSlug.value}`
+                        "item": `https://pkodlari.com/${citySlug.value}/${districtSlug.value}`
                     },
                     {
                         "@type": "ListItem",
                         "position": 4,
                         "name": titleCase(neighItem.value.name),
-                        "item": `https://postakodu.com/${citySlug.value}/${districtSlug.value}/${neighborhoodSlug.value}`
+                        "item": `https://pkodlari.com/${citySlug.value}/${districtSlug.value}/${neighborhoodSlug.value}`
                     }
                 ]
             })

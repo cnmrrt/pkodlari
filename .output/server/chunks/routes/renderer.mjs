@@ -1,21 +1,11 @@
 import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'vue-bundle-renderer/runtime';
-import { j as joinRelativeURL, u as useRuntimeConfig, g as getResponseStatusText, a as getResponseStatus, b as decodePath, c as defineRenderHandler, e as getQuery, f as createError, h as getRouteRules, i as joinURL, k as useNitroApp } from '../nitro/nitro.mjs';
+import { j as joinRelativeURL, u as useRuntimeConfig, g as getResponseStatusText, a as getResponseStatus, b as decodePath, e as defineRenderHandler, f as getQuery, c as createError, h as getRouteRules, i as joinURL, k as useNitroApp } from '../nitro/nitro.mjs';
 import { renderToString } from 'vue/server-renderer';
 import { createHead as createHead$1, propsToString, renderSSRHead } from 'unhead/server';
 import { stringify, uneval } from 'devalue';
-import { isRef, toValue } from 'vue';
-import { DeprecationsPlugin, PromisesPlugin, TemplateParamsPlugin, AliasSortingPlugin } from 'unhead/plugins';
-import viteNodeEntry_mjs from 'file:///Users/mac/Desktop/pkodlari/node_modules/@nuxt/vite-builder/dist/vite-node-entry.mjs';
-import 'node:http';
-import 'node:https';
-import 'node:events';
-import 'node:buffer';
-import 'node:fs';
-import 'node:path';
-import 'node:crypto';
-import 'node:url';
-import 'consola';
-import 'fast-xml-parser';
+import { FlatMetaPlugin, DeprecationsPlugin, PromisesPlugin, TemplateParamsPlugin, AliasSortingPlugin } from 'unhead/plugins';
+import { walkResolver } from 'unhead/utils';
+import { isRef, toValue, hasInjectionContext, inject, ref, watchEffect, getCurrentInstance, onBeforeUnmount, onDeactivated, onActivated } from 'vue';
 
 const VueResolver = (_, value) => {
   return isRef(value) ? toValue(value) : value;
@@ -35,6 +25,57 @@ function vueInstall(head) {
 }
 
 // @__NO_SIDE_EFFECTS__
+function injectHead() {
+  if (hasInjectionContext()) {
+    const instance = inject(headSymbol);
+    if (!instance) {
+      throw new Error("useHead() was called without provide context, ensure you call it through the setup() function.");
+    }
+    return instance;
+  }
+  throw new Error("useHead() was called without provide context, ensure you call it through the setup() function.");
+}
+function useHead(input, options = {}) {
+  const head = options.head || /* @__PURE__ */ injectHead();
+  return head.ssr ? head.push(input || {}, options) : clientUseHead(head, input, options);
+}
+function clientUseHead(head, input, options = {}) {
+  const deactivated = ref(false);
+  let entry;
+  watchEffect(() => {
+    const i = deactivated.value ? {} : walkResolver(input, VueResolver);
+    if (entry) {
+      entry.patch(i);
+    } else {
+      entry = head.push(i, options);
+    }
+  });
+  const vm = getCurrentInstance();
+  if (vm) {
+    onBeforeUnmount(() => {
+      entry.dispose();
+    });
+    onDeactivated(() => {
+      deactivated.value = true;
+    });
+    onActivated(() => {
+      deactivated.value = false;
+    });
+  }
+  return entry;
+}
+function useSeoMeta(input = {}, options = {}) {
+  const head = options.head || /* @__PURE__ */ injectHead();
+  head.use(FlatMetaPlugin);
+  const { title, titleTemplate, ...meta } = input;
+  return useHead({
+    title,
+    titleTemplate,
+    _flatMeta: meta
+  }, options);
+}
+
+// @__NO_SIDE_EFFECTS__
 function createHead(options = {}) {
   const head = createHead$1({
     ...options,
@@ -46,7 +87,7 @@ function createHead(options = {}) {
 
 const NUXT_RUNTIME_PAYLOAD_EXTRACTION = false;
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap"}],"style":[{"innerHTML":"\n            body { \n                font-family: 'Inter', sans-serif;\n                background-color: #f8fafc;\n                color: #1e293b;\n                -webkit-font-smoothing: antialiased;\n            }\n            .mono { font-family: 'JetBrains Mono', monospace; }\n            .soft-card {\n                background: #ffffff;\n                border: 1px solid #e2e8f0;\n                box-shadow: 0 1px 3px rgba(0,0,0,0.02);\n                transition: all 0.2s ease;\n            }\n            .soft-card:hover {\n                border-color: #cbd5e1;\n                box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);\n                transform: translateY(-2px);\n            }\n          "}],"script":[{"src":"https://cdn.tailwindcss.com"}],"noscript":[],"title":"Posta Kodu Rehberi"};
+const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[{"rel":"icon","type":"image/svg+xml","href":"/favicon.svg"},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap"}],"style":[{"innerHTML":"\n            body { \n                font-family: 'Inter', sans-serif;\n                background-color: #f8fafc;\n                color: #1e293b;\n                -webkit-font-smoothing: antialiased;\n            }\n            .mono { font-family: 'JetBrains Mono', monospace; }\n            .soft-card {\n                background: #ffffff;\n                border: 1px solid #e2e8f0;\n                box-shadow: 0 1px 3px rgba(0,0,0,0.02);\n                transition: all 0.2s ease;\n            }\n            .soft-card:hover {\n                border-color: #cbd5e1;\n                box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);\n                transform: translateY(-2px);\n            }\n          "}],"script":[{"src":"https://cdn.tailwindcss.com"}],"noscript":[],"title":"Posta Kodu Rehberi"};
 
 const appRootTag = "div";
 
@@ -58,6 +99,10 @@ const appTeleportAttrs = {"id":"teleports"};
 
 const appId = "nuxt-app";
 
+function baseURL() {
+	// TODO: support passing event to `useRuntimeConfig`
+	return useRuntimeConfig().app.baseURL;
+}
 function buildAssetsDir() {
 	// TODO: support passing event to `useRuntimeConfig`
 	return useRuntimeConfig().app.buildAssetsDir;
@@ -75,9 +120,9 @@ function publicAssetsURL(...path) {
 const APP_ROOT_OPEN_TAG = `<${appRootTag}${propsToString(appRootAttrs)}>`;
 const APP_ROOT_CLOSE_TAG = `</${appRootTag}>`;
 // @ts-expect-error file will be produced after app build
-const getServerEntry = () => Promise.resolve().then(function () { return server; }).then((r) => r.default || r);
+const getServerEntry = () => import('../build/server.mjs').then((r) => r.default || r);
 // @ts-expect-error file will be produced after app build
-const getPrecomputedDependencies = () => import('./client.precomputed.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
+const getPrecomputedDependencies = () => import('../build/client.precomputed.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
 // -- SSR Renderer --
 const getSSRRenderer = lazyCachedFunction(async () => {
 	// Load server bundle
@@ -148,7 +193,7 @@ function getRenderer(ssrContext) {
 	return ssrContext.noSSR ? getSPARenderer() : getSSRRenderer();
 }
 // @ts-expect-error file will be produced after app build
-const getSSRStyles = lazyCachedFunction(() => import('./styles.mjs').then((r) => r.default || r));
+const getSSRStyles = lazyCachedFunction(() => import('../build/styles.mjs').then((r) => r.default || r));
 
 function renderPayloadResponse(ssrContext) {
 	return {
@@ -447,10 +492,10 @@ function renderHTMLDocument(html) {
 	return "<!DOCTYPE html>" + `<html${joinAttrs(html.htmlAttrs)}>` + `<head>${joinTags(html.head)}</head>` + `<body${joinAttrs(html.bodyAttrs)}>${joinTags(html.bodyPrepend)}${joinTags(html.body)}${joinTags(html.bodyAppend)}</body>` + "</html>";
 }
 
-const server = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const renderer$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
-  default: viteNodeEntry_mjs
+  default: renderer
 }, Symbol.toStringTag, { value: 'Module' }));
 
-export { renderer as default };
+export { useSeoMeta as a, baseURL as b, headSymbol as h, renderer$1 as r, useHead as u };
 //# sourceMappingURL=renderer.mjs.map

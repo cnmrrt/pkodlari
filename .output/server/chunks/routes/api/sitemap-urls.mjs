@@ -14,7 +14,7 @@ import 'fast-xml-parser';
 const defineSitemapEventHandler = defineEventHandler;
 
 const sitemapUrls = defineSitemapEventHandler(async () => {
-  const response = await $fetch("https://pkodlari.com/pk.json");
+  const response = await $fetch("/api/postal-data");
   const urls = [];
   const entries = Array.isArray(response) ? response : Object.values(response);
   const slugify = (s) => {

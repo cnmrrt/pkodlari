@@ -439,6 +439,11 @@ const _routes = [
     component: () => import('./index-Bm4o49-P.mjs')
   },
   {
+    name: "edirne",
+    path: "/edirne",
+    component: () => import('./index-DKza-Haj.mjs')
+  },
+  {
     name: "elazig",
     path: "/elazig",
     component: () => import('./index-C61DaHe_.mjs')
@@ -534,6 +539,11 @@ const _routes = [
     component: () => import('./index-BCZgWzPA.mjs')
   },
   {
+    name: "edirne-district",
+    path: "/edirne/:district()",
+    component: () => import('./index-DAvamhlc.mjs')
+  },
+  {
     name: "elazig-district",
     path: "/elazig/:district()",
     component: () => import('./index-C2a9r80Q.mjs')
@@ -627,6 +637,11 @@ const _routes = [
     name: "bartin-district-neighborhood",
     path: "/bartin/:district()/:neighborhood()",
     component: () => import('./_neighborhood_-DGZQkIIT.mjs')
+  },
+  {
+    name: "edirne-district-neighborhood",
+    path: "/edirne/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-s4lU9Kyq.mjs')
   },
   {
     name: "elazig-district-neighborhood",

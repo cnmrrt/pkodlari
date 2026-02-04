@@ -8,7 +8,7 @@ const distSlug = computed(() => route.params.district as string) ;
 const filter = ref('');
 
 const { data: edirneData } = await useAsyncData<CityData>('edirne-specific-data', async () => {
-const response = await $fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/edirne.json');
+const response = await $fetch<any[]>('https://pkodlari.com/data/edirne.json');
 
 const cityObj: CityData = {
 name: 'EDİRNE',

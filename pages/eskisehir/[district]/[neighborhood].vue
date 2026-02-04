@@ -8,8 +8,8 @@ const distSlug = computed(() => route.params.district as string)             ;
 const neighborhoodSlug = computed(() => route.params.neighborhood as string) ;
 const copied = ref(false)                                                    ;
 
-const { data: edirneData } = await useAsyncData<CityData>('edirne-specific-data', async () => {
-const response = await $fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/edirne.json');
+const { data: eskisehirData } = await useAsyncData<CityData>('eskisehir-specific-data', async () => {
+const response = await $fetch<any[]>('https://pkodlari.com/data/eskisehir.json');
 
 const cityObj: CityData = {
 name: 'EDİRNE',
@@ -41,11 +41,11 @@ zipCode: codeStr,
 return cityObj ;
 })             ;
 
-const districtItem = computed(() => edirneData.value?.districts[distSlug.value])            ;
+const districtItem = computed(() => eskisehirData.value?.districts[distSlug.value])            ;
 const neighItem = computed(() => districtItem.value?.neighborhoods[neighborhoodSlug.value]) ;
 
 const pageTitle = computed(() => neighItem.value ? `${titleCase(neighItem.value.name)} Posta Kodu` : 'Posta Kodu Bulunamadı');
-const pageDesc = computed(() => districtItem.value && neighItem.value ? `Edirne ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı ${titleCase(neighItem.value.name)}'nin posta kodunu görmek için tıklayın!` : 'Posta Kodu Rehberi');
+const pageDesc = computed(() => districtItem.value && neighItem.value ? `eskisehir ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı ${titleCase(neighItem.value.name)}'nin posta kodunu görmek için tıklayın!` : 'Posta Kodu Rehberi');
 useHead({
 title: pageTitle,
 meta: [{ name: 'description', content: pageDesc }],
@@ -67,20 +67,20 @@ children: JSON.stringify({
 {
 "@type": "ListItem",
 "position": 2,
-"name": "Edirne",
-"item": `https://postakodu.com/edirne`
+"name": "eskisehir",
+"item": `https://postakodu.com/eskisehir`
 },
 {
 "@type": "ListItem",
 "position": 3,
 "name": titleCase(districtItem.value.name),
-"item": `https://postakodu.com/edirne/${distSlug.value}`
+"item": `https://postakodu.com/eskisehir/${distSlug.value}`
 },
 {
 "@type": "ListItem",
 "position": 4,
 "name": titleCase(neighItem.value.name),
-"item": `https://postakodu.com/edirne/${distSlug.value}/${neighborhoodSlug.value}`
+"item": `https://postakodu.com/eskisehir/${distSlug.value}/${neighborhoodSlug.value}`
 }
 ]
 })
@@ -104,7 +104,7 @@ const share = () => {
 if (navigator.share && neighItem.value) {
 navigator.share({
 title: `${titleCase(neighItem.value.name)} Posta Kodu`,
-text: `Edirne, ${titleCase(districtItem.value.name)}, ${titleCase(neighItem.value.name)} mahallesinin posta kodu: ${neighItem.value.zipCode}`,
+text: `eskisehir, ${titleCase(districtItem.value.name)}, ${titleCase(neighItem.value.name)} mahallesinin posta kodu: ${neighItem.value.zipCode}`,
 url: window.location.href,
 })                                                                                                                                             ;
 }
@@ -117,9 +117,9 @@ url: window.location.href,
 <nav class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-8 overflow-x-auto whitespace-nowrap pb-2">
 <NuxtLink to="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</NuxtLink>
 <ChevronRight class="w-3 h-3" />
-<NuxtLink to="/edirne" class="hover:text-slate-900 transition-colors">EDİRNE</NuxtLink>
+<NuxtLink to="/eskisehir" class="hover:text-slate-900 transition-colors">EDİRNE</NuxtLink>
 <ChevronRight class="w-3 h-3" />
-<NuxtLink :to="`/edirne/${distSlug}`" class="hover:text-slate-900 transition-colors">{{ titleCase(districtItem.name) }}</NuxtLink>
+<NuxtLink :to="`/eskisehir/${distSlug}`" class="hover:text-slate-900 transition-colors">{{ titleCase(districtItem.name) }}</NuxtLink>
 </nav>
 
 <div class="bg-white border border-slate-200 rounded-[2rem] p-8 md:p-12 shadow-sm">

@@ -59,18 +59,21 @@ const cityList = computed(() => {
                 <div class="font-semibold text-slate-900 text-sm truncate">Ankara</div>
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">25 İLÇE </div>
             </a>
+            <a href="/ardahan" class="soft-card p-4 rounded-xl text-center">
+                <div class="font-semibold text-slate-900 text-sm truncate">Ardahan</div>
+                <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">6 İLÇE </div>
+            </a>
             <a href="/antalya" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Antalya</div>
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">19 İLÇE </div>
-            </a><a href="/ardahan" class="soft-card p-4 rounded-xl text-center">
-                <div class="font-semibold text-slate-900 text-sm truncate">Ardahan</div>
-                <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">6 İLÇE </div>
-            </a><a href="/artvin" class="soft-card p-4 rounded-xl text-center">
+            </a>
+            <a href="/artvin" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Artvin</div>
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">1 İLÇE </div>
-            </a><a href="/aydin" class="soft-card p-4 rounded-xl text-center">
+            </a>
+            <a href="/aydin" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Aydın</div>
-                <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">1 İLÇE </div>
+                <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">2 İLÇE </div>
             </a>
             <a href="/balikesir" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Balıkesir</div>

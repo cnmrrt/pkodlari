@@ -12,7 +12,7 @@ const { data: eskisehirData } = await useAsyncData<CityData>('eskisehir-specific
 const response = await $fetch<any[]>('https://pkodlari.com/data/eskisehir.json');
 
 const cityObj: CityData = {
-name: 'EDİRNE',
+name: 'ESKİŞEHİR',
 districts: {}
 }                           ;
 
@@ -41,17 +41,17 @@ zipCode: codeStr,
 return cityObj ;
 })             ;
 
-const districtItem = computed(() => eskisehirData.value?.districts[distSlug.value])            ;
+const districtItem = computed(() => eskisehirData.value?.districts[distSlug.value])             ;
 const neighItem = computed(() => districtItem.value?.neighborhoods[neighborhoodSlug.value]) ;
 
 const pageTitle = computed(() => neighItem.value ? `${titleCase(neighItem.value.name)} Posta Kodu` : 'Posta Kodu Bulunamadı');
-const pageDesc = computed(() => districtItem.value && neighItem.value ? `eskisehir ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı ${titleCase(neighItem.value.name)}'nin posta kodunu görmek için tıklayın!` : 'Posta Kodu Rehberi');
+const pageDesc = computed(() => districtItem.value && neighItem.value ? `Eskişehir ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı ${titleCase(neighItem.value.name)}'nin posta kodunu görmek için tıklayın!` : 'Posta Kodu Rehberi');
 useHead({
 title: pageTitle,
 meta: [{ name: 'description', content: pageDesc }],
 script: [
 computed(() => {
-if (!districtItem.value || !neighItem.value) return {}                                                                                                       ;
+if (!districtItem.value || !neighItem.value) return {}                                                                                                      ;
 return {
 type: 'application/ld+json',
 children: JSON.stringify({
@@ -67,7 +67,7 @@ children: JSON.stringify({
 {
 "@type": "ListItem",
 "position": 2,
-"name": "eskisehir",
+"name": "Eskişehir",
 "item": `https://postakodu.com/eskisehir`
 },
 {
@@ -104,11 +104,11 @@ const share = () => {
 if (navigator.share && neighItem.value) {
 navigator.share({
 title: `${titleCase(neighItem.value.name)} Posta Kodu`,
-text: `eskisehir, ${titleCase(districtItem.value.name)}, ${titleCase(neighItem.value.name)} mahallesinin posta kodu: ${neighItem.value.zipCode}`,
+text: `Eskişehir, ${titleCase(districtItem.value.name)}, ${titleCase(neighItem.value.name)} mahallesinin posta kodu: ${neighItem.value.zipCode}`,
 url: window.location.href,
-})                                                                                                                                             ;
+})                                                                                                                                            ;
 }
-}                                                                                                                                              ;
+}                                                                                                                                             ;
 </script>
 
 <template>
@@ -117,7 +117,7 @@ url: window.location.href,
 <nav class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-8 overflow-x-auto whitespace-nowrap pb-2">
 <NuxtLink to="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</NuxtLink>
 <ChevronRight class="w-3 h-3" />
-<NuxtLink to="/eskisehir" class="hover:text-slate-900 transition-colors">EDİRNE</NuxtLink>
+<NuxtLink to="/eskisehir" class="hover:text-slate-900 transition-colors">ESKİŞEHİR</NuxtLink>
 <ChevronRight class="w-3 h-3" />
 <NuxtLink :to="`/eskisehir/${distSlug}`" class="hover:text-slate-900 transition-colors">{{ titleCase(districtItem.name) }}</NuxtLink>
 </nav>
@@ -128,7 +128,7 @@ url: window.location.href,
 <MapPin class="w-6 h-6 text-slate-900" />
 </div>
 <h1 class="text-4xl font-bold text-slate-900 mb-2 tracking-tight">{{ titleCase(neighItem.name) }}</h1>
-<p class="text-slate-500 font-medium uppercase tracking-widest text-sm">{{ titleCase(districtItem.name) }}, EDİRNE</p>
+<p class="text-slate-500 font-medium uppercase tracking-widest text-sm">{{ titleCase(districtItem.name) }}, ESKİŞEHİR</p>
 </div>
 
 <div class="bg-slate-50 rounded-3xl p-8 text-center relative overflow-hidden">

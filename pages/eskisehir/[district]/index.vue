@@ -7,11 +7,11 @@ const route = useRoute()                                         ;
 const distSlug = computed(() => route.params.district as string) ;
 const filter = ref('');
 
-const { data: edirneData } = await useAsyncData<CityData>('edirne-specific-data', async () => {
-const response = await $fetch<any[]>('https://pkodlari.com/data/edirne.json');
+const { data: eskisehirData } = await useAsyncData<CityData>('eskisehir-specific-data', async () => {
+const response = await $fetch<any[]>('https://pkodlari.com/data/eskisehir.json');
 
 const cityObj: CityData = {
-name: 'EDİRNE',
+name: 'ESKİŞEHİR',
 districts: {}
 }                           ;
 
@@ -38,16 +38,16 @@ zipCode: codeStr
 return cityObj ;
 })             ;
 
-const districtItem = computed(() => edirneData.value?.districts[distSlug.value]) ;
+const districtItem = computed(() => eskisehirData.value?.districts[distSlug.value]) ;
 
-const pageTitle = computed(() => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodları - Edirne` : 'İlçe Bulunamadı');
-const pageDesc = computed(() => districtItem.value ? `Edirne ${titleCase(districtItem.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!` : 'Posta Kodu Rehberi');
+const pageTitle = computed(() => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodları - Eskişehir` : 'İlçe Bulunamadı');
+const pageDesc = computed(() => districtItem.value ? `Eskişehir ${titleCase(districtItem.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!` : 'Posta Kodu Rehberi');
 useHead({
 title: pageTitle,
 meta: [{ name: 'description', content: pageDesc }],
 script: [
 computed(() => {
-if (!districtItem.value) return {}                                                                                                  ;
+if (!districtItem.value) return {}                                                                                                 ;
 return {
 type: 'application/ld+json',
 children: JSON.stringify({
@@ -63,14 +63,14 @@ children: JSON.stringify({
 {
 "@type": "ListItem",
 "position": 2,
-"name": "Edirne",
-"item": `https://postakodu.com/edirne`
+"name": "Eskişehir",
+"item": `https://postakodu.com/eskisehir`
 },
 {
 "@type": "ListItem",
 "position": 3,
 "name": titleCase(districtItem.value.name),
-"item": `https://postakodu.com/edirne/${distSlug.value}`
+"item": `https://postakodu.com/eskisehir/${distSlug.value}`
 }
 ]
 })
@@ -95,10 +95,10 @@ return items
 <div v-if="isValid" class="animate-in fade-in duration-500 max-w-4xl mx-auto">
 <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
 <div class="flex items-center gap-4">
-<NuxtLink to="/edirne" class="text-slate-400 hover:text-slate-900 transition-colors"><ArrowLeft class="w-5 h-5" /></NuxtLink>
+<NuxtLink to="/eskisehir" class="text-slate-400 hover:text-slate-900 transition-colors"><ArrowLeft class="w-5 h-5" /></NuxtLink>
 <div>
 <h1 class="text-3xl font-bold text-slate-900 tracking-tight">{{ titleCase(districtItem.name) }} Posta Kodları</h1>
-<p class="text-slate-500 text-sm font-medium uppercase tracking-wider">EDİRNE</p>
+<p class="text-slate-500 text-sm font-medium uppercase tracking-wider">ESKİŞEHİR</p>
 </div>
 </div>
 <div class="relative w-full md:w-64">
@@ -116,7 +116,7 @@ v-model="filter"
 <NuxtLink
 v-for="([nSlug, nItem]) in neighs"
 :key="nSlug"
-:to="`/edirne/${distSlug}/${nSlug}`"
+:to="`/eskisehir/${distSlug}/${nSlug}`"
 class="soft-card p-5 flex items-center justify-between group"
 >
 <div class="min-w-0 pr-4">
@@ -129,15 +129,6 @@ class="soft-card p-5 flex items-center justify-between group"
 </div>
 </NuxtLink>
 <div v-if="neighs.length === 0" class="col-span-full p-12 text-center text-slate-400 text-sm">Sonuç bulunamadı</div>
-</div>
-
-<div v-if="districtItem.mapCode" class="mt-12 bg-white border border-slate-200 rounded-[2rem] p-4 md:p-6 shadow-sm overflow-hidden">
-<div class="mb-4 flex items-center gap-2 px-2">
-<MapPin class="w-4 h-4 text-slate-400" />
-<h3 class="font-bold text-slate-900 text-sm uppercase tracking-wide">Konum</h3>
-</div>
-<div v-if="districtItem.mapCode.trim().startsWith('<')" v-html="districtItem.mapCode" class="w-full aspect-video rounded-2xl overflow-hidden [&>iframe]:w-full [&>iframe]:h-full"></div>
-<iframe v-else :src="districtItem.mapCode" class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100" loading="lazy"></iframe>
 </div>
 </div>
 </template>

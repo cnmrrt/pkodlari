@@ -40,17 +40,11 @@ return cityObj ;
 
 const districtItem = computed(() => elazigData.value?.districts[distSlug.value]) ;
 
+const pageTitle = computed(() => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodları - Elazığ` : 'İlçe Bulunamadı');
+const pageDesc = computed(() => districtItem.value ? `Elazığ ${titleCase(districtItem.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!` : 'Posta Kodu Rehberi');
 useHead({
-title: computed(() => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodları - Elazığ` : 'İlçe Bulunamadı'),
-meta: [
-{
-name: 'description',
-content: computed(() => {
-if (!districtItem.value) return '';
-return `Elazığ ${titleCase(districtItem.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!`    ;
-})
-}
-],
+title: pageTitle,
+meta: [{ name: 'description', content: pageDesc }],
 script: [
 computed(() => {
 if (!districtItem.value) return {}                                                                                                 ;
@@ -83,7 +77,8 @@ children: JSON.stringify({
 }
 })
 ]
-})                                                                                                                                 ;
+});
+usePageSeo({ title: pageTitle, description: pageDesc });
 
 const isValid = computed(() => !!districtItem.value) ;
 

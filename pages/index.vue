@@ -7,8 +7,10 @@ import type { PostalData } from '~/types';
 const postalData = inject<Ref<PostalData | null>>('postalData');
 
 useHead({
-    title: 'Türkiye Posta Kodları'
+    title: 'Türkiye Posta Kodları',
+    meta: [{ name: 'description', content: 'Türkiye posta kodları rehberi. İl, ilçe ve mahalle posta kodlarını hızlıca sorgulayın.' }]
 });
+usePageSeo({ title: 'Türkiye Posta Kodları', description: 'Türkiye posta kodları rehberi. İl, ilçe ve mahalle posta kodlarını hızlıca sorgulayın.' });
 
 const cityList = computed(() => {
     if (!postalData?.value) return [];

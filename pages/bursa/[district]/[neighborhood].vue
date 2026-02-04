@@ -44,17 +44,11 @@ return cityObj ;
 const districtItem = computed(() => bursaData.value?.districts[distSlug.value])             ;
 const neighItem = computed(() => districtItem.value?.neighborhoods[neighborhoodSlug.value]) ;
 
+const pageTitle = computed(() => neighItem.value ? `${titleCase(neighItem.value.name)} Posta Kodu` : 'Posta Kodu Bulunamadı');
+const pageDesc = computed(() => districtItem.value && neighItem.value ? `Bursa ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı ${titleCase(neighItem.value.name)}'nin posta kodunu görmek için tıklayın!` : 'Posta Kodu Rehberi');
 useHead({
-title: computed(() => neighItem.value ? `${titleCase(neighItem.value.name)} Posta Kodu` : 'Posta Kodu Bulunamadı'),
-meta: [
-{
-name: 'description',
-content: computed(() => {
-if (!districtItem.value || !neighItem.value) return '';
-return `Bursa ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı ${titleCase(neighItem.value.name)}'nin posta kodunu görmek için tıklayın!` ;
-})
-}
-],
+title: pageTitle,
+meta: [{ name: 'description', content: pageDesc }],
 script: [
 computed(() => {
 if (!districtItem.value || !neighItem.value) return {}                                                                                                      ;
@@ -93,7 +87,8 @@ children: JSON.stringify({
 }
 })
 ]
-})                                                                                                                                                          ;
+});
+usePageSeo({ title: pageTitle, description: pageDesc });
 
 const isValid = computed(() => !!neighItem.value) ;
 

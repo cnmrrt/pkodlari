@@ -40,17 +40,11 @@ return cityObj ;
 
 const districtItem = computed(() => antalyaData.value?.districts[distSlug.value]) ;
 
+const pageTitle = computed(() => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodları - Antalya` : 'İlçe Bulunamadı');
+const pageDesc = computed(() => districtItem.value ? `Antalya ${titleCase(districtItem.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!` : 'Posta Kodu Rehberi');
 useHead({
-title: computed(() => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodları - Antalya` : 'İlçe Bulunamadı'),
-meta: [
-{
-name: 'description',
-content: computed(() => {
-if (!districtItem.value) return '';
-return `Antalya ${titleCase(districtItem.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!`    ;
-})
-}
-],
+title: pageTitle,
+meta: [{ name: 'description', content: pageDesc }],
 script: [
 computed(() => {
 if (!districtItem.value) return {}                                                                                                   ;
@@ -83,7 +77,8 @@ children: JSON.stringify({
 }
 })
 ]
-})                                                                                                                                   ;
+});
+usePageSeo({ title: pageTitle, description: pageDesc });
 
 const isValid = computed(() => !!districtItem.value) ;
 

@@ -34,14 +34,11 @@ zipCode: codeStr
 return cityObj ;
 })             ;
 
+const pageTitle = computed(() => bartinData.value ? `${titleCase(bartinData.value.name)} Posta Kodları` : 'Şehir Bulunamadı');
+const pageDesc = computed(() => bartinData.value ? `${titleCase(bartinData.value.name)} iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!` : 'Posta Kodu Rehberi');
 useHead({
-title: computed(() => bartinData.value ? `${titleCase(bartinData.value.name)} Posta Kodları` : 'Şehir Bulunamadı'),
-meta: [
-{
-name: 'description',
-content: computed(() => bartinData.value ? `${titleCase(bartinData.value.name)} iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!` : '')
-}
-],
+title: pageTitle,
+meta: [{ name: 'description', content: pageDesc }],
 script: [
 {
 type: 'application/ld+json',
@@ -65,7 +62,8 @@ children: JSON.stringify({
 })
 }
 ]
-})                                                                                                                                                                     ;
+});
+usePageSeo({ title: pageTitle, description: pageDesc });
 
 const districts = computed(() => {
 if (!bartinData.value) return []                                                                              ;

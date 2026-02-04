@@ -10,17 +10,14 @@ const postalData = inject<Ref<PostalData | null>>('postalData');
 const citySlug = computed(() => route.params.city as string);
 const cityItem = computed(() => postalData?.value?.[citySlug.value]);
 
+const pageTitle = computed(() => cityItem.value ? `${titleCase(cityItem.value.name)} Posta Kodları` : 'Şehir Bulunamadı');
+const pageDesc = computed(() => {
+  if (!cityItem.value) return 'Posta Kodu Rehberi';
+  return `${titleCase(cityItem.value.name)} iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!`;
+});
 useHead({
-  title: computed(() => cityItem.value ? `${titleCase(cityItem.value.name)} Posta Kodları` : 'Şehir Bulunamadı'),
-  meta: [
-    {
-      name: 'description',
-      content: computed(() => {
-        if (!cityItem.value) return '';
-        return `${titleCase(cityItem.value.name)} iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!`;
-      })
-    }
-  ],
+  title: pageTitle,
+  meta: [{ name: 'description', content: pageDesc }],
   script: [
     computed(() => {
         if (!cityItem.value) return {};
@@ -48,6 +45,7 @@ useHead({
     })
   ]
 });
+usePageSeo({ title: pageTitle, description: pageDesc });
 
 const districts = computed(() => {
   if (!cityItem.value) return [];

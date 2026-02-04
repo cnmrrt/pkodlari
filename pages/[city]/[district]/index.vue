@@ -14,17 +14,14 @@ const districtSlug = computed(() => route.params.district as string);
 const cityItem = computed(() => postalData?.value?.[citySlug.value]);
 const districtItem = computed(() => cityItem.value?.districts[districtSlug.value]);
 
+const pageTitle = computed(() => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodları` : 'İlçe Bulunamadı');
+const pageDesc = computed(() => {
+  if (!cityItem.value || !districtItem.value) return 'Posta Kodu Rehberi';
+  return `${titleCase(cityItem.value.name)} ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!`;
+});
 useHead({
-  title: computed(() => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodları` : 'İlçe Bulunamadı'),
-  meta: [
-    {
-      name: 'description',
-      content: computed(() => {
-        if (!cityItem.value || !districtItem.value) return '';
-        return `${titleCase(cityItem.value.name)} ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!`;
-      })
-    }
-  ],
+  title: pageTitle,
+  meta: [{ name: 'description', content: pageDesc }],
   script: [
     computed(() => {
         if (!cityItem.value || !districtItem.value) return {};
@@ -58,6 +55,7 @@ useHead({
     })
   ]
 });
+usePageSeo({ title: pageTitle, description: pageDesc });
 
 const isValid = computed(() => !!districtItem.value);
 

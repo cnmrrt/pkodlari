@@ -14,7 +14,7 @@ const findValue = (obj: any, possibleKeys: string[]) => {
 
 // Use useAsyncData for SSR-friendly data fetching
 const { data: postalData } = await useAsyncData<PostalData>('postal-data', async () => {
-  const response = await $fetch<any>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/postakodlari.json');
+  const response = await $fetch<any>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/afyonkarahisar.json');
   
   const transformed: PostalData = {};
   const entries = Array.isArray(response) ? response : Object.values(response);

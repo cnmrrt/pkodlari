@@ -29,29 +29,37 @@ const cityList = computed(() => {
             <p class="text-slate-500 mb-10">Hızlıca ilçe ve mahalle posta kodlarını sorgulayın.</p>
             <SearchBar :data="postalData" />
         </div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"><a href="/adana"
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <a href="/adana"
                 class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Adana</div>
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">15 İLÇE </div>
-            </a><a href="/adiyaman" class="soft-card p-4 rounded-xl text-center">
+            </a>
+            <a href="/adiyaman" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Adıyaman</div>
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">1 İLÇE </div>
-            </a><a href="/afyonkarahisar" class="soft-card p-4 rounded-xl text-center">
+            </a>
+            <a href="/afyonkarahisar" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Afyonkarahisar</div>
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">7 İLÇE </div>
-            </a><a href="/agri" class="soft-card p-4 rounded-xl text-center">
+            </a>
+            <a href="/agri" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Ağrı</div>
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">8 İLÇE </div>
-            </a><a href="/aksaray" class="soft-card p-4 rounded-xl text-center">
+            </a>
+            <a href="/aksaray" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Aksaray</div>
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">1 İLÇE </div>
-            </a><a href="/amasya" class="soft-card p-4 rounded-xl text-center">
+            </a>
+            <a href="/amasya" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Amasya</div>
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">1 İLÇE </div>
-            </a><a href="/ankara" class="soft-card p-4 rounded-xl text-center">
+            </a>
+            <a href="/ankara" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Ankara</div>
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">25 İLÇE </div>
-            </a><a href="/antalya" class="soft-card p-4 rounded-xl text-center">
+            </a>
+            <a href="/antalya" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Antalya</div>
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">19 İLÇE </div>
             </a><a href="/ardahan" class="soft-card p-4 rounded-xl text-center">
@@ -63,10 +71,17 @@ const cityList = computed(() => {
             </a><a href="/aydin" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Aydın</div>
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">1 İLÇE </div>
-            </a><a href="/balikesir" class="soft-card p-4 rounded-xl text-center">
+            </a>
+            <a href="/balikesir" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Balıkesir</div>
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">5 İLÇE </div>
-            </a><a href="/bartin" class="soft-card p-4 rounded-xl text-center">
+            </a>
+            <a href="/bilecik" class="soft-card p-4 rounded-xl text-center">
+                <div class="font-semibold text-slate-900 text-sm truncate">Bilecik</div>
+                <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">1 İLÇE </div>
+            </a>
+            
+            <a href="/bartin" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Bartın</div>
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">4 İLÇE </div>
             </a><a href="/batman" class="soft-card p-4 rounded-xl text-center">
@@ -75,10 +90,9 @@ const cityList = computed(() => {
             </a><a href="/bayburt" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Bayburt</div>
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">1 İLÇE </div>
-            </a><a href="/bilecik" class="soft-card p-4 rounded-xl text-center">
-                <div class="font-semibold text-slate-900 text-sm truncate">Bilecik</div>
-                <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">1 İLÇE </div>
-            </a><a href="/bingol" class="soft-card p-4 rounded-xl text-center">
+            </a>
+            
+            <a href="/bingol" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Bingöl</div>
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">1 İLÇE </div>
             </a><a href="/bitlis" class="soft-card p-4 rounded-xl text-center">
@@ -92,7 +106,7 @@ const cityList = computed(() => {
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">1 İLÇE </div>
             </a><a href="/bursa" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Bursa</div>
-                <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">9 İLÇE </div>
+                <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">10 İLÇE </div>
             </a><a href="/edirne" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Edirne</div>
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">4 İLÇE </div>

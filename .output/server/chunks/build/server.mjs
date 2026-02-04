@@ -1,5 +1,5 @@
-import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { hasInjectionContext, getCurrentInstance, inject, defineComponent, shallowRef, h, resolveComponent, computed, useSSRContext, ref, Suspense, Fragment, createElementBlock, provide, cloneVNode, createApp, mergeProps, withCtx, unref, createVNode, createTextVNode, shallowReactive, withAsyncContext, onErrorCaptured, onServerPrefetch, resolveDynamicComponent, reactive, effectScope, toValue, defineAsyncComponent, getCurrentScope, toRef, nextTick, isReadonly, isRef, isShallow, isReactive, toRaw } from 'vue';
-import { p as parseQuery, k as getContext, l as hasProtocol, h as joinURL, w as withQuery, m as isScriptProtocol, n as withTrailingSlash, o as withoutTrailingSlash, s as sanitizeStatusCode, $ as $fetch$1, q as createHooks, e as createError$1, r as executeAsync, t as defu } from '../nitro/nitro.mjs';
+import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { hasInjectionContext, inject, getCurrentInstance, computed, toValue, onServerPrefetch, defineComponent, shallowRef, h, resolveComponent, ref, nextTick, unref, toRef, useSSRContext, Suspense, Fragment, createElementBlock, provide, cloneVNode, createApp, mergeProps, withCtx, createVNode, createTextVNode, shallowReactive, withAsyncContext, onErrorCaptured, resolveDynamicComponent, reactive, effectScope, defineAsyncComponent, getCurrentScope, isReadonly, isRef, isShallow, isReactive, toRaw } from 'vue';
+import { p as parseQuery, k as getContext, l as hasProtocol, h as joinURL, w as withQuery, m as isScriptProtocol, e as createError$1, n as withTrailingSlash, o as withoutTrailingSlash, s as sanitizeStatusCode, $ as $fetch$1, q as createHooks, r as executeAsync, t as defu } from '../nitro/nitro.mjs';
 import { b as baseURL } from '../routes/renderer.mjs';
 import { RouterView, createMemoryHistory, createRouter, START_LOCATION } from 'vue-router';
 import { ssrRenderAttrs, ssrRenderComponent, ssrInterpolate, ssrRenderSuspense, ssrRenderVNode } from 'vue/server-renderer';
@@ -396,22 +396,247 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-CYmg2MZy.mjs')
+    component: () => import('./index-BE-HYpDh.mjs')
+  },
+  {
+    name: "kars",
+    path: "/kars",
+    component: () => import('./index-OJ-vTKHx.mjs')
+  },
+  {
+    name: "adana",
+    path: "/adana",
+    component: () => import('./index-CbbmW6Cl.mjs')
+  },
+  {
+    name: "bursa",
+    path: "/bursa",
+    component: () => import('./index-Egr33xIy.mjs')
+  },
+  {
+    name: "mugla",
+    path: "/mugla",
+    component: () => import('./index-BRa4YrYD.mjs')
   },
   {
     name: "city",
     path: "/:city()",
-    component: () => import('./index-Bjtti-4R.mjs')
+    component: () => import('./index-DLTbIpeO.mjs')
+  },
+  {
+    name: "ankara",
+    path: "/ankara",
+    component: () => import('./index-C15OYtZi.mjs')
+  },
+  {
+    name: "bartin",
+    path: "/bartin",
+    component: () => import('./index-BotoB_Iy.mjs')
+  },
+  {
+    name: "edirne",
+    path: "/edirne",
+    component: () => import('./index-CyxVwKbG.mjs')
+  },
+  {
+    name: "manisa",
+    path: "/manisa",
+    component: () => import('./index-BMjiKbYH.mjs')
+  },
+  {
+    name: "antalya",
+    path: "/antalya",
+    component: () => import('./index-BN967Pm1.mjs')
+  },
+  {
+    name: "sakarya",
+    path: "/sakarya",
+    component: () => import('./index-QRT9_xIl.mjs')
+  },
+  {
+    name: "adiyaman",
+    path: "/adiyaman",
+    component: () => import('./index-Gs7QxP8S.mjs')
+  },
+  {
+    name: "istanbul",
+    path: "/istanbul",
+    component: () => import('./index-ur9IU2HK.mjs')
+  },
+  {
+    name: "balikesir",
+    path: "/balikesir",
+    component: () => import('./index-tvj7i7Ju.mjs')
+  },
+  {
+    name: "canakkale",
+    path: "/canakkale",
+    component: () => import('./index-D6kE8bOx.mjs')
+  },
+  {
+    name: "afyonkarahisar",
+    path: "/afyonkarahisar",
+    component: () => import('./index-CooCNHqf.mjs')
+  },
+  {
+    name: "kars-district",
+    path: "/kars/:district()",
+    component: () => import('./index-mqHI8bG1.mjs')
+  },
+  {
+    name: "adana-district",
+    path: "/adana/:district()",
+    component: () => import('./index-D-oONV5n.mjs')
+  },
+  {
+    name: "bursa-district",
+    path: "/bursa/:district()",
+    component: () => import('./index-CnhF1JKS.mjs')
+  },
+  {
+    name: "mugla-district",
+    path: "/mugla/:district()",
+    component: () => import('./index-CaynDEq8.mjs')
   },
   {
     name: "city-district",
     path: "/:city()/:district()",
-    component: () => import('./index-l1g5BtzI.mjs')
+    component: () => import('./index-Btat2-XJ.mjs')
+  },
+  {
+    name: "ankara-district",
+    path: "/ankara/:district()",
+    component: () => import('./index-CiIhWapK.mjs')
+  },
+  {
+    name: "bartin-district",
+    path: "/bartin/:district()",
+    component: () => import('./index-Cj2Mt0pg.mjs')
+  },
+  {
+    name: "edirne-district",
+    path: "/edirne/:district()",
+    component: () => import('./index-tYyaQFYX.mjs')
+  },
+  {
+    name: "manisa-district",
+    path: "/manisa/:district()",
+    component: () => import('./index-Bzz1kW5_.mjs')
+  },
+  {
+    name: "antalya-district",
+    path: "/antalya/:district()",
+    component: () => import('./index-Dbkco-AT.mjs')
+  },
+  {
+    name: "sakarya-district",
+    path: "/sakarya/:district()",
+    component: () => import('./index-I_TCznpV.mjs')
+  },
+  {
+    name: "adiyaman-district",
+    path: "/adiyaman/:district()",
+    component: () => import('./index-CuF-n3VG.mjs')
+  },
+  {
+    name: "istanbul-district",
+    path: "/istanbul/:district()",
+    component: () => import('./index-JMY6DW1W.mjs')
+  },
+  {
+    name: "balikesir-district",
+    path: "/balikesir/:district()",
+    component: () => import('./index-eoWM-ZVa.mjs')
+  },
+  {
+    name: "canakkale-district",
+    path: "/canakkale/:district()",
+    component: () => import('./index-CxbrlDV9.mjs')
+  },
+  {
+    name: "kars-district-neighborhood",
+    path: "/kars/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-DFLKQ4gM.mjs')
+  },
+  {
+    name: "adana-district-neighborhood",
+    path: "/adana/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-BNiB5pbl.mjs')
+  },
+  {
+    name: "afyonkarahisar-district",
+    path: "/afyonkarahisar/:district()",
+    component: () => import('./index-DgpSzC8W.mjs')
+  },
+  {
+    name: "bursa-district-neighborhood",
+    path: "/bursa/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-B207iFqF.mjs')
+  },
+  {
+    name: "mugla-district-neighborhood",
+    path: "/mugla/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-DJflwtuR.mjs')
   },
   {
     name: "city-district-neighborhood",
     path: "/:city()/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-8KwRDnzW.mjs')
+    component: () => import('./_neighborhood_-IqwSHEhV.mjs')
+  },
+  {
+    name: "ankara-district-neighborhood",
+    path: "/ankara/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-XMTT-0Dt.mjs')
+  },
+  {
+    name: "bartin-district-neighborhood",
+    path: "/bartin/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-YxlY5o9X.mjs')
+  },
+  {
+    name: "edirne-district-neighborhood",
+    path: "/edirne/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-CtPoETQX.mjs')
+  },
+  {
+    name: "manisa-district-neighborhood",
+    path: "/manisa/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-BcSkVHsN.mjs')
+  },
+  {
+    name: "antalya-district-neighborhood",
+    path: "/antalya/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-DvC1ft35.mjs')
+  },
+  {
+    name: "sakarya-district-neighborhood",
+    path: "/sakarya/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-DWfuR9E6.mjs')
+  },
+  {
+    name: "adiyaman-district-neighborhood",
+    path: "/adiyaman/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-Bs-2Daz2.mjs')
+  },
+  {
+    name: "istanbul-district-neighborhood",
+    path: "/istanbul/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-O996qR59.mjs')
+  },
+  {
+    name: "balikesir-district-neighborhood",
+    path: "/balikesir/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-BqsPyB1j.mjs')
+  },
+  {
+    name: "canakkale-district-neighborhood",
+    path: "/canakkale/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-CEDDI2BE.mjs')
+  },
+  {
+    name: "afyonkarahisar-district-neighborhood",
+    path: "/afyonkarahisar/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-D4OJlEGD.mjs')
   }
 ];
 const ROUTE_KEY_PARENTHESES_RE = /(:\w+)\([^)]+\)/g;
@@ -1602,8 +1827,8 @@ const _sfc_main$1 = {
     const statusText = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
     const description = _error.message || _error.toString();
     const stack = void 0;
-    const _Error404 = defineAsyncComponent(() => import('./error-404-8-XlKSNp.mjs'));
-    const _Error = defineAsyncComponent(() => import('./error-500-BTZQV9a-.mjs'));
+    const _Error404 = defineAsyncComponent(() => import('./error-404-ByuK-X1V.mjs'));
+    const _Error = defineAsyncComponent(() => import('./error-500-Bfx37wjD.mjs'));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {
       _push(ssrRenderComponent(unref(ErrorTemplate), mergeProps({ status: unref(status), statusText: unref(statusText), statusCode: unref(status), statusMessage: unref(statusText), description: unref(description), stack: unref(stack) }, _attrs), null, _parent));
@@ -1684,5 +1909,5 @@ let entry;
 }
 const entry_default = ((ssrContext) => entry(ssrContext));
 
-export { __nuxt_component_0 as _, tryUseNuxtApp as a, entry_default as default, titleCase as t, useRoute as u };
+export { __nuxt_component_0 as _, useRoute as a, tryUseNuxtApp as b, entry_default as default, slugify as s, titleCase as t, useAsyncData as u };
 //# sourceMappingURL=server.mjs.map

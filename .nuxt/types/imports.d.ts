@@ -25,6 +25,7 @@ declare global {
   const definePayloadReviver: typeof import('../../node_modules/nuxt/dist/app/composables/payload').definePayloadReviver
   const effect: typeof import('../../node_modules/vue').effect
   const effectScope: typeof import('../../node_modules/vue').effectScope
+  const findMapValue: typeof import('../../utils/slugify').findMapValue
   const getAppManifest: typeof import('../../node_modules/nuxt/dist/app/composables/manifest').getAppManifest
   const getCurrentInstance: typeof import('../../node_modules/vue').getCurrentInstance
   const getCurrentScope: typeof import('../../node_modules/vue').getCurrentScope
@@ -212,6 +213,7 @@ declare module 'vue' {
     readonly definePayloadReviver: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/payload')['definePayloadReviver']>
     readonly effect: UnwrapRef<typeof import('../../node_modules/vue')['effect']>
     readonly effectScope: UnwrapRef<typeof import('../../node_modules/vue')['effectScope']>
+    readonly findMapValue: UnwrapRef<typeof import('../../utils/slugify')['findMapValue']>
     readonly getAppManifest: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/manifest')['getAppManifest']>
     readonly getCurrentInstance: UnwrapRef<typeof import('../../node_modules/vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('../../node_modules/vue')['getCurrentScope']>

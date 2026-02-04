@@ -22,6 +22,7 @@ const nStr = String(item.mahalle || "MERKEZ").trim().toLocaleUpperCase('tr');
 const dSlug = slugify(dStr)                                                   ;
 const nSlug = slugify(nStr)                                                   ;
 const codeStr = String(item.postaKodu || "00000").trim();
+const mapVal = findMapValue(item);
 
 if (!cityObj.districts[dSlug]) {
 cityObj.districts[dSlug] = {
@@ -32,7 +33,8 @@ neighborhoods: {}
 
 cityObj.districts[dSlug].neighborhoods[nSlug] = {
 name: nStr,
-zipCode: codeStr
+zipCode: codeStr,
+...(mapVal && { mapCode: mapVal })
 }                                                 ;
 })                                                ;
 
@@ -162,6 +164,15 @@ class="flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-co
 >
 <Share2 class="w-4 h-4" /> PAYLAŞ
 </button>
+</div>
+
+<div v-if="neighItem.mapCode" class="mt-12 bg-white border border-slate-200 rounded-[2rem] p-4 md:p-6 shadow-sm overflow-hidden">
+<div class="mb-4 flex items-center gap-2 px-2">
+<MapPin class="w-4 h-4 text-slate-400" />
+<h3 class="font-bold text-slate-900 text-sm uppercase tracking-wide">Konum</h3>
+</div>
+<div v-if="neighItem.mapCode.trim().startsWith('<')" v-html="neighItem.mapCode" class="w-full aspect-video rounded-2xl overflow-hidden [&>iframe]:w-full [&>iframe]:h-full"></div>
+<iframe v-else :src="neighItem.mapCode" class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100" loading="lazy"></iframe>
 </div>
 </div>
 

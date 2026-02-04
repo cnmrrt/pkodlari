@@ -16,6 +16,8 @@ export interface CityItem {
   mapCode?: string;
 }
 
+export type CityData = CityItem;
+
 export interface PostalData {
   [citySlug: string]: CityItem;
 }

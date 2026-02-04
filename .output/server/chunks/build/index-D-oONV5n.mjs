@@ -30,7 +30,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     const distSlug = computed(() => route.params.district);
     const filter = ref("");
     const { data: adanaData } = ([__temp, __restore] = withAsyncContext(async () => useAsyncData("adana-specific-data", async () => {
-      const response = await $fetch("https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/adana.json");
+      const response = await $fetch("https://pkodlari.com/data/adana.json");
       const cityObj = {
         name: "ADANA",
         districts: {}

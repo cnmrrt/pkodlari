@@ -4,7 +4,7 @@ import { ArrowLeft, ChevronRight, MapPin } from 'lucide-vue-next';
 import type { CityData } from '~/types';
 
 const { data: adanaData } = await useAsyncData<CityData>('adana-specific-data', async () => {
-const response = await $fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/adana.json');
+const response = await $fetch<any[]>('https://pkodlari.com/data/adana.json');
 
 const cityObj: CityData = {
 name: 'ADANA',

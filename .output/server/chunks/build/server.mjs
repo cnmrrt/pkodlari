@@ -1,5 +1,5 @@
 import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { hasInjectionContext, inject, getCurrentInstance, computed, toValue, onServerPrefetch, defineComponent, shallowRef, h, resolveComponent, ref, nextTick, unref, toRef, useSSRContext, Suspense, Fragment, createElementBlock, provide, cloneVNode, createApp, mergeProps, withCtx, createVNode, createTextVNode, shallowReactive, withAsyncContext, onErrorCaptured, resolveDynamicComponent, reactive, effectScope, defineAsyncComponent, getCurrentScope, isReadonly, isRef, isShallow, isReactive, toRaw } from 'vue';
-import { p as parseQuery, k as getContext, l as hasProtocol, h as joinURL, w as withQuery, m as isScriptProtocol, e as createError$1, n as withTrailingSlash, o as withoutTrailingSlash, s as sanitizeStatusCode, $ as $fetch$1, q as createHooks, r as executeAsync, t as defu } from '../nitro/nitro.mjs';
+import { p as parseQuery, m as getContext, n as hasProtocol, k as joinURL, w as withQuery, o as isScriptProtocol, c as createError$1, q as withTrailingSlash, r as withoutTrailingSlash, s as sanitizeStatusCode, $ as $fetch$1, t as createHooks, v as executeAsync, x as defu } from '../nitro/nitro.mjs';
 import { b as baseURL } from '../routes/renderer.mjs';
 import { RouterView, createMemoryHistory, createRouter, START_LOCATION } from 'vue-router';
 import { ssrRenderAttrs, ssrRenderComponent, ssrInterpolate, ssrRenderSuspense, ssrRenderVNode } from 'vue/server-renderer';
@@ -396,12 +396,12 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-BHkv6Lle.mjs')
+    component: () => import('./index-CeOvLdBg.mjs')
   },
   {
     name: "agri",
     path: "/agri",
-    component: () => import('./index-Cd3tTNFg.mjs')
+    component: () => import('./index-B3xAJXrk.mjs')
   },
   {
     name: "kars",
@@ -411,12 +411,22 @@ const _routes = [
   {
     name: "adana",
     path: "/adana",
-    component: () => import('./index-C4jA_e_V.mjs')
+    component: () => import('./index-DH8TaueN.mjs')
+  },
+  {
+    name: "aydin",
+    path: "/aydin",
+    component: () => import('./index-BUjUUdmy.mjs')
   },
   {
     name: "bursa",
     path: "/bursa",
     component: () => import('./index-s5nGYwQR.mjs')
+  },
+  {
+    name: "konya",
+    path: "/konya",
+    component: () => import('./index-1u40r-2d.mjs')
   },
   {
     name: "mugla",
@@ -441,12 +451,12 @@ const _routes = [
   {
     name: "edirne",
     path: "/edirne",
-    component: () => import('./index-DKza-Haj.mjs')
+    component: () => import('./index-BXf0KpUm.mjs')
   },
   {
     name: "elazig",
     path: "/elazig",
-    component: () => import('./index-C61DaHe_.mjs')
+    component: () => import('./index-58GvRoNV.mjs')
   },
   {
     name: "manisa",
@@ -461,7 +471,7 @@ const _routes = [
   {
     name: "ardahan",
     path: "/ardahan",
-    component: () => import('./index-CrxC8g-o.mjs')
+    component: () => import('./index-CxMB5WoG.mjs')
   },
   {
     name: "sakarya",
@@ -491,7 +501,7 @@ const _routes = [
   {
     name: "eskisehir",
     path: "/eskisehir",
-    component: () => import('./index-B_Debvbo.mjs')
+    component: () => import('./index-CjQRhwR2.mjs')
   },
   {
     name: "afyonkarahisar",
@@ -501,7 +511,7 @@ const _routes = [
   {
     name: "agri-district",
     path: "/agri/:district()",
-    component: () => import('./index-C-j1jVGy.mjs')
+    component: () => import('./index-TI_6qne6.mjs')
   },
   {
     name: "kars-district",
@@ -511,12 +521,22 @@ const _routes = [
   {
     name: "adana-district",
     path: "/adana/:district()",
-    component: () => import('./index-BvpVs8yL.mjs')
+    component: () => import('./index-BRyiqa7j.mjs')
+  },
+  {
+    name: "aydin-district",
+    path: "/aydin/:district()",
+    component: () => import('./index-CYKWHeAY.mjs')
   },
   {
     name: "bursa-district",
     path: "/bursa/:district()",
     component: () => import('./index-D7WPBdd_.mjs')
+  },
+  {
+    name: "konya-district",
+    path: "/konya/:district()",
+    component: () => import('./index-DRyL1cnR.mjs')
   },
   {
     name: "mugla-district",
@@ -541,12 +561,12 @@ const _routes = [
   {
     name: "edirne-district",
     path: "/edirne/:district()",
-    component: () => import('./index-DAvamhlc.mjs')
+    component: () => import('./index-r6Jk1jVz.mjs')
   },
   {
     name: "elazig-district",
     path: "/elazig/:district()",
-    component: () => import('./index-C2a9r80Q.mjs')
+    component: () => import('./index-DLnvnyJz.mjs')
   },
   {
     name: "manisa-district",
@@ -561,7 +581,7 @@ const _routes = [
   {
     name: "ardahan-district",
     path: "/ardahan/:district()",
-    component: () => import('./index-CQVxCfii.mjs')
+    component: () => import('./index-jPFh3y9O.mjs')
   },
   {
     name: "sakarya-district",
@@ -591,12 +611,12 @@ const _routes = [
   {
     name: "eskisehir-district",
     path: "/eskisehir/:district()",
-    component: () => import('./index-Bv7ACgp1.mjs')
+    component: () => import('./index-DwpZAXWy.mjs')
   },
   {
     name: "agri-district-neighborhood",
     path: "/agri/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-C1kWyIHh.mjs')
+    component: () => import('./_neighborhood_-CoWJJInh.mjs')
   },
   {
     name: "kars-district-neighborhood",
@@ -606,7 +626,7 @@ const _routes = [
   {
     name: "adana-district-neighborhood",
     path: "/adana/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-B8ZqAxfi.mjs')
+    component: () => import('./_neighborhood_-BVRfl_PV.mjs')
   },
   {
     name: "afyonkarahisar-district",
@@ -614,9 +634,19 @@ const _routes = [
     component: () => import('./index-SKyrn7PL.mjs')
   },
   {
+    name: "aydin-district-neighborhood",
+    path: "/aydin/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-Dlpqdn4H.mjs')
+  },
+  {
     name: "bursa-district-neighborhood",
     path: "/bursa/:district()/:neighborhood()",
     component: () => import('./_neighborhood_-BTnl2Jaw.mjs')
+  },
+  {
+    name: "konya-district-neighborhood",
+    path: "/konya/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-CO7VwdGi.mjs')
   },
   {
     name: "mugla-district-neighborhood",
@@ -641,12 +671,12 @@ const _routes = [
   {
     name: "edirne-district-neighborhood",
     path: "/edirne/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-s4lU9Kyq.mjs')
+    component: () => import('./_neighborhood_-lELEtl7n.mjs')
   },
   {
     name: "elazig-district-neighborhood",
     path: "/elazig/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-D3M8IFmJ.mjs')
+    component: () => import('./_neighborhood_-DUrXct-i.mjs')
   },
   {
     name: "manisa-district-neighborhood",
@@ -661,7 +691,7 @@ const _routes = [
   {
     name: "ardahan-district-neighborhood",
     path: "/ardahan/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-fuoSSVM3.mjs')
+    component: () => import('./_neighborhood_-DshYewrN.mjs')
   },
   {
     name: "sakarya-district-neighborhood",
@@ -691,7 +721,7 @@ const _routes = [
   {
     name: "eskisehir-district-neighborhood",
     path: "/eskisehir/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-BFaXW5Q0.mjs')
+    component: () => import('./_neighborhood_-BxVQ7sbo.mjs')
   },
   {
     name: "afyonkarahisar-district-neighborhood",
@@ -1818,7 +1848,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
       return null;
     };
     const { data: postalData } = ([__temp, __restore] = withAsyncContext(async () => useAsyncData("postal-data", async () => {
-      const response = await $fetch("https://words-from-life-5cb26-default-rtdb.firebaseio.com/postakodlari.json");
+      const response = await $fetch("/api/postal-data");
       const transformed = {};
       const entries = Array.isArray(response) ? response : Object.values(response);
       entries.forEach((item) => {
@@ -1872,7 +1902,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
       _push(ssrRenderComponent(_component_Header, null, null, _parent));
       _push(`<main class="max-w-5xl mx-auto px-6 py-8">`);
       _push(ssrRenderComponent(_component_NuxtPage, null, null, _parent));
-      _push(`</main><footer class="py-12 text-center text-slate-400 text-xs font-medium border-t border-slate-200 mt-20"> Posta Kodu Rehberi © ${ssrInterpolate((/* @__PURE__ */ new Date()).getFullYear())} — Tüm hakları saklıdır. </footer></div>`);
+      _push(`</main><footer class="py-12 text-center text-slate-400 text-xs font-medium border-t border-slate-200 mt-20"> Posta Kodu Rehberi © ; ${ssrInterpolate((/* @__PURE__ */ new Date()).getFullYear())} — Tüm hakları saklıdır. </footer></div>`);
     };
   }
 });

@@ -4,7 +4,7 @@ import { ArrowLeft, ChevronRight } from 'lucide-vue-next';
 import type { CityData } from '~/types';
 
 const { data: agriData } = await useAsyncData<CityData>('agri-specific-data', async () => {
-const response = await $fetch<any[]>('https://pkodlari.com/data/agri.json');
+const response = await $fetch<any[]>('/api/data/agri');
 
 const cityObj: CityData = {
 name: 'AĞRI',
@@ -62,8 +62,8 @@ children: JSON.stringify({
 })
 }
 ]
-});
-usePageSeo({ title: pageTitle, description: pageDesc });
+})                                                                                                                                                                                            ;
+usePageSeo({ title: pageTitle, description: pageDesc })                                                                                                                                       ;
 
 const districts = computed(() => {
 if (!agriData.value) return []                                                                              ;

@@ -4,7 +4,7 @@ import { ArrowLeft, ChevronRight, MapPin } from 'lucide-vue-next';
 import type { CityData } from '~/types';
 
 const { data: eskisehirData } = await useAsyncData<CityData>('eskisehir-specific-data', async () => {
-const response = await $fetch<any[]>('https://pkodlari.com/data/eskisehir.json');
+const response = await $fetch<any[]>('/api/data/eskisehir');
 
 const cityObj: CityData = {
 name: 'ESKİŞEHİR',
@@ -62,13 +62,13 @@ children: JSON.stringify({
 })
 }
 ]
-});
-usePageSeo({ title: pageTitle, description: pageDesc });
+})                                                                                                                                                                                                      ;
+usePageSeo({ title: pageTitle, description: pageDesc })                                                                                                                                                 ;
 
 const districts = computed(() => {
 if (!eskisehirData.value) return []                                                                              ;
 return Object.entries(eskisehirData.value.districts).sort(([, a], [, b]) => a.name.localeCompare(b.name, 'tr'));
-})                                                                                                           ;
+})                                                                                                               ;
 
 const isValid = computed(() => !!eskisehirData.value) ;
 </script>

@@ -4,7 +4,7 @@ import { ArrowLeft, ChevronRight, MapPin } from 'lucide-vue-next';
 import type { CityData } from '~/types';
 
 const { data: edirneData } = await useAsyncData<CityData>('edirne-specific-data', async () => {
-const response = await $fetch<any[]>('https://pkodlari.com/data/edirne.json');
+const response = await $fetch<any[]>('/api/data/edirne');
 
 const cityObj: CityData = {
 name: 'EDİRNE',
@@ -62,13 +62,13 @@ children: JSON.stringify({
 })
 }
 ]
-});
-usePageSeo({ title: pageTitle, description: pageDesc });
+})                                                                                                                                                                                                ;
+usePageSeo({ title: pageTitle, description: pageDesc })                                                                                                                                           ;
 
 const districts = computed(() => {
 if (!edirneData.value) return []                                                                              ;
 return Object.entries(edirneData.value.districts).sort(([, a], [, b]) => a.name.localeCompare(b.name, 'tr'));
-})                                                                                                           ;
+})                                                                                                            ;
 
 const isValid = computed(() => !!edirneData.value) ;
 </script>

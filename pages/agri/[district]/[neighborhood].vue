@@ -9,7 +9,7 @@ const neighborhoodSlug = computed(() => route.params.neighborhood as string) ;
 const copied = ref(false)                                                    ;
 
 const { data: agriData } = await useAsyncData<CityData>('agri-specific-data', async () => {
-const response = await $fetch<any[]>('https://pkodlari.com/data/agri.json');
+const response = await $fetch<any[]>('/api/data/agri');
 
 const cityObj: CityData = {
 name: 'AĞRI',
@@ -22,7 +22,7 @@ const nStr = String(item.mahalle || "MERKEZ").trim().toLocaleUpperCase('tr');
 const dSlug = slugify(dStr)                                                   ;
 const nSlug = slugify(nStr)                                                   ;
 const codeStr = String(item.postaKodu || "00000").trim();
-const mapVal = findMapValue(item);
+const mapVal = findMapValue(item)                                             ;
 
 if (!cityObj.districts[dSlug]) {
 cityObj.districts[dSlug] = {
@@ -51,7 +51,7 @@ title: pageTitle,
 meta: [{ name: 'description', content: pageDesc }],
 script: [
 computed(() => {
-if (!districtItem.value || !neighItem.value) return {}                                                                                                       ;
+if (!districtItem.value || !neighItem.value) return {}                                                                                                                                                                                                 ;
 return {
 type: 'application/ld+json',
 children: JSON.stringify({
@@ -87,8 +87,8 @@ children: JSON.stringify({
 }
 })
 ]
-});
-usePageSeo({ title: pageTitle, description: pageDesc });
+})                                                                                                                                                                                                                                                     ;
+usePageSeo({ title: pageTitle, description: pageDesc })                                                                                                                                                                                                ;
 
 const isValid = computed(() => !!neighItem.value) ;
 

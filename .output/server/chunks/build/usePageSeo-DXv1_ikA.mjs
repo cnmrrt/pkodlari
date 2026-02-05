@@ -1,6 +1,6 @@
 import { computed, toValue } from 'vue';
 import { a as useRoute, c as useNuxtApp } from './server.mjs';
-import { v as getRequestURL } from '../nitro/nitro.mjs';
+import { y as getRequestURL } from '../nitro/nitro.mjs';
 import { u as useHead } from './v3-nkHqSgkI.mjs';
 
 function useRequestEvent(nuxtApp) {

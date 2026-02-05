@@ -4,7 +4,7 @@ import { ArrowLeft, ChevronRight, MapPin } from 'lucide-vue-next';
 import type { CityData } from '~/types';
 
 const { data: elazigData } = await useAsyncData<CityData>('elazig-specific-data', async () => {
-const response = await $fetch<any[]>('https://pkodlari.com/data/elazig.json');
+const response = await $fetch<any[]>('/api/data/elazig');
 
 const cityObj: CityData = {
 name: 'ELAZIĞ',
@@ -62,13 +62,13 @@ children: JSON.stringify({
 })
 }
 ]
-});
-usePageSeo({ title: pageTitle, description: pageDesc });
+})                                                                                                                                                                                                ;
+usePageSeo({ title: pageTitle, description: pageDesc })                                                                                                                                           ;
 
 const districts = computed(() => {
 if (!elazigData.value) return []                                                                              ;
 return Object.entries(elazigData.value.districts).sort(([, a], [, b]) => a.name.localeCompare(b.name, 'tr'));
-})                                                                                                           ;
+})                                                                                                            ;
 
 const isValid = computed(() => !!elazigData.value) ;
 </script>

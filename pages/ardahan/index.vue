@@ -4,7 +4,7 @@ import { ArrowLeft, ChevronRight } from 'lucide-vue-next';
 import type { CityData } from '~/types';
 
 const { data: ardahanData } = await useAsyncData<CityData>('ardahan-specific-data', async () => {
-const response = await $fetch<any[]>('https://pkodlari.com/data/ardahan.json');
+const response = await $fetch<any[]>('/api/data/ardahan');
 
 const cityObj: CityData = {
 name: 'ARDAHAN',
@@ -62,8 +62,8 @@ children: JSON.stringify({
 })
 }
 ]
-});
-usePageSeo({ title: pageTitle, description: pageDesc });
+})                                                                                                                                                                                                  ;
+usePageSeo({ title: pageTitle, description: pageDesc })                                                                                                                                             ;
 
 const districts = computed(() => {
 if (!ardahanData.value) return []                                                                              ;

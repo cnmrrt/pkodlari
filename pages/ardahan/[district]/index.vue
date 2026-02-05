@@ -8,7 +8,7 @@ const distSlug = computed(() => route.params.district as string) ;
 const filter = ref('');
 
 const { data: ardahanData } = await useAsyncData<CityData>('ardahan-specific-data', async () => {
-const response = await $fetch<any[]>('https://pkodlari.com/data/ardahan.json');
+const response = await $fetch<any[]>('/api/data/ardahan');
 
 const cityObj: CityData = {
 name: 'ARDAHAN',
@@ -47,7 +47,7 @@ title: pageTitle,
 meta: [{ name: 'description', content: pageDesc }],
 script: [
 computed(() => {
-if (!districtItem.value) return {}                                                                                                   ;
+if (!districtItem.value) return {}                                                                                                                                                                       ;
 return {
 type: 'application/ld+json',
 children: JSON.stringify({
@@ -77,8 +77,8 @@ children: JSON.stringify({
 }
 })
 ]
-});
-usePageSeo({ title: pageTitle, description: pageDesc });
+})                                                                                                                                                                                                       ;
+usePageSeo({ title: pageTitle, description: pageDesc })                                                                                                                                                  ;
 
 const isValid = computed(() => !!districtItem.value) ;
 

@@ -2583,10 +2583,14 @@ async function getIslandContext(event) {
 	return ctx;
 }
 
+const _lazy_pzRPYN = () => Promise.resolve().then(function () { return _city__get$1; });
+const _lazy_sbvGIU = () => Promise.resolve().then(function () { return postalData_get$1; });
 const _lazy_FLF44k = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
   { route: '', handler: __kamDj, lazy: false, middleware: true, method: undefined },
+  { route: '/api/data/:city', handler: _lazy_pzRPYN, lazy: true, middleware: false, method: "get" },
+  { route: '/api/postal-data', handler: _lazy_sbvGIU, lazy: true, middleware: false, method: "get" },
   { route: '/__nuxt_error', handler: _lazy_FLF44k, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
   { route: '/**', handler: _lazy_FLF44k, lazy: true, middleware: false, method: undefined }
@@ -2927,6 +2931,49 @@ const styles = {};
 const styles$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: styles
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const _city__get = defineCachedEventHandler(async (event) => {
+  const city = getRouterParam(event, "city");
+  if (!city) {
+    throw createError({
+      statusCode: 400,
+      statusMessage: "City parameter is required"
+    });
+  }
+  try {
+    const data = await $fetch(`https://pkodlari.com/data/${city}.json`);
+    return data;
+  } catch (error) {
+    throw createError({
+      statusCode: 404,
+      statusMessage: "City data not found"
+    });
+  }
+}, {
+  maxAge: 60 * 60,
+  // 1 hour
+  name: "city-data",
+  getKey: (event) => `city-data-${getRouterParam(event, "city")}`
+});
+
+const _city__get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _city__get
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const postalData_get = defineCachedEventHandler(async (event) => {
+  const data = await $fetch("https://words-from-life-5cb26-default-rtdb.firebaseio.com/postakodlari.json");
+  return data;
+}, {
+  maxAge: 60 * 60,
+  // 1 hour
+  name: "postal-data"
+});
+
+const postalData_get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: postalData_get
 }, Symbol.toStringTag, { value: 'Module' }));
 
 function renderPayloadResponse(ssrContext) {

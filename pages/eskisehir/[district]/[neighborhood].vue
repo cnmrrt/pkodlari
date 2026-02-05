@@ -9,7 +9,7 @@ const neighborhoodSlug = computed(() => route.params.neighborhood as string) ;
 const copied = ref(false)                                                    ;
 
 const { data: eskisehirData } = await useAsyncData<CityData>('eskisehir-specific-data', async () => {
-const response = await $fetch<any[]>('https://pkodlari.com/data/eskisehir.json');
+const response = await $fetch<any[]>('/api/data/eskisehir');
 
 const cityObj: CityData = {
 name: 'ESKİŞEHİR',
@@ -22,7 +22,7 @@ const nStr = String(item.mahalle || "MERKEZ").trim().toLocaleUpperCase('tr');
 const dSlug = slugify(dStr)                                                   ;
 const nSlug = slugify(nStr)                                                   ;
 const codeStr = String(item.postaKodu || "00000").trim();
-const mapVal = findMapValue(item);
+const mapVal = findMapValue(item)                                             ;
 
 if (!cityObj.districts[dSlug]) {
 cityObj.districts[dSlug] = {
@@ -41,7 +41,7 @@ zipCode: codeStr,
 return cityObj ;
 })             ;
 
-const districtItem = computed(() => eskisehirData.value?.districts[distSlug.value])             ;
+const districtItem = computed(() => eskisehirData.value?.districts[distSlug.value])         ;
 const neighItem = computed(() => districtItem.value?.neighborhoods[neighborhoodSlug.value]) ;
 
 const pageTitle = computed(() => neighItem.value ? `${titleCase(neighItem.value.name)} Posta Kodu` : 'Posta Kodu Bulunamadı');
@@ -51,7 +51,7 @@ title: pageTitle,
 meta: [{ name: 'description', content: pageDesc }],
 script: [
 computed(() => {
-if (!districtItem.value || !neighItem.value) return {}                                                                                                      ;
+if (!districtItem.value || !neighItem.value) return {}                                                                                                                                                                                                     ;
 return {
 type: 'application/ld+json',
 children: JSON.stringify({
@@ -87,8 +87,8 @@ children: JSON.stringify({
 }
 })
 ]
-});
-usePageSeo({ title: pageTitle, description: pageDesc });
+})                                                                                                                                                                                                                                                         ;
+usePageSeo({ title: pageTitle, description: pageDesc })                                                                                                                                                                                                    ;
 
 const isValid = computed(() => !!neighItem.value) ;
 
@@ -106,9 +106,9 @@ navigator.share({
 title: `${titleCase(neighItem.value.name)} Posta Kodu`,
 text: `Eskişehir, ${titleCase(districtItem.value.name)}, ${titleCase(neighItem.value.name)} mahallesinin posta kodu: ${neighItem.value.zipCode}`,
 url: window.location.href,
-})                                                                                                                                            ;
+})                                                                                                                                                 ;
 }
-}                                                                                                                                             ;
+}                                                                                                                                                  ;
 </script>
 
 <template>

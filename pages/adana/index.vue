@@ -4,7 +4,7 @@ import { ArrowLeft, ChevronRight, MapPin } from 'lucide-vue-next';
 import type { CityData } from '~/types';
 
 const { data: adanaData } = await useAsyncData<CityData>('adana-specific-data', async () => {
-const response = await $fetch<any[]>('https://pkodlari.com/data/adana.json');
+const response = await $fetch<any[]>('/api/data/adana');
 
 const cityObj: CityData = {
 name: 'ADANA',
@@ -62,8 +62,8 @@ children: JSON.stringify({
 })
 }
 ]
-});
-usePageSeo({ title: pageTitle, description: pageDesc });
+})                                                                                                                                                                                              ;
+usePageSeo({ title: pageTitle, description: pageDesc })                                                                                                                                         ;
 
 const districts = computed(() => {
 if (!adanaData.value) return []                                                                              ;

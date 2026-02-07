@@ -761,6 +761,13 @@
         "mahalle": "Afatlar Mahallesi / Yazıköy Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Afatlar Yayla Mahallesi / Yazıköy Köyü",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
     }
 
 ]

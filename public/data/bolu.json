@@ -795,6 +795,13 @@
         "mahalle": "Aktaş Mahallesi / Aktaşkurtlar Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Apsarı Mahallesi / Yeşilvadi Köyü",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
     }
 
 ]

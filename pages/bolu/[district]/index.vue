@@ -40,8 +40,8 @@ return cityObj ;
 
 const districtItem = computed(() => boluData.value?.districts[distSlug.value]) ;
 
-const pageTitle = computed(() => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodları - Ağrı` : 'İlçe Bulunamadı');
-const pageDesc = computed(() => districtItem.value ? `Ağrı ${titleCase(districtItem.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!` : 'Posta Kodu Rehberi');
+const pageTitle = computed(() => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodları - Bolu` : 'İlçe Bulunamadı');
+const pageDesc = computed(() => districtItem.value ? `Bolu ${titleCase(districtItem.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!` : 'Posta Kodu Rehberi');
 useHead({
 title: pageTitle,
 meta: [{ name: 'description', content: pageDesc }],
@@ -63,7 +63,7 @@ children: JSON.stringify({
 {
 "@type": "ListItem",
 "position": 2,
-"name": "Ağrı",
+"name": "Bolu",
 "item": `https://postakodu.com/bolu`
 },
 {
@@ -98,7 +98,7 @@ return items
 <NuxtLink to="/bolu" class="text-slate-400 hover:text-slate-900 transition-colors"><ArrowLeft class="w-5 h-5" /></NuxtLink>
 <div>
 <h1 class="text-3xl font-bold text-slate-900 tracking-tight">{{ titleCase(districtItem.name) }} Posta Kodları</h1>
-<p class="text-slate-500 text-sm font-medium uppercase tracking-wider">AĞRI</p>
+<p class="text-slate-500 text-sm font-medium uppercase tracking-wider">BOLU</p>
 </div>
 </div>
 <div class="relative w-full md:w-64">

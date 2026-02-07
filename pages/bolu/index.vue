@@ -55,7 +55,7 @@ children: JSON.stringify({
 {
 "@type": "ListItem",
 "position": 2,
-"name": "Ağrı",
+"name": "Bolu",
 "item": `https://postakodu.com/bolu`
 }
 ]

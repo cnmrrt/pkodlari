@@ -41,7 +41,7 @@ return cityObj ;
 const districtItem = computed(() => aydinData.value?.districts[distSlug.value]) ;
 
 const pageTitle = computed(() => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodları - aydin` : 'İlçe Bulunamadı');
-const pageDesc = computed(() => districtItem.value ? `aydin ${titleCase(districtItem.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!` : 'Posta Kodu Rehberi');
+const pageDesc = computed(() => districtItem.value ? `Aydin ${titleCase(districtItem.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!` : 'Posta Kodu Rehberi');
 useHead({
 title: pageTitle,
 meta: [{ name: 'description', content: pageDesc }],

@@ -977,6 +977,24 @@
         "mahalle": "Demirciler Mahallesi",
         "postaKodu": "14900",
         "semt": "Gerede"
+    },{
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Demirciler OSB Mahallesi",
+        "postaKodu": "14900",
+        "semt": "Gerede"
+    },{
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Dere Mahallesi (Merkez Mahallesi) / Çayörengüney Köyü",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },{
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Dere Mahallesi / Kapaklı Köyü",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
     }
 
 ]

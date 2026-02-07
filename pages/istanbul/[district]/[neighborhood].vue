@@ -169,6 +169,11 @@ class="flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-co
 <div v-if="neighItem.mapCode.trim().startsWith('<')" v-html="neighItem.mapCode" class="w-full aspect-video rounded-2xl overflow-hidden [&>iframe]:w-full [&>iframe]:h-full"></div>
 <iframe v-else :src="neighItem.mapCode" class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100" loading="lazy"></iframe>
 </div>
+
+<div class="mt-8 text-center mb-8">
+    <h2 class="text-xl font-bold text-slate-900 mb-2">{{ neighItem.zipCode }} nerenin posta kodu?</h2>
+    <p class="text-slate-600">{{ neighItem.zipCode }} posta kodu İstanbul {{ titleCase(districtItem.name) }} {{ titleCase(neighItem.name) }}'ne aittir.</p>
+</div>
 </div>
 
 <div v-else class="max-w-2xl mx-auto py-12 text-center text-slate-500">

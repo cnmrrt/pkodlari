@@ -941,6 +941,18 @@
         "mahalle": "Çongallar Mahallesi / Macarlar Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
+    },{
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Çukur Mahallesi / Yunuslar Köyü",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },{
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Dayıoğlu Mahallesi",
+        "postaKodu": "14900",
+        "semt": "Gerede"
     }
 
 ]

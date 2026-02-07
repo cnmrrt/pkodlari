@@ -851,6 +851,12 @@
         "mahalle": "Bahçelievler Mahallesi",
         "postaKodu": "14900",
         "semt": "Gerede"
+    },{
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Baltacılar Mahallesi / Örencik Köyü",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
     }
 
 ]

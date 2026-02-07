@@ -839,6 +839,18 @@
         "mahalle": "Avlasızgil Mahallesi / Karacadağdemirciler Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
+    },{
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Ayvatlar Mahallesi / Göynükören Köyü",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },{
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Bahçelievler Mahallesi",
+        "postaKodu": "14900",
+        "semt": "Gerede"
     }
 
 ]

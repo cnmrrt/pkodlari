@@ -1,0 +1,766 @@
+[
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Adakınık Mahallesi",
+        "postaKodu": "14910",
+        "semt": "Dörtdivan"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Adaköy Köyü/Adaköy Merkez Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Adaköy Köyü/Nahçıvan Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Aşağıdüğer Köyü/Aşağıdüğer Merkez Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Aşağıdüğer Köyü/Aşağıdüğer Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Aşağısayık Köyü/Aşağısayık Merkez Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Aşağısayık Köyü/Çukurca Aladağı Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Aşağısayık Köyü/Hasinler Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Aşağısayık Köyü/Mandıra Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Aşağısayık Köyü/Yayla Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Bayramlar Mahallesi",
+        "postaKodu": "14910",
+        "semt": "Dörtdivan"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Bünüş Köyü/Batı Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Bünüş Köyü/Bünüş Aladağı Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Bünüş Köyü/Bünüş Mandırası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Bünüş Köyü/Bünüş Merkez Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Bünüş Köyü/Göl Yayla Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Çalköy Köyü/Çalköy Beydüşlüh Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Çalköy Köyü/Çalköy Köroğlu Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Çalköy Köyü/Çalköy Merkez Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Çardak Köyü",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Çardak Köyü/Çardak Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Çavuşlar Mahallesi",
+        "postaKodu": "14910",
+        "semt": "Dörtdivan"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Cemaller Köyü/Cemaller Çiçekli Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Cemaller Köyü/Cemaller Hokak Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Cemaller Köyü/Cemaller Karagöz Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Cemaller Köyü/Cemaller Kirazlı Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Cemaller Köyü/Cemaller Merkez Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Çetikören Köyü/Çetikören Aladağ Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Çetikören Köyü/Çetikören Gökçe Alan Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Çetikören Köyü/Çetikören Kirazlı Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Çetikören Köyü/Çetikören Mandıraları Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Çetikören Köyü/Konaklar Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Çetikören Köyü/Tepecik Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Çitler Mahallesi",
+        "postaKodu": "14910",
+        "semt": "Dörtdivan"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Deveciler Mahallesi",
+        "postaKodu": "14910",
+        "semt": "Dörtdivan"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Doğancılar Köyü/Aşağı Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Doğancılar Köyü/Aşağı Yayla Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Doğancılar Köyü/Bayır Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Doğancılar Köyü/Gerede Yolu Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Doğancılar Köyü/İmamlar Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Doğancılar Köyü/Kadırlı Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Doğancılar Köyü/Karaçayır Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Doğancılar Köyü/Şahallar Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Doğancılar Köyü/Tabaklar Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Doğancılar Köyü/Uzunlar Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Dülger Köyü/Aşağıdülger Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Dülger Köyü/Dülger Merkez Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Dülger Köyü/Dülger Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Göbüler Köyü/Aşağı Yayla Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Göbüler Köyü/Göbüler Merkez Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Göbüler Köyü/Softalar Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Göbüler Köyü/Yukarı Yayla Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Gücükler Köyü/Gücükler Merkez Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Gücükler Köyü/Gücükler Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Gücükler Köyü/Karslar Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Hacetler Mahallesi",
+        "postaKodu": "14910",
+        "semt": "Dörtdivan"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Kadılar Mahallesi",
+        "postaKodu": "14910",
+        "semt": "Dörtdivan"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Kargıbayramlar Mahallesi",
+        "postaKodu": "14910",
+        "semt": "Dörtdivan"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Kılıçlar Köyü/Kılıçlar Merkez Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Kılıçlar Köyü/Kılıçlar Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Kılıçlar Köyü/Kuzköy Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Kuruca Köyü",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Kuruca Köyü/Kuruca Çampınar Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Ömerpaşalar Köyü/Aşağı Yayla Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Ömerpaşalar Köyü/Azaplar Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Ömerpaşalar Köyü/Çimencik Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Ömerpaşalar Köyü/Gerede Yolu Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Ömerpaşalar Köyü/Ömerpaşalar Merkez Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Ömerpaşalar Köyü/Yeni Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Ortaköy Köyü/Kirazlı Yayla Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Ortaköy Köyü/Ortaköy Merkez Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Ortaköy Köyü/Yaslıcalı Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Seyitaliler Köyü/Aladağ Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Seyitaliler Köyü/Aşağı Yayla Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Seyitaliler Köyü/Nuhören Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Seyitaliler Köyü/Seyitaliler Merkez Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Sorkun Köyü/Aladağ Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Sorkun Köyü/Aşağı Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Sorkun Köyü/Aşağı Mandıra Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Sorkun Köyü/Bıçkı Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Sorkun Köyü/Göllü Yayla Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Sorkun Köyü/Yeni Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Sorkun Köyü/Yukarı Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Sorkun Köyü/Yukarı Mandıra Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Süleler Köyü/Aladağ Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Süleler Köyü/Aşağı Yayla Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Süleler Köyü/Çampınar Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Süleler Köyü/Süleler Merkez Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yağbaşlar Köyü/Kabaklar Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yağbaşlar Köyü/Kabaklar Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yağbaşlar Köyü/Mursallar Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yağbaşlar Köyü/Mursallar Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yağbaşlar Köyü/Yağbaşlar Merkez Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yağbaşlar Köyü/Yağbaşlar Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yalacık Köyü",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yalacık Köyü/Çampınar Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yalacık Köyü/Yalacık Aşağı Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yalacık Köyü/Yalacık Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yayalar Köyü",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yayalar Köyü/Yağbaşlar Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yukarıdüğer Köyü/Aladağ Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yukarıdüğer Köyü/Aşağı Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yukarıdüğer Köyü/Aşağı Yayla Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yukarıdüğer Köyü/Yeni Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yukarıdüğer Köyü/Yukarı Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yukarısayık Köyü/Aşağı Yayla Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yukarısayık Köyü/Çukurca Yaylası Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Dörtdivan",
+        "mahalle": "Yukarısayık Köyü/Yukarısayık Merkez Mahallesi",
+        "postaKodu": "14912",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Afatlar Mahallesi / Yazıköy Köyü",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    }
+
+]

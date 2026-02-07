@@ -821,6 +821,24 @@
         "mahalle": "Aşağı Mahallesi / Nuhören Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
+    },{
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Aşağı Yayla Mahallesi / Göynükören Köyü",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },{
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Avcılar Mahallesi / Yukarıörenbaşı Köyü",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },{
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Avlasızgil Mahallesi / Karacadağdemirciler Köyü",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
     }
 
 ]

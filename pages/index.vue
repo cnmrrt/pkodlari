@@ -53,7 +53,7 @@ class="soft-card p-4 rounded-xl text-center">
 </a>
 <a href="/amasya" class="soft-card p-4 rounded-xl text-center">
 <div class="font-semibold text-slate-900 text-sm truncate">Amasya</div>
-<div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">2 İLÇE </div>
+<div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">3 İLÇE </div>
 </a>
 <a href="/ankara" class="soft-card p-4 rounded-xl text-center">
 <div class="font-semibold text-slate-900 text-sm truncate">Ankara</div>

@@ -953,6 +953,30 @@
         "mahalle": "Dayıoğlu Mahallesi",
         "postaKodu": "14900",
         "semt": "Gerede"
+    },{
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Demirci Mahallesi / Külef Köyü",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },{
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Demirci Mahallesi / Yukarıörenbaşı Köyü",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },{
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Demirci Mahallesi (Merkez Mahallesi) / Güneydemirciler Köyü",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },{
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Demirciler Mahallesi",
+        "postaKodu": "14900",
+        "semt": "Gerede"
     }
 
 ]

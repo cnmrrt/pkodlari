@@ -768,14 +768,16 @@
         "mahalle": "Afatlar Yayla Mahallesi / Yazıköy Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Ağagil Mahallesi / Karacadağdemirciler Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler",
         "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3018.715287643552!2d32.46257312687962!3d40.83421698012334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x408325cf85b27f15%3A0xf8c8479318c763a4!2sA%C4%9Fagil%2C%2014902%20Karacada%C4%9Fdemirciler%2FGerede%2FBolu!5e0!3m2!1sen!2str!4v1770425670658!5m2!1sen!2str\"width=\"600\"height=\"450\"style=\"border:0;\"allowfullscreen=\"\"loading=\"lazy\"referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Akçagil Mahallesi / Çağış Köyü",
@@ -802,13 +804,15 @@
         "mahalle": "Apsarı Mahallesi / Yeşilvadi Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Aşağı Mahallesi / Balcılar Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Aşağı Mahallesi / Bünüş Köyü",
@@ -821,198 +825,452 @@
         "mahalle": "Aşağı Mahallesi / Nuhören Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Aşağı Yayla Mahallesi / Göynükören Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Avcılar Mahallesi / Yukarıörenbaşı Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Avlasızgil Mahallesi / Karacadağdemirciler Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Ayvatlar Mahallesi / Göynükören Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Bahçelievler Mahallesi",
         "postaKodu": "14900",
         "semt": "Gerede"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Baltacılar Mahallesi / Örencik Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Battallar Mahallesi / Aydınlar Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Bıçakcılar Mahallesi / Güneydemirciler Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Bıçakcılar Yayla Mahallesi / Güneydemirciler Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Birinciafşar Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Bozkuş Mahallesi / Aktaşkurtlar Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Bozuklar Mahallesi / Davutbeyli Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Burgucu Mahallesi / Eymir Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Çağış Mahallesi / Çağış Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Çağış Yaylası Mahallesi / Çağış Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Çalga Mahallesi / Asmaca Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Çengeller Mahallesi / Muratfakılar Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Çengeller Yayla Mahallesi / Muratfakılar Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Çobanlar Mahallesi / Göynükören Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Çongallar Mahallesi / Macarlar Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Çukur Mahallesi / Yunuslar Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Dayıoğlu Mahallesi",
         "postaKodu": "14900",
         "semt": "Gerede"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Demirci Mahallesi / Külef Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Demirci Mahallesi / Yukarıörenbaşı Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Demirci Mahallesi (Merkez Mahallesi) / Güneydemirciler Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Demirciler Mahallesi",
         "postaKodu": "14900",
         "semt": "Gerede"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Demirciler OSB Mahallesi",
         "postaKodu": "14900",
         "semt": "Gerede"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Dere Mahallesi (Merkez Mahallesi) / Çayörengüney Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Dere Mahallesi / Kapaklı Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Dere Mahallesi / Karacadağdemirciler Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Dereköy Mahallesi / Karacadağ Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    },{
+    },
+    {
         "il": "Bolu",
         "ilce": "Gerede",
         "mahalle": "Deveyatağı Yaylası Mahallesi / Karapazar Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
-    }
-
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Deyişler Mahallesi (Sofular Köyü)",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Deyişler Yaylası Mahallesi (Sofular Köyü)",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Doğancılar Mahallesi (Akçabey Köyü)",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Dümenler Mahallesi (Geçitler Köyü)",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Dümenler Yayla Mahallesi (Geçitler Köyü)",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Dursunlar Mahallesi (Yakakaya Köyü)",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Ecinlioğlu Mahallesi (Macarlar Köyü)",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Ekmenler Mahallesi (Bahçedere Köyü)",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Eminağa Mahallesi (Beşkonak Köyü)",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Emirler Mahallesi (Sungurlar Köyü)",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Evrenler Mahallesi (Yakakaya Köyü)",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Fadıllar Mahallesi (Beşkonak Köyü)",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Gaziler Mahallesi (Güneydemirciler Köyü)",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Gaziler Yayla Mahallesi (Güneydemirciler Köyü)",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Gökçeler Mahallesi (Bahçedere Köyü)",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Gölcük Mahallesi (Aktaş Köyü)",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Gözümler Mahallesi (Demircisopran Köyü)",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Güney Mahallesi (Çayörengüney Köyü)",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },{
+    "il": "Bolu",
+    "ilce": "Gerede",
+    "mahalle": "Hacı İpekler Mahallesi (Güneydemirciler Köyü)",
+    "postaKodu": "14902",
+    "semt": "Merkezköyler"
+  },
+  {
+    "il": "Bolu",
+    "ilce": "Gerede",
+    "mahalle": "Hacı Muslar Mahallesi (Demircisopran Köyü)",
+    "postaKodu": "14902",
+    "semt": "Merkezköyler"
+  },
+  {
+    "il": "Bolu",
+    "ilce": "Gerede",
+    "mahalle": "Hatiplar Mahallesi (Enseliler Köyü)",
+    "postaKodu": "14902",
+    "semt": "Merkezköyler"
+  },
+  {
+    "il": "Bolu",
+    "ilce": "Gerede",
+    "mahalle": "İmamlar Mahallesi (Karacadağdemirciler Köyü)",
+    "postaKodu": "14902",
+    "semt": "Merkezköyler"
+  },
+  {
+    "il": "Bolu",
+    "ilce": "Gerede",
+    "mahalle": "İmanlar Mahallesi (Bahçedere Köyü)",
+    "postaKodu": "14902",
+    "semt": "Merkezköyler"
+  },
+  {
+    "il": "Bolu",
+    "ilce": "Gerede",
+    "mahalle": "İmreşe Mahallesi (Mankallar Köyü)",
+    "postaKodu": "14902",
+    "semt": "Merkezköyler"
+  },
+  {
+    "il": "Bolu",
+    "ilce": "Gerede",
+    "mahalle": "Işıklı Mahallesi (Ulaşlar Köyü)",
+    "postaKodu": "14902",
+    "semt": "Merkezköyler"
+  },
+  {
+    "il": "Bolu",
+    "ilce": "Gerede",
+    "mahalle": "Ispahlar Mahallesi (Sipahiler Köyü)",
+    "postaKodu": "14902",
+    "semt": "Merkezköyler"
+  },
+  {
+    "il": "Bolu",
+    "ilce": "Gerede",
+    "mahalle": "Kabaklar Mahallesi (Güneydemirciler Köyü)",
+    "postaKodu": "14902",
+    "semt": "Merkezköyler"
+  },
+  {
+    "il": "Bolu",
+    "ilce": "Gerede",
+    "mahalle": "Kabiller Mahallesi",
+    "postaKodu": "14900",
+    "semt": "Gerede"
+  },
+  {
+    "il": "Bolu",
+    "ilce": "Gerede",
+    "mahalle": "Kadimler Mahallesi (Ortaca Köyü)",
+    "postaKodu": "14902",
+    "semt": "Merkezköyler"
+  },
+  {
+    "il": "Bolu",
+    "ilce": "Gerede",
+    "mahalle": "Kandak Mahallesi (Davutbeyli Köyü)",
+    "postaKodu": "14902",
+    "semt": "Merkezköyler"
+  },
+  {
+    "il": "Bolu",
+    "ilce": "Gerede",
+    "mahalle": "Kapçı Evi Mahallesi (Çağış Köyü)",
+    "postaKodu": "14902",
+    "semt": "Merkezköyler"
+  },
+  {
+    "il": "Bolu",
+    "ilce": "Gerede",
+    "mahalle": "Karakuz Mahallesi (Ertuğrulköy Köyü)",
+    "postaKodu": "14902",
+    "semt": "Merkezköyler"
+  }
 ]

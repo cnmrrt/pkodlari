@@ -84,6 +84,21 @@ class="soft-card p-4 rounded-xl text-center">
 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">1 İLÇE </div>
 </a>
 
+<a href="/bingol" class="soft-card p-4 rounded-xl text-center">
+<div class="font-semibold text-slate-900 text-sm truncate">Bingöl</div>
+<div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">1 İLÇE </div>
+</a>
+
+<a href="/bitlis" class="soft-card p-4 rounded-xl text-center">
+<div class="font-semibold text-slate-900 text-sm truncate">Bitlis</div>
+<div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">1 İLÇE </div>
+</a>
+
+<a href="/bolu" class="soft-card p-4 rounded-xl text-center">
+<div class="font-semibold text-slate-900 text-sm truncate">Bolu</div>
+<div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">5 İLÇE </div>
+</a>
+
 <a href="/bartin" class="soft-card p-4 rounded-xl text-center">
 <div class="font-semibold text-slate-900 text-sm truncate">Bartın</div>
 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">4 İLÇE </div>
@@ -95,17 +110,6 @@ class="soft-card p-4 rounded-xl text-center">
 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">1 İLÇE </div>
 </a>
 
-<a href="/bingol" class="soft-card p-4 rounded-xl text-center">
-<div class="font-semibold text-slate-900 text-sm truncate">Bingöl</div>
-<div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">1 İLÇE </div>
-</a><a href="/bitlis" class="soft-card p-4 rounded-xl text-center">
-<div class="font-semibold text-slate-900 text-sm truncate">Bitlis</div>
-<div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">1 İLÇE </div>
-</a>
-<a href="/bolu" class="soft-card p-4 rounded-xl text-center">
-<div class="font-semibold text-slate-900 text-sm truncate">Bolu</div>
-<div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">4 İLÇE </div>
-</a>
 <a href="/burdur" class="soft-card p-4 rounded-xl text-center">
 <div class="font-semibold text-slate-900 text-sm truncate">Burdur</div>
 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">1 İLÇE </div>

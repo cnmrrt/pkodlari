@@ -995,6 +995,18 @@
         "mahalle": "Dere Mahallesi / Kapaklı Köyü",
         "postaKodu": "14902",
         "semt": "Merkezköyler"
+    },{
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Dere Mahallesi / Karacadağdemirciler Köyü",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
+    },{
+        "il": "Bolu",
+        "ilce": "Gerede",
+        "mahalle": "Dereköy Mahallesi / Karacadağ Köyü",
+        "postaKodu": "14902",
+        "semt": "Merkezköyler"
     }
 
 ]

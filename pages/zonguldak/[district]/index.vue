@@ -98,7 +98,7 @@ return items
 <NuxtLink to="/zonguldak" class="text-slate-400 hover:text-slate-900 transition-colors"><ArrowLeft class="w-5 h-5" /></NuxtLink>
 <div>
 <h1 class="text-3xl font-bold text-slate-900 tracking-tight">{{ titleCase(districtItem.name) }} Posta Kodları</h1>
-<p class="text-slate-500 text-sm font-medium uppercase tracking-wider">ZONGULDAK</p>
+<p class="text-slate-500 text-sm font-medium uppercase tracking-wider">AĞRI</p>
 </div>
 </div>
 <div class="relative w-full md:w-64">

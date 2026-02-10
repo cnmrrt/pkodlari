@@ -117,7 +117,7 @@ url: window.location.href,
 <nav class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-8 overflow-x-auto whitespace-nowrap pb-2">
 <NuxtLink to="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</NuxtLink>
 <ChevronRight class="w-3 h-3" />
-<NuxtLink to="/zonguldak" class="hover:text-slate-900 transition-colors">AĞRI</NuxtLink>
+<NuxtLink to="/zonguldak" class="hover:text-slate-900 transition-colors">ZONGULDAK</NuxtLink>
 <ChevronRight class="w-3 h-3" />
 <NuxtLink :to="`/zonguldak/${distSlug}`" class="hover:text-slate-900 transition-colors">{{ titleCase(districtItem.name) }}</NuxtLink>
 </nav>
@@ -128,7 +128,7 @@ url: window.location.href,
 <MapPin class="w-6 h-6 text-slate-900" />
 </div>
 <h1 class="text-4xl font-bold text-slate-900 mb-2 tracking-tight">{{ titleCase(neighItem.name) }}</h1>
-<p class="text-slate-500 font-medium uppercase tracking-widest text-sm">{{ titleCase(districtItem.name) }}, AĞRI</p>
+<p class="text-slate-500 font-medium uppercase tracking-widest text-sm">{{ titleCase(districtItem.name) }}, ZONGULDAK</p>
 </div>
 
 <div class="bg-slate-50 rounded-3xl p-8 text-center relative overflow-hidden">

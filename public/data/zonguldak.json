@@ -6,5 +6,36 @@
         "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6010.552597166755!2d31.44265369886484!3d41.12849396670068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409c55d1fc8e5df5%3A0x940d64f0de8a5a2!2zQWJhY8SxbGFyLCA2Nzg1MiDDh2FtY8SxbGFyL0FsYXBsxLEvWm9uZ3VsZGFr!5e0!3m2!1sen!2str!4v1770311063585!5m2!1sen!2str\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
         "postaKodu": 67852,
         "semt": "Merkezköyler"
+    },
+    {
+        "il": "Zonguldak",
+        "ilçe": "Alaplı",
+        "mahalle": "Ahiler Mahallesi / Alioğlu Köyü",
+        "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6006.854690227228!2d31.482205598870316!3d41.168845461706866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409c5707660cebb7%3A0x9e1cc1834a0f8ea6!2sAhiler%2C%2067852%20Alio%C4%9Flu%2FAlapl%C4%B1%2FZonguldak!5e0!3m2!1sen!2str!4v1770310865263!5m2!1sen!2str\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "postaKodu": 67852,
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Zonguldak",
+        "ilce": "Alaplı",
+        "mahalle": "Alaplıbölücek Köyü",
+        "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6009.109075944148!2d31.397773548866894!3d41.144249514751124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409c5407a4bc1a81%3A0xb6a1733aab7ad964!2zNjc4NTIgQWxhcGzEsWLDtmzDvGNlay9BbGFwbMSxL1pvbmd1bGRhaw!5e0!3m2!1sen!2str!4v1770326679930!5m2!1sen!2str\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "postaKodu": 67852,
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Zonguldak",
+        "ilce": "Alaplı",
+        "mahalle": "Aşağıdağ Mahallesi / Aşağıdağ Köyü",
+        "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.3874570124494!2d31.50069657688861!3d41.126067012162274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409cf8ab77000cad%3A0x670df24bb0bed532!2zQcWfYcSfxLFkYcSfa8O2eSwgQcWfYcSfxLFkYcSfL0FsYXBsxLEvWm9uZ3VsZGFr!5e0!3m2!1sen!2str!4v1770399228493!5m2!1sen!2str\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "postaKodu": 67852,
+        "semt": "Merkezköyler"
+    },
+    {
+        "il": "Zonguldak",
+        "ilce": "Alaplı",
+        "mahalle": "Aşağıdoğancılar Mahallesi",
+        "postaKodu": 67850,
+        "semt": "Alaplı"
     }
 ]

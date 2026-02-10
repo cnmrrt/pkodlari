@@ -1,0 +1,982 @@
+[
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Aksaray Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Aksüt Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Aktepe Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Aliçeri Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Altunlu Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Ancar Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Aşağıörükçü Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Aydınlar Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Bağköy Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Bahri Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Başpınar Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Bayramuşağı Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Bekiruşağı Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Bölüklü Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Büyükçimiş Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Büyükköy Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Çakıllıpınar Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Çatalbahçe Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Çevirme Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Çobanuşağı Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Darıca Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Dedeköy Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Demirciler Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Develi Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Doğanlar Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Doğantepe Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Doğu Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Dümüklü Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Durulova Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Dutlu Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Eğin Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Esenbey Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Esenli Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Fatih Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Gölpınar Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Güneşli Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Gürkaynak Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Hançerli Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Hartut Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Harunuşağı Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "İkinciler Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Ilıcak Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Kadıibrahim Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Kahyali Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Karamağara Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Karapınar Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Kasımuşağı Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Kayadibi Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Keklikpınarı Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Keller Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Kepez Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Kolköy Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Kömekavak Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Kotangölü Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Kozluca Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Küçükkürne Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Kültür Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Kurtuşağı Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Levent Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Mezra Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Mihmanlı Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Muratlı Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Ören Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Ortaköy Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Resuluşağı Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Sahilköy Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Sakalıuzun Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Sarıhacı Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Şeyhler Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Taşevler Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Taşolar Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Tataruşağı Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Yağmurlu Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Yalınbudak Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Yalınkaya Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Yaylımlı Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Akçadağ",
+        "mahalle": "Yukarıörükçü Mahallesi",
+        "postaKodu": "44600",
+        "semt": "Akçadağ"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Aktaş Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Aliçli Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Aşağıçörengeme Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Aşağıulupınar Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Aşağıyenice Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Berenger Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Boğazlı Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Bostancık Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Budak Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Çakırsu Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Çarşı Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Çaybaşı Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Çiğnir Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Çimen Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Çobanlı Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Cömertli Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Deregezen Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Düzce Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Eğnir Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Esikli Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Eskiarapgir Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Gebeli Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Göz Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Gözeli Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Günüzü Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Hezenek Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Hocaali Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Kayakesen Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Kaynak Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Kazanç Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Kılıçlı Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Konducak Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Koru Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Köseoğlu Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Mehmetakif Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Meşeli Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Onar Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Ormansırtı Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Osmanpaşa Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Pacalı Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Piralı Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Şağıluşağı Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Sekizsu Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Selamlı Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Serge Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Sıhlar Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Sinikli Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Sipahiuşağı Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Suceyin Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Sugeçti Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Tarhan Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Taşdelen Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Taşdibek Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Ulaçlı Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Yaylacık Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Yazılı Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Yeni Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Yeşilyayla Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Yukarıçörenge Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Yukarıulupınar Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Yukarıyabanlı Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Yukarıyenice Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    },
+    {
+        "il": "Malatya",
+        "ilce": "Arapgir",
+        "mahalle": "Zöhrap Mahallesi",
+        "postaKodu": "44800",
+        "semt": "Arapgir"
+    }
+]

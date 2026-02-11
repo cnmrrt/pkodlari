@@ -334,7 +334,8 @@
         "plaka": "59",
         "postaKodu": "59850",
         "semt": "Çorlu"
-    },{
+    },
+    {
         "il": "Tekirdağ",
         "ilce": "Ergene",
         "mahalle": "Ahimehmet Mahallesi",
@@ -2641,6 +2642,7 @@
         "il": "Tekirdağ",
         "ilce": "Şarköy",
         "mahalle": "Kızılcaterzi Mahallesi",
+        "map": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3029.9331731737543!2d26.981536761919394!3d40.58723047129337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b3e4ac8a10a829%3A0x12fb500f1a19be14!2zS8SxesSxbGNhdGVyemksIDU5ODAwIMWeYXJrw7Z5L1Rla2lyZGHEnw!5e0!3m2!1sen!2str!4v1770841214550!5m2!1sen!2str' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
         "postaKodu": "59800",
         "semt": "Şarköy"
     },

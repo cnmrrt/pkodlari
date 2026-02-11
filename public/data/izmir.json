@@ -1,0 +1,991 @@
+[
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Aşağışakran Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Atatürk Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "B. Hayrettin Paşa Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Bahçedere Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Bozköy Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Çakmaklı Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Çaltılıdere Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Çıtak Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Çoraklar Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Fatih Mahallesi",
+        "postaKodu": 35820,
+        "semt": "Helvaci"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Güzelhisar Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Hacıömerli Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Horozgediği Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Kalabak Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Kapukaya Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Karaköy Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Karakuzu Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Kazım Dirik Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Kültür Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Kurtuluş Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Mimar Sinan Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Şakran Hasbi Efendi Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Samurlu Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Şehitkemal Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Siteler Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Uzunhasanlar Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Yalı Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Yeni Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Yukarı Şehitkemal Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Aliağa",
+        "mahalle": "Yüksekköy Mahallesi",
+        "postaKodu": 35800,
+        "semt": "Aliağa"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Balçova",
+        "mahalle": "Bahçelerarası Mahallesi",
+        "postaKodu": 35330,
+        "semt": "Balçova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Balçova",
+        "mahalle": "Çetin Emeç Mahallesi",
+        "postaKodu": 35330,
+        "semt": "Balçova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Balçova",
+        "mahalle": "Eğitim Mahallesi",
+        "postaKodu": 35330,
+        "semt": "Balçova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Balçova",
+        "mahalle": "Fevzi Çakmak Mahallesi",
+        "postaKodu": 35330,
+        "semt": "Balçova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Balçova",
+        "mahalle": "İnciraltı Mahallesi",
+        "postaKodu": 35330,
+        "semt": "Balçova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Balçova",
+        "mahalle": "Korutürk Mahallesi",
+        "postaKodu": 35330,
+        "semt": "Balçova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Balçova",
+        "mahalle": "Onur Mahallesi",
+        "postaKodu": 35330,
+        "semt": "Balçova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Balçova",
+        "mahalle": "Teleferik Mahallesi",
+        "postaKodu": 35330,
+        "semt": "Balçova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Alankıyı Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Alanköy Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Arikbaşı Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Atatürk Mahallesi",
+        "postaKodu": 35845,
+        "semt": "Canlı"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Balcılar Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Bıyıklar Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Buruncuk Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Camii Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Çamlıbel Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Çenikler Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Çiftçigediği Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Çınar Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Çınardibi Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Çırpi Camii Mahallesi",
+        "postaKodu": 35843,
+        "semt": "Çırpi"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Cumhuriyet Mahallesi",
+        "postaKodu": 35845,
+        "semt": "Canlı"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Demircilik Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Dereköy Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Dernekli Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Elifli Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Ergenli Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Fatih Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Fırınlı Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Gaziler Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Hacı Beşir Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Hacı İbrahim Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Hasköy Mahallesi",
+        "postaKodu": 35843,
+        "semt": "Çırpi"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Hatay Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Havuzbaşı Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Hisarlık Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "İbrahimçavuş Mahallesi",
+        "postaKodu": 35843,
+        "semt": "Çırpi"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Kabağaç Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Karahalilli Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Karapınar Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Karavelliler Mahallesi",
+        "postaKodu": 35845,
+        "semt": "Canlı"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Kızılcaağaç Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Kızılcaova Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Kızılkeçili Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Kızıloba Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Kurt Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Lütüflar Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Mektep Mahallesi",
+        "postaKodu": 35843,
+        "semt": "Çırpi"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Mithatpaşa Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Necati Uza Mahallesi",
+        "postaKodu": 35843,
+        "semt": "Çırpi"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Orta Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Osmanlar Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Pınarlı Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Sadıkpaşa Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Sarıyurt Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Söğütören Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Tokatbaşı Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Turan Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Yakacık Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Yakapınar Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Yeni Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Yenice Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Yeşilova Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Yusuflu Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bayındır",
+        "mahalle": "Zeytinova Mahallesi",
+        "postaKodu": 35840,
+        "semt": "Bayındır"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Atatürk Mahallesi",
+        "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99965.95444189021!2d27.167925493283885!3d38.46603705244878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b97c847c2ade23%3A0xc9ef319820d8565c!2zQm9ybm92YS_EsHptaXI!5e0!3m2!1sen!2str!4v1707873735271!5m2!1sen!2str\"width=\"600\"height=\"450\"style=\"border:0;\"allowfullscreen=\"\"loading=\"lazy\"referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "postaKodu": "35030",
+        "semt": "Atatürk"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Barbaros Mahallesi",
+        "postaKodu": "35090",
+        "semt": "Çamdibi"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Beşyol Mahallesi",
+        "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1560.4767490974712!2d27.29183503903853!3d38.534840091054946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b979166f73ef2b%3A0x358072199c19284c!2zQmXFn3lvbCwgMzUwNDAgQm9ybm92YS_EsHptaXI!5e0!3m2!1sen!2str!4v1770370055174!5m2!1sen!2str\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "postaKodu": "35040",
+        "semt": "Bornova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Birlik Mahallesi",
+        "postaKodu": "35080",
+        "semt": "Altındağ"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Çamiçi Mahallesi",
+        "postaKodu": "35040",
+        "semt": "Bornova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Çamkule Mahallesi",
+        "postaKodu": "35080",
+        "semt": "Altındağ"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Çiçekli Mahallesi",
+        "postaKodu": "35040",
+        "semt": "Bornova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Çınar Mahallesi",
+        "postaKodu": "35090",
+        "semt": "Çamdibi"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Doğanlar Mahallesi",
+        "postaKodu": "35050",
+        "semt": "Naldöken"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Egemenlik Mahallesi",
+        "postaKodu": "35070",
+        "semt": "Işıkkent"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Eğridere Mahallesi",
+        "postaKodu": "35040",
+        "semt": "Bornova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Ergene Mahallesi",
+        "postaKodu": "35040",
+        "semt": "Bornova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Erzene Mahallesi",
+        "postaKodu": "35040",
+        "semt": "Bornova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Evka 3 Mahallesi",
+        "postaKodu": "35050",
+        "semt": "Naldöken"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Evka 4 Mahallesi",
+        "postaKodu": "35030",
+        "semt": "Atatürk"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Gazi Osman Paşa Mahallesi",
+        "postaKodu": "35090",
+        "semt": "Çamdibi"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Gökdere Mahallesi",
+        "postaKodu": "35040",
+        "semt": "Bornova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Gürpınar Mahallesi",
+        "postaKodu": "35060",
+        "semt": "Pınarbaşı"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "İnönü Mahallesi",
+        "postaKodu": "35030",
+        "semt": "Atatürk"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Işıklar Mahallesi",
+        "postaKodu": "35070",
+        "semt": "Işıkkent"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Karaçam Mahallesi",
+        "postaKodu": "35040",
+        "semt": "Bornova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Karacaoğlan Mahallesi",
+        "postaKodu": "35070",
+        "semt": "Işıkkent"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Kavaklıdere Mahallesi",
+        "postaKodu": "35040",
+        "semt": "Bornova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Kayadibi Mahallesi",
+        "postaKodu": "35040",
+        "semt": "Bornova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Kazımdirik Mahallesi",
+        "postaKodu": "35100",
+        "semt": "Kazımdirik"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Kemalpaşa Mahallesi",
+        "postaKodu": "35060",
+        "semt": "Pınarbaşı"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Kızılay Mahallesi",
+        "postaKodu": "35030",
+        "semt": "Atatürk"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Koşukavak Mahallesi",
+        "postaKodu": "35080",
+        "semt": "Altındağ"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Kurudere Mahallesi",
+        "postaKodu": "35040",
+        "semt": "Bornova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Laka Mahallesi",
+        "postaKodu": "35040",
+        "semt": "Bornova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Meriç Mahallesi",
+        "postaKodu": "35090",
+        "semt": "Çamdibi"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Merkez Mahallesi",
+        "postaKodu": "35080",
+        "semt": "Altındağ"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Mevlana Mahallesi",
+        "postaKodu": "35050",
+        "semt": "Naldöken"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Naldöken Mahallesi",
+        "postaKodu": "35050",
+        "semt": "Naldöken"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Rafet Paşa Mahallesi",
+        "postaKodu": "35090",
+        "semt": "Çamdibi"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Sarnıçköy Mahallesi",
+        "postaKodu": "35040",
+        "semt": "Bornova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Serintepe Mahallesi",
+        "postaKodu": "35080",
+        "semt": "Altındağ"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Tuna Mahallesi",
+        "postaKodu": "35090",
+        "semt": "Çamdibi"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Ümit Mahallesi",
+        "postaKodu": "35060",
+        "semt": "Pınarbaşı"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Yakaköy Mahallesi",
+        "postaKodu": "35040",
+        "semt": "Bornova"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Yeşilçam Mahallesi",
+        "postaKodu": "35050",
+        "semt": "Naldöken"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Yeşilova Mahallesi",
+        "postaKodu": "35080",
+        "semt": "Altındağ"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Yıldırım Beyazıt Mahallesi",
+        "postaKodu": "35090",
+        "semt": "Çamdibi"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Yunus Emre Mahallesi",
+        "postaKodu": "35060",
+        "semt": "Pınarbaşı"
+    },
+    {
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "mahalle": "Zafer Mahallesi",
+        "postaKodu": "35080",
+        "semt": "Altındağ"
+    }
+]

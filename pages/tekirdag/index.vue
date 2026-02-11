@@ -3,8 +3,8 @@ import { computed } from 'vue';
 import { ArrowLeft, ChevronRight } from 'lucide-vue-next';
 import type { CityData } from '~/types';
 
-const { data: tekirdag Data } = await useAsyncData<CityData>('tekirdag -specific-data', async () => {
-const response = await $fetch<any[]>('/api/data/tekirdag ');
+const { data: tekirdagData } = await useAsyncData<CityData>('tekirdag-specific-data', async () => {
+const response = await $fetch<any[]>('/api/data/tekirdag');
 
 const cityObj: CityData = {
 name: 'TEKİRDAĞ',
@@ -34,8 +34,8 @@ zipCode: codeStr
 return cityObj ;
 })             ;
 
-const pageTitle = computed(() => tekirdag Data.value ? `${titleCase(tekirdag Data.value.name)} Posta Kodları` : 'Şehir Bulunamadı');
-const pageDesc = computed(() => tekirdag Data.value ? `${titleCase(tekirdag Data.value.name)} iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!` : 'Posta Kodu Rehberi');
+const pageTitle = computed(() => tekirdagData.value ? `${titleCase(tekirdagData.value.name)} Posta Kodları` : 'Şehir Bulunamadı');
+const pageDesc = computed(() => tekirdagData.value ? `${titleCase(tekirdagData.value.name)} iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!` : 'Posta Kodu Rehberi');
 useHead({
 title: pageTitle,
 meta: [{ name: 'description', content: pageDesc }],
@@ -56,7 +56,7 @@ children: JSON.stringify({
 "@type": "ListItem",
 "position": 2,
 "name": "Tekirdağ",
-"item": `https://postakodu.com/tekirdag `
+"item": `https://postakodu.com/tekirdag`
 }
 ]
 })
@@ -66,11 +66,11 @@ children: JSON.stringify({
 usePageSeo({ title: pageTitle, description: pageDesc })                                                                                                                                       ;
 
 const districts = computed(() => {
-if (!tekirdag Data.value) return []                                                                              ;
-return Object.entries(tekirdag Data.value.districts).sort(([, a], [, b]) => a.name.localeCompare(b.name, 'tr'));
+if (!tekirdagData.value) return []                                                                              ;
+return Object.entries(tekirdagData.value.districts).sort(([, a], [, b]) => a.name.localeCompare(b.name, 'tr'));
 })                                                                                                          ;
 
-const isValid = computed(() => !!tekirdag Data.value) ;
+const isValid = computed(() => !!tekirdagData.value) ;
 </script>
 
 <template>
@@ -78,7 +78,7 @@ const isValid = computed(() => !!tekirdag Data.value) ;
 <div class="mb-10 flex items-center gap-4">
 <NuxtLink to="/" class="text-slate-400 hover:text-slate-900 transition-colors"><ArrowLeft class="w-5 h-5" /></NuxtLink>
 <div>
-<h1 class="text-3xl font-bold text-slate-900 tracking-tight">{{ titleCase(tekirdag Data.name) }} Posta Kodları</h1>
+<h1 class="text-3xl font-bold text-slate-900 tracking-tight">{{ titleCase(tekirdagData.name) }} Posta Kodları</h1>
 <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">{{ districts.length }} İLÇE</p>
 </div>
 </div>
@@ -87,7 +87,7 @@ const isValid = computed(() => !!tekirdag Data.value) ;
 <NuxtLink
 v-for="([distSlug, distItem]) in districts"
 :key="distSlug"
-:to="`/tekirdag /${distSlug}`"
+:to="`/tekirdag/${distSlug}`"
 class="soft-card p-6 rounded-xl flex items-center justify-between"
 >
 <div>

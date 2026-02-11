@@ -174,7 +174,7 @@ const cityList = computed(() => {
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">35 İLÇE </div>
             </a><a href="/izmir" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">İzmir</div>
-                <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">4 İLÇE </div>
+                <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">30 İLÇE </div>
             </a><a href="/kars" class="soft-card p-4 rounded-xl text-center">
                 <div class="font-semibold text-slate-900 text-sm truncate">Kars</div>
                 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">8 İLÇE </div>

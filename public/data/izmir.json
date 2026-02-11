@@ -671,6 +671,48 @@
         "postaKodu": 35840,
         "semt": "Bayındır"
     },
+
+
+
+
+
+
+
+{ "il": "İzmir", "ilce": "Bayraklı", "mahalle": "75. Yıl Mah", "postaKodu": "35540", "semt": "Alpaslan" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Adalet Mah", "postaKodu": "35530", "semt": "Bayraklı" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Alpaslan Mah", "postaKodu": "35540", "semt": "Alpaslan" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Bayraklı Mah", "postaKodu": "35530", "semt": "Bayraklı" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Çay Mah", "postaKodu": "35530", "semt": "Bayraklı" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Cengizhan Mah", "postaKodu": "35540", "semt": "Alpaslan" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Çiçek Mah", "postaKodu": "35540", "semt": "Alpaslan" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Doğançay Mah", "postaKodu": "35510", "semt": "Gümüşpala" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Emek Mah", "postaKodu": "35510", "semt": "Gümüşpala" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Fuat Edip Baksı Mah", "postaKodu": "35540", "semt": "Alpaslan" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Gümüşpala Mah", "postaKodu": "35510", "semt": "Gümüşpala" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Körfez Mah", "postaKodu": "35520", "semt": "Soğukkuyu" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Manavkuyu Mah", "postaKodu": "35535", "semt": "Manavkuyu" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Mansuroğlu Mah", "postaKodu": "35535", "semt": "Manavkuyu" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Muhittin Erener Mah", "postaKodu": "35540", "semt": "Alpaslan" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Onur Mah", "postaKodu": "35520", "semt": "Soğukkuyu" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Org. Nafiz Gürman Mah", "postaKodu": "35510", "semt": "Gümüşpala" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Osmangazi Mah", "postaKodu": "35535", "semt": "Manavkuyu" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Postacılar Mah", "postaKodu": "35520", "semt": "Soğukkuyu" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "R. Şevket İnce Mah", "postaKodu": "35540", "semt": "Alpaslan" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Soğukkuyu Mah", "postaKodu": "35520", "semt": "Soğukkuyu" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Tepekule Mah", "postaKodu": "35530", "semt": "Bayraklı" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Turan Mah", "postaKodu": "35540", "semt": "Alpaslan" },
+  { "il": "İzmir", "ilce": "Bayraklı", "mahalle": "Yamanlar Mah", "postaKodu": "35510", "semt": "Gümüşpala" },
+
+
+
+
+
+
+
+
+
+
+
     {
         "il": "İzmir",
         "ilce": "Bornova",

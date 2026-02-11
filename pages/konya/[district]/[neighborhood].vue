@@ -45,7 +45,7 @@ const districtItem = computed(() => konyaData.value?.districts[distSlug.value]) 
 const neighItem = computed(() => districtItem.value?.neighborhoods[neighborhoodSlug.value]) ;
 
 const pageTitle = computed(() => neighItem.value ? `${titleCase(neighItem.value.name)} Posta Kodu` : 'Posta Kodu Bulunamadı');
-const pageDesc = computed(() => districtItem.value && neighItem.value ? `Balıkesir ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı ${titleCase(neighItem.value.name)}'nin posta kodunu görmek için tıklayın!` : 'Posta Kodu Rehberi');
+const pageDesc = computed(() => districtItem.value && neighItem.value ? `Konya ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı ${titleCase(neighItem.value.name)}'nin posta kodunu görmek için tıklayın!` : 'Posta Kodu Rehberi');
 useHead({
 title: pageTitle,
 meta: [{ name: 'description', content: pageDesc }],
@@ -67,7 +67,7 @@ children: JSON.stringify({
 {
 "@type": "ListItem",
 "position": 2,
-"name": "Balıkesir",
+"name": "Konya",
 "item": `https://postakodu.com/konya`
 },
 {
@@ -104,7 +104,7 @@ const share = () => {
 if (navigator.share && neighItem.value) {
 navigator.share({
 title: `${titleCase(neighItem.value.name)} Posta Kodu`,
-text: `Balıkesir, ${titleCase(districtItem.value.name)}, ${titleCase(neighItem.value.name)} mahallesinin posta kodu: ${neighItem.value.zipCode}`,
+text: `Konya, ${titleCase(districtItem.value.name)}, ${titleCase(neighItem.value.name)} mahallesinin posta kodu: ${neighItem.value.zipCode}`,
 url: window.location.href,
 })                                                                                                                                                 ;
 }
@@ -117,7 +117,7 @@ url: window.location.href,
 <nav class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-8 overflow-x-auto whitespace-nowrap pb-2">
 <NuxtLink to="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</NuxtLink>
 <ChevronRight class="w-3 h-3" />
-<NuxtLink to="/konya" class="hover:text-slate-900 transition-colors">BALIKESİR</NuxtLink>
+<NuxtLink to="/konya" class="hover:text-slate-900 transition-colors">KONYA</NuxtLink>
 <ChevronRight class="w-3 h-3" />
 <NuxtLink :to="`/konya/${distSlug}`" class="hover:text-slate-900 transition-colors">{{ titleCase(districtItem.name) }}</NuxtLink>
 </nav>
@@ -128,7 +128,7 @@ url: window.location.href,
 <MapPin class="w-6 h-6 text-slate-900" />
 </div>
 <h1 class="text-4xl font-bold text-slate-900 mb-2 tracking-tight">{{ titleCase(neighItem.name) }}</h1>
-<p class="text-slate-500 font-medium uppercase tracking-widest text-sm">{{ titleCase(districtItem.name) }}, BALIKESİR</p>
+<p class="text-slate-500 font-medium uppercase tracking-widest text-sm">{{ titleCase(districtItem.name) }}, KONYA</p>
 </div>
 
 <div class="bg-slate-50 rounded-3xl p-8 text-center relative overflow-hidden">

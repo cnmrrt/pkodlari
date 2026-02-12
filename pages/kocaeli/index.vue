@@ -7,7 +7,7 @@ const { data: kocaeliData } = await useAsyncData<CityData>('kocaeli-specific-dat
 const response = await $fetch<any[]>('/api/data/kocaeli');
 
 const cityObj: CityData = {
-name: 'TEKİRDAĞ',
+name: 'KOCAELİ',
 districts: {}
 }                           ;
 

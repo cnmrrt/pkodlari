@@ -35,5 +35,32 @@
   { "il": "Kocaeli", "ilce": "Başiskele", "mahalle": "Yeniköy Merkez Mah", "postaKodu": "41275", "semt": "Yeniköy" },
   { "il": "Kocaeli", "ilce": "Başiskele", "mahalle": "Yeşilkent Mah", "postaKodu": "41030", "semt": "Bahçecik" },
   { "il": "Kocaeli", "ilce": "Başiskele", "mahalle": "Yeşilyurt Mah", "postaKodu": "41190", "semt": "Yuvacık" },
-  { "il": "Kocaeli", "ilce": "Başiskele", "mahalle": "Yuvacık Yakacık Mah", "postaKodu": "41190", "semt": "Yuvacık" }
+  { "il": "Kocaeli", "ilce": "Başiskele", "mahalle": "Yuvacık Yakacık Mah", "postaKodu": "41190", "semt": "Yuvacık" },
+
+  { "il": "Kocaeli", "ilce": "Çayırova", "mahalle": "Akse Mah", "postaKodu": "41420", "semt": "Çayırova" },
+  { "il": "Kocaeli", "ilce": "Çayırova", "mahalle": "Atatürk Mah", "postaKodu": "41420", "semt": "Çayırova" },
+  { "il": "Kocaeli", "ilce": "Çayırova", "mahalle": "Çayırova Mah", "postaKodu": "41420", "semt": "Çayırova" },
+  { "il": "Kocaeli", "ilce": "Çayırova", "mahalle": "Cumhuriyet Mah", "postaKodu": "41420", "semt": "Çayırova" },
+  { "il": "Kocaeli", "ilce": "Çayırova", "mahalle": "Emek Mah", "postaKodu": "41420", "semt": "Çayırova" },
+  { "il": "Kocaeli", "ilce": "Çayırova", "mahalle": "Gebze Osb2 Mah", "postaKodu": "41420", "semt": "Çayırova" },
+  { "il": "Kocaeli", "ilce": "Çayırova", "mahalle": "İnönü Mah", "postaKodu": "41420", "semt": "Çayırova" },
+  { "il": "Kocaeli", "ilce": "Çayırova", "mahalle": "Özgürlük Mah", "postaKodu": "41420", "semt": "Çayırova" },
+  { "il": "Kocaeli", "ilce": "Çayırova", "mahalle": "Şekerpınar Mah", "postaKodu": "41420", "semt": "Çayırova" },
+  { "il": "Kocaeli", "ilce": "Çayırova", "mahalle": "Tosb Otomotiv Mah (Osb Mah)", "postaKodu": "41420", "semt": "Çayırova" },
+  { "il": "Kocaeli", "ilce": "Çayırova", "mahalle": "Yeni Mah", "postaKodu": "41420", "semt": "Çayırova" },
+
+  { "il": "Kocaeli", "ilce": "Darıca", "mahalle": "Abdi İpekçi Mah", "postaKodu": "41700", "semt": "Darıca" },
+  { "il": "Kocaeli", "ilce": "Darıca", "mahalle": "Bağlarbaşı Mah", "postaKodu": "41700", "semt": "Darıca" },
+  { "il": "Kocaeli", "ilce": "Darıca", "mahalle": "Bayramoğlu Mah", "postaKodu": "41700", "semt": "Darıca" },
+  { "il": "Kocaeli", "ilce": "Darıca", "mahalle": "Cami Mah", "postaKodu": "41700", "semt": "Darıca" },
+  { "il": "Kocaeli", "ilce": "Darıca", "mahalle": "Emek Mah", "postaKodu": "41700", "semt": "Darıca" },
+  { "il": "Kocaeli", "ilce": "Darıca", "mahalle": "Fevziçakmak Mah", "postaKodu": "41700", "semt": "Darıca" },
+  { "il": "Kocaeli", "ilce": "Darıca", "mahalle": "Kazımkarabekir Mah", "postaKodu": "41700", "semt": "Darıca" },
+  { "il": "Kocaeli", "ilce": "Darıca", "mahalle": "Nenehatun Mah", "postaKodu": "41700", "semt": "Darıca" },
+  { "il": "Kocaeli", "ilce": "Darıca", "mahalle": "Osmangazi Mah", "postaKodu": "41700", "semt": "Darıca" },
+  { "il": "Kocaeli", "ilce": "Darıca", "mahalle": "Piri Reis Mah", "postaKodu": "41700", "semt": "Darıca" },
+  { "il": "Kocaeli", "ilce": "Darıca", "mahalle": "Sırasöğütler Mah", "postaKodu": "41700", "semt": "Darıca" },
+  { "il": "Kocaeli", "ilce": "Darıca", "mahalle": "Yalı Mah", "postaKodu": "41700", "semt": "Darıca" },
+  { "il": "Kocaeli", "ilce": "Darıca", "mahalle": "Yeni Mah", "postaKodu": "41700", "semt": "Darıca" },
+  { "il": "Kocaeli", "ilce": "Darıca", "mahalle": "Zincirlikuyu Mah", "postaKodu": "41700", "semt": "Darıca" }
 ]

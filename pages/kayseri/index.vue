@@ -3,11 +3,11 @@ import { computed } from 'vue';
 import { ArrowLeft, ChevronRight } from 'lucide-vue-next';
 import type { CityData } from '~/types';
 
-const { data: mersinData } = await useAsyncData<CityData>('mersin-specific-data', async () => {
-const response = await $fetch<any[]>('/api/data/mersin');
+const { data: kayseriData } = await useAsyncData<CityData>('kayseri-specific-data', async () => {
+const response = await $fetch<any[]>('/api/data/kayseri');
 
 const cityObj: CityData = {
-name: 'MERSİN',
+name: 'KAYSERİ',
 districts: {}
 }                           ;
 
@@ -34,8 +34,8 @@ zipCode: codeStr
 return cityObj ;
 })             ;
 
-const pageTitle = computed(() => mersinData.value ? `${titleCase(mersinData.value.name)} Posta Kodları` : 'Şehir Bulunamadı');
-const pageDesc = computed(() => mersinData.value ? `${titleCase(mersinData.value.name)} iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!` : 'Posta Kodu Rehberi');
+const pageTitle = computed(() => kayseriData.value ? `${titleCase(kayseriData.value.name)} Posta Kodları` : 'Şehir Bulunamadı');
+const pageDesc = computed(() => kayseriData.value ? `${titleCase(kayseriData.value.name)} iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!` : 'Posta Kodu Rehberi');
 useHead({
 title: pageTitle,
 meta: [{ name: 'description', content: pageDesc }],
@@ -55,8 +55,8 @@ children: JSON.stringify({
 {
 "@type": "ListItem",
 "position": 2,
-"name": "Mersin",
-"item": `https://postakodu.com/mersin`
+"name": "Kayseri",
+"item": `https://postakodu.com/kayseri`
 }
 ]
 })
@@ -66,11 +66,11 @@ children: JSON.stringify({
 usePageSeo({ title: pageTitle, description: pageDesc })                                                                                                                                       ;
 
 const districts = computed(() => {
-if (!mersinData.value) return []                                                                              ;
-return Object.entries(mersinData.value.districts).sort(([, a], [, b]) => a.name.localeCompare(b.name, 'tr'));
+if (!kayseriData.value) return []                                                                              ;
+return Object.entries(kayseriData.value.districts).sort(([, a], [, b]) => a.name.localeCompare(b.name, 'tr'));
 })                                                                                                          ;
 
-const isValid = computed(() => !!mersinData.value) ;
+const isValid = computed(() => !!kayseriData.value) ;
 </script>
 
 <template>
@@ -78,7 +78,7 @@ const isValid = computed(() => !!mersinData.value) ;
 <div class="mb-10 flex items-center gap-4">
 <NuxtLink to="/" class="text-slate-400 hover:text-slate-900 transition-colors"><ArrowLeft class="w-5 h-5" /></NuxtLink>
 <div>
-<h1 class="text-3xl font-bold text-slate-900 tracking-tight">{{ titleCase(mersinData.name) }} (İçel) Posta Kodları</h1>
+<h1 class="text-3xl font-bold text-slate-900 tracking-tight">{{ titleCase(kayseriData.name) }} Posta Kodları</h1>
 <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">{{ districts.length }} İLÇE</p>
 </div>
 </div>
@@ -87,7 +87,7 @@ const isValid = computed(() => !!mersinData.value) ;
 <NuxtLink
 v-for="([distSlug, distItem]) in districts"
 :key="distSlug"
-:to="`/mersin/${distSlug}`"
+:to="`/kayseri/${distSlug}`"
 class="soft-card p-6 rounded-xl flex items-center justify-between"
 >
 <div>

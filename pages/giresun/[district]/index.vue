@@ -8,7 +8,7 @@ const distSlug = computed(() => route.params.district as string) ;
 const filter = ref('');
 
 const { data: giresunData } = await useAsyncData<CityData>('giresun-specific-data', async () => {
-const response = await $fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/giresun.json');
+const response = await $fetch<any[]>('/api/data/giresun');
 
 const cityObj: CityData = {
 name: 'GİRESUN',
@@ -47,7 +47,7 @@ title: pageTitle,
 meta: [{ name: 'description', content: pageDesc }],
 script: [
 computed(() => {
-if (!districtItem.value) return {}                                                                                                  ;
+if (!districtItem.value) return {}                                                                                                                                                                      ;
 return {
 type: 'application/ld+json',
 children: JSON.stringify({
@@ -77,8 +77,8 @@ children: JSON.stringify({
 }
 })
 ]
-});
-usePageSeo({ title: pageTitle, description: pageDesc });
+})                                                                                                                                                                                                      ;
+usePageSeo({ title: pageTitle, description: pageDesc })                                                                                                                                                 ;
 
 const isValid = computed(() => !!districtItem.value) ;
 

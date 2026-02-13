@@ -4,7 +4,7 @@ import { ArrowLeft, ChevronRight } from 'lucide-vue-next';
 import type { CityData } from '~/types';
 
 const { data: giresunData } = await useAsyncData<CityData>('giresun-specific-data', async () => {
-const response = await $fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/giresun.json');
+const response = await $fetch<any[]>('/api/data/giresun');
 
 const cityObj: CityData = {
 name: 'GİRESUN',
@@ -62,13 +62,13 @@ children: JSON.stringify({
 })
 }
 ]
-});
-usePageSeo({ title: pageTitle, description: pageDesc });
+})                                                                                                                                                                                            ;
+usePageSeo({ title: pageTitle, description: pageDesc })                                                                                                                                       ;
 
 const districts = computed(() => {
 if (!giresunData.value) return []                                                                              ;
 return Object.entries(giresunData.value.districts).sort(([, a], [, b]) => a.name.localeCompare(b.name, 'tr'));
-})                                                                                                            ;
+})                                                                                                          ;
 
 const isValid = computed(() => !!giresunData.value) ;
 </script>
@@ -83,7 +83,7 @@ const isValid = computed(() => !!giresunData.value) ;
 </div>
 </div>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <NuxtLink
 v-for="([distSlug, distItem]) in districts"
 :key="distSlug"

@@ -171,7 +171,7 @@ return Object.values(postalData.value).sort((a, b) => a.name.localeCompare(b.nam
 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">1 İLÇE </div>
 </a><a href="/isparta" class="soft-card p-4 rounded-xl text-center">
 <div class="font-semibold text-slate-900 text-sm truncate">Isparta</div>
-<div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">13İLÇE </div>
+<div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">13 İLÇE </div>
 </a><a href="/mersin" class="soft-card p-4 rounded-xl text-center">
 <div class="font-semibold text-slate-900 text-sm truncate">Mersin</div>
 <div class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">13 İLÇE </div>

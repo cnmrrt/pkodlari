@@ -2365,5 +2365,1664 @@
     "mahalle": "Zafer Mahallesi (Büyükkabaca Beldesi)",
     "semt": "Büyükkabaca",
     "postaKodu": "32610"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Aşağıyaylabel Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Ayvapınarı Mahallesi (Ayvalıpınar Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Başkoz Mahallesi",
+    "semt": "Sütçüler",
+    "postaKodu": "32950"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Bekirağalar Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Belen Mahallesi",
+    "semt": "Sütçüler",
+    "postaKodu": "32950"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Belence Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Beydili Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Birlik Mahallesi",
+    "semt": "Sütçüler",
+    "postaKodu": "32950"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Boğazköy Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Bucakdere Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Cami Mahallesi",
+    "semt": "Sütçüler",
+    "postaKodu": "32950"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Cami Mahallesi (Kesme Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Camii Mahallesi (Kasımlar Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Çandır Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Çıraklar Mahallesi (Ayvalıpınar Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Çobanisa Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Çökek Mahallesi (Kesme Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Çukurca Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Çürük Belen Mahallesi (Kasımlar Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Darıbükü Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Derindere Mahallesi (Kesme Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Erenler Mahallesi",
+    "semt": "Sütçüler",
+    "postaKodu": "32950"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Güldallı Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Gümü Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Güney Mahallesi (Kasımlar Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Hacıahmetler Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Hacıaliler Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "İbişler Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "İncedere Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Karadiken Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Kızılbelen Mahallesi (Kesme Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Köprübaşı Mahallesi (Ayvalıpınar Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Kuz Mahallesi (Ayvalıpınar Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Kuzca Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Melikler Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Müezzinler Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Öbektaş Mahallesi (Ayvalıpınar Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Pınarköy Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Sağrak Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Saray Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Sarımehmetler Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Şehler Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Yeniköy Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Yeşildere Mahallesi",
+    "semt": "Sütçüler",
+    "postaKodu": "32950"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Yeşilyurt Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32952"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Sütçüler",
+    "mahalle": "Yukarı Mahallesi",
+    "semt": "Sütçüler",
+    "postaKodu": "32950"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Alcıklar Mahallesi",
+    "semt": "Şarkikaraağaç",
+    "postaKodu": "32800"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Arak Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Armutlu Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Arslandoğmuş Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Aşağı Mahallesi (Çiçekpınar Beldesi)",
+    "semt": "Çiçekpınar",
+    "postaKodu": "32820"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Aşağı Mahallesi (Göksöğüt Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Aşağıdinek Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Aşağıkale Mahallesi",
+    "semt": "Şarkikaraağaç",
+    "postaKodu": "32800"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Asılkale Mahallesi",
+    "semt": "Şarkikaraağaç",
+    "postaKodu": "32800"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Başdeğirmen Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Belceğiz Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Beyköy Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Bölükler Mahallesi (Çarıksaraylar Beldesi)",
+    "semt": "Çarıksaraylar",
+    "postaKodu": "32810"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Çaltı Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Camikebir Mahallesi",
+    "semt": "Şarkikaraağaç",
+    "postaKodu": "32800"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Çavundur Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Çeltek Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Çördük Mahallesi (Çiçekpınar Beldesi)",
+    "semt": "Çiçekpınar",
+    "postaKodu": "32820"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Çukur Mahallesi (Çarıksaraylar Beldesi)",
+    "semt": "Çarıksaraylar",
+    "postaKodu": "32810"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Cumhuriyet Mahallesi (Çarıksaraylar Beldesi)",
+    "semt": "Çarıksaraylar",
+    "postaKodu": "32810"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Fakılar Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Fatih Mahallesi",
+    "semt": "Şarkikaraağaç",
+    "postaKodu": "32800"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Fele Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Gedikli Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Karayaka Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Kerkük Mahallesi",
+    "semt": "Şarkikaraağaç",
+    "postaKodu": "32800"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Kıyakdede Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Köprü Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Muratbağı Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Ördekçi Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Örenköy Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Orta Mahallesi",
+    "semt": "Şarkikaraağaç",
+    "postaKodu": "32800"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Orta Mahallesi (Çiçekpınar Beldesi)",
+    "semt": "Çiçekpınar",
+    "postaKodu": "32820"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Salur Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Sarıkaya Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Suvar Mahallesi (Çarıksaraylar Beldesi)",
+    "semt": "Çarıksaraylar",
+    "postaKodu": "32810"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Ulu Mahallesi (Çarıksaraylar Beldesi)",
+    "semt": "Çarıksaraylar",
+    "postaKodu": "32810"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Ulvikale Mahallesi",
+    "semt": "Şarkikaraağaç",
+    "postaKodu": "32800"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Yakaemir Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Yeni Mahallesi (Göksöğüt Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Yenicekale Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Yeniköy Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Yukarı Mahallesi (Göksöğüt Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Şarkikaraağaç",
+    "mahalle": "Yukarıdinek Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32802"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Uluborlu",
+    "mahalle": "Dere Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32652"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Uluborlu",
+    "mahalle": "Güreşyeri Mahallesi",
+    "semt": "Uluborlu",
+    "postaKodu": "32650"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Uluborlu",
+    "mahalle": "Hamideli Mahallesi",
+    "semt": "Uluborlu",
+    "postaKodu": "32650"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Uluborlu",
+    "mahalle": "İleydağı Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32652"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Uluborlu",
+    "mahalle": "İnhisar Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32652"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Uluborlu",
+    "mahalle": "Kabaağaç Mahallesi",
+    "semt": "Uluborlu",
+    "postaKodu": "32650"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Uluborlu",
+    "mahalle": "Kösehasan Mahallesi",
+    "semt": "Uluborlu",
+    "postaKodu": "32650"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Uluborlu",
+    "mahalle": "Küçükkabaca Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32652"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Uluborlu",
+    "mahalle": "Namazgah Mahallesi",
+    "semt": "Uluborlu",
+    "postaKodu": "32650"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Uluborlu",
+    "mahalle": "Pazar Mahallesi",
+    "semt": "Uluborlu",
+    "postaKodu": "32650"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Uluborlu",
+    "mahalle": "Selçuklu Mahallesi",
+    "semt": "Uluborlu",
+    "postaKodu": "32650"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Uluborlu",
+    "mahalle": "Serenler Mahallesi",
+    "semt": "Uluborlu",
+    "postaKodu": "32650"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Uluborlu",
+    "mahalle": "Taşköprü Mahallesi",
+    "semt": "Uluborlu",
+    "postaKodu": "32650"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Uluborlu",
+    "mahalle": "Topraklık Mahallesi",
+    "semt": "Uluborlu",
+    "postaKodu": "32650"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Uluborlu",
+    "mahalle": "Zincirli Mahallesi",
+    "semt": "Uluborlu",
+    "postaKodu": "32650"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Abacılar Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Akçaşar Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Akköprü Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Altıkapı Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Ardıçlı Mahallesi (Kozluçay Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Aşağı Mahallesi (Celeptaş Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Aşağı Mahallesi (Çetince Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Aşağı Mahallesi (Körküler Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Aşağı Mahallesi (Kozluçay Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Aşağı Mahallesi (Kumdanlı Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Aşağı Mahallesi (Sağırköy Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Aşağı Mahallesi (Sücüllü Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Aşağı Yukarı Mahallesi (Aşağıkaşıkara Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Aşağıkaşıkara Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Ayvalı Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Bağlar Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Bahçelievler Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Bahçelievler Mahallesi (Dedeçam Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Bahtiyar Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Bolatlık Mahallesi (Tokmacık Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Çakırçal Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Çamharman Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Çarşı Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Çayır Mahallesi (Kumdanlı Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Cumhuriyet Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Cumhuriyet Mahallesi (Bağkonak Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Cumhuriyet Mahallesi (Çetince Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Debbağlar Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Deliktaş Mahallesi (Sücüllü Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Dere Gültepe Mahallesi (Aşağıkaşıkara Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Dere Mahallesi (Kozluçay Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Eğirler Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Esentepe Mahallesi (Tokmacık Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Eski Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Eski Mahallesi (Körküler Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Eskigeçit Mahallesi (Hüyüklü Beldesi)",
+    "semt": "Hüyüklü",
+    "postaKodu": "32430"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Eyüpler Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Fatih Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Fatih Mahallesi (Bağkonak Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Fatih Mahallesi (Kozluçay Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Fatih Mahallesi (Özgüney Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Fatih Mahallesi (Yukarıkaşıkara Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Gökçay Mahallesi (Tokmacık Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Gökçeali Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Görgü Bayram Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Görgü Camii Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Görgüorta Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Gülkent Mahallesi (Tokmacık Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Gümüşlü Mahallesi (Aşağıtırtar Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Harman Mahallesi (Kuyucak Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Harman Mahallesi (Özbayat Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Harman Mahallesi (Sücüllü Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Harman Mahallesi (Yukarıkaşıkara Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Hisarardı Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Hurşitler Mahallesi (Sücüllü Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "İleği Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "İslibucağı Mahallesi (Aşağıtırtar Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Kale Mahallesi (Bağkonak Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Karşıyaka Mahallesi (Çetince Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Kaşaşağı Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Kaşcamii Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Kaşhacıbey Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Kaşyukarı Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Kırkbaş Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Kızılca Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Koruyaka Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Küçüktepe Mahallesi (Aşağıtırtar Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Kurusarı Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Kuşku Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Kuzyaka Mahallesi (Özbayat Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Leblebiciler Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Mescit Mahallesi (Hüyüklü Beldesi)",
+    "semt": "Hüyüklü",
+    "postaKodu": "32430"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Mezarlık Mahallesi (Aşağıtırtar Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Mısırlı Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Mithatpaşa Mahallesi (Çetince Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Müderris Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Nalbant Mahallesi (Hüyüklü Beldesi)",
+    "semt": "Hüyüklü",
+    "postaKodu": "32430"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Orta Mahallesi (Dedeçam Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Orta Mahallesi (Kumdanlı Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Orta Mahallesi (Kuyucak Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Orta Mahallesi (Özbayat Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Pazar Aşağı Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Pazar Mahallesi (Körküler Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Pazar Mahallesi (Özgüney Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Pazar Yukarı Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Salur Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Sanayi Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Saray Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Selçuklu Mahallesi (Özgüney Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Sofular Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Taşevi Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Tepecik Mahallesi (Bağlarbaşı Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Terziler Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Tolyüzü Mahallesi (Aşağıtırtar Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Ulucamii Mahallesi (Bağkonak Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yağcılar Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yanarık Mahallesi (Hüyüklü Beldesi)",
+    "semt": "Hüyüklü",
+    "postaKodu": "32430"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yarıkkaya Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yayla Mahallesi (Kozluçay Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yayla Mahallesi (Tokmacık Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yayla Mahallesi (Yukarıkaşıkara Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yeni Mahallesi (Bağkonak Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yeni Mahallesi (Çetince Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yeni Mahallesi (Dedeçam Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yeni Mahallesi (Hüyüklü Beldesi)",
+    "semt": "Hüyüklü",
+    "postaKodu": "32430"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yeni Mahallesi (Körküler Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yeni Mahallesi (Kozluçay Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yeni Mahallesi (Kumdanlı Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yeni Mahallesi (Kuyucak Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yeni Mahallesi (Özbayat Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yeni Mahallesi (Özgüney Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yeni Mahallesi (Sücüllü Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yeni Mahallesi (Tokmacık Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yeni Mahallesi (Yağcılar Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yeni Mahallesi (Yukarıkaşıkara Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yukarı Mahallesi (Bağlarbaşı Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yukarı Mahallesi (Celeptaş Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yukarı Mahallesi (Çetince Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yukarı Mahallesi (İleği Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yukarı Mahallesi (Kozluçay Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yukarı Mahallesi (Kumdanlı Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yukarı Mahallesi (Kuyucak Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yukarı Mahallesi (Sağırköy Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yukarı Mahallesi (Sücüllü Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yukarıtırtar Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Yusuflar Mahallesi (Bağlarbaşı Köyü)",
+    "semt": "Merkezköyler",
+    "postaKodu": "32402"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yalvaç",
+    "mahalle": "Zafer Mahallesi",
+    "semt": "Yalvaç",
+    "postaKodu": "32400"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yenişarbademli",
+    "mahalle": "Gölkonak Köyü",
+    "semt": "Merkezköyler",
+    "postaKodu": "32852"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yenişarbademli",
+    "mahalle": "Gündoğdu Mahallesi",
+    "semt": "Yenişarbademli",
+    "postaKodu": "32850"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yenişarbademli",
+    "mahalle": "Pınarbaşı Mahallesi",
+    "semt": "Yenişarbademli",
+    "postaKodu": "32850"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yenişarbademli",
+    "mahalle": "Yenicami Mahallesi",
+    "semt": "Yenişarbademli",
+    "postaKodu": "32850"
+  },
+  {
+    "il": "Isparta",
+    "ilce": "Yenişarbademli",
+    "mahalle": "Yenice Mahallesi",
+    "semt": "Yenişarbademli",
+    "postaKodu": "32850"
   }
 ]

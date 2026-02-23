@@ -411,7 +411,7 @@ const _routes = [
   {
     name: "city-district-neighborhood",
     path: "/:city()/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-CSFf8BOB.mjs')
+    component: () => import('./_neighborhood_-7TdcHGnf.mjs')
   }
 ];
 const ROUTE_KEY_PARENTHESES_RE = /(:\w+)\([^)]+\)/g;

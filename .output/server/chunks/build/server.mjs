@@ -399,6 +399,11 @@ const _routes = [
     component: () => import('./index-Csxd5I-A.mjs')
   },
   {
+    name: "mus",
+    path: "/mus",
+    component: () => import('./index-Dz7FDF35.mjs')
+  },
+  {
     name: "van",
     path: "/van",
     component: () => import('./index-D2KCVg0_.mjs')
@@ -459,6 +464,11 @@ const _routes = [
     component: () => import('./index-D6dYPqV6.mjs')
   },
   {
+    name: "mugla",
+    path: "/mugla",
+    component: () => import('./index-GoQgmHPE.mjs')
+  },
+  {
     name: "tokat",
     path: "/tokat",
     component: () => import('./index-CQGL04cB.mjs')
@@ -487,6 +497,11 @@ const _routes = [
     name: "bartin",
     path: "/bartin",
     component: () => import('./index-S_8QXeiv.mjs')
+  },
+  {
+    name: "batman",
+    path: "/batman",
+    component: () => import('./index-DmyX4QjM.mjs')
   },
   {
     name: "bingol",
@@ -549,6 +564,11 @@ const _routes = [
     component: () => import('./index-ReA1Ym8T.mjs')
   },
   {
+    name: "isparta",
+    path: "/isparta",
+    component: () => import('./index-CDtu24oU.mjs')
+  },
+  {
     name: "karabuk",
     path: "/karabuk",
     component: () => import('./index-CIcNOvOq.mjs')
@@ -604,6 +624,11 @@ const _routes = [
     component: () => import('./index-BZgKIfn-.mjs')
   },
   {
+    name: "eskisehir",
+    path: "/eskisehir",
+    component: () => import('./index-BtuWnLXf.mjs')
+  },
+  {
     name: "gaziantep",
     path: "/gaziantep",
     component: () => import('./index-CqDj5EFM.mjs')
@@ -632,6 +657,11 @@ const _routes = [
     name: "afyonkarahisar",
     path: "/afyonkarahisar",
     component: () => import('./index-B38w9d0F.mjs')
+  },
+  {
+    name: "mus-district",
+    path: "/mus/:district()",
+    component: () => import('./index-R7kiIS9f.mjs')
   },
   {
     name: "van-district",
@@ -694,6 +724,11 @@ const _routes = [
     component: () => import('./index-D3wtaHtk.mjs')
   },
   {
+    name: "mugla-district",
+    path: "/mugla/:district()",
+    component: () => import('./index-3Z3vLYK5.mjs')
+  },
+  {
     name: "tokat-district",
     path: "/tokat/:district()",
     component: () => import('./index-Ba6riIlb.mjs')
@@ -722,6 +757,11 @@ const _routes = [
     name: "bartin-district",
     path: "/bartin/:district()",
     component: () => import('./index-BRTEVhCv.mjs')
+  },
+  {
+    name: "batman-district",
+    path: "/batman/:district()",
+    component: () => import('./index-Nbge_ZMK.mjs')
   },
   {
     name: "bingol-district",
@@ -784,6 +824,11 @@ const _routes = [
     component: () => import('./index-B591-7Ue.mjs')
   },
   {
+    name: "isparta-district",
+    path: "/isparta/:district()",
+    component: () => import('./index-Bc8jBscM.mjs')
+  },
+  {
     name: "karabuk-district",
     path: "/karabuk/:district()",
     component: () => import('./index-NX1zL0aj.mjs')
@@ -839,6 +884,11 @@ const _routes = [
     component: () => import('./index-BCP7Aika.mjs')
   },
   {
+    name: "eskisehir-district",
+    path: "/eskisehir/:district()",
+    component: () => import('./index-DWwjGZKZ.mjs')
+  },
+  {
     name: "gaziantep-district",
     path: "/gaziantep/:district()",
     component: () => import('./index-_s8tTHO4.mjs')
@@ -862,6 +912,11 @@ const _routes = [
     name: "diyarbakir-district",
     path: "/diyarbakir/:district()",
     component: () => import('./index-Crd5Fl7l.mjs')
+  },
+  {
+    name: "mus-district-neighborhood",
+    path: "/mus/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-BMUlqLAN.mjs')
   },
   {
     name: "van-district-neighborhood",
@@ -929,6 +984,11 @@ const _routes = [
     component: () => import('./_neighborhood_-CvZzH9IW.mjs')
   },
   {
+    name: "mugla-district-neighborhood",
+    path: "/mugla/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-BnlUtpSf.mjs')
+  },
+  {
     name: "tokat-district-neighborhood",
     path: "/tokat/:district()/:neighborhood()",
     component: () => import('./_neighborhood_-kALzW1Jw.mjs')
@@ -957,6 +1017,11 @@ const _routes = [
     name: "bartin-district-neighborhood",
     path: "/bartin/:district()/:neighborhood()",
     component: () => import('./_neighborhood_-COJx8t5x.mjs')
+  },
+  {
+    name: "batman-district-neighborhood",
+    path: "/batman/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-D5B5f-YQ.mjs')
   },
   {
     name: "bingol-district-neighborhood",
@@ -1019,6 +1084,11 @@ const _routes = [
     component: () => import('./_neighborhood_-Bu8dLjPK.mjs')
   },
   {
+    name: "isparta-district-neighborhood",
+    path: "/isparta/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-CuQosmG8.mjs')
+  },
+  {
     name: "karabuk-district-neighborhood",
     path: "/karabuk/:district()/:neighborhood()",
     component: () => import('./_neighborhood_-B89xJvoz.mjs')
@@ -1072,6 +1142,11 @@ const _routes = [
     name: "canakkale-district-neighborhood",
     path: "/canakkale/:district()/:neighborhood()",
     component: () => import('./_neighborhood_-DCeGcf-Z.mjs')
+  },
+  {
+    name: "eskisehir-district-neighborhood",
+    path: "/eskisehir/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-Cd_K1dVe.mjs')
   },
   {
     name: "gaziantep-district-neighborhood",

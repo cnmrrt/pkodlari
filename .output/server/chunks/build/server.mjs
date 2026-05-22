@@ -656,7 +656,7 @@ const _routes = [
   {
     name: "adiyaman",
     path: "/adiyaman",
-    component: () => import('./index-icPdnWPK.mjs')
+    component: () => import('./index-LzCNaDBb.mjs')
   },
   {
     name: "erzincan",
@@ -666,7 +666,7 @@ const _routes = [
   {
     name: "istanbul",
     path: "/istanbul",
-    component: () => import('./index-Da8KZGBP.mjs')
+    component: () => import('./index-DpOSsM6a.mjs')
   },
   {
     name: "kirsehir",
@@ -1001,7 +1001,7 @@ const _routes = [
   {
     name: "adiyaman-district",
     path: "/adiyaman/:district()",
-    component: () => import('./index-i8idn7VG.mjs')
+    component: () => import('./index-vm65FXKn.mjs')
   },
   {
     name: "erzincan-district",
@@ -1011,7 +1011,7 @@ const _routes = [
   {
     name: "istanbul-district",
     path: "/istanbul/:district()",
-    component: () => import('./index-CCg8QOht.mjs')
+    component: () => import('./index-DCuzvONm.mjs')
   },
   {
     name: "kirsehir-district",
@@ -1346,7 +1346,7 @@ const _routes = [
   {
     name: "adiyaman-district-neighborhood",
     path: "/adiyaman/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-BssKjxnm.mjs')
+    component: () => import('./_neighborhood_-ChEBORSU.mjs')
   },
   {
     name: "erzincan-district-neighborhood",
@@ -1356,7 +1356,7 @@ const _routes = [
   {
     name: "istanbul-district-neighborhood",
     path: "/istanbul/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-W3KJ9ZbD.mjs')
+    component: () => import('./_neighborhood_-CSQrO-N2.mjs')
   },
   {
     name: "kirsehir-district-neighborhood",

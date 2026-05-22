@@ -521,7 +521,7 @@ const _routes = [
   {
     name: "batman",
     path: "/batman",
-    component: () => import('./index-DmyX4QjM.mjs')
+    component: () => import('./index-QMleIsJ0.mjs')
   },
   {
     name: "bingol",
@@ -866,7 +866,7 @@ const _routes = [
   {
     name: "batman-district",
     path: "/batman/:district()",
-    component: () => import('./index-Nbge_ZMK.mjs')
+    component: () => import('./index-D5G-ASWm.mjs')
   },
   {
     name: "bingol-district",
@@ -1211,7 +1211,7 @@ const _routes = [
   {
     name: "batman-district-neighborhood",
     path: "/batman/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-D5B5f-YQ.mjs')
+    component: () => import('./_neighborhood_-DrM33UEK.mjs')
   },
   {
     name: "bingol-district-neighborhood",

@@ -1011,7 +1011,7 @@ const _routes = [
   {
     name: "istanbul-district",
     path: "/istanbul/:district()",
-    component: () => import('./index-DCuzvONm.mjs')
+    component: () => import('./index-DUe_wKin.mjs')
   },
   {
     name: "kirsehir-district",

@@ -7,7 +7,7 @@ const route = useRoute()  ;
 const copied = ref(false) ;
 
 const { data: agriData } = await useAsyncData('agri-data', () =>
-$fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/agri.json')
+$fetch<any[]>('https://pkodlari.com/data/agri.json')
 )                                                                                                              ;
 
 const districtSlug = computed(() => route.params.district as string)         ;

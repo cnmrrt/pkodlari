@@ -416,7 +416,7 @@ const _routes = [
   {
     name: "bolu",
     path: "/bolu",
-    component: () => import('./index-BIJaCzrF.mjs')
+    component: () => import('./index-3Ft5g4ba.mjs')
   },
   {
     name: "kars",
@@ -541,7 +541,7 @@ const _routes = [
   {
     name: "edirne",
     path: "/edirne",
-    component: () => import('./index-DGCSWSi7.mjs')
+    component: () => import('./index-qcUkg6_b.mjs')
   },
   {
     name: "elazig",
@@ -601,7 +601,7 @@ const _routes = [
   {
     name: "erzurum",
     path: "/erzurum",
-    component: () => import('./index-JL1IapUA.mjs')
+    component: () => import('./index-BgXXYgZp.mjs')
   },
   {
     name: "giresun",
@@ -691,7 +691,7 @@ const _routes = [
   {
     name: "balikesir",
     path: "/balikesir",
-    component: () => import('./index-C4A4RBis.mjs')
+    component: () => import('./index-CNlzk8sh.mjs')
   },
   {
     name: "canakkale",
@@ -761,7 +761,7 @@ const _routes = [
   {
     name: "bolu-district",
     path: "/bolu/:district()",
-    component: () => import('./index-BCQmKhuB.mjs')
+    component: () => import('./index-H5iuwz4L.mjs')
   },
   {
     name: "kars-district",
@@ -886,7 +886,7 @@ const _routes = [
   {
     name: "edirne-district",
     path: "/edirne/:district()",
-    component: () => import('./index-D7UMbkBL.mjs')
+    component: () => import('./index-DHtUM_Kg.mjs')
   },
   {
     name: "elazig-district",
@@ -946,12 +946,12 @@ const _routes = [
   {
     name: "erzurum-district",
     path: "/erzurum/:district()",
-    component: () => import('./index-DOiUYalN.mjs')
+    component: () => import('./index-DvpcNWaq.mjs')
   },
   {
     name: "giresun-district",
     path: "/giresun/:district()",
-    component: () => import('./index-DAP_iqjP.mjs')
+    component: () => import('./index--SOXhpDq.mjs')
   },
   {
     name: "isparta-district",
@@ -1036,7 +1036,7 @@ const _routes = [
   {
     name: "balikesir-district",
     path: "/balikesir/:district()",
-    component: () => import('./index-Ckbq_mRv.mjs')
+    component: () => import('./index-nFfS_Nef.mjs')
   },
   {
     name: "canakkale-district",
@@ -1101,7 +1101,7 @@ const _routes = [
   {
     name: "bolu-district-neighborhood",
     path: "/bolu/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-bGEDiPbk.mjs')
+    component: () => import('./_neighborhood_-GS9lweKm.mjs')
   },
   {
     name: "kars-district-neighborhood",
@@ -1231,7 +1231,7 @@ const _routes = [
   {
     name: "edirne-district-neighborhood",
     path: "/edirne/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-jAErbrz2.mjs')
+    component: () => import('./_neighborhood_-CvgZ1lZm.mjs')
   },
   {
     name: "elazig-district-neighborhood",
@@ -1291,7 +1291,7 @@ const _routes = [
   {
     name: "erzurum-district-neighborhood",
     path: "/erzurum/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-C2lbY9Ws.mjs')
+    component: () => import('./_neighborhood_-CsZLLsUR.mjs')
   },
   {
     name: "giresun-district-neighborhood",
@@ -1381,7 +1381,7 @@ const _routes = [
   {
     name: "balikesir-district-neighborhood",
     path: "/balikesir/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-VuOq2dZU.mjs')
+    component: () => import('./_neighborhood_-CntYtKwh.mjs')
   },
   {
     name: "canakkale-district-neighborhood",

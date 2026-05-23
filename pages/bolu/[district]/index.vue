@@ -7,7 +7,7 @@ const route = useRoute() ;
 const filter = ref('');
 
 const { data: boluData } = await useAsyncData('bolu-data', () =>
-$fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/bolu.json')
+$fetch<any[]>('https://pkodlari.com/data/bolu.json')
 )                                                                                                              ;
 
 const districtSlug = computed(() => route.params.district as string) ;
@@ -36,7 +36,7 @@ n.name.toLocaleLowerCase('tr').includes(filter.value.toLocaleLowerCase('tr'))
 )                                                                             ;
 })                                                                            ;
 
-const pageTitle = computed(() => districtData.value ? `${titleCase(districtData.value.name)} Posta Kodları` : 'İlçe Bulunamadı');
+const pageTitle = computed(() => districtData.value ? `Bolu ${titleCase(districtData.value.name)} Posta Kodları` : 'İlçe Bulunamadı');
 const pageDesc = computed(() => districtData.value ? `Bolu ilinin ${titleCase(districtData.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!` : 'Posta Kodu Rehberi');
 
 useHead({

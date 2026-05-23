@@ -7,7 +7,7 @@ const route = useRoute() ;
 const filter = ref('');
 
 const { data: balikesirData } = await useAsyncData('balikesir-data', () =>
-$fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/balikesir.json')
+$fetch<any[]>('https://pkodlari.com/data/balikesir.json')
 )                                                                                                                   ;
 
 const districtSlug = computed(() => route.params.district as string) ;
@@ -36,7 +36,7 @@ n.name.toLocaleLowerCase('tr').includes(filter.value.toLocaleLowerCase('tr'))
 )                                                                             ;
 })                                                                            ;
 
-const pageTitle = computed(() => districtData.value ? `${titleCase(districtData.value.name)} Posta Kodları` : 'İlçe Bulunamadı');
+const pageTitle = computed(() => districtData.value ? `Balıkesir ${titleCase(districtData.value.name)} Posta Kodları` : 'İlçe Bulunamadı');
 const pageDesc = computed(() => districtData.value ? `Balıkesir ilinin ${titleCase(districtData.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!` : 'Posta Kodu Rehberi');
 
 useHead({

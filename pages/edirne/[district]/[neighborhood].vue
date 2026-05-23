@@ -7,7 +7,7 @@ const route = useRoute()  ;
 const copied = ref(false) ;
 
 const { data: edirneData } = await useAsyncData('edirne-data', () =>
-$fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/edirne.json')
+$fetch<any[]>('https://pkodlari.com/data/edirne.json')
 )                                                                                                                ;
 
 const districtSlug = computed(() => route.params.district as string)         ;

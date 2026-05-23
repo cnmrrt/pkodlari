@@ -606,7 +606,7 @@ const _routes = [
   {
     name: "giresun",
     path: "/giresun",
-    component: () => import('./index-ReA1Ym8T.mjs')
+    component: () => import('./index-B_VT3p4r.mjs')
   },
   {
     name: "isparta",
@@ -951,7 +951,7 @@ const _routes = [
   {
     name: "giresun-district",
     path: "/giresun/:district()",
-    component: () => import('./index-B591-7Ue.mjs')
+    component: () => import('./index-DAP_iqjP.mjs')
   },
   {
     name: "isparta-district",
@@ -1296,7 +1296,7 @@ const _routes = [
   {
     name: "giresun-district-neighborhood",
     path: "/giresun/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-Bu8dLjPK.mjs')
+    component: () => import('./_neighborhood_-DRDP08a8.mjs')
   },
   {
     name: "isparta-district-neighborhood",

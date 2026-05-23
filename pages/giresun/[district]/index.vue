@@ -36,7 +36,7 @@ n.name.toLocaleLowerCase('tr').includes(filter.value.toLocaleLowerCase('tr'))
 )                                                                             ;
 })                                                                            ;
 
-const pageTitle = computed(() => districtData.value ? `${titleCase(districtData.value.name)} Posta Kodları` : 'İlçe Bulunamadı');
+const pageTitle = computed(() => districtData.value ? `Giresun ${titleCase(districtData.value.name)} Posta Kodları` : 'İlçe Bulunamadı');
 const pageDesc = computed(() => districtData.value ? `Giresun ilinin ${titleCase(districtData.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!` : 'Posta Kodu Rehberi');
 
 useHead({

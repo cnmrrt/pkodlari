@@ -3,7 +3,7 @@ import { ArrowLeft, ChevronRight } from 'lucide-vue-next';
 import { slugify, titleCase } from '~/utils/slugify';
 
 const { data: canakkaleData } = await useAsyncData('canakkale-data', () =>
-$fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/canakkale.json')
+$fetch<any[]>('https://pkodlari.com/data/canakkale.json')
 )                                                                                                                   ;
 
 const districts = computed(() => {
@@ -22,8 +22,8 @@ districtMap[distSlug].count++                        ;
 return Object.entries(districtMap).sort(([, a], [, b]) => a.name.localeCompare(b.name, 'tr'));
 })                                                                                             ;
 
-const pageTitle = "Çanakkale Posta Kodları";
-const pageDesc = "Çanakkale iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!";
+const pageTitle = "Çanakkale Posta Kodları - pkodlari.com.tr";
+const pageDesc = "Çanakkale iline bağlı ilçe ve mahallelerin güncel posta kodlarını görmek için tıklayın!";
 
 useHead({
 title: pageTitle,

@@ -3,7 +3,7 @@ import { ArrowLeft, ChevronRight } from 'lucide-vue-next';
 import { slugify, titleCase } from '~/utils/slugify';
 
 const { data: izmirData } = await useAsyncData('izmir-data', () =>
-$fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/izmir.json')
+$fetch<any[]>('https://pkodlari.com/data/izmir.json')
 )                                                                                                               ;
 
 const districts = computed(() => {

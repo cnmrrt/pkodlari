@@ -466,7 +466,7 @@ const _routes = [
   {
     name: "izmir",
     path: "/izmir",
-    component: () => import('./index-Uglylqa9.mjs')
+    component: () => import('./index-D58xniqI.mjs')
   },
   {
     name: "kilis",
@@ -696,7 +696,7 @@ const _routes = [
   {
     name: "canakkale",
     path: "/canakkale",
-    component: () => import('./index-BZgKIfn-.mjs')
+    component: () => import('./index-B6IOHNBr.mjs')
   },
   {
     name: "eskisehir",
@@ -706,7 +706,7 @@ const _routes = [
   {
     name: "gaziantep",
     path: "/gaziantep",
-    component: () => import('./index-CqDj5EFM.mjs')
+    component: () => import('./index-BOtJyb1V.mjs')
   },
   {
     name: "gumushane",
@@ -716,7 +716,7 @@ const _routes = [
   {
     name: "kastamonu",
     path: "/kastamonu",
-    component: () => import('./index-gf91wv5V.mjs')
+    component: () => import('./index-Dt2kLjDO.mjs')
   },
   {
     name: "kirikkale",
@@ -811,7 +811,7 @@ const _routes = [
   {
     name: "izmir-district",
     path: "/izmir/:district()",
-    component: () => import('./index-rsGfhsD0.mjs')
+    component: () => import('./index-DA5fFjQ-.mjs')
   },
   {
     name: "kilis-district",
@@ -1041,7 +1041,7 @@ const _routes = [
   {
     name: "canakkale-district",
     path: "/canakkale/:district()",
-    component: () => import('./index-BCP7Aika.mjs')
+    component: () => import('./index-CTXb0FrQ.mjs')
   },
   {
     name: "eskisehir-district",
@@ -1051,7 +1051,7 @@ const _routes = [
   {
     name: "gaziantep-district",
     path: "/gaziantep/:district()",
-    component: () => import('./index-_s8tTHO4.mjs')
+    component: () => import('./index-DRq2FMZF.mjs')
   },
   {
     name: "gumushane-district",
@@ -1061,7 +1061,7 @@ const _routes = [
   {
     name: "kastamonu-district",
     path: "/kastamonu/:district()",
-    component: () => import('./index-BJZ_3NEp.mjs')
+    component: () => import('./index-DODaBegz.mjs')
   },
   {
     name: "kirikkale-district",
@@ -1156,7 +1156,7 @@ const _routes = [
   {
     name: "izmir-district-neighborhood",
     path: "/izmir/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-C2zGx9Mq.mjs')
+    component: () => import('./_neighborhood_-B2I4QcTA.mjs')
   },
   {
     name: "kilis-district-neighborhood",
@@ -1386,7 +1386,7 @@ const _routes = [
   {
     name: "canakkale-district-neighborhood",
     path: "/canakkale/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-DCeGcf-Z.mjs')
+    component: () => import('./_neighborhood_-CHIyGi4H.mjs')
   },
   {
     name: "eskisehir-district-neighborhood",
@@ -1396,7 +1396,7 @@ const _routes = [
   {
     name: "gaziantep-district-neighborhood",
     path: "/gaziantep/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-C43cs6mY.mjs')
+    component: () => import('./_neighborhood_-Blnn2ZNO.mjs')
   },
   {
     name: "gumushane-district-neighborhood",
@@ -1406,7 +1406,7 @@ const _routes = [
   {
     name: "kastamonu-district-neighborhood",
     path: "/kastamonu/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-Coc8pJjq.mjs')
+    component: () => import('./_neighborhood_-BpHwn-sF.mjs')
   },
   {
     name: "kirikkale-district-neighborhood",

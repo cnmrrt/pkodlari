@@ -31,7 +31,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     const copied = ref(false);
     const { data: aksarayData } = ([__temp, __restore] = withAsyncContext(() => useAsyncData(
       "aksaray-data",
-      () => $fetch("https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/aksaray.json")
+      () => $fetch("https://pkodlari.com/data/aksaray.json")
     )), __temp = await __temp, __restore(), __temp);
     const districtSlug = computed(() => route.params.district);
     const neighborhoodSlug = computed(() => route.params.neighborhood);

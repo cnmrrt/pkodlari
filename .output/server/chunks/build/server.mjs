@@ -661,7 +661,7 @@ const _routes = [
   {
     name: "erzincan",
     path: "/erzincan",
-    component: () => import('./index-BJ5J09ny.mjs')
+    component: () => import('./index-Bcd8Ro6n.mjs')
   },
   {
     name: "istanbul",
@@ -731,7 +731,7 @@ const _routes = [
   {
     name: "diyarbakir",
     path: "/diyarbakir",
-    component: () => import('./index-jorOSeDy.mjs')
+    component: () => import('./index-CSiGsx2i.mjs')
   },
   {
     name: "kirklareli",
@@ -1006,7 +1006,7 @@ const _routes = [
   {
     name: "erzincan-district",
     path: "/erzincan/:district()",
-    component: () => import('./index-BedK2fYE.mjs')
+    component: () => import('./index-UE_yhhgn.mjs')
   },
   {
     name: "istanbul-district",
@@ -1076,7 +1076,7 @@ const _routes = [
   {
     name: "diyarbakir-district",
     path: "/diyarbakir/:district()",
-    component: () => import('./index-Crd5Fl7l.mjs')
+    component: () => import('./index-BlDZNhLF.mjs')
   },
   {
     name: "kirklareli-district",
@@ -1351,7 +1351,7 @@ const _routes = [
   {
     name: "erzincan-district-neighborhood",
     path: "/erzincan/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-_-sb43jR.mjs')
+    component: () => import('./_neighborhood_-BJZQuxhP.mjs')
   },
   {
     name: "istanbul-district-neighborhood",
@@ -1421,7 +1421,7 @@ const _routes = [
   {
     name: "diyarbakir-district-neighborhood",
     path: "/diyarbakir/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-i75IwEAq.mjs')
+    component: () => import('./_neighborhood_-BhOj3eU-.mjs')
   },
   {
     name: "kirklareli-district-neighborhood",

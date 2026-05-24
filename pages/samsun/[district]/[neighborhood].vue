@@ -7,7 +7,7 @@ const route = useRoute()  ;
 const copied = ref(false) ;
 
 const { data: samsunData } = await useAsyncData('samsun-data', () =>
-$fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/samsun.json')
+$fetch<any[]>('https://pkodlari.com/data/samsun.json')
 )                                                                                                                ;
 
 const districtSlug = computed(() => route.params.district as string)         ;

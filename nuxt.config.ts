@@ -4,6 +4,9 @@ export default defineNuxtConfig({
     devtools: { enabled: true },
     app: {
         head: {
+            htmlAttrs: {
+                lang: 'tr'
+            },
             title: 'Posta Kodu Rehberi',
             script: [
                 { src: 'https://cdn.tailwindcss.com' },
@@ -23,8 +26,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
                 }
             ],
             link: [
-                { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap' },
-                { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
+                { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap' },
+                { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+                { rel: 'preconnect', href: 'https://cdn.tailwindcss.com' }
+
             ],
             style: [
                 {

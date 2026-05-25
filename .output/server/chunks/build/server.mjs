@@ -401,7 +401,7 @@ const _routes = [
   {
     name: "mus",
     path: "/mus",
-    component: () => import('./index-Dz7FDF35.mjs')
+    component: () => import('./index-CU7RAdF1.mjs')
   },
   {
     name: "van",
@@ -631,7 +631,7 @@ const _routes = [
   {
     name: "kocaeli",
     path: "/kocaeli",
-    component: () => import('./index-CA0hs6Lv.mjs')
+    component: () => import('./index-DdXl3a_e.mjs')
   },
   {
     name: "kutahya",
@@ -641,7 +641,7 @@ const _routes = [
   {
     name: "malatya",
     path: "/malatya",
-    component: () => import('./index-CFTwp51m.mjs')
+    component: () => import('./index-UZirkTIW.mjs')
   },
   {
     name: "sakarya",
@@ -746,7 +746,7 @@ const _routes = [
   {
     name: "mus-district",
     path: "/mus/:district()",
-    component: () => import('./index-R7kiIS9f.mjs')
+    component: () => import('./index-BGqAjwyC.mjs')
   },
   {
     name: "van-district",
@@ -976,7 +976,7 @@ const _routes = [
   {
     name: "kocaeli-district",
     path: "/kocaeli/:district()",
-    component: () => import('./index-w2wAvrWX.mjs')
+    component: () => import('./index-CbZRGVwc.mjs')
   },
   {
     name: "kutahya-district",
@@ -986,7 +986,7 @@ const _routes = [
   {
     name: "malatya-district",
     path: "/malatya/:district()",
-    component: () => import('./index-CgkHMCOW.mjs')
+    component: () => import('./index-CmcZkbLk.mjs')
   },
   {
     name: "sakarya-district",
@@ -1086,7 +1086,7 @@ const _routes = [
   {
     name: "mus-district-neighborhood",
     path: "/mus/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-BMUlqLAN.mjs')
+    component: () => import('./_neighborhood_-BqIoUWmq.mjs')
   },
   {
     name: "van-district-neighborhood",
@@ -1321,7 +1321,7 @@ const _routes = [
   {
     name: "kocaeli-district-neighborhood",
     path: "/kocaeli/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-BvxJSvI7.mjs')
+    component: () => import('./_neighborhood_-CylPPf9o.mjs')
   },
   {
     name: "kutahya-district-neighborhood",
@@ -1331,7 +1331,7 @@ const _routes = [
   {
     name: "malatya-district-neighborhood",
     path: "/malatya/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-W794pUPB.mjs')
+    component: () => import('./_neighborhood_-BmusRh2Q.mjs')
   },
   {
     name: "sakarya-district-neighborhood",

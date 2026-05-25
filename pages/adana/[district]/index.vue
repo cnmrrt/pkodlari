@@ -7,7 +7,7 @@ const route = useRoute() ;
 const filter = ref('');
 
 const { data: adanaData } = await useAsyncData('adana-data', () =>
-$fetch<any[]>(https://pkodlari.com/data/adana.json')
+$fetch<any[]>('https://pkodlari.com/data/adana.json')
 )                                                                                                               ;
 
 const districtSlug = computed(() => route.params.district as string) ;

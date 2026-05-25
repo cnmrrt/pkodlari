@@ -3,8 +3,8 @@ import { ArrowLeft, ChevronRight } from 'lucide-vue-next';
 import { slugify, titleCase } from '~/utils/slugify';
 
 const { data: adanaData } = await useAsyncData('adana-data', () =>
-$fetch<any[]>(https://pkodlari.com/data/adana.json')
-)                                                                                                               ;
+$fetch<any[]>('https://pkodlari.com/data/adana.json')
+)                                                                                                             ;
 
 const districts = computed(() => {
 if (!adanaData.value) return []                                         ;

@@ -7,7 +7,7 @@ const route = useRoute() ;
 const filter = ref('');
 
 const { data: tokatData } = await useAsyncData('tokat-data', () =>
-$fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/tokat.json')
+$fetch<any[]>('https://pkodlari.com/data/tokat.json')
 )                                                                                                               ;
 
 const districtSlug = computed(() => route.params.district as string) ;
@@ -36,7 +36,7 @@ n.name.toLocaleLowerCase('tr').includes(filter.value.toLocaleLowerCase('tr'))
 )                                                                             ;
 })                                                                            ;
 
-const pageTitle = computed(() => districtData.value ? `${titleCase(districtData.value.name)} Posta Kodları` : 'İlçe Bulunamadı');
+const pageTitle = computed(() => districtData.value ? `Tokat ${titleCase(districtData.value.name)} Posta Kodları` : 'İlçe Bulunamadı');
 const pageDesc = computed(() => districtData.value ? `Tokat ilinin ${titleCase(districtData.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!` : 'Posta Kodu Rehberi');
 
 useHead({

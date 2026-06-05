@@ -3,7 +3,7 @@ import { ArrowLeft, ChevronRight } from 'lucide-vue-next';
 import { slugify, titleCase } from '~/utils/slugify';
 
 const { data: osmaniyeData } = await useAsyncData('osmaniye-data', () =>
-$fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/osmaniye.json')
+$fetch<any[]>('https://pkodlari.com/data/osmaniye.json')
 )                                                                                                                  ;
 
 const districts = computed(() => {

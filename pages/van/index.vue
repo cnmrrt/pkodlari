@@ -3,7 +3,7 @@ import { ArrowLeft, ChevronRight } from 'lucide-vue-next';
 import { slugify, titleCase } from '~/utils/slugify';
 
 const { data: vanData } = await useAsyncData('van-data', () =>
-$fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/van.json')
+$fetch<any[]>('https://pkodlari.com/data/van.json')
 )                                                                                                               ;
 
 const districts = computed(() => {

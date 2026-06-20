@@ -584,6 +584,11 @@ const _routes = [
     component: () => import('./index-DnGfrqaV.mjs')
   },
   {
+    name: "yalova",
+    path: "/yalova",
+    component: () => import('./index-CVpOyMCA.mjs')
+  },
+  {
     name: "yozgat",
     path: "/yozgat",
     component: () => import('./index-ClfflGbX.mjs')
@@ -939,6 +944,11 @@ const _routes = [
     component: () => import('./index-E2GjpWvV.mjs')
   },
   {
+    name: "yalova-district",
+    path: "/yalova/:district()",
+    component: () => import('./index-CEQarN_z.mjs')
+  },
+  {
     name: "yozgat-district",
     path: "/yozgat/:district()",
     component: () => import('./index-7gvQqBin.mjs')
@@ -1292,6 +1302,11 @@ const _routes = [
     name: "sirnak-district-neighborhood",
     path: "/sirnak/:district()/:neighborhood()",
     component: () => import('./_neighborhood_-DFTugbup.mjs')
+  },
+  {
+    name: "yalova-district-neighborhood",
+    path: "/yalova/:district()/:neighborhood()",
+    component: () => import('./_neighborhood_-tVaqP29W.mjs')
   },
   {
     name: "yozgat-district-neighborhood",

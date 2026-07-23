@@ -409,11 +409,6 @@ const _routes = [
     component: () => import('./index-BvGfxmQH.mjs')
   },
   {
-    name: "agri",
-    path: "/agri",
-    component: () => import('./index-T0oVSzsc.mjs')
-  },
-  {
     name: "bolu",
     path: "/bolu",
     component: () => import('./index-3Ft5g4ba.mjs')
@@ -437,11 +432,6 @@ const _routes = [
     name: "usak",
     path: "/usak",
     component: () => import('./index-C8uog0IW.mjs')
-  },
-  {
-    name: "adana",
-    path: "/adana",
-    component: () => import('./index-B2xFL15H.mjs')
   },
   {
     name: "aydin",
@@ -669,11 +659,6 @@ const _routes = [
     component: () => import('./index-7qqybBEC.mjs')
   },
   {
-    name: "adiyaman",
-    path: "/adiyaman",
-    component: () => import('./index-LzCNaDBb.mjs')
-  },
-  {
     name: "erzincan",
     path: "/erzincan",
     component: () => import('./index-Bcd8Ro6n.mjs')
@@ -754,11 +739,6 @@ const _routes = [
     component: () => import('./index-cCK7-tYw.mjs')
   },
   {
-    name: "afyonkarahisar",
-    path: "/afyonkarahisar",
-    component: () => import('./index-CajwX8B0.mjs')
-  },
-  {
     name: "mus-district",
     path: "/mus/:district()",
     component: () => import('./index-BGqAjwyC.mjs')
@@ -767,11 +747,6 @@ const _routes = [
     name: "van-district",
     path: "/van/:district()",
     component: () => import('./index-Cdj0Zh1E.mjs')
-  },
-  {
-    name: "agri-district",
-    path: "/agri/:district()",
-    component: () => import('./index-DPVj4VYA.mjs')
   },
   {
     name: "bolu-district",
@@ -797,11 +772,6 @@ const _routes = [
     name: "usak-district",
     path: "/usak/:district()",
     component: () => import('./index-CLse_2bk.mjs')
-  },
-  {
-    name: "adana-district",
-    path: "/adana/:district()",
-    component: () => import('./index-dQi5iUgb.mjs')
   },
   {
     name: "aydin-district",
@@ -866,7 +836,7 @@ const _routes = [
   {
     name: "city-district",
     path: "/:city()/:district()",
-    component: () => import('./index-Cw762wL_.mjs')
+    component: () => import('./index-CMqzQ7Ye.mjs')
   },
   {
     name: "amasya-district",
@@ -1029,11 +999,6 @@ const _routes = [
     component: () => import('./index-C47AKJeT.mjs')
   },
   {
-    name: "adiyaman-district",
-    path: "/adiyaman/:district()",
-    component: () => import('./index-vm65FXKn.mjs')
-  },
-  {
     name: "erzincan-district",
     path: "/erzincan/:district()",
     component: () => import('./index-UE_yhhgn.mjs')
@@ -1124,11 +1089,6 @@ const _routes = [
     component: () => import('./_neighborhood_-RIn_dsqg.mjs')
   },
   {
-    name: "agri-district-neighborhood",
-    path: "/agri/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-4PhbKNjx.mjs')
-  },
-  {
     name: "bolu-district-neighborhood",
     path: "/bolu/:district()/:neighborhood()",
     component: () => import('./_neighborhood_-GS9lweKm.mjs')
@@ -1152,16 +1112,6 @@ const _routes = [
     name: "usak-district-neighborhood",
     path: "/usak/:district()/:neighborhood()",
     component: () => import('./_neighborhood_-C5MUXd0z.mjs')
-  },
-  {
-    name: "adana-district-neighborhood",
-    path: "/adana/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-Ba38DCcE.mjs')
-  },
-  {
-    name: "afyonkarahisar-district",
-    path: "/afyonkarahisar/:district()",
-    component: () => import('./index-C8ei2-rd.mjs')
   },
   {
     name: "aydin-district-neighborhood",
@@ -1389,11 +1339,6 @@ const _routes = [
     component: () => import('./_neighborhood_-BWG-AhX_.mjs')
   },
   {
-    name: "adiyaman-district-neighborhood",
-    path: "/adiyaman/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-ChEBORSU.mjs')
-  },
-  {
     name: "erzincan-district-neighborhood",
     path: "/erzincan/:district()/:neighborhood()",
     component: () => import('./_neighborhood_-BJZQuxhP.mjs')
@@ -1472,11 +1417,6 @@ const _routes = [
     name: "kirklareli-district-neighborhood",
     path: "/kirklareli/:district()/:neighborhood()",
     component: () => import('./_neighborhood_-CXWozHVd.mjs')
-  },
-  {
-    name: "afyonkarahisar-district-neighborhood",
-    path: "/afyonkarahisar/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-9QRs2aPI.mjs')
   }
 ];
 const ROUTE_KEY_PARENTHESES_RE = /(:\w+)\([^)]+\)/g;

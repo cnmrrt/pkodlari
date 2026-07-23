@@ -1,71 +1,65 @@
 <script setup lang="ts">
-import { inject, computed, ref } from 'vue';
-import type { Ref } from 'vue';
+import { computed, ref } from 'vue';
 import { ArrowLeft, Search, ChevronRight, MapPin } from 'lucide-vue-next';
 import type { PostalData } from '~/types';
 
-const route = useRoute()                                         ;
-const postalData = inject<Ref<PostalData | null>>('postalData');
+const route = useRoute();
 const filter = ref('');
 
-const citySlug = computed(() => route.params.city as string)         ;
-const districtSlug = computed(() => route.params.district as string) ;
+// Fetch postal data safely during SSR/Build time so the crawler catches it
+const { data: postalData } = await useAsyncData<PostalData>('postal-data', async () => {
+  // If it's a local import or file, load it here. Example:
+  // return await import('~/assets/data/postal-data.json').then(m => m.default)
+  
+  // Or if it's from an internal API:
+  return await $fetch('/api/postal-data')
+});
 
-const cityItem = computed(() => postalData?.value?.[citySlug.value])               ;
-const districtItem = computed(() => cityItem.value?.districts[districtSlug.value]) ;
+const citySlug = computed(() => route.params.city as string);
+const districtSlug = computed(() => route.params.district as string);
+
+const cityItem = computed(() => postalData.value?.[citySlug.value]);
+const districtItem = computed(() => cityItem.value?.districts[districtSlug.value]);
 
 const pageTitle = computed(() => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodları` : 'İlçe Bulunamadı');
 const pageDesc = computed(() => {
-if (!cityItem.value || !districtItem.value) return 'Posta Kodu Rehberi';
-return `${titleCase(cityItem.value.name)} ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!` ;
-})                                                                                                                                                                 ;
-useHead({
-title: pageTitle,
-meta: [{ name: 'description', content: pageDesc }],
-script: [
-computed(() => {
-if (!cityItem.value || !districtItem.value) return {}                                                                                                              ;
-return {
-type: 'application/ld+json',
-children: JSON.stringify({
-"@context": "https://schema.org",
-"@type": "BreadcrumbList",
-"itemListElement": [
-{
-"@type": "ListItem",
-"position": 1,
-"name": "Anasayfa",
-"item": `https://pkodlari.com/`
-},
-{
-"@type": "ListItem",
-"position": 2,
-"name": titleCase(cityItem.value.name),
-"item": `https://pkodlari.com/${citySlug.value}`
-},
-{
-"@type": "ListItem",
-"position": 3,
-"name": titleCase(districtItem.value.name),
-"item": `https://pkodlari.com/${citySlug.value}/${districtSlug.value}`
-}
-]
-})
-}
-})
-]
-})                                                                                                                                                                 ;
-usePageSeo({ title: pageTitle, description: pageDesc })                                                                                                            ;
+  if (!cityItem.value || !districtItem.value) return 'Posta Kodu Rehberi';
+  return `${titleCase(cityItem.value.name)} ilinin ${titleCase(districtItem.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!`;
+});
 
-const isValid = computed(() => !!districtItem.value) ;
+useHead({
+  title: pageTitle,
+  meta: [{ name: 'description', content: pageDesc }],
+  script: [
+    computed(() => {
+      if (!cityItem.value || !districtItem.value) return {};
+      return {
+        type: 'application/ld+json',
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Anasayfa", "item": "https://pkodlari.com/" },
+            { "@type": "ListItem", "position": 2, "name": titleCase(cityItem.value.name), "item": `https://pkodlari.com/${citySlug.value}` },
+            { "@type": "ListItem", "position": 3, "name": titleCase(districtItem.value.name), "item": `https://pkodlari.com/${citySlug.value}/${districtSlug.value}` }
+          ]
+        })
+      };
+    })
+  ]
+});
+
+usePageSeo({ title: pageTitle, description: pageDesc });
+
+const isValid = computed(() => !!districtItem.value);
 
 const neighs = computed(() => {
-if (!isValid.value) return []                                                                     ;
-const items = Object.entries(districtItem.value!.neighborhoods)                                   ;
-return items
-.filter(([, n]) => n.name.toLocaleLowerCase('tr').includes(filter.value.toLocaleLowerCase('tr')))
-.sort(([, a], [, b]) => a.name.localeCompare(b.name, 'tr'));
-})                                                                                                ;
+  if (!isValid.value) return [];
+  const items = Object.entries(districtItem.value!.neighborhoods);
+  return items
+    .filter(([, n]) => n.name.toLocaleLowerCase('tr').includes(filter.value.toLocaleLowerCase('tr')))
+    .sort(([, a], [, b]) => a.name.localeCompare(b.name, 'tr'));
+});
 </script>
 
 <template>

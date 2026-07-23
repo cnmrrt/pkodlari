@@ -506,7 +506,7 @@ const _routes = [
   {
     name: "city",
     path: "/:city()",
-    component: () => import('./index-BUeDpNMT.mjs')
+    component: () => import('./index-3wwJ_3AG.mjs')
   },
   {
     name: "amasya",
@@ -866,7 +866,7 @@ const _routes = [
   {
     name: "city-district",
     path: "/:city()/:district()",
-    component: () => import('./index-D0VZhPNH.mjs')
+    component: () => import('./index-Cw762wL_.mjs')
   },
   {
     name: "amasya-district",

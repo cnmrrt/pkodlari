@@ -1,14 +1,51 @@
 <script setup lang="ts">
-import { inject, computed } from "vue";
-import type { Ref } from "vue";
+import { computed } from "vue";
 import { ArrowLeft, ChevronRight, MapPin } from "lucide-vue-next";
-import type { PostalData } from "~/types";
+import { slugify, titleCase } from "~/utils/slugify";
 
 const route = useRoute();
-const postalData = inject<Ref<PostalData | null>>("postalData");
-
 const citySlug = computed(() => route.params.city as string);
-const cityItem = computed(() => postalData?.value?.[citySlug.value]);
+
+const { data: cityData } = await useAsyncData(
+  () => `city-data-${citySlug.value}`,
+  async () => {
+    try {
+      return await $fetch<any[]>(`https://pkodlari.com/data/${citySlug.value}.json`);
+    } catch {
+      return [];
+    }
+  }
+);
+
+const cityItem = computed(() => {
+  if (!cityData.value?.length) return null;
+
+  const districts = cityData.value.reduce<Record<string, { name: string; neighborhoods: any[] }>>(
+    (acc, item) => {
+      const distSlug = slugify(item.ilce || "MERKEZ");
+      const distName = item.ilce || "MERKEZ";
+      if (!acc[distSlug]) {
+        acc[distSlug] = { name: distName, neighborhoods: [] };
+      }
+      acc[distSlug].neighborhoods.push({
+        name: item.mahalle,
+        zipCode: item.postaKodu,
+        slug: slugify(item.mahalle),
+      });
+      return acc;
+    },
+    {}
+  );
+
+  Object.values(districts).forEach((dist) =>
+    dist.neighborhoods.sort((a, b) => a.name.localeCompare(b.name, "tr"))
+  );
+
+  return {
+    name: cityData.value[0].il || citySlug.value,
+    districts,
+  };
+});
 
 const pageTitle = computed(() =>
   cityItem.value ? `${titleCase(cityItem.value.name)} Posta Kodları` : "Şehir Bulunamadı"
@@ -88,7 +125,7 @@ const isValid = computed(() => !!cityItem.value);
         <div>
           <h3 class="font-bold text-slate-900 text-lg">{{ titleCase(distItem.name) }}</h3>
           <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
-            {{ Object.keys(distItem.neighborhoods || {}).length }} mahalle
+            {{ distItem.neighborhoods.length }} mahalle
           </p>
         </div>
         <ChevronRight class="w-5 h-5 text-slate-300" />

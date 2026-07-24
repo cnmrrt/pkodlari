@@ -41,8 +41,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       );
     });
     const isValid = computed(() => !!neighData.value);
-    const pageTitle = computed(() => neighData.value ? `${titleCase(neighData.value.mahalle)} Posta Kodu (${titleCase(neighData.value.ilce)}/\xC7orum)` : "Posta Kodu Bulunamad\u0131");
-    const pageDesc = computed(() => neighData.value ? `\xC7orum ilinin ${titleCase(neighData.value.ilce)} il\xE7esine ba\u011Fl\u0131 ${titleCase(neighData.value.mahalle)}'nin posta kodunu \xF6\u011Frenmek i\xE7in t\u0131klay\u0131n!` : "Posta Kodu Rehberi");
+    const pageTitle = computed(() => neighData.value ? `${titleCase(neighData.value.mahalle)} Posta Kodu (${titleCase(neighData.value.ilce)}/Çorum)` : "Posta Kodu Bulunamadı");
+    const pageDesc = computed(() => neighData.value ? `Çorum ilinin ${titleCase(neighData.value.ilce)} ilçesine bağlı ${titleCase(neighData.value.mahalle)}'nin posta kodunu öğrenmek için tıklayın!` : "Posta Kodu Rehberi");
     useHead({
       title: pageTitle,
       meta: [{ name: "description", content: pageDesc }],
@@ -56,7 +56,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
               "@type": "BreadcrumbList",
               "itemListElement": [
                 { "@type": "ListItem", "position": 1, "name": "Anasayfa", "item": "https://pkodlari.com/" },
-                { "@type": "ListItem", "position": 2, "name": "\xC7orum", "item": "https://pkodlari.com/corum" },
+                { "@type": "ListItem", "position": 2, "name": "Çorum", "item": "https://pkodlari.com/corum" },
                 { "@type": "ListItem", "position": 3, "name": titleCase(neighData.value.ilce), "item": `https://pkodlari.com/corum/${districtSlug.value}` },
                 { "@type": "ListItem", "position": 4, "name": titleCase(neighData.value.mahalle), "item": `https://pkodlari.com/corum/${districtSlug.value}/${neighborhoodSlug.value}` }
               ]
@@ -75,7 +75,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                 "name": `${neighData.value.postaKodu} nerenin posta kodu?`,
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": `${neighData.value.postaKodu} posta kodu \xC7orum ${titleCase(neighData.value.ilce)} ${titleCase(neighData.value.mahalle)}'ne aittir.`
+                  "text": `${neighData.value.postaKodu} posta kodu Çorum ${titleCase(neighData.value.ilce)} ${titleCase(neighData.value.mahalle)}'ne aittir.`
                 }
               }]
             })
@@ -85,7 +85,6 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     });
     usePageSeo({ title: pageTitle, description: pageDesc });
     return (_ctx, _push, _parent, _attrs) => {
-      var _a;
       const _component_NuxtLink = __nuxt_component_0$1;
       if (isValid.value) {
         _push(`<div${ssrRenderAttrs(mergeProps({ class: "animate-in fade-in duration-500 max-w-2xl mx-auto" }, _attrs))}><nav class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-8 overflow-x-auto whitespace-nowrap pb-2">`);
@@ -95,10 +94,10 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         }, {
           default: withCtx((_, _push2, _parent2, _scopeId) => {
             if (_push2) {
-              _push2(`T\xDCRK\u0130YE`);
+              _push2(`TÜRKİYE`);
             } else {
               return [
-                createTextVNode("T\xDCRK\u0130YE")
+                createTextVNode("TÜRKİYE")
               ];
             }
           }),
@@ -111,10 +110,10 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         }, {
           default: withCtx((_, _push2, _parent2, _scopeId) => {
             if (_push2) {
-              _push2(`\xC7ORUM`);
+              _push2(`ÇORUM`);
             } else {
               return [
-                createTextVNode("\xC7ORUM")
+                createTextVNode("ÇORUM")
               ];
             }
           }),
@@ -138,7 +137,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         }, _parent));
         _push(`</nav><div class="bg-white border border-slate-200 rounded-[2rem] p-8 md:p-12 shadow-sm"><div class="text-center mb-10"><div class="inline-flex p-3 bg-slate-50 rounded-2xl mb-6">`);
         _push(ssrRenderComponent(unref(MapPin), { class: "w-6 h-6 text-slate-900" }, null, _parent));
-        _push(`</div><h1 class="text-4xl font-bold text-slate-900 mb-2 tracking-tight">${ssrInterpolate(unref(titleCase)(neighData.value.mahalle))}</h1><p class="text-slate-500 font-medium uppercase tracking-widest text-sm">${ssrInterpolate(unref(titleCase)(neighData.value.ilce))}, \xC7orum</p></div><div class="bg-slate-50 rounded-3xl p-8 text-center relative overflow-hidden"><div class="relative z-10"><p class="text-xs font-bold text-slate-400 uppercase tracking-[0.3em] mb-4">POSTA KODU</p><div class="mono text-7xl font-bold text-slate-900 mb-8">${ssrInterpolate(neighData.value.postaKodu)}</div><button class="${ssrRenderClass([copied.value ? "bg-green-600 text-white" : "bg-slate-900 text-white hover:bg-slate-800", "flex items-center gap-2 mx-auto px-8 py-4 rounded-2xl font-bold text-sm transition-all active:scale-95"])}">`);
+        _push(`</div><h1 class="text-4xl font-bold text-slate-900 mb-2 tracking-tight">${ssrInterpolate(unref(titleCase)(neighData.value.mahalle))}</h1><p class="text-slate-500 font-medium uppercase tracking-widest text-sm">${ssrInterpolate(unref(titleCase)(neighData.value.ilce))}, Çorum</p></div><div class="bg-slate-50 rounded-3xl p-8 text-center relative overflow-hidden"><div class="relative z-10"><p class="text-xs font-bold text-slate-400 uppercase tracking-[0.3em] mb-4">POSTA KODU</p><div class="mono text-7xl font-bold text-slate-900 mb-8">${ssrInterpolate(neighData.value.postaKodu)}</div><button class="${ssrRenderClass([copied.value ? "bg-green-600 text-white" : "bg-slate-900 text-white hover:bg-slate-800", "flex items-center gap-2 mx-auto px-8 py-4 rounded-2xl font-bold text-sm transition-all active:scale-95"])}">`);
         if (copied.value) {
           _push(ssrRenderComponent(unref(Check), { class: "w-4 h-4" }, null, _parent));
         } else {
@@ -146,13 +145,13 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         }
         _push(` ${ssrInterpolate(copied.value ? "KOPYALANDI" : "KODU KOPYALA")}</button></div><div class="absolute -bottom-10 -right-10 mono text-[12rem] font-black text-slate-200/50 select-none">${ssrInterpolate(String(neighData.value.postaKodu).substring(0, 2))}</div></div></div><div class="mt-8 flex justify-center"><button class="flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-colors font-bold text-xs uppercase tracking-widest">`);
         _push(ssrRenderComponent(unref(Share2), { class: "w-4 h-4" }, null, _parent));
-        _push(` PAYLA\u015E </button></div>`);
+        _push(` PAYLAŞ </button></div>`);
         if (neighData.value.map) {
           _push(`<div class="mt-12 bg-white border border-slate-200 rounded-[2rem] p-4 md:p-6 shadow-sm overflow-hidden"><div class="mb-4 flex items-center gap-2 px-2">`);
           _push(ssrRenderComponent(unref(MapPin), { class: "w-4 h-4 text-slate-400" }, null, _parent));
           _push(`<h3 class="font-bold text-slate-900 text-sm uppercase tracking-wide">Konum</h3></div>`);
           if (neighData.value.map.trim().startsWith("<")) {
-            _push(`<div class="w-full aspect-video rounded-2xl overflow-hidden [&amp;&gt;iframe]:w-full [&amp;&gt;iframe]:h-full">${(_a = neighData.value.map) != null ? _a : ""}</div>`);
+            _push(`<div class="w-full aspect-video rounded-2xl overflow-hidden [&amp;&gt;iframe]:w-full [&amp;&gt;iframe]:h-full">${neighData.value.map ?? ""}</div>`);
           } else {
             _push(`<iframe${ssrRenderAttr("src", neighData.value.map)} class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100" loading="lazy"></iframe>`);
           }
@@ -160,19 +159,19 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         } else {
           _push(`<!---->`);
         }
-        _push(`<div class="mt-8 text-center mb-8"><h2 class="text-xl font-bold text-slate-900 mb-2">${ssrInterpolate(neighData.value.postaKodu)} nerenin posta kodu?</h2><p class="text-slate-600">${ssrInterpolate(neighData.value.postaKodu)} posta kodu \xC7orum ${ssrInterpolate(unref(titleCase)(neighData.value.ilce))} ${ssrInterpolate(unref(titleCase)(neighData.value.mahalle))}&#39;ne aittir.</p></div><div class="mt-8 text-center mb-8"><h2 class="text-xl font-bold text-slate-900 mb-2">${ssrInterpolate(unref(titleCase)(neighData.value.ilce))} ${ssrInterpolate(unref(titleCase)(neighData.value.mahalle))} Posta Kodu Rehberi</h2><p class="text-slate-600">\xC7orum ${ssrInterpolate(unref(titleCase)(neighData.value.ilce))} ${ssrInterpolate(unref(titleCase)(neighData.value.mahalle))}&#39;ne ait g\xFCncel posta kodu bilgileri a\u015Fa\u011F\u0131da yer almaktad\u0131r. Adres formlar\u0131nda, kargo g\xF6nderilerinde ve resmi i\u015Flemlerde kullanabilirsiniz.</p><br><p><strong>${ssrInterpolate(unref(titleCase)(neighData.value.mahalle))} Posta Kodu: ${ssrInterpolate(neighData.value.postaKodu)}</strong></p></div><div class="mt-8 text-center mb-8"><h2 class="text-xl font-bold text-slate-900 mb-2">Adres Yaz\u0131m\u0131nda Posta Kodunun \xD6nemi</h2><p class="text-slate-600">Posta kodu, bir adresin en spesifik bile\u015Fenidir. ${ssrInterpolate(unref(titleCase)(neighData.value.mahalle))} i\xE7in tan\u0131mlanan ${ssrInterpolate(neighData.value.postaKodu)} numaras\u0131n\u0131 kullanmak \u015Fu avantajlar\u0131 sa\u011Flar:</p><ul><li><b>S\u0131ralama H\u0131z\u0131:</b> PTT ve \xF6zel kargo \u015Firketlerinin otomatik ayr\u0131\u015Ft\u0131rma makineleri g\xF6nderinizi posta koduna g\xF6re s\u0131n\u0131fland\u0131r\u0131r.</li><li><b>Yanl\u0131\u015F Teslimat \xD6nleme:</b> Do\u011Fru kod, g\xF6nderinizin ba\u015Fka bir \u015Fehirdeki ada\u015F mahalleye gitmesini engeller.</li><li><b>Dijital Do\u011Fruluk:</b> Bankac\u0131l\u0131k ve e-devlet sistemlerinde adres teyidinde kullan\u0131l\u0131r.</li></ul></div><div class="mt-8 text-center mb-8"><h2 class="text-xl font-bold text-slate-900 mb-2">Konum Ve B\xF6lge Bilgileri</h2><p class="text-slate-600">${ssrInterpolate(unref(titleCase)(neighData.value.mahalle))}, \xC7orum ilinin ${ssrInterpolate(unref(titleCase)(neighData.value.ilce))} il\xE7esine ba\u011Fl\u0131d\u0131r. Posta kodunun ilk 2 hanesi il plaka kodunu, son 3 hanesi ise il\xE7e ve mahalle da\u011F\u0131t\u0131m b\xF6lgesini temsil eder.</p></div></div>`);
+        _push(`<div class="mt-8 text-center mb-8"><h2 class="text-xl font-bold text-slate-900 mb-2">${ssrInterpolate(neighData.value.postaKodu)} nerenin posta kodu?</h2><p class="text-slate-600">${ssrInterpolate(neighData.value.postaKodu)} posta kodu Çorum ${ssrInterpolate(unref(titleCase)(neighData.value.ilce))} ${ssrInterpolate(unref(titleCase)(neighData.value.mahalle))}&#39;ne aittir.</p></div><div class="mt-8 text-center mb-8"><h2 class="text-xl font-bold text-slate-900 mb-2">${ssrInterpolate(unref(titleCase)(neighData.value.ilce))} ${ssrInterpolate(unref(titleCase)(neighData.value.mahalle))} Posta Kodu Rehberi</h2><p class="text-slate-600">Çorum ${ssrInterpolate(unref(titleCase)(neighData.value.ilce))} ${ssrInterpolate(unref(titleCase)(neighData.value.mahalle))}&#39;ne ait güncel posta kodu bilgileri aşağıda yer almaktadır. Adres formlarında, kargo gönderilerinde ve resmi işlemlerde kullanabilirsiniz.</p><br><p><strong>${ssrInterpolate(unref(titleCase)(neighData.value.mahalle))} Posta Kodu: ${ssrInterpolate(neighData.value.postaKodu)}</strong></p></div><div class="mt-8 text-center mb-8"><h2 class="text-xl font-bold text-slate-900 mb-2">Adres Yazımında Posta Kodunun Önemi</h2><p class="text-slate-600">Posta kodu, bir adresin en spesifik bileşenidir. ${ssrInterpolate(unref(titleCase)(neighData.value.mahalle))} için tanımlanan ${ssrInterpolate(neighData.value.postaKodu)} numarasını kullanmak şu avantajları sağlar:</p><ul><li><b>Sıralama Hızı:</b> PTT ve özel kargo şirketlerinin otomatik ayrıştırma makineleri gönderinizi posta koduna göre sınıflandırır.</li><li><b>Yanlış Teslimat Önleme:</b> Doğru kod, gönderinizin başka bir şehirdeki adaş mahalleye gitmesini engeller.</li><li><b>Dijital Doğruluk:</b> Bankacılık ve e-devlet sistemlerinde adres teyidinde kullanılır.</li></ul></div><div class="mt-8 text-center mb-8"><h2 class="text-xl font-bold text-slate-900 mb-2">Konum Ve Bölge Bilgileri</h2><p class="text-slate-600">${ssrInterpolate(unref(titleCase)(neighData.value.mahalle))}, Çorum ilinin ${ssrInterpolate(unref(titleCase)(neighData.value.ilce))} ilçesine bağlıdır. Posta kodunun ilk 2 hanesi il plaka kodunu, son 3 hanesi ise ilçe ve mahalle dağıtım bölgesini temsil eder.</p></div></div>`);
       } else {
-        _push(`<div${ssrRenderAttrs(mergeProps({ class: "max-w-2xl mx-auto py-12 text-center text-slate-500" }, _attrs))}><div class="bg-red-50 text-red-600 p-6 rounded-xl border border-red-100"><h2 class="font-bold text-lg mb-2">Veri Bulunamad\u0131!</h2><p class="text-sm mb-4">Arad\u0131\u011F\u0131n\u0131z mahalle bilgisine ula\u015F\u0131lamad\u0131. L\xFCtfen adresi kontrol edin.</p>`);
+        _push(`<div${ssrRenderAttrs(mergeProps({ class: "max-w-2xl mx-auto py-12 text-center text-slate-500" }, _attrs))}><div class="bg-red-50 text-red-600 p-6 rounded-xl border border-red-100"><h2 class="font-bold text-lg mb-2">Veri Bulunamadı!</h2><p class="text-sm mb-4">Aradığınız mahalle bilgisine ulaşılamadı. Lütfen adresi kontrol edin.</p>`);
         _push(ssrRenderComponent(_component_NuxtLink, {
           to: "/corum",
           class: "mt-6 inline-block text-red-700 underline"
         }, {
           default: withCtx((_, _push2, _parent2, _scopeId) => {
             if (_push2) {
-              _push2(`\xC7orum Sayfas\u0131na D\xF6n`);
+              _push2(`Çorum Sayfasına Dön`);
             } else {
               return [
-                createTextVNode("\xC7orum Sayfas\u0131na D\xF6n")
+                createTextVNode("Çorum Sayfasına Dön")
               ];
             }
           }),

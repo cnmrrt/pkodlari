@@ -21,21 +21,21 @@ import 'unhead/utils';
 import 'vue-router';
 import 'perfect-debounce';
 
-const pageTitle = "Diyarbak\u0131r Posta Kodlar\u0131";
-const pageDesc = "Diyarbak\u0131r iline ba\u011Fl\u0131 il\xE7e ve mahallelerin posta kodlar\u0131n\u0131 g\xF6rmek i\xE7in t\u0131klay\u0131n!";
+const pageTitle = "Diyarbakır Posta Kodları";
+const pageDesc = "Diyarbakır iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!";
 const _sfc_main = /* @__PURE__ */ defineComponent({
   __name: "index",
   __ssrInlineRender: true,
   async setup(__props) {
     let __temp, __restore;
-    const { data: diyarbak\u0131rData } = ([__temp, __restore] = withAsyncContext(() => useAsyncData(
+    const { data: diyarbakırData } = ([__temp, __restore] = withAsyncContext(() => useAsyncData(
       "diyarbakir-data",
       () => $fetch("https://pkodlari.com/data/diyarbakir.json")
     )), __temp = await __temp, __restore(), __temp);
     const districts = computed(() => {
-      if (!diyarbak\u0131rData.value) return [];
+      if (!diyarbakırData.value) return [];
       const districtMap = {};
-      diyarbak\u0131rData.value.forEach((item) => {
+      diyarbakırData.value.forEach((item) => {
         const distName = item.ilce || "MERKEZ";
         const distSlug = slugify(distName);
         if (!districtMap[distSlug]) {
@@ -56,7 +56,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
             "@type": "BreadcrumbList",
             "itemListElement": [
               { "@type": "ListItem", "position": 1, "name": "Anasayfa", "item": "https://pkodlari.com/" },
-              { "@type": "ListItem", "position": 2, "name": "Diyarbak\u0131r", "item": "https://pkodlari.com/diyarbakir" }
+              { "@type": "ListItem", "position": 2, "name": "Diyarbakır", "item": "https://pkodlari.com/diyarbakir" }
             ]
           })
         }
@@ -81,7 +81,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`<div><h1 class="text-3xl font-bold text-slate-900 tracking-tight">Diyarbak\u0131r Posta Kodlar\u0131</h1><p class="text-slate-500 text-sm font-medium uppercase tracking-wider">${ssrInterpolate(unref(districts).length)} \u0130L\xC7E</p></div></div><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"><!--[-->`);
+      _push(`<div><h1 class="text-3xl font-bold text-slate-900 tracking-tight">Diyarbakır Posta Kodları</h1><p class="text-slate-500 text-sm font-medium uppercase tracking-wider">${ssrInterpolate(unref(districts).length)} İLÇE</p></div></div><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"><!--[-->`);
       ssrRenderList(unref(districts), ([distSlug, distItem]) => {
         _push(ssrRenderComponent(_component_NuxtLink, {
           key: distSlug,

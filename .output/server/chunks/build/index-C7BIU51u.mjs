@@ -53,8 +53,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         (n) => n.name.toLocaleLowerCase("tr").includes(filter.value.toLocaleLowerCase("tr"))
       );
     });
-    const pageTitle = computed(() => districtData.value ? `${titleCase(districtData.value.name)} Posta Kodlar\u0131` : "\u0130l\xE7e Bulunamad\u0131");
-    const pageDesc = computed(() => districtData.value ? `Bart\u0131n ilinin ${titleCase(districtData.value.name)} il\xE7esine ba\u011Fl\u0131 mahallelerin posta kodlar\u0131n\u0131 g\xF6rmek i\xE7in t\u0131klay\u0131n!` : "Posta Kodu Rehberi");
+    const pageTitle = computed(() => districtData.value ? `${titleCase(districtData.value.name)} Posta Kodları` : "İlçe Bulunamadı");
+    const pageDesc = computed(() => districtData.value ? `Bartın ilinin ${titleCase(districtData.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!` : "Posta Kodu Rehberi");
     useHead({
       title: pageTitle,
       meta: [{ name: "description", content: pageDesc }],
@@ -76,7 +76,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
                 {
                   "@type": "ListItem",
                   "position": 2,
-                  "name": "Bart\u0131n",
+                  "name": "Bartın",
                   "item": "https://pkodlari.com/bartin"
                 },
                 {
@@ -111,7 +111,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           }),
           _: 1
         }, _parent));
-        _push(`<div><h1 class="text-3xl font-bold text-slate-900 tracking-tight">${ssrInterpolate(unref(titleCase)(districtData.value.name))} Posta Kodlar\u0131</h1><p class="text-slate-500 text-sm font-medium uppercase tracking-wider">Bart\u0131n</p></div></div><div class="relative w-full md:w-64">`);
+        _push(`<div><h1 class="text-3xl font-bold text-slate-900 tracking-tight">${ssrInterpolate(unref(titleCase)(districtData.value.name))} Posta Kodları</h1><p class="text-slate-500 text-sm font-medium uppercase tracking-wider">Bartın</p></div></div><div class="relative w-full md:w-64">`);
         _push(ssrRenderComponent(unref(Search), { class: "absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" }, null, _parent));
         _push(`<input type="text" placeholder="Mahallelerde ara..." class="w-full pl-9 pr-4 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-slate-400 transition-all text-sm"${ssrRenderAttr("value", filter.value)}></div></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><!--[-->`);
         ssrRenderList(neighs.value, (nItem) => {
@@ -143,23 +143,23 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         });
         _push(`<!--]-->`);
         if (neighs.value.length === 0) {
-          _push(`<div class="col-span-full p-12 text-center text-slate-400 text-sm">Sonu\xE7 bulunamad\u0131</div>`);
+          _push(`<div class="col-span-full p-12 text-center text-slate-400 text-sm">Sonuç bulunamadı</div>`);
         } else {
           _push(`<!---->`);
         }
         _push(`</div></div>`);
       } else {
-        _push(`<div${ssrRenderAttrs(mergeProps({ class: "py-32 text-center text-slate-400" }, _attrs))}><p>\u0130l\xE7e bulunamad\u0131.</p>`);
+        _push(`<div${ssrRenderAttrs(mergeProps({ class: "py-32 text-center text-slate-400" }, _attrs))}><p>İlçe bulunamadı.</p>`);
         _push(ssrRenderComponent(_component_NuxtLink, {
           to: "/bartin",
           class: "text-slate-900 underline mt-4 inline-block"
         }, {
           default: withCtx((_, _push2, _parent2, _scopeId) => {
             if (_push2) {
-              _push2(`Bart\u0131n sayfas\u0131na d\xF6n`);
+              _push2(`Bartın sayfasına dön`);
             } else {
               return [
-                createTextVNode("Bart\u0131n sayfas\u0131na d\xF6n")
+                createTextVNode("Bartın sayfasına dön")
               ];
             }
           }),

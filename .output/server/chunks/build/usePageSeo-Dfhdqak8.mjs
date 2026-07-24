@@ -4,9 +4,8 @@ import { u as useHead } from './composables-DS4h4PXI.mjs';
 import { A as getRequestURL } from '../nitro/nitro.mjs';
 
 function useRequestEvent(nuxtApp) {
-  var _a;
-  nuxtApp || (nuxtApp = useNuxtApp());
-  return (_a = nuxtApp.ssrContext) == null ? void 0 : _a.event;
+  nuxtApp ||= useNuxtApp();
+  return nuxtApp.ssrContext?.event;
 }
 function useRequestURL(opts) {
   {
@@ -16,12 +15,9 @@ function useRequestURL(opts) {
 function usePageSeo(options) {
   const route = useRoute();
   const requestUrl = useRequestURL();
-  const canonicalUrl = computed(() => {
-    var _a;
-    return requestUrl.origin + (((_a = route.fullPath) == null ? void 0 : _a.startsWith("/")) ? route.fullPath : "/" + (route.fullPath || ""));
-  });
+  const canonicalUrl = computed(() => requestUrl.origin + (route.fullPath?.startsWith("/") ? route.fullPath : "/" + (route.fullPath || "")));
   const resolvedTitle = computed(() => toValue(options.title) || "Posta Kodu Rehberi");
-  const resolvedDesc = computed(() => toValue(options.description) || "T\xFCrkiye posta kodlar\u0131 rehberi");
+  const resolvedDesc = computed(() => toValue(options.description) || "Türkiye posta kodları rehberi");
   const ogImageUrl = options.image ? computed(() => {
     const img = options.image;
     return img.startsWith("http") ? img : requestUrl.origin + (img.startsWith("/") ? img : "/" + img);

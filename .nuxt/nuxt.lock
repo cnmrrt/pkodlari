@@ -1,0 +1,9 @@
+{
+  "pid": 31952,
+  "startedAt": 1784897945435,
+  "command": "dev",
+  "cwd": "/Users/mac/Desktop/pkodlari",
+  "port": 3000,
+  "hostname": "::1",
+  "url": "http://[::1]:3000"
+}

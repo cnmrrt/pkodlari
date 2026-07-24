@@ -595,9 +595,9 @@ function getRouteRules(arg) {
 }
 const _routes = [
   {
-    name: "aksaray-district-neighborhood",
-    path: "/aksaray/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-B3ESDGKA.mjs')
+    name: "endflowprojects-todayinhistory-public-assets-js-macy",
+    path: "/endflowprojects/todayinhistory/public/assets/js/macy",
+    component: () => import('./macy-BtrzgTZ-.mjs')
   },
   {
     name: "bartin-district-neighborhood",
@@ -625,24 +625,9 @@ const _routes = [
     component: () => import('./_neighborhood_-BPkTGMgv.mjs')
   },
   {
-    name: "bolu-district-neighborhood",
-    path: "/bolu/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-_ufpbfeL.mjs')
-  },
-  {
-    name: "burdur-district-neighborhood",
-    path: "/burdur/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-D4Ikfbso.mjs')
-  },
-  {
     name: "bursa-district-neighborhood",
     path: "/bursa/:district()/:neighborhood()",
     component: () => import('./_neighborhood_-vFLrEmzE.mjs')
-  },
-  {
-    name: "canakkale-district-neighborhood",
-    path: "/canakkale/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-CQtZ1Qgv.mjs')
   },
   {
     name: "cankiri-district-neighborhood",
@@ -905,11 +890,6 @@ const _routes = [
     component: () => import('./_neighborhood_-Cw0SNnvp.mjs')
   },
   {
-    name: "aksaray-district",
-    path: "/aksaray/:district()",
-    component: () => import('./index-BL5gjuWI.mjs')
-  },
-  {
     name: "bartin-district",
     path: "/bartin/:district()",
     component: () => import('./index-C7BIU51u.mjs')
@@ -935,24 +915,9 @@ const _routes = [
     component: () => import('./index-CsnTzFtN.mjs')
   },
   {
-    name: "bolu-district",
-    path: "/bolu/:district()",
-    component: () => import('./index-DC0DVmV0.mjs')
-  },
-  {
-    name: "burdur-district",
-    path: "/burdur/:district()",
-    component: () => import('./index-CEn4JP-D.mjs')
-  },
-  {
     name: "bursa-district",
     path: "/bursa/:district()",
     component: () => import('./index-Dduj0-yG.mjs')
-  },
-  {
-    name: "canakkale-district",
-    path: "/canakkale/:district()",
-    component: () => import('./index-CIF3wH6B.mjs')
   },
   {
     name: "cankiri-district",
@@ -1215,11 +1180,6 @@ const _routes = [
     component: () => import('./index-DhgA6Q2v.mjs')
   },
   {
-    name: "aksaray",
-    path: "/aksaray",
-    component: () => import('./index-Dw3YOqp0.mjs')
-  },
-  {
     name: "bartin",
     path: "/bartin",
     component: () => import('./index-r3SL7Kdd.mjs')
@@ -1245,24 +1205,9 @@ const _routes = [
     component: () => import('./index-Cij09csB.mjs')
   },
   {
-    name: "bolu",
-    path: "/bolu",
-    component: () => import('./index-VtfXyvDP.mjs')
-  },
-  {
-    name: "burdur",
-    path: "/burdur",
-    component: () => import('./index-VlJ0caq1.mjs')
-  },
-  {
     name: "bursa",
     path: "/bursa",
     component: () => import('./index-B6x-Ydu8.mjs')
-  },
-  {
-    name: "canakkale",
-    path: "/canakkale",
-    component: () => import('./index-BI1CD-Kb.mjs')
   },
   {
     name: "cankiri",
@@ -1527,17 +1472,17 @@ const _routes = [
   {
     name: "city-district-neighborhood",
     path: "/:city()/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-BeoChYir.mjs')
+    component: () => import('./_neighborhood_-D5RNMAbZ.mjs')
   },
   {
     name: "city-district",
     path: "/:city()/:district()",
-    component: () => import('./index-CWXeeTX-.mjs')
+    component: () => import('./index-Dz7T-nBo.mjs')
   },
   {
     name: "city",
     path: "/:city()",
-    component: () => import('./index-B70pcmFy.mjs')
+    component: () => import('./index-cBzOpDt1.mjs')
   },
   {
     name: "index",
@@ -1893,14 +1838,14 @@ const revive_payload_server_MVtmlZaQpj6ApFmshWfUWl5PehCebzaBf2NuRMiIbms = /* @__
     }
   }
 });
-const components_plugin_z4hgvsiddfKkfXTP6M8M4zG5Cb7sGnDhcryKVM45Di4 = /* @__PURE__ */ defineNuxtPlugin({
+const components_plugin_4kY4pyzJIYX99vmMAAIorFf3CnAaptHitJgf7JxiED8 = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:global-components"
 });
 const plugins = [
   unhead_k2P3m_ZDyjlr2mMYnoDPwavjsDN8hBlk9cFai0bbopU,
   plugin,
   revive_payload_server_MVtmlZaQpj6ApFmshWfUWl5PehCebzaBf2NuRMiIbms,
-  components_plugin_z4hgvsiddfKkfXTP6M8M4zG5Cb7sGnDhcryKVM45Di4
+  components_plugin_4kY4pyzJIYX99vmMAAIorFf3CnAaptHitJgf7JxiED8
 ];
 const firstNonUndefined = (...args) => args.find((arg) => arg !== void 0);
 // @__NO_SIDE_EFFECTS__

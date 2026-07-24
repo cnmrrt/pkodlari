@@ -3,15 +3,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "npm run generate:sitemap && nuxt build",
-    "dev": "npm run generate:sitemap && nuxt dev",
-    "generate": "npm run generate:sitemap && nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
+    "build": "npm run generate:sitemap && NODE_OPTIONS=--max-old-space-size=4096 nuxi build",
+    "dev": "npm run generate:sitemap && nuxi dev",
+    "generate": "npm run generate:sitemap && NODE_OPTIONS=--max-old-space-size=8192 nuxi generate",
+    "preview": "nuxi preview",
+    "postinstall": "nuxi prepare",
     "generate:sitemap": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
-    "nuxt": "^3.15.4",
+    "nuxt": "^4.0.0",
     "lucide-vue-next": "^0.474.0"
   }
 }

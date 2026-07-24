@@ -33,16 +33,22 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     })), __temp = await __temp, __restore(), __temp);
     const citySlug = computed(() => route.params.city);
     const districtSlug = computed(() => route.params.district);
-    const cityItem = computed(() => postalData.value?.[citySlug.value]);
-    const districtItem = computed(() => cityItem.value?.districts[districtSlug.value]);
+    const cityItem = computed(() => {
+      var _a;
+      return (_a = postalData.value) == null ? void 0 : _a[citySlug.value];
+    });
+    const districtItem = computed(() => {
+      var _a;
+      return (_a = cityItem.value) == null ? void 0 : _a.districts[districtSlug.value];
+    });
     const pageTitle = computed(
-      () => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodları` : "İlçe Bulunamadı"
+      () => districtItem.value ? `${titleCase(districtItem.value.name)} Posta Kodlar\u0131` : "\u0130l\xE7e Bulunamad\u0131"
     );
     const pageDesc = computed(() => {
       if (!cityItem.value || !districtItem.value) return "Posta Kodu Rehberi";
       return `${titleCase(cityItem.value.name)} ilinin ${titleCase(
         districtItem.value.name
-      )} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!`;
+      )} il\xE7esine ba\u011Fl\u0131 mahallelerin posta kodlar\u0131n\u0131 g\xF6rmek i\xE7in t\u0131klay\u0131n!`;
     });
     useHead({
       title: pageTitle,
@@ -90,6 +96,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       ).sort(([, a], [, b]) => a.name.localeCompare(b.name, "tr"));
     });
     return (_ctx, _push, _parent, _attrs) => {
+      var _a;
       const _component_NuxtLink = __nuxt_component_0$1;
       if (isValid.value) {
         _push(`<div${ssrRenderAttrs(mergeProps({ class: "animate-in fade-in duration-500 max-w-4xl mx-auto" }, _attrs))}><div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6"><div class="flex items-center gap-4">`);
@@ -108,7 +115,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           }),
           _: 1
         }, _parent));
-        _push(`<div><h1 class="text-3xl font-bold text-slate-900 tracking-tight">${ssrInterpolate(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(districtItem.value.name))} Posta Kodları </h1><p class="text-slate-500 text-sm font-medium uppercase tracking-wider">${ssrInterpolate(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(cityItem.value.name))}</p></div></div><div class="relative w-full md:w-64">`);
+        _push(`<div><h1 class="text-3xl font-bold text-slate-900 tracking-tight">${ssrInterpolate(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(districtItem.value.name))} Posta Kodlar\u0131 </h1><p class="text-slate-500 text-sm font-medium uppercase tracking-wider">${ssrInterpolate(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(cityItem.value.name))}</p></div></div><div class="relative w-full md:w-64">`);
         _push(ssrRenderComponent(unref(Search), { class: "absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" }, null, _parent));
         _push(`<input type="text" placeholder="Mahallelerde ara..." class="w-full pl-9 pr-4 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-slate-400 transition-all text-sm"${ssrRenderAttr("value", filter.value)}></div></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><!--[-->`);
         ssrRenderList(neighs.value, ([nSlug, nItem]) => {
@@ -140,7 +147,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         });
         _push(`<!--]-->`);
         if (neighs.value.length === 0) {
-          _push(`<div class="col-span-full p-12 text-center text-slate-400 text-sm"> Sonuç bulunamadı </div>`);
+          _push(`<div class="col-span-full p-12 text-center text-slate-400 text-sm"> Sonu\xE7 bulunamad\u0131 </div>`);
         } else {
           _push(`<!---->`);
         }
@@ -150,7 +157,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           _push(ssrRenderComponent(unref(MapPin), { class: "w-4 h-4 text-slate-400" }, null, _parent));
           _push(`<h3 class="font-bold text-slate-900 text-sm uppercase tracking-wide">Konum</h3></div>`);
           if (districtItem.value.mapCode.trim().startsWith("<")) {
-            _push(`<div class="w-full aspect-video rounded-2xl overflow-hidden [&amp;&gt;iframe]:w-full [&amp;&gt;iframe]:h-full">${districtItem.value.mapCode ?? ""}</div>`);
+            _push(`<div class="w-full aspect-video rounded-2xl overflow-hidden [&amp;&gt;iframe]:w-full [&amp;&gt;iframe]:h-full">${(_a = districtItem.value.mapCode) != null ? _a : ""}</div>`);
           } else {
             _push(`<iframe${ssrRenderAttr("src", districtItem.value.mapCode)} class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100" loading="lazy"></iframe>`);
           }

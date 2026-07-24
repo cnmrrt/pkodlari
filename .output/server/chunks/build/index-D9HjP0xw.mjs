@@ -28,14 +28,14 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     let __temp, __restore;
     const route = useRoute();
     const filter = ref("");
-    const { data: diyarbakırData } = ([__temp, __restore] = withAsyncContext(() => useAsyncData(
+    const { data: diyarbak\u0131rData } = ([__temp, __restore] = withAsyncContext(() => useAsyncData(
       "diyarbakir-data",
       () => $fetch("https://pkodlari.com/data/diyarbakir.json")
     )), __temp = await __temp, __restore(), __temp);
     const districtSlug = computed(() => route.params.district);
     const districtData = computed(() => {
-      if (!diyarbakırData.value) return null;
-      const filtered = diyarbakırData.value.filter((item) => slugify(item.ilce || "MERKEZ") === districtSlug.value);
+      if (!diyarbak\u0131rData.value) return null;
+      const filtered = diyarbak\u0131rData.value.filter((item) => slugify(item.ilce || "MERKEZ") === districtSlug.value);
       if (filtered.length === 0) return null;
       return {
         name: filtered[0].ilce || "MERKEZ",
@@ -53,8 +53,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         (n) => n.name.toLocaleLowerCase("tr").includes(filter.value.toLocaleLowerCase("tr"))
       );
     });
-    const pageTitle = computed(() => districtData.value ? `Diyarbakır ${titleCase(districtData.value.name)} Posta Kodları` : "İlçe Bulunamadı");
-    const pageDesc = computed(() => districtData.value ? `Diyarbakır ilinin ${titleCase(districtData.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!` : "Posta Kodu Rehberi");
+    const pageTitle = computed(() => districtData.value ? `Diyarbak\u0131r ${titleCase(districtData.value.name)} Posta Kodlar\u0131` : "\u0130l\xE7e Bulunamad\u0131");
+    const pageDesc = computed(() => districtData.value ? `Diyarbak\u0131r ilinin ${titleCase(districtData.value.name)} il\xE7esine ba\u011Fl\u0131 mahallelerin posta kodlar\u0131n\u0131 g\xF6rmek i\xE7in t\u0131klay\u0131n!` : "Posta Kodu Rehberi");
     useHead({
       title: pageTitle,
       meta: [{ name: "description", content: pageDesc }],
@@ -68,7 +68,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
               "@type": "BreadcrumbList",
               "itemListElement": [
                 { "@type": "ListItem", "position": 1, "name": "Anasayfa", "item": "https://pkodlari.com/" },
-                { "@type": "ListItem", "position": 2, "name": "Diyarbakır", "item": "https://pkodlari.com/diyarbakir" },
+                { "@type": "ListItem", "position": 2, "name": "Diyarbak\u0131r", "item": "https://pkodlari.com/diyarbakir" },
                 { "@type": "ListItem", "position": 3, "name": titleCase(districtData.value.name), "item": `https://pkodlari.com/diyarbakir/${districtSlug.value}` }
               ]
             })
@@ -96,7 +96,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           }),
           _: 1
         }, _parent));
-        _push(`<div><h1 class="text-3xl font-bold text-slate-900 tracking-tight">${ssrInterpolate(unref(titleCase)(districtData.value.name))} Posta Kodları</h1><p class="text-slate-500 text-sm font-medium uppercase tracking-wider">Diyarbakır</p></div></div><div class="relative w-full md:w-64">`);
+        _push(`<div><h1 class="text-3xl font-bold text-slate-900 tracking-tight">${ssrInterpolate(unref(titleCase)(districtData.value.name))} Posta Kodlar\u0131</h1><p class="text-slate-500 text-sm font-medium uppercase tracking-wider">Diyarbak\u0131r</p></div></div><div class="relative w-full md:w-64">`);
         _push(ssrRenderComponent(unref(Search), { class: "absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" }, null, _parent));
         _push(`<input type="text" placeholder="Mahallelerde ara..." class="w-full pl-9 pr-4 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-slate-400 transition-all text-sm"${ssrRenderAttr("value", filter.value)}></div></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><!--[-->`);
         ssrRenderList(neighs.value, (nItem) => {
@@ -128,23 +128,23 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         });
         _push(`<!--]-->`);
         if (neighs.value.length === 0) {
-          _push(`<div class="col-span-full p-12 text-center text-slate-400 text-sm">Sonuç bulunamadı</div>`);
+          _push(`<div class="col-span-full p-12 text-center text-slate-400 text-sm">Sonu\xE7 bulunamad\u0131</div>`);
         } else {
           _push(`<!---->`);
         }
         _push(`</div></div>`);
       } else {
-        _push(`<div${ssrRenderAttrs(mergeProps({ class: "py-32 text-center text-slate-400" }, _attrs))}><p>İlçe bulunamadı.</p>`);
+        _push(`<div${ssrRenderAttrs(mergeProps({ class: "py-32 text-center text-slate-400" }, _attrs))}><p>\u0130l\xE7e bulunamad\u0131.</p>`);
         _push(ssrRenderComponent(_component_NuxtLink, {
           to: "/diyarbakir",
           class: "text-slate-900 underline mt-4 inline-block"
         }, {
           default: withCtx((_, _push2, _parent2, _scopeId) => {
             if (_push2) {
-              _push2(`Diyarbakır sayfasına dön`);
+              _push2(`Diyarbak\u0131r sayfas\u0131na d\xF6n`);
             } else {
               return [
-                createTextVNode("Diyarbakır sayfasına dön")
+                createTextVNode("Diyarbak\u0131r sayfas\u0131na d\xF6n")
               ];
             }
           }),

@@ -28,15 +28,18 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     const route = useRoute();
     const postalData = inject("postalData");
     const citySlug = computed(() => route.params.city);
-    const cityItem = computed(() => postalData?.value?.[citySlug.value]);
+    const cityItem = computed(() => {
+      var _a;
+      return (_a = postalData == null ? void 0 : postalData.value) == null ? void 0 : _a[citySlug.value];
+    });
     const pageTitle = computed(
-      () => cityItem.value ? `${titleCase(cityItem.value.name)} Posta Kodları` : "Şehir Bulunamadı"
+      () => cityItem.value ? `${titleCase(cityItem.value.name)} Posta Kodlar\u0131` : "\u015Eehir Bulunamad\u0131"
     );
     const pageDesc = computed(() => {
       if (!cityItem.value) return "Posta Kodu Rehberi";
       return `${titleCase(
         cityItem.value.name
-      )} iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!`;
+      )} iline ba\u011Fl\u0131 il\xE7e ve mahallelerin posta kodlar\u0131n\u0131 g\xF6rmek i\xE7in t\u0131klay\u0131n!`;
     });
     useHead({
       title: pageTitle,
@@ -77,6 +80,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     });
     const isValid = computed(() => !!cityItem.value);
     return (_ctx, _push, _parent, _attrs) => {
+      var _a;
       const _component_NuxtLink = __nuxt_component_0$1;
       if (isValid.value) {
         _push(`<div${ssrRenderAttrs(mergeProps({ class: "animate-in fade-in duration-500 max-w-4xl mx-auto" }, _attrs))}><div class="mb-10 flex items-center gap-4">`);
@@ -95,7 +99,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           }),
           _: 1
         }, _parent));
-        _push(`<div><h1 class="text-3xl font-bold text-slate-900 tracking-tight">${ssrInterpolate(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(cityItem.value.name))} Posta Kodları </h1><p class="text-slate-500 text-sm font-medium uppercase tracking-wider">${ssrInterpolate(districts.value.length)} İLÇE </p></div></div><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"><!--[-->`);
+        _push(`<div><h1 class="text-3xl font-bold text-slate-900 tracking-tight">${ssrInterpolate(("titleCase" in _ctx ? _ctx.titleCase : unref(titleCase))(cityItem.value.name))} Posta Kodlar\u0131 </h1><p class="text-slate-500 text-sm font-medium uppercase tracking-wider">${ssrInterpolate(districts.value.length)} \u0130L\xC7E </p></div></div><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"><!--[-->`);
         ssrRenderList(districts.value, ([distSlug, distItem]) => {
           _push(ssrRenderComponent(_component_NuxtLink, {
             key: distSlug,
@@ -125,7 +129,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           _push(ssrRenderComponent(unref(MapPin), { class: "w-4 h-4 text-slate-400" }, null, _parent));
           _push(`<h3 class="font-bold text-slate-900 text-sm uppercase tracking-wide">Konum</h3></div>`);
           if (cityItem.value.mapCode.trim().startsWith("<")) {
-            _push(`<div class="w-full aspect-video rounded-2xl overflow-hidden [&amp;&gt;iframe]:w-full [&amp;&gt;iframe]:h-full">${cityItem.value.mapCode ?? ""}</div>`);
+            _push(`<div class="w-full aspect-video rounded-2xl overflow-hidden [&amp;&gt;iframe]:w-full [&amp;&gt;iframe]:h-full">${(_a = cityItem.value.mapCode) != null ? _a : ""}</div>`);
           } else {
             _push(`<iframe${ssrRenderAttr("src", cityItem.value.mapCode)} class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100" loading="lazy"></iframe>`);
           }

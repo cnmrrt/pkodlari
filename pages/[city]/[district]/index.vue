@@ -1,25 +1,45 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import { ArrowLeft, Search, ChevronRight, MapPin } from "lucide-vue-next";
-import type { PostalData } from "~/types";
+import { slugify, titleCase } from "~/utils/slugify";
 
 const route = useRoute();
 const filter = ref("");
 
-// Fetch postal data safely during SSR/Build time so the crawler catches it
-const { data: postalData } = await useAsyncData<PostalData>("postal-data", async () => {
-  // If it's a local import or file, load it here. Example:
-  // return await import('~/assets/data/postal-data.json').then(m => m.default)
-
-  // Or if it's from an internal API:
-  return await $fetch("/api/postal-data");
-});
-
 const citySlug = computed(() => route.params.city as string);
 const districtSlug = computed(() => route.params.district as string);
 
-const cityItem = computed(() => postalData.value?.[citySlug.value]);
-const districtItem = computed(() => cityItem.value?.districts[districtSlug.value]);
+const { data: cityData } = await useAsyncData(
+  () => `city-data-${citySlug.value}`,
+  async () => {
+    try {
+      return await $fetch<any[]>(`https://pkodlari.com/data/${citySlug.value}.json`);
+    } catch {
+      return [];
+    }
+  }
+);
+
+const cityName = computed(() => titleCase(citySlug.value));
+
+const districtItem = computed(() => {
+  if (!cityData.value) return null;
+  const filtered = cityData.value.filter(
+    (item) => slugify(item.ilce || "MERKEZ") === districtSlug.value
+  );
+  if (filtered.length === 0) return null;
+
+  return {
+    name: filtered[0].ilce || "MERKEZ",
+    neighborhoods: filtered
+      .map((item) => ({
+        name: item.mahalle,
+        zipCode: item.postaKodu,
+        slug: slugify(item.mahalle),
+      }))
+      .sort((a, b) => a.name.localeCompare(b.name, "tr")),
+  };
+});
 
 const pageTitle = computed(() =>
   districtItem.value
@@ -27,8 +47,8 @@ const pageTitle = computed(() =>
     : "İlçe Bulunamadı"
 );
 const pageDesc = computed(() => {
-  if (!cityItem.value || !districtItem.value) return "Posta Kodu Rehberi";
-  return `${titleCase(cityItem.value.name)} ilinin ${titleCase(
+  if (!districtItem.value) return "Posta Kodu Rehberi";
+  return `${cityName.value} ilinin ${titleCase(
     districtItem.value.name
   )} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!`;
 });
@@ -38,7 +58,7 @@ useHead({
   meta: [{ name: "description", content: pageDesc }],
   script: [
     computed(() => {
-      if (!cityItem.value || !districtItem.value) return {};
+      if (!districtItem.value) return {};
       return {
         type: "application/ld+json",
         children: JSON.stringify({
@@ -54,7 +74,7 @@ useHead({
             {
               "@type": "ListItem",
               position: 2,
-              name: titleCase(cityItem.value.name),
+              name: cityName.value,
               item: `https://pkodlari.com/${citySlug.value}`,
             },
             {
@@ -75,13 +95,10 @@ usePageSeo({ title: pageTitle, description: pageDesc });
 const isValid = computed(() => !!districtItem.value);
 
 const neighs = computed(() => {
-  if (!isValid.value) return [];
-  const items = Object.entries(districtItem.value!.neighborhoods);
-  return items
-    .filter(([, n]) =>
-      n.name.toLocaleLowerCase("tr").includes(filter.value.toLocaleLowerCase("tr"))
-    )
-    .sort(([, a], [, b]) => a.name.localeCompare(b.name, "tr"));
+  if (!districtItem.value) return [];
+  return districtItem.value.neighborhoods.filter((neigh) =>
+    neigh.name.toLocaleLowerCase("tr").includes(filter.value.toLocaleLowerCase("tr"))
+  );
 });
 </script>
 
@@ -99,7 +116,7 @@ const neighs = computed(() => {
             {{ titleCase(districtItem.name) }} Posta Kodları
           </h1>
           <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">
-            {{ titleCase(cityItem.name) }}
+            {{ cityName }}
           </p>
         </div>
       </div>
@@ -116,9 +133,9 @@ const neighs = computed(() => {
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <NuxtLink
-        v-for="[nSlug, nItem] in neighs"
-        :key="nSlug"
-        :to="`/${citySlug}/${districtSlug}/${nSlug}`"
+        v-for="nItem in neighs"
+        :key="nItem.slug"
+        :to="`/${citySlug}/${districtSlug}/${nItem.slug}`"
         class="soft-card p-5 flex items-center justify-between group"
       >
         <div class="min-w-0 pr-4">

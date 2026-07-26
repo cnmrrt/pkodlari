@@ -100,6 +100,8 @@ const isValid = computed(() => !!cityItem.value);
 </script>
 
 <template> 
+
+
   <div v-if="isValid" class="animate-in fade-in duration-500 max-w-4xl mx-auto">
     <div class="mb-10 flex items-center gap-4">
       <NuxtLink to="/" class="text-slate-400 hover:text-slate-900 transition-colors"

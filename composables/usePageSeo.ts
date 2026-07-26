@@ -7,16 +7,17 @@ export function usePageSeo(options: {
 }) {
   const route = useRoute();
   const requestUrl = useRequestURL();
-  const canonicalUrl = computed(() => requestUrl.origin + (route.fullPath?.startsWith('/') ? route.fullPath : '/' + (route.fullPath || '')));
+  //const canonicalUrl = computed(() => https://pkodlari.com + (route.fullPath?.startsWith('/') ? route.fullPath : '/' + (route.fullPath || '')));
+  const canonicalUrl = computed(() => 'https://pkodlari.com' + (route.fullPath?.startsWith('/') ? route.fullPath : '/' + (route.fullPath || '')));
 
   const resolvedTitle = computed(() => toValue(options.title) || 'Posta Kodu Rehberi');
   const resolvedDesc = computed(() => toValue(options.description) || 'Türkiye posta kodları rehberi');
   const ogImageUrl = options.image
     ? computed(() => {
-        const img = options.image!;
-        return img.startsWith('http') ? img : requestUrl.origin + (img.startsWith('/') ? img : '/' + img);
-      })
-    : computed(() => requestUrl.origin + '/favicon.svg');
+      const img = options.image!;
+      return img.startsWith('http') ? img : 'https://pkodlari.com' + (img.startsWith('/') ? img : '/' + img);
+    })
+    : computed(() => 'https://pkodlari.com' + '/favicon.svg');
 
   useHead({
     link: [{ rel: 'canonical', href: canonicalUrl }],

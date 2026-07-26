@@ -3,7 +3,6 @@ export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
     devtools: { enabled: true },
     app: {
-        baseURL: '/pkodlari/',
         head: {
             htmlAttrs: {
                 lang: 'tr'

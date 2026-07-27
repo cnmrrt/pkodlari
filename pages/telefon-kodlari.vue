@@ -38,7 +38,7 @@ const phoneCodes = [
   { name: "Hakkari", code: "438" },
   { name: "Hatay", code: "326" },
   { name: "Isparta", code: "246" },
-  { name: "İstanbul", code: "212 / 216 / 224 / 232 / 262 / 312" },
+  { name: "İstanbul", code: "212 / 216" },
   { name: "İzmir", code: "232" },
   { name: "Kahramanmaraş", code: "344" },
   { name: "Karabük", code: "370" },

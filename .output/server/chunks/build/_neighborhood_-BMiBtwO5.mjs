@@ -1,5 +1,5 @@
 import { u as useRoute, a as useAsyncData, t as titleCase, s as slugify, _ as __nuxt_component_0$1 } from './server.mjs';
-import { defineComponent, ref, computed, withAsyncContext, mergeProps, withCtx, createTextVNode, unref, toDisplayString, useSSRContext } from 'vue';
+import { defineComponent, ref, computed, withAsyncContext, mergeProps, withCtx, createTextVNode, unref, toDisplayString, createVNode, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrInterpolate, ssrRenderClass, ssrRenderAttr, ssrRenderList } from 'vue/server-renderer';
 import { ChevronRight, MapPin, Check, Copy, Share2 } from 'lucide-vue-next';
 import { u as useHead } from './composables-DS4h4PXI.mjs';
@@ -148,6 +148,12 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     });
     usePageSeo({ title: pageTitle, description: pageDesc });
     const isValid = computed(() => !!neighItem.value);
+    const otherNeighborhoods = computed(() => {
+      if (!districtItem.value || !neighItem.value) return [];
+      return districtItem.value.neighborhoods.filter(
+        (neigh) => neigh.slug !== neighItem.value?.slug
+      );
+    });
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLink = __nuxt_component_0$1;
       if (isValid.value) {
@@ -226,6 +232,35 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         } else {
           _push(`<!---->`);
         }
+        if (otherNeighborhoods.value.length) {
+          _push(`<div class="mt-10"><h2 class="text-xl font-bold text-slate-900 mb-4">Bu ilçedeki diğer mahalleler</h2><div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><!--[-->`);
+          ssrRenderList(otherNeighborhoods.value, (neigh) => {
+            _push(ssrRenderComponent(_component_NuxtLink, {
+              key: neigh.slug,
+              to: `/${citySlug.value}/${districtSlug.value}/${neigh.slug}`,
+              class: "soft-card p-4 rounded-xl flex items-center justify-between"
+            }, {
+              default: withCtx((_, _push2, _parent2, _scopeId) => {
+                if (_push2) {
+                  _push2(`<div${_scopeId}><h3 class="font-semibold text-slate-900 text-sm"${_scopeId}>${ssrInterpolate(unref(titleCase)(neigh.name))}</h3><p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider"${_scopeId}>${ssrInterpolate(neigh.zipCode)}</p></div>`);
+                  _push2(ssrRenderComponent(unref(ChevronRight), { class: "w-5 h-5 text-slate-300" }, null, _parent2, _scopeId));
+                } else {
+                  return [
+                    createVNode("div", null, [
+                      createVNode("h3", { class: "font-semibold text-slate-900 text-sm" }, toDisplayString(unref(titleCase)(neigh.name)), 1),
+                      createVNode("p", { class: "text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider" }, toDisplayString(neigh.zipCode), 1)
+                    ]),
+                    createVNode(unref(ChevronRight), { class: "w-5 h-5 text-slate-300" })
+                  ];
+                }
+              }),
+              _: 2
+            }, _parent));
+          });
+          _push(`<!--]--></div></div>`);
+        } else {
+          _push(`<!---->`);
+        }
         _push(`<div class="mt-8 text-center mb-8"><h2 class="text-xl font-bold text-slate-900 mb-2">${ssrInterpolate(neighItem.value.zipCode)} nerenin posta kodu? </h2><p class="text-slate-600">${ssrInterpolate(neighItem.value.zipCode)} posta kodu ${ssrInterpolate(cityName.value)} ${ssrInterpolate(unref(titleCase)(districtItem.value.name))} ${ssrInterpolate(unref(titleCase)(neighItem.value.name))}&#39;ne aittir. </p></div><div class="mt-8 text-center mb-8"><h2 class="text-xl font-bold text-slate-900 mb-2">${ssrInterpolate(unref(titleCase)(districtItem.value.name))} ${ssrInterpolate(unref(titleCase)(neighItem.value.name))} Posta Kodu Rehberi </h2><p class="text-slate-600">${ssrInterpolate(cityName.value)} ${ssrInterpolate(unref(titleCase)(districtItem.value.name))} ${ssrInterpolate(unref(titleCase)(neighItem.value.name))}&#39;ne ait güncel posta kodu bilgileri aşağıda yer almaktadır. Adres formlarında, kargo gönderilerinde ve resmi işlemlerde hata payını sıfıra indirmek için bu kodu kullanabilirsiniz. </p><br><p><strong>${ssrInterpolate(unref(titleCase)(neighItem.value.name))} Posta Kodu: ${ssrInterpolate(neighItem.value.zipCode)}</strong></p></div><div class="mt-8 text-center mb-8"><h2 class="text-xl font-bold text-slate-900 mb-2"> Adres Yazımında Posta Kodunun Önemi </h2><p class="text-slate-600"> Posta kodu, bir adresin en spesifik bileşenidir. ${ssrInterpolate(unref(titleCase)(neighItem.value.name))} için tanımlanan ${ssrInterpolate(neighItem.value.zipCode)} numarasını kullanmak şu avantajları sağlar: </p><ul><li><b>Sıralama Hızı:</b> PTT ve özel kargo şirketlerinin otomatik ayrıştırma makineleri, gönderinizi adresten önce posta koduna göre sınıflandırır. </li><li><b>Yanlış Teslimat Önleme:</b> Türkiye genelinde aynı ismi taşıyan yüzlerce mahalle bulunmaktadır. Doğru kod, gönderinizin başka bir şehirdeki adaş mahalleye gitmesini engeller. </li><li><b>Dijital Doğruluk:</b> Bankacılık ve e-devlet sistemlerinde adres teyidi yapılırken sistemler genellikle bu kodu baz alır. </li></ul></div><div class="mt-8 text-center mb-8"><h2 class="text-xl font-bold text-slate-900 mb-2">Konum Ve Bölge Bilgileri</h2><p class="text-slate-600">${ssrInterpolate(unref(titleCase)(neighItem.value.name))}, ${ssrInterpolate(cityName.value)} ilinin ${ssrInterpolate(unref(titleCase)(districtItem.value.name))} ilçesine bağlıdır. Posta kodu yapısı incelendiğinde ; </p><ol><li>İlk 2 hane il plaka kodunu temsil eder.</li><li>Son 3 hane ilçe içerisindeki dağıtım bölgesini ve mahallesini kapsar.</li></ol></div></div>`);
       } else {
         _push(`<div${ssrRenderAttrs(mergeProps({ class: "max-w-2xl mx-auto py-12 text-center text-slate-500" }, _attrs))}><div class="bg-red-50 text-red-600 p-6 rounded-xl border border-red-100"><h2 class="font-bold text-lg mb-2">Veri Bulunamadı!</h2><p class="text-sm mb-4"> Aradığınız mahalle bilgisine ulaşılamadı. Lütfen adresi kontrol edin. </p><div class="text-left text-xs font-mono bg-white p-4 rounded border border-red-100 overflow-auto max-h-64"><p><strong>URL Params:</strong> ${ssrInterpolate(unref(route).params)}</p><p><strong>City Loaded:</strong> ${ssrInterpolate(unref(cityData).value?.length ? "YES" : "NO")} (${ssrInterpolate(citySlug.value)}) </p><p><strong>District Valid:</strong> ${ssrInterpolate(!!districtItem.value ? "YES" : "NO")} (${ssrInterpolate(districtSlug.value)}) </p><p><strong>Neighborhood Request:</strong> &quot;${ssrInterpolate(neighborhoodSlug.value)}&quot;</p>`);
@@ -267,4 +302,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=_neighborhood_-D7AaOfNd.mjs.map
+//# sourceMappingURL=_neighborhood_-BMiBtwO5.mjs.map

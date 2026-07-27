@@ -62,7 +62,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       { name: "Hakkari", code: "438" },
       { name: "Hatay", code: "326" },
       { name: "Isparta", code: "246" },
-      { name: "İstanbul", code: "212 / 216 / 224 / 232 / 262 / 312" },
+      { name: "İstanbul", code: "212 / 216" },
       { name: "İzmir", code: "232" },
       { name: "Kahramanmaraş", code: "344" },
       { name: "Karabük", code: "370" },
@@ -136,4 +136,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=telefon-kodlari-D_YkpAc0.mjs.map
+//# sourceMappingURL=telefon-kodlari-Dv_U6_kr.mjs.map

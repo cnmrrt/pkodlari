@@ -142,6 +142,14 @@ usePageSeo({ title: pageTitle, description: pageDesc });
 
 const isValid = computed(() => !!neighItem.value);
 
+const otherNeighborhoods = computed(() => {
+  if (!districtItem.value || !neighItem.value) return [];
+
+  return districtItem.value.neighborhoods.filter(
+    (neigh) => neigh.slug !== neighItem.value?.slug
+  );
+});
+
 const copyToClipboard = () => {
   if (neighItem.value) {
     navigator.clipboard.writeText(neighItem.value.zipCode);
@@ -258,7 +266,28 @@ const share = () => {
       ></iframe>
     </div>
 
-    <div class="mt-8 text-center mb-8">
+
+    <div v-if="otherNeighborhoods.length" class="mt-10">
+      <h2 class="text-xl font-bold text-slate-900 mb-4">Bu ilçedeki diğer mahalleler</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <NuxtLink
+          v-for="neigh in otherNeighborhoods"
+          :key="neigh.slug"
+          :to="`/${citySlug}/${districtSlug}/${neigh.slug}`"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+        >
+          <div>
+            <h3 class="font-semibold text-slate-900 text-sm">{{ titleCase(neigh.name) }}</h3>
+            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+              {{ neigh.zipCode }}
+            </p>
+          </div>
+          <ChevronRight class="w-5 h-5 text-slate-300" />
+        </NuxtLink>
+      </div>
+    </div>
+
+ <div class="mt-8 text-center mb-8">
       <h2 class="text-xl font-bold text-slate-900 mb-2">
         {{ neighItem.zipCode }} nerenin posta kodu?
       </h2>
@@ -322,6 +351,7 @@ const share = () => {
         <li>Son 3 hane ilçe içerisindeki dağıtım bölgesini ve mahallesini kapsar.</li>
       </ol>
     </div>
+
   </div>
 
   <div v-else class="max-w-2xl mx-auto py-12 text-center text-slate-500">

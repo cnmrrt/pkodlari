@@ -597,12 +597,12 @@ const _routes = [
   {
     name: "telefon-kodlari",
     path: "/telefon-kodlari",
-    component: () => import('./telefon-kodlari-D_YkpAc0.mjs')
+    component: () => import('./telefon-kodlari-Dv_U6_kr.mjs')
   },
   {
     name: "city-district-neighborhood",
     path: "/:city()/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-D7AaOfNd.mjs')
+    component: () => import('./_neighborhood_-BMiBtwO5.mjs')
   },
   {
     name: "city-district",

@@ -61,7 +61,7 @@ useHead({
       if (!districtItem.value) return {};
       return {
         type: "application/ld+json",
-        children: JSON.stringify({
+        innerHTML: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [

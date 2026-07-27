@@ -81,7 +81,7 @@ useHead({
       if (!districtItem.value || !neighItem.value) return {};
       return {
         type: "application/ld+json",
-        children: JSON.stringify({
+        innerHTML: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
@@ -117,7 +117,7 @@ useHead({
       if (!districtItem.value || !neighItem.value) return {};
       return {
         type: "application/ld+json",
-        children: JSON.stringify({
+        innerHTML: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
           mainEntity: [

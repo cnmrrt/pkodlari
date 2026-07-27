@@ -63,19 +63,19 @@ useHead({
     computed(() => {
       if (!cityItem.value) return {};
       return {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
           itemListElement: [
             {
-              "@type": "ListItem",
+              '@type': 'ListItem',
               position: 1,
-              name: "Anasayfa",
-              item: `https://pkodlari.com/`,
+              name: 'Anasayfa',
+              item: 'https://pkodlari.com/',
             },
             {
-              "@type": "ListItem",
+              '@type': 'ListItem',
               position: 2,
               name: titleCase(cityItem.value.name),
               item: `https://pkodlari.com/${citySlug.value}`,

@@ -33,4 +33,3 @@ export { definePageMeta, PageMeta } from '#app/composables/pages';
 export { defineLazyHydrationComponent } from '#app/composables/lazy-hydration';
 export { usePageSeo } from '../composables/usePageSeo';
 export { slugify, findMapValue, titleCase } from '../utils/slugify';
-export { useNuxtDevTools } from '../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools';

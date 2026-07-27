@@ -11,8 +11,9 @@ import { MapPin } from 'lucide-vue-next';
         </div>
         <span class="font-bold text-slate-900 tracking-tight">Posta Kodu Rehberi</span>
       </NuxtLink>
-      <nav class="text-sm font-medium text-slate-500 flex gap-6">
+      <nav class="text-sm font-medium text-slate-500 flex gap-4 sm:gap-6 flex-wrap justify-end">
         <NuxtLink to="/" class="hover:text-slate-900 transition-colors">Şehirler</NuxtLink>
+        <NuxtLink to="/telefon-kodlari" class="hover:text-slate-900 transition-colors">Telefon Kodları</NuxtLink>
         <a href="https://postakodu.ptt.gov.tr/" target="_blank" class="hover:text-slate-900 transition-colors">PTT Sorgulama</a>
       </nav>
     </div>

@@ -595,6 +595,11 @@ function getRouteRules(arg) {
 }
 const _routes = [
   {
+    name: "telefon-kodlari",
+    path: "/telefon-kodlari",
+    component: () => import('./telefon-kodlari-D_YkpAc0.mjs')
+  },
+  {
     name: "city-district-neighborhood",
     path: "/:city()/:district()/:neighborhood()",
     component: () => import('./_neighborhood_-D7AaOfNd.mjs')
@@ -1282,7 +1287,7 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`<nav class="text-sm font-medium text-slate-500 flex gap-6">`);
+      _push(`<nav class="text-sm font-medium text-slate-500 flex gap-4 sm:gap-6 flex-wrap justify-end">`);
       _push(ssrRenderComponent(_component_NuxtLink, {
         to: "/",
         class: "hover:text-slate-900 transition-colors"
@@ -1293,6 +1298,21 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
           } else {
             return [
               createTextVNode("Şehirler")
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(ssrRenderComponent(_component_NuxtLink, {
+        to: "/telefon-kodlari",
+        class: "hover:text-slate-900 transition-colors"
+      }, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`Telefon Kodları`);
+          } else {
+            return [
+              createTextVNode("Telefon Kodları")
             ];
           }
         }),

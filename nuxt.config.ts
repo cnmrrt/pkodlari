@@ -57,13 +57,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
             ]
         }
     },
-    nitro: {
-    prerender: {
-      crawlLinks: true, // Automatically scans and generates static HTML for discovered subpages
-      routes: [
-        '/'             // Starting point for the crawler
-      ]
-    }
-  },
     ssr: true
 })

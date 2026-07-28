@@ -14,9 +14,7 @@ const { data: cityData } = await useAsyncData(
   () => `city-data-${citySlug.value}`,
   async () => {
     try {
-      return await $fetch<any[]>(
-        `https://pkodlari.com/data/${citySlug.value}.json`
-      );
+      return await $fetch<any[]>(`https://pkodlari.com/data/${citySlug.value}.json`);
     } catch {
       return [];
     }
@@ -70,7 +68,9 @@ const pageDesc = computed(() => {
   if (!districtItem.value || !neighItem.value) return "Posta Kodu Rehberi";
   return `${cityName.value} ilinin ${titleCase(
     districtItem.value.name
-  )} ilçesine bağlı ${titleCase(neighItem.value.name)}'nin posta kodunu görmek için tıklayın!`;
+  )} ilçesine bağlı ${titleCase(
+    neighItem.value.name
+  )}'nin posta kodunu görmek için tıklayın!`;
 });
 
 useHead({
@@ -126,9 +126,11 @@ useHead({
               name: `${neighItem.value.zipCode} nerenin posta kodu?`,
               acceptedAnswer: {
                 "@type": "Answer",
-                text: `${neighItem.value.zipCode} posta kodu ${cityName.value} ${titleCase(
-                  districtItem.value.name
-                )} ${titleCase(neighItem.value.name)}'ne aittir.`,
+                text: `${neighItem.value.zipCode} posta kodu ${
+                  cityName.value
+                } ${titleCase(districtItem.value.name)} ${titleCase(
+                  neighItem.value.name
+                )}'ne aittir.`,
               },
             },
           ],
@@ -162,11 +164,9 @@ const share = () => {
   if (navigator.share && neighItem.value) {
     navigator.share({
       title: `${titleCase(neighItem.value.name)} Posta Kodu`,
-      text: `${cityName.value}, ${titleCase(
-        districtItem.value?.name ?? ""
-      )}, ${titleCase(neighItem.value.name)} mahallesinin posta kodu: ${
-        neighItem.value.zipCode
-      }`,
+      text: `${cityName.value}, ${titleCase(districtItem.value?.name ?? "")}, ${titleCase(
+        neighItem.value.name
+      )} mahallesinin posta kodu: ${neighItem.value.zipCode}`,
       url: window.location.href,
     });
   }
@@ -266,7 +266,6 @@ const share = () => {
       ></iframe>
     </div>
 
-
     <div v-if="otherNeighborhoods.length" class="mt-10">
       <h2 class="text-xl font-bold text-slate-900 mb-4">Bu ilçedeki diğer mahalleler</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -277,7 +276,9 @@ const share = () => {
           class="soft-card p-4 rounded-xl flex items-center justify-between"
         >
           <div>
-            <h3 class="font-semibold text-slate-900 text-sm">{{ titleCase(neigh.name) }}</h3>
+            <h3 class="font-semibold text-slate-900 text-sm">
+              {{ titleCase(neigh.name) }}
+            </h3>
             <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
               {{ neigh.zipCode }}
             </p>
@@ -287,7 +288,7 @@ const share = () => {
       </div>
     </div>
 
- <div class="mt-8 text-center mb-8">
+    <div class="mt-8 text-center mb-8">
       <h2 class="text-xl font-bold text-slate-900 mb-2">
         {{ neighItem.zipCode }} nerenin posta kodu?
       </h2>
@@ -351,7 +352,6 @@ const share = () => {
         <li>Son 3 hane ilçe içerisindeki dağıtım bölgesini ve mahallesini kapsar.</li>
       </ol>
     </div>
-
   </div>
 
   <div v-else class="max-w-2xl mx-auto py-12 text-center text-slate-500">
@@ -366,19 +366,20 @@ const share = () => {
       >
         <p><strong>URL Params:</strong> {{ route.params }}</p>
         <p>
-          <strong>City Loaded:</strong> {{ cityData.value?.length ? "YES" : "NO" }} ({{ citySlug }})
+          <strong>City Loaded:</strong> {{ cityData.value?.length ? "YES" : "NO" }} ({{
+            citySlug
+          }})
         </p>
         <p>
-          <strong>District Valid:</strong> {{ !!districtItem ? "YES" : "NO" }} ({{ districtSlug }})
+          <strong>District Valid:</strong> {{ !!districtItem ? "YES" : "NO" }} ({{
+            districtSlug
+          }})
         </p>
         <p><strong>Neighborhood Request:</strong> "{{ neighborhoodSlug }}"</p>
         <div v-if="districtItem">
           <p><strong>Available Neighborhoods (First 5):</strong></p>
           <ul>
-            <li
-              v-for="neigh in districtItem.neighborhoods.slice(0, 5)"
-              :key="neigh.slug"
-            >
+            <li v-for="neigh in districtItem.neighborhoods.slice(0, 5)" :key="neigh.slug">
               {{ neigh.slug }}
             </li>
           </ul>

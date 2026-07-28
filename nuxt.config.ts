@@ -52,10 +52,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
                 box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
                 transform: translateY(-2px);
             }
+                
           `
                 }
             ]
         }
-    },
-    ssr: true
+    }
 })

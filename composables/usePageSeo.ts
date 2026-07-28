@@ -7,17 +7,16 @@ export function usePageSeo(options: {
 }) {
   const route = useRoute();
   const requestUrl = useRequestURL();
-  const domain = "https://pkodlari.com";
-  const canonicalUrl = computed(() => domain + (route.fullPath?.startsWith('/') ? route.fullPath : '/' + (route.fullPath || '')));
+  const canonicalUrl = computed(() => requestUrl.origin + (route.fullPath?.startsWith('/') ? route.fullPath : '/' + (route.fullPath || '')));
 
   const resolvedTitle = computed(() => toValue(options.title) || 'Posta Kodu Rehberi');
   const resolvedDesc = computed(() => toValue(options.description) || 'Türkiye posta kodları rehberi');
   const ogImageUrl = options.image
     ? computed(() => {
         const img = options.image!;
-        return img.startsWith('http') ? img : domain + (img.startsWith('/') ? img : '/' + img);
+        return img.startsWith('http') ? img : requestUrl.origin + (img.startsWith('/') ? img : '/' + img);
       })
-    : computed(() => domain + '/favicon.svg');
+    : computed(() => requestUrl.origin + '/favicon.svg');
 
   useHead({
     link: [{ rel: 'canonical', href: canonicalUrl }],

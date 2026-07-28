@@ -1,10 +1,11 @@
 import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'vue-bundle-renderer/runtime';
-import { j as joinRelativeURL, u as useRuntimeConfig, a as getResponseStatusText, b as getResponseStatus, e as encodePath, f as defineRenderHandler, h as getQuery, c as createError, i as destr, k as getRouteRules, l as joinURL, m as useNitroApp } from '../nitro/nitro.mjs';
+import { j as joinRelativeURL, u as useRuntimeConfig, a as getResponseStatusText, b as getResponseStatus, e as decodePath, f as defineRenderHandler, h as getQuery, c as createError, i as getRouteRules, k as joinURL, l as useNitroApp } from '../nitro/nitro.mjs';
 import { renderToString } from 'vue/server-renderer';
 import { createHead as createHead$1, propsToString, renderSSRHead } from 'unhead/server';
 import { stringify, uneval } from 'devalue';
 import { walkResolver } from 'unhead/utils';
 import { isRef, toValue, hasInjectionContext, inject, ref, watchEffect, getCurrentInstance, onBeforeUnmount, onDeactivated, onActivated } from 'vue';
+import { DeprecationsPlugin, PromisesPlugin, TemplateParamsPlugin, AliasSortingPlugin } from 'unhead/plugins';
 
 const VueResolver = (_, value) => {
   return isRef(value) ? toValue(value) : value;
@@ -27,9 +28,10 @@ function vueInstall(head) {
 function injectHead() {
   if (hasInjectionContext()) {
     const instance = inject(headSymbol);
-    if (instance) {
-      return instance;
+    if (!instance) {
+      throw new Error("useHead() was called without provide context, ensure you call it through the setup() function.");
     }
+    return instance;
   }
   throw new Error("useHead() was called without provide context, ensure you call it through the setup() function.");
 }
@@ -73,10 +75,9 @@ function createHead(options = {}) {
   return head;
 }
 
-const NUXT_PAYLOAD_INLINE = false;
 const NUXT_RUNTIME_PAYLOAD_EXTRACTION = false;
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[{"rel":"preload","as":"style","href":"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap"},{"rel":"icon","type":"image/svg+xml","href":"/favicon.svg"},{"rel":"preconnect","href":"https://cdn.tailwindcss.com"}],"style":[{"innerHTML":"\n            body { \n                font-family: 'Inter', sans-serif;\n                background-color: #f8fafc;\n                color: #1e293b;\n                -webkit-font-smoothing: antialiased;\n            }\n            .mono { font-family: 'JetBrains Mono', monospace; }\n            .soft-card {\n                background: #ffffff;\n                border: 1px solid #e2e8f0;\n                box-shadow: 0 1px 3px rgba(0,0,0,0.02);\n                transition: all 0.2s ease;\n            }\n            .soft-card:hover {\n                border-color: #cbd5e1;\n                box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);\n                transform: translateY(-2px);\n            }\n          "}],"script":[{"src":"https://cdn.tailwindcss.com"},{"innerHTML":"(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-PVZMM8PF');"}],"noscript":[{"innerHTML":"<iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-PVZMM8PF\"\nheight=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe>","tagPosition":"bodyOpen"}],"htmlAttrs":{"lang":"tr"},"title":"Posta Kodu Rehberi"};
+const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[{"rel":"preload","as":"style","href":"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap"},{"rel":"icon","type":"image/svg+xml","href":"/favicon.svg"},{"rel":"preconnect","href":"https://cdn.tailwindcss.com"}],"style":[{"innerHTML":"\n            body { \n                font-family: 'Inter', sans-serif;\n                background-color: #f8fafc;\n                color: #1e293b;\n                -webkit-font-smoothing: antialiased;\n            }\n            .mono { font-family: 'JetBrains Mono', monospace; }\n            .soft-card {\n                background: #ffffff;\n                border: 1px solid #e2e8f0;\n                box-shadow: 0 1px 3px rgba(0,0,0,0.02);\n                transition: all 0.2s ease;\n            }\n            .soft-card:hover {\n                border-color: #cbd5e1;\n                box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);\n                transform: translateY(-2px);\n            }\n                \n          "}],"script":[{"src":"https://cdn.tailwindcss.com"},{"innerHTML":"(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-PVZMM8PF');"}],"noscript":[{"innerHTML":"<iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-PVZMM8PF\"\nheight=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe>","tagPosition":"bodyOpen"}],"htmlAttrs":{"lang":"tr"},"title":"Posta Kodu Rehberi"};
 
 const appRootTag = "div";
 
@@ -86,50 +87,42 @@ const appTeleportTag = "div";
 
 const appTeleportAttrs = {"id":"teleports"};
 
-const appSpaLoaderTag = "div";
-
-const appSpaLoaderAttrs = {"id":"__nuxt-loader"};
-
 const appId = "nuxt-app";
 
 function baseURL() {
-	
+	// TODO: support passing event to `useRuntimeConfig`
 	return useRuntimeConfig().app.baseURL;
 }
 function buildAssetsDir() {
-	
+	// TODO: support passing event to `useRuntimeConfig`
 	return useRuntimeConfig().app.buildAssetsDir;
 }
 function buildAssetsURL(...path) {
 	return joinRelativeURL(publicAssetsURL(), buildAssetsDir(), ...path);
 }
 function publicAssetsURL(...path) {
-	
+	// TODO: support passing event to `useRuntimeConfig`
 	const app = useRuntimeConfig().app;
 	const publicBase = app.cdnURL || app.baseURL;
 	return path.length ? joinRelativeURL(publicBase, ...path) : publicBase;
 }
 
-// @ts-expect-error private property consumed by vite-generated url helpers
-globalThis.__buildAssetsURL = buildAssetsURL;
-// @ts-expect-error private property consumed by vite-generated url helpers
-globalThis.__publicAssetsURL = publicAssetsURL;
 const APP_ROOT_OPEN_TAG = `<${appRootTag}${propsToString(appRootAttrs)}>`;
 const APP_ROOT_CLOSE_TAG = `</${appRootTag}>`;
 // @ts-expect-error file will be produced after app build
 const getServerEntry = () => import('../build/server.mjs').then((r) => r.default || r);
 // @ts-expect-error file will be produced after app build
 const getPrecomputedDependencies = () => import('../build/client.precomputed.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
-
+// -- SSR Renderer --
 const getSSRRenderer = lazyCachedFunction(async () => {
-	
+	// Load server bundle
 	const createSSRApp = await getServerEntry();
 	if (!createSSRApp) {
 		throw new Error("Server bundle is not available");
 	}
-	
+	// Load precomputed dependencies
 	const precomputed = await getPrecomputedDependencies();
-	
+	// Create renderer
 	const renderer = createRenderer(createSSRApp, {
 		precomputed,
 		manifest: undefined,
@@ -142,20 +135,16 @@ const getSSRRenderer = lazyCachedFunction(async () => {
 	}
 	return renderer;
 });
-
+// -- SPA Renderer --
 const getSPARenderer = lazyCachedFunction(async () => {
 	const precomputed = await getPrecomputedDependencies();
 	// @ts-expect-error virtual file
 	const spaTemplate = await import('../virtual/_virtual_spa-template.mjs').then((r) => r.template).catch(() => "").then((r) => {
 		{
-			const APP_SPA_LOADER_OPEN_TAG = `<${appSpaLoaderTag}${propsToString(appSpaLoaderAttrs)}>`;
-			const APP_SPA_LOADER_CLOSE_TAG = `</${appSpaLoaderTag}>`;
-			const appTemplate = APP_ROOT_OPEN_TAG + APP_ROOT_CLOSE_TAG;
-			const loaderTemplate = r ? APP_SPA_LOADER_OPEN_TAG + r + APP_SPA_LOADER_CLOSE_TAG : "";
-			return appTemplate + loaderTemplate;
+			return APP_ROOT_OPEN_TAG + r + APP_ROOT_CLOSE_TAG;
 		}
 	});
-	
+	// Create SPA renderer and cache the result for all requests
 	const renderer = createRenderer(() => () => {}, {
 		precomputed,
 		manifest: undefined,
@@ -198,7 +187,7 @@ const getSSRStyles = lazyCachedFunction(() => import('../build/styles.mjs').then
 
 function renderPayloadResponse(ssrContext) {
 	return {
-		body: encodeForwardSlashes(stringify(splitPayload(ssrContext).payload, ssrContext["~payloadReducers"])) ,
+		body: stringify(splitPayload(ssrContext).payload, ssrContext["~payloadReducers"]) ,
 		statusCode: getResponseStatus(ssrContext.event),
 		statusMessage: getResponseStatusText(ssrContext.event),
 		headers: {
@@ -208,7 +197,7 @@ function renderPayloadResponse(ssrContext) {
 	};
 }
 function renderPayloadJsonScript(opts) {
-	const contents = opts.data ? encodeForwardSlashes(stringify(opts.data, opts.ssrContext["~payloadReducers"])) : "";
+	const contents = opts.data ? stringify(opts.data, opts.ssrContext["~payloadReducers"]) : "";
 	const payload = {
 		"type": "application/json",
 		"innerHTML": contents,
@@ -223,10 +212,6 @@ function renderPayloadJsonScript(opts) {
 	}
 	const config = uneval(opts.ssrContext.config);
 	return [payload, { innerHTML: `window.__NUXT__={};window.__NUXT__.config=${config}` }];
-}
-
-function encodeForwardSlashes(str) {
-	return str.replaceAll("/", "\\u002F");
 }
 function splitPayload(ssrContext) {
 	const { data, prerenderedAt, ...initial } = ssrContext.payload;
@@ -244,19 +229,13 @@ function splitPayload(ssrContext) {
 
 const unheadOptions = {
   disableDefaults: true,
+  disableCapoSorting: false,
+  plugins: [DeprecationsPlugin, PromisesPlugin, TemplateParamsPlugin, AliasSortingPlugin],
 };
 
-function encodeEventPath(path) {
-	const queryIndex = path.indexOf("?");
-	if (queryIndex === -1) {
-		return encodePath(path);
-	}
-	return encodePath(path.slice(0, queryIndex)) + path.slice(queryIndex);
-}
 function createSSRContext(event) {
-	const url = encodeEventPath(event.path);
 	const ssrContext = {
-		url,
+		url: decodePath(event.path),
 		event,
 		runtimeConfig: useRuntimeConfig(event),
 		noSSR: event.context.nuxt?.noSSR || (false),
@@ -288,7 +267,7 @@ async function renderInlineStyles(usedModules) {
 	return Array.from(inlinedStyles).map((style) => ({ innerHTML: style }));
 }
 
-const renderSSRHeadOptions = {"omitLineBreaks":true};
+const renderSSRHeadOptions = {"omitLineBreaks":false};
 
 const entryIds = [];
 
@@ -301,8 +280,9 @@ const APP_TELEPORT_OPEN_TAG = HAS_APP_TELEPORTS ? `<${appTeleportTag}${propsToSt
 const APP_TELEPORT_CLOSE_TAG = HAS_APP_TELEPORTS ? `</${appTeleportTag}>` : "";
 const PAYLOAD_URL_RE = /^[^?]*\/_payload.json(?:\?.*)?$/ ;
 const PAYLOAD_FILENAME = "_payload.json" ;
-const handler = defineRenderHandler((event) => {
-	
+const renderer = defineRenderHandler(async (event) => {
+	const nitroApp = useNitroApp();
+	// Whether we're rendering an error page
 	const ssrError = event.path.startsWith("/__nuxt_error") ? getQuery(event) : null;
 	if (ssrError && !("__unenv__" in event.node.req)) {
 		throw createError({
@@ -311,37 +291,24 @@ const handler = defineRenderHandler((event) => {
 			message: "Page Not Found: /__nuxt_error"
 		});
 	}
-	return renderRoute(event, ssrError);
-});
-async function renderRoute(event, ssrError) {
-	const nitroApp = useNitroApp();
-	
+	// Initialize ssr context
 	const ssrContext = createSSRContext(event);
-	
+	// needed for hash hydration plugin to work
 	const headEntryOptions = { mode: "server" };
 	ssrContext.head.push(appHead, headEntryOptions);
 	if (ssrError) {
-		
+		// eslint-disable-next-line @typescript-eslint/no-deprecated
 		const status = ssrError.status || ssrError.statusCode;
 		if (status) {
-			
+			// eslint-disable-next-line @typescript-eslint/no-deprecated
 			ssrError.status = ssrError.statusCode = Number.parseInt(status);
-		}
-		if (typeof ssrError.data === "string") {
-			try {
-				ssrError.data = destr(ssrError.data);
-			} catch {}
 		}
 		setSSRError(ssrContext, ssrError);
 	}
-	
+	// Get route options (for `ssr: false`, `isr`, `cache` and `noScripts`)
 	const routeOptions = getRouteRules(event);
-	
+	// Whether we are prerendering route or using ISR/SWR caching
 	const _PAYLOAD_EXTRACTION = !ssrContext.noSSR && (NUXT_RUNTIME_PAYLOAD_EXTRACTION);
-	
-	
-	
-	const _PAYLOAD_INLINE = !_PAYLOAD_EXTRACTION || NUXT_PAYLOAD_INLINE;
 	const isRenderingPayload = (_PAYLOAD_EXTRACTION || false) && PAYLOAD_URL_RE.test(ssrContext.url);
 	if (isRenderingPayload) {
 		const url = ssrContext.url.substring(0, ssrContext.url.lastIndexOf("/")) || "/";
@@ -352,7 +319,7 @@ async function renderRoute(event, ssrError) {
 		ssrContext.noSSR = true;
 	}
 	const payloadURL = _PAYLOAD_EXTRACTION ? joinURL(ssrContext.runtimeConfig.app.cdnURL || ssrContext.runtimeConfig.app.baseURL, ssrContext.url.replace(/\?.*$/, ""), PAYLOAD_FILENAME) + "?" + ssrContext.runtimeConfig.app.buildId : undefined;
-	
+	// Render app
 	const renderer = await getRenderer(ssrContext);
 	{
 		for (const id of entryIds) {
@@ -360,42 +327,41 @@ async function renderRoute(event, ssrError) {
 		}
 	}
 	const _rendered = await renderer.renderToString(ssrContext).catch(async (error) => {
-		
-		
+		// We use error to bypass full render if we have an early response we can make
+		// TODO: remove _renderResponse in nuxt v5
 		if ((ssrContext["~renderResponse"] || ssrContext._renderResponse) && error.message === "skipping render") {
 			return {};
 		}
-		
+		// Use explicitly thrown error in preference to subsequent rendering errors
 		const _err = !ssrError && ssrContext.payload?.error || error;
 		await ssrContext.nuxt?.hooks.callHook("app:error", _err);
 		throw _err;
 	});
-	
-	
+	// Render inline styles
+	// TODO: remove _renderResponse in nuxt v5
 	const inlinedStyles = !ssrContext["~renderResponse"] && !ssrContext._renderResponse && !isRenderingPayload ? await renderInlineStyles(ssrContext.modules ?? []) : [];
 	await ssrContext.nuxt?.hooks.callHook("app:rendered", {
 		ssrContext,
 		renderResult: _rendered
 	});
 	if (ssrContext["~renderResponse"] || ssrContext._renderResponse) {
-		
+		// TODO: remove _renderResponse in nuxt v5
 		return ssrContext["~renderResponse"] || ssrContext._renderResponse;
 	}
-	
+	// Handle errors
 	if (ssrContext.payload?.error && !ssrError) {
 		throw ssrContext.payload.error;
 	}
-	
+	// Directly render payload routes
 	if (isRenderingPayload) {
 		const response = renderPayloadResponse(ssrContext);
 		return response;
 	}
 	const NO_SCRIPTS = routeOptions.noScripts;
-	
+	// Setup head
 	const { styles, scripts } = getRequestDependencies(ssrContext, renderer.rendererContext);
-	
-	
-	if (_PAYLOAD_EXTRACTION && !_PAYLOAD_INLINE && !NO_SCRIPTS) {
+	// 1. Preload payloads and app manifest
+	if (_PAYLOAD_EXTRACTION && !NO_SCRIPTS) {
 		ssrContext.head.push({ link: [{
 			rel: "preload",
 			as: "fetch",
@@ -403,15 +369,27 @@ async function renderRoute(event, ssrError) {
 			href: payloadURL
 		} ] }, headEntryOptions);
 	}
-	
+	if (ssrContext["~preloadManifest"] && !NO_SCRIPTS) {
+		ssrContext.head.push({ link: [{
+			rel: "preload",
+			as: "fetch",
+			fetchpriority: "low",
+			crossorigin: "anonymous",
+			href: buildAssetsURL(`builds/meta/${ssrContext.runtimeConfig.app.buildId}.json`)
+		}] }, {
+			...headEntryOptions,
+			tagPriority: "low"
+		});
+	}
+	// 2. Styles
 	if (inlinedStyles.length) {
 		ssrContext.head.push({ style: inlinedStyles });
 	}
 	const link = [];
 	for (const resource of Object.values(styles)) {
-		
-		
-		
+		// Add CSS links in <head> for CSS files
+		// - in production
+		// - in dev mode when not rendering an island
 		link.push({
 			rel: "stylesheet",
 			href: renderer.rendererContext.buildAssetsURL(resource.file),
@@ -422,46 +400,44 @@ async function renderRoute(event, ssrError) {
 		ssrContext.head.push({ link }, headEntryOptions);
 	}
 	if (!NO_SCRIPTS) {
-		
-		
-		
+		// 4. Resource Hints
+		// Remove lazy hydrated modules from ssrContext.modules so they don't get preloaded
+		// (CSS links are already added above, this only affects JS preloads)
 		if (ssrContext["~lazyHydratedModules"]) {
 			for (const id of ssrContext["~lazyHydratedModules"]) {
 				ssrContext.modules?.delete(id);
 			}
 		}
+		// TODO: add priorities based on Capo
 		ssrContext.head.push({ link: getPreloadLinks(ssrContext, renderer.rendererContext) }, headEntryOptions);
 		ssrContext.head.push({ link: getPrefetchLinks(ssrContext, renderer.rendererContext) }, headEntryOptions);
-		
-		ssrContext.head.push({ script: _PAYLOAD_INLINE ? renderPayloadJsonScript({
-			ssrContext,
-			data: ssrContext.payload
-		})  : renderPayloadJsonScript({
+		// 5. Payloads
+		ssrContext.head.push({ script: _PAYLOAD_EXTRACTION ? renderPayloadJsonScript({
 			ssrContext,
 			data: splitPayload(ssrContext).initial,
 			src: payloadURL
+		})  : renderPayloadJsonScript({
+			ssrContext,
+			data: ssrContext.payload
 		})  }, {
 			...headEntryOptions,
-			
 			tagPosition: "bodyClose",
 			tagPriority: "high"
 		});
 	}
-	
+	// 6. Scripts
 	if (!routeOptions.noScripts) {
 		const tagPosition = "head";
 		ssrContext.head.push({ script: Object.values(scripts).map((resource) => ({
 			type: resource.module ? "module" : null,
 			src: renderer.rendererContext.buildAssetsURL(resource.file),
 			defer: resource.module ? null : true,
-			
-			
 			tagPosition,
 			crossorigin: ""
 		})) }, headEntryOptions);
 	}
 	const { headTags, bodyTags, bodyTagsOpen, htmlAttrs, bodyAttrs } = await renderSSRHead(ssrContext.head, renderSSRHeadOptions);
-	
+	// Create render context
 	const htmlContext = {
 		htmlAttrs: htmlAttrs ? [htmlAttrs] : [],
 		head: normalizeChunks([headTags]),
@@ -470,9 +446,9 @@ async function renderRoute(event, ssrError) {
 		body: [_rendered.html, APP_TELEPORT_OPEN_TAG + (HAS_APP_TELEPORTS ? joinTags([ssrContext.teleports?.[`#${appTeleportAttrs.id}`]]) : "") + APP_TELEPORT_CLOSE_TAG],
 		bodyAppend: [bodyTags]
 	};
-	
+	// Allow hooking into the rendered result
 	await nitroApp.hooks.callHook("render:html", htmlContext, { event });
-	
+	// Construct HTML response
 	return {
 		body: renderHTMLDocument(htmlContext),
 		statusCode: getResponseStatus(event),
@@ -482,7 +458,7 @@ async function renderRoute(event, ssrError) {
 			"x-powered-by": "Nuxt"
 		}
 	};
-}
+});
 function normalizeChunks(chunks) {
 	const result = [];
 	for (const _chunk of chunks) {
@@ -506,10 +482,10 @@ function renderHTMLDocument(html) {
 	return "<!DOCTYPE html>" + `<html${joinAttrs(html.htmlAttrs)}>` + `<head>${joinTags(html.head)}</head>` + `<body${joinAttrs(html.bodyAttrs)}>${joinTags(html.bodyPrepend)}${joinTags(html.body)}${joinTags(html.bodyAppend)}</body>` + "</html>";
 }
 
-const renderer = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+const renderer$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
-  default: handler
+  default: renderer
 }, Symbol.toStringTag, { value: 'Module' }));
 
-export { baseURL as b, headSymbol as h, renderer as r, useHead as u };
+export { baseURL as b, headSymbol as h, renderer$1 as r, useHead as u };
 //# sourceMappingURL=renderer.mjs.map

@@ -9,7 +9,7 @@ import 'node:crypto';
 import 'node:url';
 
 const postalData_get = defineCachedEventHandler(async (event) => {
-  const data = await $fetch("https://words-from-life-5cb26-default-rtdb.firebaseio.com/postakodlari.json");
+  const data = await $fetch("https://pkodlari.com/pk.json");
   return data;
 }, {
   maxAge: 60 * 60,

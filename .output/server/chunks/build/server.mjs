@@ -506,7 +506,7 @@ const _routes = [
   {
     name: "city",
     path: "/:city()",
-    component: () => import('./index-B46FQQxd.mjs')
+    component: () => import('./index-BUeDpNMT.mjs')
   },
   {
     name: "amasya",
@@ -601,7 +601,7 @@ const _routes = [
   {
     name: "bilecik",
     path: "/bilecik",
-    component: () => import('./index-DDgpk25a.mjs')
+    component: () => import('./index-BihhP9KP.mjs')
   },
   {
     name: "cankiri",
@@ -871,7 +871,7 @@ const _routes = [
   {
     name: "city-district",
     path: "/:city()/:district()",
-    component: () => import('./index-ChPB58VH.mjs')
+    component: () => import('./index-D0VZhPNH.mjs')
   },
   {
     name: "amasya-district",
@@ -966,7 +966,7 @@ const _routes = [
   {
     name: "bilecik-district",
     path: "/bilecik/:district()",
-    component: () => import('./index-kMINN6Sh.mjs')
+    component: () => import('./index-Ges-MH3L.mjs')
   },
   {
     name: "cankiri-district",
@@ -1231,7 +1231,7 @@ const _routes = [
   {
     name: "city-district-neighborhood",
     path: "/:city()/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_--WmN49K2.mjs')
+    component: () => import('./_neighborhood_-CMdfL1rB.mjs')
   },
   {
     name: "amasya-district-neighborhood",
@@ -1326,7 +1326,7 @@ const _routes = [
   {
     name: "bilecik-district-neighborhood",
     path: "/bilecik/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-fTEC1-lR.mjs')
+    component: () => import('./_neighborhood_-qImB20hg.mjs')
   },
   {
     name: "cankiri-district-neighborhood",

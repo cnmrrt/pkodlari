@@ -10,6 +10,7 @@ const districts = computed(() => {
 if (!ankaraData.value) return []                                        ;
 const districtMap: Record<string, { name: string, count: number }> = {} ;
 
+
 ankaraData.value.forEach(item => {
 const distName = item.ilce || 'MERKEZ';
 const distSlug = slugify(distName)                   ;

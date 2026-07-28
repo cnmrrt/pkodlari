@@ -7,7 +7,7 @@ const route = useRoute() ;
 const filter = ref('');
 
 const { data: bilecikData } = await useAsyncData('bilecik-data', () =>
-$fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/bilecik.json')
+$fetch<any[]>('https://pkodlari.com/data/bilecik.json')
 )                                                                                                               ;
 
 const districtSlug = computed(() => route.params.district as string) ;

@@ -7,7 +7,7 @@ const route = useRoute() ;
 const filter = ref('');
 
 const { data: nevsehirData } = await useAsyncData('nevsehir-data', () =>
-$fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/nevsehir.json')
+$fetch<any[]>('https://pkodlari.com/data/nevsehir.json')
 )                                                                                                                  ;
 
 const districtSlug = computed(() => route.params.district as string) ;

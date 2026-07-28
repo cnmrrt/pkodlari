@@ -31,7 +31,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     let __temp, __restore;
     const { data: elazigData } = ([__temp, __restore] = withAsyncContext(() => useAsyncData(
       "elazig-data",
-      () => $fetch("https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/elazig.json")
+      () => $fetch("https://pkodlari.com/data/elazig.json")
     )), __temp = await __temp, __restore(), __temp);
     const districts = computed(() => {
       if (!elazigData.value) return [];

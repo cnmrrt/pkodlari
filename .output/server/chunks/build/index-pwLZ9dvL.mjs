@@ -31,7 +31,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     const filter = ref("");
     const { data: cankiriData } = ([__temp, __restore] = withAsyncContext(() => useAsyncData(
       "cankiri-data",
-      () => $fetch("https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/cankiri.json")
+      () => $fetch("https://pkodlari.com/data/cankiri.json")
     )), __temp = await __temp, __restore(), __temp);
     const districtSlug = computed(() => route.params.district);
     const districtData = computed(() => {

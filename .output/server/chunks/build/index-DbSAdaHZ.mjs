@@ -31,7 +31,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     const filter = ref("");
     const { data: orduData } = ([__temp, __restore] = withAsyncContext(() => useAsyncData(
       "ordu-data",
-      () => $fetch("https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/ordu.json")
+      () => $fetch("https://pkodlari.com/data/ordu.json")
     )), __temp = await __temp, __restore(), __temp);
     const districtSlug = computed(() => route.params.district);
     const districtData = computed(() => {

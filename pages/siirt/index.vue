@@ -3,7 +3,7 @@ import { ArrowLeft, ChevronRight } from 'lucide-vue-next';
 import { slugify, titleCase } from '~/utils/slugify';
 
 const { data: siirtData } = await useAsyncData('siirt-data', () =>
-$fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/siirt.json')
+$fetch<any[]>('https://pkodlari.com/data/siirt.json')
 )                                                                                                               ;
 
 const districts = computed(() => {

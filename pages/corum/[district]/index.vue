@@ -7,7 +7,7 @@ const route = useRoute() ;
 const filter = ref('');
 
 const { data: corumData } = await useAsyncData('corum-data', () =>
-$fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/corum.json')
+$fetch<any[]>('https://pkodlari.com/data/corum.json')
 )                                                                                                               ;
 
 const districtSlug = computed(() => route.params.district as string) ;

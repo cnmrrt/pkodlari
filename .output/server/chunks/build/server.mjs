@@ -506,7 +506,7 @@ const _routes = [
   {
     name: "city",
     path: "/:city()",
-    component: () => import('./index-BUeDpNMT.mjs')
+    component: () => import('./index-3wwJ_3AG.mjs')
   },
   {
     name: "amasya",
@@ -631,7 +631,7 @@ const _routes = [
   {
     name: "karabuk",
     path: "/karabuk",
-    component: () => import('./index-CIcNOvOq.mjs')
+    component: () => import('./index-74RcJwd1.mjs')
   },
   {
     name: "karaman",
@@ -996,7 +996,7 @@ const _routes = [
   {
     name: "karabuk-district",
     path: "/karabuk/:district()",
-    component: () => import('./index-NX1zL0aj.mjs')
+    component: () => import('./index-CLqxc6c5.mjs')
   },
   {
     name: "karaman-district",
@@ -1356,7 +1356,7 @@ const _routes = [
   {
     name: "karabuk-district-neighborhood",
     path: "/karabuk/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-B89xJvoz.mjs')
+    component: () => import('./_neighborhood_-DrU7QHoP.mjs')
   },
   {
     name: "karaman-district-neighborhood",
@@ -1396,7 +1396,7 @@ const _routes = [
   {
     name: "adiyaman-district-neighborhood",
     path: "/adiyaman/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-ChEBORSU.mjs')
+    component: () => import('./_neighborhood_-CufvX6Q3.mjs')
   },
   {
     name: "erzincan-district-neighborhood",

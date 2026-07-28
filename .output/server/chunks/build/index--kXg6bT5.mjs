@@ -31,7 +31,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     let __temp, __restore;
     const { data: nigdeData } = ([__temp, __restore] = withAsyncContext(() => useAsyncData(
       "nigde-data",
-      () => $fetch("https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/nigde.json")
+      () => $fetch("https://pkodlari.com/data/nigde.json")
     )), __temp = await __temp, __restore(), __temp);
     const districts = computed(() => {
       if (!nigdeData.value) return [];

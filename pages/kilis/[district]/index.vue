@@ -7,7 +7,7 @@ const route = useRoute() ;
 const filter = ref('');
 
 const { data: kilisData } = await useAsyncData('kilis-data', () =>
-$fetch<any[]>('https://words-from-life-5cb26-default-rtdb.firebaseio.com/posta_kodlari_duzenlenmis/kilis.json')
+$fetch<any[]>('https://pkodlari.com/data/kilis.json')
 )                                                                                                               ;
 
 const districtSlug = computed(() => route.params.district as string) ;

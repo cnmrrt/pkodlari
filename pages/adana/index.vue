@@ -1,74 +1,464 @@
 <script setup lang="ts">
-import { ArrowLeft, ChevronRight } from 'lucide-vue-next';
-import { slugify, titleCase } from '~/utils/slugify';
+import { ArrowLeft, ChevronRight } from "lucide-vue-next";
+import { slugify, titleCase } from "~/utils/slugify";
 
-const { data: adanaData } = await useAsyncData('adana-data', () =>
-$fetch<any[]>('https://pkodlari.com/data/adana.json')
-)                                                                                                             ;
+// const { data: adanaData } = await useAsyncData("adana-data", () =>
+//   $fetch<any[]>("https://pkodlari.com/data/adana.json")
+// );
 
-const districts = computed(() => {
-if (!adanaData.value) return []                                         ;
-const districtMap: Record<string, { name: string, count: number }> = {} ;
+// const districts = computed(() => {
+//   if (!adanaData.value) return [];
+//   const districtMap: Record<string, { name: string; count: number }> = {};
 
-adanaData.value.forEach(item => {
-const distName = item.ilce || 'MERKEZ';
-const distSlug = slugify(distName)                   ;
-if (!districtMap[distSlug]) {
-districtMap[distSlug] = { name: distName, count: 0 } ;
-}
-districtMap[distSlug].count++                        ;
-})                                                   ;
+//   adanaData.value.forEach((item) => {
+//     const distName = item.ilce || "MERKEZ";
+//     const distSlug = slugify(distName);
+//     if (!districtMap[distSlug]) {
+//       districtMap[distSlug] = { name: distName, count: 0 };
+//     }
+//     districtMap[distSlug].count++;
+//   });
 
-return Object.entries(districtMap).sort(([, a], [, b]) => a.name.localeCompare(b.name, 'tr'));
-})                                                                                             ;
+//   return Object.entries(districtMap).sort(([, a], [, b]) =>
+//     a.name.localeCompare(b.name, "tr")
+//   );
+// });
 
 const pageTitle = "Adana Posta Kodları";
-const pageDesc = "Adana iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!";
+const pageDesc =
+  "Adana iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!";
 
 useHead({
-title: pageTitle,
-meta: [{ name: 'description', content: pageDesc }],
-script: [
-{
-type: 'application/ld+json',
-children: JSON.stringify({
-"@context": "https://schema.org",
-"@type": "BreadcrumbList",
-"itemListElement": [
-{ "@type": "ListItem", "position": 1, "name": "Anasayfa", "item": "https://pkodlari.com/" },
-{ "@type": "ListItem", "position": 2, "name": "Adana", "item": "https://pkodlari.com/adana" }
-]
-})
-}
-]
-})                                                                                            ;
+  title: "Adana Posta Kodları",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Adana iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!",
+    },
+  ],
+  script: [
+    {
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Anasayfa",
+            item: "https://pkodlari.com/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Adana",
+            item: "https://pkodlari.com/adana",
+          },
+        ],
+      }),
+    },
+  ],
+});
 
-usePageSeo({ title: pageTitle, description: pageDesc }) ;
+usePageSeo({
+  title: "Adana Posta Kodları",
+  description:
+    "Adana iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!",
+});
 </script>
 
 <template>
-<div class="animate-in fade-in duration-500 max-w-4xl mx-auto">
-<div class="mb-10 flex items-center gap-4">
-<NuxtLink to="/" class="text-slate-400 hover:text-slate-900 transition-colors"><ArrowLeft class="w-5 h-5" /></NuxtLink>
-<div>
-<h1 class="text-3xl font-bold text-slate-900 tracking-tight">Adana Posta Kodları</h1>
-<p class="text-slate-500 text-sm font-medium uppercase tracking-wider">{{ districts.length }} İLÇE</p>
-</div>
-</div>
+  <div class="animate-in fade-in duration-500 max-w-4xl mx-auto">
+    <div class="mb-10 flex items-center gap-4">
+      <a href="/" class="text-slate-400 hover:text-slate-900 transition-colors"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-arrow-left-icon w-5 h-5"
+        >
+          <path d="m12 19-7-7 7-7"></path>
+          <path d="M19 12H5"></path></svg
+      ></a>
+      <div>
+        <h1 class="text-3xl font-bold text-slate-900 tracking-tight">
+          Adana Posta Kodları
+        </h1>
+        <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">15 İLÇE</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <a
+        href="/adana/aladag"
+        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        ><div>
+          <h3 class="font-bold text-slate-900 text-lg">Aladağ</h3>
+          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+            31 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/adana/ceyhan"
+        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        ><div>
+          <h3 class="font-bold text-slate-900 text-lg">Ceyhan</h3>
+          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+            154 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/adana/cukurova"
+        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        ><div>
+          <h3 class="font-bold text-slate-900 text-lg">Çukurova</h3>
+          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+            27 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/adana/feke"
+        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        ><div>
+          <h3 class="font-bold text-slate-900 text-lg">Feke</h3>
+          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+            48 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/adana/imamoglu"
+        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        ><div>
+          <h3 class="font-bold text-slate-900 text-lg">İmamoğlu</h3>
+          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+            27 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/adana/karaisali"
+        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        ><div>
+          <h3 class="font-bold text-slate-900 text-lg">Karaisalı</h3>
+          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+            57 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/adana/karatas"
+        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        ><div>
+          <h3 class="font-bold text-slate-900 text-lg">Karataş</h3>
+          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+            43 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/adana/kozan"
+        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        ><div>
+          <h3 class="font-bold text-slate-900 text-lg">Kozan</h3>
+          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+            103 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/adana/pozanti"
+        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        ><div>
+          <h3 class="font-bold text-slate-900 text-lg">Pozantı</h3>
+          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+            21 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/adana/saimbeyli"
+        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        ><div>
+          <h3 class="font-bold text-slate-900 text-lg">Saimbeyli</h3>
+          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+            28 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/adana/saricam"
+        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        ><div>
+          <h3 class="font-bold text-slate-900 text-lg">Sarıçam</h3>
+          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+            69 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/adana/seyhan"
+        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        ><div>
+          <h3 class="font-bold text-slate-900 text-lg">Seyhan</h3>
+          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+            96 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/adana/tufanbeyli"
+        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        ><div>
+          <h3 class="font-bold text-slate-900 text-lg">Tufanbeyli</h3>
+          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+            33 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/adana/yumurtalik"
+        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        ><div>
+          <h3 class="font-bold text-slate-900 text-lg">Yumurtalık</h3>
+          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+            24 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/adana/yuregir"
+        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        ><div>
+          <h3 class="font-bold text-slate-900 text-lg">Yüreğir</h3>
+          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+            107 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+        >
+          <path d="m9 18 6-6-6-6"></path></svg
+      ></a>
+    </div>
+  </div>
+  <!-- <div class="animate-in fade-in duration-500 max-w-4xl mx-auto">
+    <div class="mb-10 flex items-center gap-4">
+      <NuxtLink to="/" class="text-slate-400 hover:text-slate-900 transition-colors"
+        ><ArrowLeft class="w-5 h-5"
+      /></NuxtLink>
+      <div>
+        <h1 class="text-3xl font-bold text-slate-900 tracking-tight">
+          Adana Posta Kodları
+        </h1>
+        <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">
+          {{ districts.length }} İLÇE
+        </p>
+      </div>
+    </div>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-<NuxtLink
-v-for="([distSlug, distItem]) in districts"
-:key="distSlug"
-:to="`/adana/${distSlug}`"
-class="soft-card p-6 rounded-xl flex items-center justify-between"
->
-<div>
-<h3 class="font-bold text-slate-900 text-lg">{{ titleCase(distItem.name) }}</h3>
-<p class="text-xs text-slate-400 font-medium uppercase tracking-wider">{{ distItem.count }} mahalle</p>
-</div>
-<ChevronRight class="w-5 h-5 text-slate-300" />
-</NuxtLink>
-</div>
-</div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <NuxtLink
+        v-for="[distSlug, distItem] in districts"
+        :key="distSlug"
+        :to="`/adana/${distSlug}`"
+        class="soft-card p-6 rounded-xl flex items-center justify-between"
+      >
+        <div>
+          <h3 class="font-bold text-slate-900 text-lg">{{ titleCase(distItem.name) }}</h3>
+          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+            {{ distItem.count }} mahalle
+          </p>
+        </div>
+        <ChevronRight class="w-5 h-5 text-slate-300" />
+      </NuxtLink>
+    </div>
+  </div> -->
 </template>

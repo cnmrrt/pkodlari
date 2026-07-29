@@ -441,7 +441,7 @@ const _routes = [
   {
     name: "adana",
     path: "/adana",
-    component: () => import('./index-B2xFL15H.mjs')
+    component: () => import('./index-D-vL9IHX.mjs')
   },
   {
     name: "aydin",
@@ -471,7 +471,7 @@ const _routes = [
   {
     name: "izmir",
     path: "/izmir",
-    component: () => import('./index-D58xniqI.mjs')
+    component: () => import('./index-DwRToRl0.mjs')
   },
   {
     name: "kilis",
@@ -616,7 +616,7 @@ const _routes = [
   {
     name: "erzurum",
     path: "/erzurum",
-    component: () => import('./index-BgXXYgZp.mjs')
+    component: () => import('./index-C2Vc08aV.mjs')
   },
   {
     name: "giresun",
@@ -671,7 +671,7 @@ const _routes = [
   {
     name: "adiyaman",
     path: "/adiyaman",
-    component: () => import('./index-LzCNaDBb.mjs')
+    component: () => import('./index-BlDdLyuo.mjs')
   },
   {
     name: "erzincan",
@@ -681,7 +681,7 @@ const _routes = [
   {
     name: "istanbul",
     path: "/istanbul",
-    component: () => import('./index-DpOSsM6a.mjs')
+    component: () => import('./index-Bq-oq0D1.mjs')
   },
   {
     name: "kirsehir",
@@ -706,7 +706,7 @@ const _routes = [
   {
     name: "balikesir",
     path: "/balikesir",
-    component: () => import('./index-CNlzk8sh.mjs')
+    component: () => import('./index-DarWKtjl.mjs')
   },
   {
     name: "canakkale",
@@ -806,7 +806,7 @@ const _routes = [
   {
     name: "adana-district",
     path: "/adana/:district()",
-    component: () => import('./index-dQi5iUgb.mjs')
+    component: () => import('./index-CKa2fD_x.mjs')
   },
   {
     name: "aydin-district",
@@ -922,6 +922,11 @@ const _routes = [
     name: "elazig-district",
     path: "/elazig/:district()",
     component: () => import('./index-BcWJlboI.mjs')
+  },
+  {
+    name: "istanbul-umraniye",
+    path: "/istanbul/umraniye",
+    component: () => import('./index-yLKTsdmI.mjs')
   },
   {
     name: "manisa-district",
@@ -1046,7 +1051,7 @@ const _routes = [
   {
     name: "istanbul-district",
     path: "/istanbul/:district()",
-    component: () => import('./index-DUe_wKin.mjs')
+    component: () => import('./index-6Ksn_6Go.mjs')
   },
   {
     name: "kirsehir-district",
@@ -1406,7 +1411,7 @@ const _routes = [
   {
     name: "istanbul-district-neighborhood",
     path: "/istanbul/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-CSQrO-N2.mjs')
+    component: () => import('./_neighborhood_-Bxp7MTvP.mjs')
   },
   {
     name: "kirsehir-district-neighborhood",

@@ -1,129 +1,166 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import { ArrowLeft, Search, ChevronRight } from 'lucide-vue-next';
-import { slugify, titleCase } from '~/utils/slugify';
+import { ref, computed } from "vue";
+import { ArrowLeft, Search, ChevronRight } from "lucide-vue-next";
+import { slugify, titleCase } from "~/utils/slugify";
 
-const route = useRoute() ;
-const filter = ref('');
+const route = useRoute();
+const filter = ref("");
 
-const { data: istanbulData } = await useAsyncData('istanbul-data', () =>
-$fetch<any[]>('https://pkodlari.com/data/istanbul.json')
-)                                                                                                                  ;
+const { data: istanbulData } = await useAsyncData("istanbul-data", () =>
+  $fetch<any[]>("https://pkodlari.com/data/istanbul.json")
+);
 
-const districtSlug = computed(() => route.params.district as string) ;
+const districtSlug = computed(() => route.params.district as string);
 
 const districtData = computed(() => {
-if (!istanbulData.value) return null                                                                      ;
-const filtered = istanbulData.value.filter(item => slugify(item.ilce || 'MERKEZ') === districtSlug.value) ;
-if (filtered.length === 0) return null                                                                    ;
+  if (!istanbulData.value) return null;
+  const filtered = istanbulData.value.filter(
+    (item) => slugify(item.ilce || "MERKEZ") === districtSlug.value
+  );
+  if (filtered.length === 0) return null;
 
-return {
-name: filtered[0].ilce || 'MERKEZ',
-neighborhoods: filtered.map(item => ({
-name: item.mahalle,
-zipCode: item.postaKodu,
-slug: slugify(item.mahalle)
-})).sort((a, b) => a.name.localeCompare(b.name, 'tr'))
-}                                                      ;
-})                                                     ;
+  return {
+    name: filtered[0].ilce || "MERKEZ",
+    neighborhoods: filtered
+      .map((item) => ({
+        name: item.mahalle,
+        zipCode: item.postaKodu,
+        slug: slugify(item.mahalle),
+      }))
+      .sort((a, b) => a.name.localeCompare(b.name, "tr")),
+  };
+});
 
-const isValid = computed(() => !!districtData.value) ;
+const isValid = computed(() => !!districtData.value);
 
 const neighs = computed(() => {
-if (!isValid.value) return []                                                 ;
-return districtData.value!.neighborhoods.filter(n =>
-n.name.toLocaleLowerCase('tr').includes(filter.value.toLocaleLowerCase('tr'))
-)                                                                             ;
-})                                                                            ;
+  if (!isValid.value) return [];
+  return districtData.value!.neighborhoods.filter((n) =>
+    n.name.toLocaleLowerCase("tr").includes(filter.value.toLocaleLowerCase("tr"))
+  );
+});
 
-const pageTitle = computed(() => districtData.value ? `İstanbul ${titleCase(districtData.value.name)} Posta Kodları` : 'İlçe Bulunamadı');
-const pageDesc = computed(() => districtData.value ? `İstanbul ilinin ${titleCase(districtData.value.name)} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!` : 'Posta Kodu Rehberi');
+const pageTitle = computed(() =>
+  districtData.value
+    ? `İstanbul ${titleCase(districtData.value.name)} Posta Kodları`
+    : "İlçe Bulunamadı"
+);
+const pageDesc = computed(() =>
+  districtData.value
+    ? `İstanbul ilinin ${titleCase(
+        districtData.value.name
+      )} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!`
+    : "Posta Kodu Rehberi"
+);
 
 useHead({
-title: pageTitle,
-meta: [{ name: 'description', content: pageDesc }],
-script: [
-computed(() => {
-if (!districtData.value) return {}                            ;
-return {
-type: 'application/ld+json',
-children: JSON.stringify({
-"@context": "https://schema.org",
-"@type": "BreadcrumbList",
-"itemListElement": [
-{
-"@type": "ListItem",
-"position": 1,
-"name": "Anasayfa",
-"item": "https://pkodlari.com/"
-},
-{
-"@type": "ListItem",
-"position": 2,
-"name": "İstanbul",
-"item": "https://pkodlari.com/istanbul"
-},
-{
-"@type": "ListItem",
-"position": 3,
-"name": titleCase(districtData.value.name),
-"item": `https://pkodlari.com/istanbul/${districtSlug.value}`
-}
-]
-})
-}
-})
-]
-})                                                            ;
+  title: pageTitle,
+  meta: [{ name: "description", content: pageDesc }],
+  script: [
+    computed(() => {
+      if (!districtData.value) return {};
+      return {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Anasayfa",
+              item: "https://pkodlari.com/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "İstanbul",
+              item: "https://pkodlari.com/istanbul",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: titleCase(districtData.value.name),
+              item: `https://pkodlari.com/istanbul/${districtSlug.value}`,
+            },
+          ],
+        }),
+      };
+    }),
+  ],
+});
 
-usePageSeo({ title: pageTitle, description: pageDesc }) ;
+usePageSeo({ title: pageTitle, description: pageDesc });
 </script>
 
 <template>
-<div v-if="isValid" class="animate-in fade-in duration-500 max-w-4xl mx-auto">
-<div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
-<div class="flex items-center gap-4">
-<NuxtLink to="/istanbul" class="text-slate-400 hover:text-slate-900 transition-colors"><ArrowLeft class="w-5 h-5" /></NuxtLink>
-<div>
-<h1 class="text-3xl font-bold text-slate-900 tracking-tight">{{ titleCase(districtData.name) }} Posta Kodları</h1>
-<p class="text-slate-500 text-sm font-medium uppercase tracking-wider">İstanbul</p>
-</div>
-</div>
-<div class="relative w-full md:w-64">
-<Search class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-<input
-type="text"
-placeholder="Mahallelerde ara..."
-class="w-full pl-9 pr-4 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-slate-400 transition-all text-sm"
-v-model="filter"
-/>
-</div>
-</div>
+ <div v-if="isValid" class="animate-in fade-in duration-500 max-w-4xl mx-auto">
+    <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <NuxtLink
+          to="/istanbul"
+          class="text-slate-400 hover:text-slate-900 transition-colors"
+          ><ArrowLeft class="w-5 h-5"
+        /></NuxtLink>
+        <div>
+          <h1 class="text-3xl font-bold text-slate-900 tracking-tight">
+            {{ titleCase(districtData.name) }} Posta Kodları
+          </h1>
+          <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">İstanbul</p>
+        </div>
+      </div>
+      <div class="relative w-full md:w-64">
+        <Search class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+        <input
+          type="text"
+          placeholder="Mahallelerde ara..."
+          class="w-full pl-9 pr-4 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-slate-400 transition-all text-sm"
+          v-model="filter"
+        />
+      </div>
+    </div>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<NuxtLink
-v-for="nItem in neighs"
-:key="nItem.slug"
-:to="`/istanbul/${districtSlug}/${nItem.slug}`"
-class="soft-card p-5 flex items-center justify-between group"
->
-<div class="min-w-0 pr-4">
-<h4 class="font-semibold text-slate-900 truncate text-base">{{ titleCase(nItem.name) }}</h4>
-<p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5">MAHALLE</p>
-</div>
-<div class="flex items-center gap-3">
-<span class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm">{{ nItem.zipCode }}</span>
-<ChevronRight class="w-4 h-4 text-slate-300 group-hover:text-slate-500 transition-colors" />
-</div>
-</NuxtLink>
-<div v-if="neighs.length === 0" class="col-span-full p-12 text-center text-slate-400 text-sm">Sonuç bulunamadı</div>
-</div>
-<h2 class="text-2xl font-bold text-slate-900 tracking-tight mt-20 mb-5 ml-1">İstanbul İlçeleri</h2>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"><!--[--><a href="/istanbul/adalar" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Adalar</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">5 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/arnavutkoy" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Arnavutköy</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">38 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/atasehir" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Ataşehir</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">17 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/avcilar" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Avcılar</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">10 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/bagcilar" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Bağcılar</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">22 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/bahcelievler" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Bahçelievler</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">11 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/bakirkoy" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Bakırköy</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">16 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/basaksehir" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Başakşehir</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">11 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/bayrampasa" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Bayrampaşa</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">11 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/besiktas" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Beşiktaş</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">23 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/beykoz" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Beykoz</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">45 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/beylikduzu" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Beylikdüzü</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">11 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/beyoglu" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Beyoğlu</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">45 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/buyukcekmece" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Büyükçekmece</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">24 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/catalca" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Çatalca</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">40 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/cekmekoy" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Çekmeköy</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">21 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/esenler" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Esenler</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">17 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/esenyurt" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Esenyurt</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">43 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/eyup" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Eyüp</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">29 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/fatih" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Fatih</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">57 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/gaziosmanpasa" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Gaziosmanpaşa</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">16 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/gungoren" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Güngören</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">11 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/kadikoy" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Kadıköy</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">21 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/kagithane" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Kağıthane</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">19 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/kartal" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Kartal</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">20 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/kucukcekmece" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Küçükçekmece</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">22 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/maltepe" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Maltepe</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">18 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/pendik" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Pendik</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">37 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/sancaktepe" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Sancaktepe</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">19 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/sariyer" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Sarıyer</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">37 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/silivri" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Silivri</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">35 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/sultanbeyli" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Sultanbeyli</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">15 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/sultangazi" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Sultangazi</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">15 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/sile" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Şile</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">76 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/sisli" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Şişli</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">25 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/tuzla" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Tuzla</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">23 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/umraniye" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Ümraniye</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">38 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/uskudar" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Üsküdar</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">33 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><a href="/istanbul/zeytinburnu" class="soft-card p-6 rounded-xl flex items-center justify-between"><div><h3 class="font-bold text-slate-900 text-lg">Zeytinburnu</h3><p class="text-xs text-slate-400 font-medium uppercase tracking-wider">13 mahalle</p></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"><path d="m9 18 6-6-6-6"></path></svg></a><!--]--></div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <NuxtLink
+        v-for="nItem in neighs"
+        :key="nItem.slug"
+        :to="`/istanbul/${districtSlug}/${nItem.slug}`"
+        class="soft-card p-5 flex items-center justify-between group"
+      >
+        <div class="min-w-0 pr-4">
+          <h4 class="font-semibold text-slate-900 truncate text-base">
+            {{ titleCase(nItem.name) }}
+          </h4>
+          <p
+            class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
+          >
+            MAHALLE
+          </p>
+        </div>
+        <div class="flex items-center gap-3">
+          <span
+            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+            >{{ nItem.zipCode }}</span
+          >
+          <ChevronRight
+            class="w-4 h-4 text-slate-300 group-hover:text-slate-500 transition-colors"
+          />
+        </div>
+      </NuxtLink>
+      <div
+        v-if="neighs.length === 0"
+        class="col-span-full p-12 text-center text-slate-400 text-sm"
+      >
+        Sonuç bulunamadı
+      </div>
+    </div>
+  </div>
 
-</div>
-<div v-else class="py-32 text-center text-slate-400">
-<p>İlçe bulunamadı.</p>
-<NuxtLink to="/istanbul" class="text-slate-900 underline mt-4 inline-block">İstanbul sayfasına dön</NuxtLink>
-</div>
+
+  <div v-else class="py-32 text-center text-slate-400">
+    <p>İlçe bulunamadı.</p>
+    <NuxtLink to="/istanbul" class="text-slate-900 underline mt-4 inline-block"
+      >İstanbul sayfasına dön</NuxtLink
+    >
+  </div>
 </template>

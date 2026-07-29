@@ -516,7 +516,7 @@ const _routes = [
   {
     name: "ankara",
     path: "/ankara",
-    component: () => import('./index-DmotjKcM.mjs')
+    component: () => import('./index-B_Cs1zz_.mjs')
   },
   {
     name: "artvin",

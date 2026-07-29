@@ -426,7 +426,7 @@ const _routes = [
   {
     name: "ordu",
     path: "/ordu",
-    component: () => import('./index-DYJFMRAF.mjs')
+    component: () => import('./index-CaBNhYd8.mjs')
   },
   {
     name: "rize",
@@ -762,6 +762,11 @@ const _routes = [
     name: "afyonkarahisar",
     path: "/afyonkarahisar",
     component: () => import('./index-CajwX8B0.mjs')
+  },
+  {
+    name: "ankara-cankaya",
+    path: "/ankara/cankaya",
+    component: () => import('./index-BED6ZYkR.mjs')
   },
   {
     name: "mus-district",

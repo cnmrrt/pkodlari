@@ -5,7 +5,6 @@ import { slugify, titleCase } from "~/utils/slugify";
 
 const filter = ref("");
 
-// Fetching specifically Beşiktaş data instead of all of Istanbul
 const { data: rawNeighborhoods } = await useAsyncData("besiktas-data", () =>
   $fetch<any[]>("https://pkodlari.com/data/istanbul/besiktas.json")
 );
@@ -41,13 +40,13 @@ const neighs = computed(() => {
 
 const pageTitle = computed(() =>
   districtData.value
-    ? `İstanbul ${titleCase(districtData.value.name)} Posta Kodları`
+    ? `${cityName} ${titleCase(districtData.value.name)} Posta Kodları`
     : "İlçe Bulunamadı"
 );
 
 const pageDesc = computed(() =>
   districtData.value
-    ? `İstanbul ilinin ${titleCase(
+    ? `${cityName} ilinin ${titleCase(
         districtData.value.name
       )} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!`
     : "Posta Kodu Rehberi"
@@ -108,7 +107,7 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             {{ titleCase(districtData.name) }} Posta Kodları
           </h1>
           <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">
-            İstanbul
+            {{ cityName }}
           </p>
         </div>
       </div>
@@ -156,8 +155,8 @@ usePageSeo({ title: pageTitle, description: pageDesc });
 
   <div v-else class="py-32 text-center text-slate-400">
     <p>İlçe bulunamadı.</p>
-    <NuxtLink to="/istanbul" class="text-slate-900 underline mt-4 inline-block">
-      İstanbul Sayfasına Dön
+    <NuxtLink :to="`/${citySlug}`" class="text-slate-900 underline mt-4 inline-block">
+      {{ cityName }} Sayfasına Dön
     </NuxtLink>
   </div>
 </template>

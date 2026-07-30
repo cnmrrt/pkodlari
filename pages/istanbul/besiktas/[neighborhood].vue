@@ -327,8 +327,8 @@ const share = () => {
       <p class="text-sm mb-4">
         Aradığınız mahalle bilgisine ulaşılamadı. Lütfen adresi kontrol edin.
       </p>
-      <NuxtLink :to="`/${citySlug}`" class="mt-6 inline-block text-red-700 underline"
-        >{{ cityName }} Sayfasına Dön</NuxtLink
+      <NuxtLink :to="`/${districtSlug}`" class="mt-6 inline-block text-red-700 underline"
+        >{{ districtName }} Sayfasına Dön</NuxtLink
       >
     </div>
   </div>

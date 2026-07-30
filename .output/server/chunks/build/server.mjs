@@ -851,7 +851,7 @@ const _routes = [
   {
     name: "istanbul-sariyer",
     path: "/istanbul/sariyer",
-    component: () => import('./index-DLvzD01M.mjs')
+    component: () => import('./index-DKS3GbUv.mjs')
   },
   {
     name: "izmir-district",
@@ -946,7 +946,7 @@ const _routes = [
   {
     name: "istanbul-besiktas",
     path: "/istanbul/besiktas",
-    component: () => import('./index-yqzpdhpL.mjs')
+    component: () => import('./index-D74B8ckb.mjs')
   },
   {
     name: "istanbul-umraniye",
@@ -1229,6 +1229,11 @@ const _routes = [
     component: () => import('./_neighborhood_-rPnNNF3f.mjs')
   },
   {
+    name: "istanbul-sariyer-neighborhood",
+    path: "/istanbul/sariyer/:neighborhood()",
+    component: () => import('./_neighborhood_-eta4GTm-.mjs')
+  },
+  {
     name: "izmir-district-neighborhood",
     path: "/izmir/:district()/:neighborhood()",
     component: () => import('./_neighborhood_-B2I4QcTA.mjs')
@@ -1321,7 +1326,7 @@ const _routes = [
   {
     name: "istanbul-besiktas-neighborhood",
     path: "/istanbul/besiktas/:neighborhood()",
-    component: () => import('./_neighborhood_-DjkB496p.mjs')
+    component: () => import('./_neighborhood_-Br5nc7N5.mjs')
   },
   {
     name: "manisa-district-neighborhood",

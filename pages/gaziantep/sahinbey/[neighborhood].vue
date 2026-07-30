@@ -6,36 +6,43 @@ import { slugify, titleCase } from "~/utils/slugify";
 const route = useRoute();
 const copied = ref(false);
 
-const { data: gaziantepData } = await useAsyncData("gaziantep-data", () =>
-  $fetch<any[]>("https://pkodlari.com/data/gaziantep/all.json")
+const { data: gaziantepSahinbeyData } = await useAsyncData("gaziantep-sahinbey-data", () =>
+  $fetch<any[]>("https://pkodlari.com/data/gaziantep/sahinbey.json")
 );
 
-const districtSlug = computed(() => route.params.district as string);
+const cityName = "Gaziantep";
+const citySlug = "gaziantep";
+const districtName = "Şahinbey";
+const districtSlug = "sahinbey";
+
 const neighborhoodSlug = computed(() => route.params.neighborhood as string);
 
 const neighData = computed(() => {
-  if (!gaziantepData.value) return null;
-  return gaziantepData.value.find(
+  if (!gaziantepSahinbeyData.value) return null;
+  return gaziantepSahinbeyData.value.find(
     (item) =>
-      slugify(item.ilce || "MERKEZ") === districtSlug.value &&
+      slugify(item.ilce || districtName) === districtSlug &&
       slugify(item.mahalle) === neighborhoodSlug.value
   );
 });
 
 const isValid = computed(() => !!neighData.value);
 
+const currentDistrictName = computed(() => 
+  neighData.value?.ilce ? titleCase(neighData.value.ilce) : titleCase(districtName)
+);
+
 const pageTitle = computed(() =>
   neighData.value
-    ? `${titleCase(neighData.value.mahalle)} Posta Kodu (${titleCase(
-        neighData.value.ilce
-      )}/Gaziantep)`
+    ? `${titleCase(neighData.value.mahalle)} Posta Kodu (${currentDistrictName.value}/${cityName})`
     : "Posta Kodu Bulunamadı"
 );
+
 const pageDesc = computed(() =>
   neighData.value
-    ? `Gaziantep ilinin ${titleCase(neighData.value.ilce)} ilçesine bağlı ${titleCase(
+    ? `${cityName} ilinin ${currentDistrictName.value} ilçesine bağlı ${titleCase(
         neighData.value.mahalle
-      )}'nin posta kodunu görmek için tıklayın!`
+      )}'nin posta kodunu öğrenmek için tıklayın!`
     : "Posta Kodu Rehberi"
 );
 
@@ -60,20 +67,20 @@ useHead({
             {
               "@type": "ListItem",
               position: 2,
-              name: "Gaziantep",
-              item: "https://pkodlari.com/gaziantep",
+              name: cityName,
+              item: `https://pkodlari.com/${citySlug}`,
             },
             {
               "@type": "ListItem",
               position: 3,
-              name: titleCase(neighData.value.ilce),
-              item: `https://pkodlari.com/gaziantep/${districtSlug.value}`,
+              name: currentDistrictName.value,
+              item: `https://pkodlari.com/${citySlug}/${districtSlug}`,
             },
             {
               "@type": "ListItem",
               position: 4,
               name: titleCase(neighData.value.mahalle),
-              item: `https://pkodlari.com/gaziantep/${districtSlug.value}/${neighborhoodSlug.value}`,
+              item: `https://pkodlari.com/${citySlug}/${districtSlug}/${neighborhoodSlug.value}`,
             },
           ],
         }),
@@ -92,9 +99,9 @@ useHead({
               name: `${neighData.value.postaKodu} nerenin posta kodu?`,
               acceptedAnswer: {
                 "@type": "Answer",
-                text: `${neighData.value.postaKodu} posta kodu Gaziantep ${titleCase(
-                  neighData.value.ilce
-                )} ${titleCase(neighData.value.mahalle)}'ne aittir.`,
+                text: `${neighData.value.postaKodu} posta kodu ${cityName} ${currentDistrictName.value} ${titleCase(
+                  neighData.value.mahalle
+                )}'ne aittir.`,
               },
             },
           ],
@@ -107,10 +114,10 @@ useHead({
 usePageSeo({ title: pageTitle, description: pageDesc });
 
 const otherNeighborhoods = computed(() => {
-  if (!gaziantepData.value || !neighData.value) return [];
+  if (!gaziantepSahinbeyData.value || !neighData.value) return [];
 
-  return gaziantepData.value
-    .filter((item) => slugify(item.ilce || "MERKEZ") === districtSlug.value)
+  return gaziantepSahinbeyData.value
+    .filter((item) => slugify(item.ilce || districtName) === districtSlug)
     .map((item) => ({
       name: item.mahalle,
       zipCode: item.postaKodu,
@@ -122,7 +129,7 @@ const otherNeighborhoods = computed(() => {
 
 const copyToClipboard = () => {
   if (neighData.value) {
-    navigator.clipboard.writeText(neighData.value.postaKodu);
+    navigator.clipboard.writeText(String(neighData.value.postaKodu));
     copied.value = true;
     setTimeout(() => (copied.value = false), 2000);
   }
@@ -132,7 +139,7 @@ const share = () => {
   if (navigator.share && neighData.value) {
     navigator.share({
       title: `${titleCase(neighData.value.mahalle)} Posta Kodu`,
-      text: `Gaziantep, ${titleCase(neighData.value.ilce)}, ${titleCase(
+      text: `${cityName}, ${currentDistrictName.value}, ${titleCase(
         neighData.value.mahalle
       )} mahallesinin posta kodu: ${neighData.value.postaKodu}`,
       url: window.location.href,
@@ -143,20 +150,19 @@ const share = () => {
 
 <template>
   <div v-if="isValid" class="animate-in fade-in duration-500 max-w-2xl mx-auto">
-    <!-- Breadcrumbs -->
     <nav
       class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-8 overflow-x-auto whitespace-nowrap pb-2"
     >
       <NuxtLink to="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</NuxtLink>
       <ChevronRight class="w-3 h-3" />
-      <NuxtLink to="/gaziantep" class="hover:text-slate-900 transition-colors"
-        >GAZİANTEP</NuxtLink
+      <NuxtLink :to="`/${citySlug}`" class="hover:text-slate-900 transition-colors"
+        >{{ cityName }}</NuxtLink
       >
       <ChevronRight class="w-3 h-3" />
       <NuxtLink
-        :to="`/gaziantep/${districtSlug}`"
+        :to="`/${citySlug}/${districtSlug}`"
         class="hover:text-slate-900 transition-colors"
-        >{{ titleCase(neighData.ilce) }}</NuxtLink
+        >{{ currentDistrictName }}</NuxtLink
       >
     </nav>
 
@@ -169,7 +175,7 @@ const share = () => {
           {{ titleCase(neighData.mahalle) }}
         </h1>
         <p class="text-slate-500 font-medium uppercase tracking-widest text-sm">
-          {{ titleCase(neighData.ilce) }}, Gaziantep
+          {{ currentDistrictName }}, {{ cityName }}
         </p>
       </div>
 
@@ -195,11 +201,10 @@ const share = () => {
             {{ copied ? "KOPYALANDI" : "KODU KOPYALA" }}
           </button>
         </div>
-        <!-- Decorative background number -->
         <div
           class="absolute -bottom-10 -right-10 mono text-[12rem] font-black text-slate-200/50 select-none"
         >
-          {{ neighData.postaKodu.substring(0, 2) }}
+          {{ String(neighData.postaKodu).substring(0, 2) }}
         </div>
       </div>
     </div>
@@ -213,13 +218,13 @@ const share = () => {
       </button>
     </div>
 
-     <div v-if="otherNeighborhoods.length" class="mt-10">
+    <div v-if="otherNeighborhoods.length" class="mt-10">
       <h2 class="text-xl font-bold text-slate-900 mb-4">Bu ilçedeki diğer mahalleler</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <NuxtLink
           v-for="neigh in otherNeighborhoods"
           :key="neigh.slug"
-          :to="`/gaziantep/${districtSlug}/${neigh.slug}`"
+          :to="`/${citySlug}/${districtSlug}/${neigh.slug}`"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
         >
           <div>
@@ -261,20 +266,18 @@ const share = () => {
         {{ neighData.postaKodu }} nerenin posta kodu?
       </h2>
       <p class="text-slate-600">
-        {{ neighData.postaKodu }} posta kodu Gaziantep {{ titleCase(neighData.ilce) }}
+        {{ neighData.postaKodu }} posta kodu {{ cityName }} {{ currentDistrictName }}
         {{ titleCase(neighData.mahalle) }}'ne aittir.
       </p>
     </div>
     <div class="mt-8 text-center mb-8">
       <h2 class="text-xl font-bold text-slate-900 mb-2">
-        {{ titleCase(neighData.ilce) }} {{ titleCase(neighData.mahalle) }} Posta Kodu
-        Rehberi
+        {{ currentDistrictName }} {{ titleCase(neighData.mahalle) }} Posta Kodu Rehberi
       </h2>
       <p class="text-slate-600">
-        Gaziantep {{ titleCase(neighData.ilce) }} {{ titleCase(neighData.mahalle) }}'ne
-        ait güncel posta kodu bilgileri aşağıda yer almaktadır. Adres formlarında, kargo
-        gönderilerinde ve resmi işlemlerde hata payını sıfıra indirmek için bu kodu
-        kullanabilirsiniz.
+        {{ cityName }} {{ currentDistrictName }} {{ titleCase(neighData.mahalle) }}'ne ait
+        güncel posta kodu bilgileri aşağıda yer almaktadır. Adres formlarında, kargo
+        gönderilerinde ve resmi işlemlerde kullanabilirsiniz.
       </p>
       <br />
       <p>
@@ -293,33 +296,28 @@ const share = () => {
         {{ titleCase(neighData.mahalle) }} için tanımlanan
         {{ neighData.postaKodu }} numarasını kullanmak şu avantajları sağlar:
       </p>
-      <ul>
+      <ul class="text-slate-600 text-left max-w-md mx-auto mt-4 list-disc pl-5">
         <li>
           <b>Sıralama Hızı:</b> PTT ve özel kargo şirketlerinin otomatik ayrıştırma
-          makineleri, gönderinizi adresten önce posta koduna göre sınıflandırır.
+          makineleri gönderinizi posta koduna göre sınıflandırır.
         </li>
         <li>
-          <b>Yanlış Teslimat Önleme:</b> Türkiye genelinde aynı ismi taşıyan yüzlerce
-          mahalle bulunmaktadır. Doğru kod, gönderinizin başka bir şehirdeki adaş
+          <b>Yanlış Teslimat Önleme:</b> Doğru kod, gönderinizin başka bir şehirdeki adaş
           mahalleye gitmesini engeller.
         </li>
         <li>
-          <b>Dijital Doğruluk:</b> Bankacılık ve e-devlet sistemlerinde adres teyidi
-          yapılırken sistemler genellikle bu kodu baz alır.
+          <b>Dijital Doğruluk:</b> Bankacılık ve e-devlet sistemlerinde adres teyidinde
+          kullanılır.
         </li>
       </ul>
     </div>
     <div class="mt-8 text-center mb-8">
       <h2 class="text-xl font-bold text-slate-900 mb-2">Konum Ve Bölge Bilgileri</h2>
       <p class="text-slate-600">
-        {{ titleCase(neighData.mahalle) }}, Gaziantep ilinin
-        {{ titleCase(neighData.ilce) }} ilçesine bağlıdır. Posta kodu yapısı
-        incelendiğinde ;
+        {{ titleCase(neighData.mahalle) }}, {{ cityName }} ilinin
+        {{ currentDistrictName }} ilçesine bağlıdır. Posta kodunun ilk 2 hanesi il
+        plaka kodunu ({{ String(neighData.postaKodu).substring(0, 2) }}), son 3 hanesi ise ilçe ve mahalle dağıtım bölgesini temsil eder.
       </p>
-      <ol>
-        <li>İlk 2 hane il plaka kodunu temsil eder.</li>
-        <li>Son 3 hane ilçe içerisindeki dağıtım bölgesini ve mahallesini kapsar.</li>
-      </ol>
     </div>
   </div>
 
@@ -329,8 +327,8 @@ const share = () => {
       <p class="text-sm mb-4">
         Aradığınız mahalle bilgisine ulaşılamadı. Lütfen adresi kontrol edin.
       </p>
-      <NuxtLink to="/gaziantep" class="mt-6 inline-block text-red-700 underline"
-        >Gaziantep Sayfasına Dön</NuxtLink
+      <NuxtLink :to="`/${districtSlug}`" class="mt-6 inline-block text-red-700 underline"
+        >{{ districtName }} Sayfasına Dön</NuxtLink
       >
     </div>
   </div>

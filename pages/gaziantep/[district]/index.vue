@@ -7,7 +7,7 @@ const route = useRoute() ;
 const filter = ref('');
 
 const { data: gaziantepData } = await useAsyncData('gaziantep-data', () =>
-$fetch<any[]>('https://pkodlari.com/data/gaziantep.json')
+$fetch<any[]>('https://pkodlari.com/data/gaziantep/all.json')
 )                                                                                                               ;
 
 const districtSlug = computed(() => route.params.district as string) ;

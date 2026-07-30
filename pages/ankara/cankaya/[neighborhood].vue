@@ -10,8 +10,8 @@ const { data: AnkaraÇankayaData } = await useAsyncData("ankara-cankaya-data", (
   $fetch<any[]>("https://pkodlari.com/data/ankara/cankaya.json")
 );
 
-const cityName = "Çankaya";
-const citySlug = "cankaya";
+const cityName = "Ankara";
+const citySlug = "ankara";
 const districtName = "ÇANKAYA";
 const districtSlug = "cankaya";
 

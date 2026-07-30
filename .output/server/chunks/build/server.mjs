@@ -769,6 +769,11 @@ const _routes = [
     component: () => import('./index-DG7h4L_z.mjs')
   },
   {
+    name: "istanbul-sile",
+    path: "/istanbul/sile",
+    component: () => import('./index-BYr6X1Rn.mjs')
+  },
+  {
     name: "afyonkarahisar",
     path: "/afyonkarahisar",
     component: () => import('./index-CajwX8B0.mjs')
@@ -1154,9 +1159,14 @@ const _routes = [
     component: () => import('./index-VCrjOZUG.mjs')
   },
   {
+    name: "istanbul-sile-neighborhood",
+    path: "/istanbul/sile/:neighborhood()",
+    component: () => import('./_neighborhood_-D79S19xS.mjs')
+  },
+  {
     name: "ankara-cankaya-neighborhood",
     path: "/ankara/cankaya/:neighborhood()",
-    component: () => import('./_neighborhood_-ezPBl17e.mjs')
+    component: () => import('./_neighborhood_-ClXlDWvT.mjs')
   },
   {
     name: "mus-district-neighborhood",

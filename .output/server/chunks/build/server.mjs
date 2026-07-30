@@ -721,7 +721,7 @@ const _routes = [
   {
     name: "gaziantep",
     path: "/gaziantep",
-    component: () => import('./index-BOtJyb1V.mjs')
+    component: () => import('./index-CiWlFM38.mjs')
   },
   {
     name: "gumushane",
@@ -944,6 +944,11 @@ const _routes = [
     component: () => import('./index-BcWJlboI.mjs')
   },
   {
+    name: "istanbul-besiktas",
+    path: "/istanbul/besiktas",
+    component: () => import('./index-yqzpdhpL.mjs')
+  },
+  {
     name: "istanbul-umraniye",
     path: "/istanbul/umraniye",
     component: () => import('./index-yLKTsdmI.mjs')
@@ -1009,6 +1014,11 @@ const _routes = [
     component: () => import('./index-DvpcNWaq.mjs')
   },
   {
+    name: "gaziantep-sahinbey",
+    path: "/gaziantep/sahinbey",
+    component: () => import('./index-BfC74Bow.mjs')
+  },
+  {
     name: "giresun-district",
     path: "/giresun/:district()",
     component: () => import('./index--SOXhpDq.mjs')
@@ -1071,7 +1081,7 @@ const _routes = [
   {
     name: "istanbul-district",
     path: "/istanbul/:district()",
-    component: () => import('./index-6Ksn_6Go.mjs')
+    component: () => import('./index-BDnCgKOG.mjs')
   },
   {
     name: "kirsehir-district",
@@ -1309,6 +1319,11 @@ const _routes = [
     component: () => import('./_neighborhood_-_s4_eZja.mjs')
   },
   {
+    name: "istanbul-besiktas-neighborhood",
+    path: "/istanbul/besiktas/:neighborhood()",
+    component: () => import('./_neighborhood_-DjkB496p.mjs')
+  },
+  {
     name: "manisa-district-neighborhood",
     path: "/manisa/:district()/:neighborhood()",
     component: () => import('./_neighborhood_-D94IJLdF.mjs')
@@ -1431,7 +1446,7 @@ const _routes = [
   {
     name: "istanbul-district-neighborhood",
     path: "/istanbul/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-Bxp7MTvP.mjs')
+    component: () => import('./_neighborhood_-C3mqQBcW.mjs')
   },
   {
     name: "kirsehir-district-neighborhood",
@@ -1471,7 +1486,7 @@ const _routes = [
   {
     name: "gaziantep-district-neighborhood",
     path: "/gaziantep/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-Blnn2ZNO.mjs')
+    component: () => import('./_neighborhood_-CxzfE5nC.mjs')
   },
   {
     name: "gumushane-district-neighborhood",
@@ -1522,6 +1537,11 @@ const _routes = [
     name: "ankara-cankaya-yasamkent-mahallesi",
     path: "/ankara/cankaya/yasamkent-mahallesi",
     component: () => import('./index-BeRUl2kK.mjs')
+  },
+  {
+    name: "gaziantep-sahinbey-karatas-mahallesi",
+    path: "/gaziantep/sahinbey/karatas-mahallesi",
+    component: () => import('./index-BidQNWPL.mjs')
   },
   {
     name: "izmir-konak-mehmet-ali-akman-mahallesi",

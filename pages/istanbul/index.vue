@@ -3,7 +3,7 @@ import { ArrowLeft, ChevronRight, MapPin } from "lucide-vue-next";
 import { slugify, titleCase } from "~/utils/slugify";
 
 // const { data: istanbulData } = await useAsyncData("istanbul-data", () =>
-//   $fetch<any[]>("https://pkodlari.com/data/istanbul.json")
+//   $fetch<any[]>("https://pkodlari.com/data/istanbul/all.json")
 // );
 
 // const districts = computed(() => {

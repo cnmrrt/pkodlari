@@ -5,6 +5,7 @@ import { ArrowLeft, Search, ChevronRight, MapPin } from "lucide-vue-next";
 
 const route = useRoute();
 
+
 useHead({
   title: "Çankaya Posta Kodları",
   meta: [
@@ -46,14 +47,20 @@ useHead({
     }),
   ],
 });
-usePageSeo({ title: "Çankaya Posta Kodları", description: "Ankara ilinin Çankaya ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!" });
+usePageSeo({
+  title: "Çankaya Posta Kodları",
+  description:
+    "Ankara ilinin Çankaya ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!",
+});
 </script>
 
 <template>
   <div class="animate-in fade-in duration-500 max-w-4xl mx-auto">
     <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
       <div class="flex items-center gap-4">
-        <a href="/ankara" class="text-slate-400 hover:text-slate-900 transition-colors"
+        <NuxtLink
+          href="/ankara"
+          class="text-slate-400 hover:text-slate-900 transition-colors"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -68,7 +75,7 @@ usePageSeo({ title: "Çankaya Posta Kodları", description: "Ankara ilinin Çank
           >
             <path d="m12 19-7-7 7-7"></path>
             <path d="M19 12H5"></path></svg
-        ></a>
+        ></NuxtLink>
         <div>
           <h1 class="text-3xl font-bold text-slate-900 tracking-tight">
             Çankaya Posta Kodları
@@ -78,7 +85,7 @@ usePageSeo({ title: "Çankaya Posta Kodları", description: "Ankara ilinin Çank
           </p>
         </div>
       </div>
-      <div class="relative w-full md:w-64">
+      <!-- <div class="relative w-full md:w-64">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -98,7 +105,7 @@ usePageSeo({ title: "Çankaya Posta Kodları", description: "Ankara ilinin Çank
           placeholder="Mahallelerde ara..."
           class="w-full pl-9 pr-4 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-slate-400 transition-all text-sm"
         />
-      </div>
+      </div> -->
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <a
@@ -131,8 +138,8 @@ usePageSeo({ title: "Çankaya Posta Kodları", description: "Ankara ilinin Çank
             class="lucide lucide-chevron-right-icon w-4 h-4 text-slate-300 group-hover:text-slate-500 transition-colors"
           >
             <path d="m9 18 6-6-6-6"></path>
-          </svg></div></a
-      ><a
+          </svg></div></a>
+          <a
         href="/ankara/cankaya/50yil-mahallesi"
         class="soft-card p-5 flex items-center justify-between group"
         ><div class="min-w-0 pr-4">

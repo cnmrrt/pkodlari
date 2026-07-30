@@ -2,6 +2,7 @@
 import { ArrowLeft, ChevronRight } from "lucide-vue-next";
 import { slugify, titleCase } from "~/utils/slugify";
 
+
 // const { data: ankaraData } = await useAsyncData("ankara-data", () =>
 //   $fetch<any[]>("https://pkodlari.com/data/ankara.json")
 // );

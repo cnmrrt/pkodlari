@@ -476,7 +476,7 @@ const _routes = [
   {
     name: "kilis",
     path: "/kilis",
-    component: () => import('./index-pnuOfoC3.mjs')
+    component: () => import('./index-83MAfTDe.mjs')
   },
   {
     name: "mugla",
@@ -501,7 +501,7 @@ const _routes = [
   {
     name: "tokat",
     path: "/tokat",
-    component: () => import('./index-9MFBkbLz.mjs')
+    component: () => import('./index-C-KLjlO9.mjs')
   },
   {
     name: "city",
@@ -731,7 +731,7 @@ const _routes = [
   {
     name: "kastamonu",
     path: "/kastamonu",
-    component: () => import('./index-Dt2kLjDO.mjs')
+    component: () => import('./index-Bqm-rEz_.mjs')
   },
   {
     name: "kirikkale",
@@ -759,6 +759,16 @@ const _routes = [
     component: () => import('./index-C5bgb4RI.mjs')
   },
   {
+    name: "izmir-konak",
+    path: "/izmir/konak",
+    component: () => import('./index-BmfD2zv8.mjs')
+  },
+  {
+    name: "tokat-merkez",
+    path: "/tokat/merkez",
+    component: () => import('./index-DG7h4L_z.mjs')
+  },
+  {
     name: "afyonkarahisar",
     path: "/afyonkarahisar",
     component: () => import('./index-CajwX8B0.mjs')
@@ -766,7 +776,7 @@ const _routes = [
   {
     name: "ankara-cankaya",
     path: "/ankara/cankaya",
-    component: () => import('./index-BED6ZYkR.mjs')
+    component: () => import('./index-gijKfX-O.mjs')
   },
   {
     name: "mus-district",
@@ -839,6 +849,11 @@ const _routes = [
     component: () => import('./index-BJvPv07r.mjs')
   },
   {
+    name: "istanbul-sariyer",
+    path: "/istanbul/sariyer",
+    component: () => import('./index-DLvzD01M.mjs')
+  },
+  {
     name: "izmir-district",
     path: "/izmir/:district()",
     component: () => import('./index-DA5fFjQ-.mjs')
@@ -876,7 +891,7 @@ const _routes = [
   {
     name: "city-district",
     path: "/:city()/:district()",
-    component: () => import('./index-D0VZhPNH.mjs')
+    component: () => import('./index-Dol0Q50y.mjs')
   },
   {
     name: "amasya-district",
@@ -1241,7 +1256,7 @@ const _routes = [
   {
     name: "city-district-neighborhood",
     path: "/:city()/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-CMdfL1rB.mjs')
+    component: () => import('./_neighborhood_-CHLJZrOj.mjs')
   },
   {
     name: "amasya-district-neighborhood",
@@ -1251,7 +1266,7 @@ const _routes = [
   {
     name: "ankara-district-neighborhood",
     path: "/ankara/:district()/:neighborhood()",
-    component: () => import('./_neighborhood_-VlC1LcAq.mjs')
+    component: () => import('./_neighborhood_-BLUKNClU.mjs')
   },
   {
     name: "artvin-district-neighborhood",
@@ -1489,9 +1504,29 @@ const _routes = [
     component: () => import('./_neighborhood_-BwbbtE3v.mjs')
   },
   {
+    name: "ankara-cankaya-barbaros-mahallesi",
+    path: "/ankara/cankaya/barbaros-mahallesi",
+    component: () => import('./index-BG7x1YtE.mjs')
+  },
+  {
+    name: "istanbul-sariyer-maslak-mahallesi",
+    path: "/istanbul/sariyer/maslak-mahallesi",
+    component: () => import('./index-BrPBOmAk.mjs')
+  },
+  {
     name: "afyonkarahisar-district-neighborhood",
     path: "/afyonkarahisar/:district()/:neighborhood()",
     component: () => import('./_neighborhood_-9QRs2aPI.mjs')
+  },
+  {
+    name: "ankara-cankaya-yasamkent-mahallesi",
+    path: "/ankara/cankaya/yasamkent-mahallesi",
+    component: () => import('./index-BeRUl2kK.mjs')
+  },
+  {
+    name: "izmir-konak-mehmet-ali-akman-mahallesi",
+    path: "/izmir/konak/mehmet-ali-akman-mahallesi",
+    component: () => import('./index-OChF1QnK.mjs')
   }
 ];
 const ROUTE_KEY_PARENTHESES_RE = /(:\w+)\([^)]+\)/g;

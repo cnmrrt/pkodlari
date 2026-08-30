@@ -193,7 +193,7 @@ const share = () => {
     <div v-if="otherNeighborhoods.length" class="other-neighborhoods">
       <h2>Bu ilçedeki diğer mahalleler</h2>
       <div class="neighborhoods-links-container">
-        <a v-for="neigh in otherNeighborhoods" :key="neigh.slug" :to="`/adana/${districtSlug}/${neigh.slug}`"
+        <a v-for="neigh in otherNeighborhoods" :key="neigh.slug" :href="`/adana/${districtSlug}/${neigh.slug}`"
           >
           <div>
             <h3>

@@ -1,20 +1,81 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import { MapPin } from 'lucide-vue-next';
 </script>
 
 <template>
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
-    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-      <NuxtLink to="/" class="flex items-center gap-2 group">
-        <div class="bg-slate-900 p-1.5 rounded-lg text-white">
-          <MapPin class="w-4 h-4" />
+  <header>
+    <div class="header-content">
+      <a href="/" class="header-logo-link">
+        <div class="header-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+            </path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
         </div>
-        <span class="font-bold text-slate-900 tracking-tight">Posta Kodu Rehberi</span>
-      </NuxtLink>
-      <nav class="text-sm font-medium text-slate-500 flex gap-6">
-        <NuxtLink to="/" class="hover:text-slate-900 transition-colors">Şehirler</NuxtLink>
-        <NuxtLink to="/telefon-kodlari" class="hover:text-slate-900 transition-colors">Telefon Kodları</NuxtLink>
-        <a href="https://postakodu.ptt.gov.tr/" target="_blank" class="hover:text-slate-900 transition-colors">PTT Sorgulama</a>
+        <span class="header-logo-text">Posta Kodu Rehberi</span>
+      </a>
+      <nav>
+        <a href="/">Şehirler</a>
+        <a href="/telefon-kodlari">Telefon Kodları</a>
+        <a href="https://postakodu.ptt.gov.tr/" target="_blank">PTT Sorgulama</a>
+      </nav>
+    </div>
+  </header>
+</template> -->
+
+<script setup lang="ts">
+import { MapPin } from 'lucide-vue-next';
+
+const route = useRoute()
+
+// Check if the current route starts with /es
+const isSpanish = computed(() => route.path.startsWith('/es'))
+</script>
+
+<template>
+  <header>
+    <!-- Spanish Header -->
+    <div v-if="isSpanish" class="header-content">
+      <a href="/es" class="header-logo-link">
+        <div class="header-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+            </path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <span class="header-logo-text">Guía de Códigos Postales</span>
+      </a>
+      <nav>
+        <a href="/es">Ciudades</a>
+        <!-- <a href="/es/codigos-telefonicos">Códigos Telefónicos</a> -->
+        <!-- <a href="https://postakodu.ptt.gov.tr/" target="_blank" rel="noopener">Consulta PTT</a> -->
+      </nav>
+    </div>
+
+    <!-- Default (Turkish/Other) Header -->
+    <div v-else class="header-content">
+      <a href="/" class="header-logo-link">
+        <div class="header-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+            </path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <span class="header-logo-text">Posta Kodu Rehberi</span>
+      </a>
+      <nav>
+        <a href="/">Şehirler</a>
+        <a href="/telefon-kodlari">Telefon Kodları</a>
+        <a href="https://postakodu.ptt.gov.tr/" target="_blank" rel="noopener">PTT Sorgulama</a>
       </nav>
     </div>
   </header>

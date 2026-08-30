@@ -39,8 +39,8 @@ usePageSeo({ title: pageTitle, description: pageDesc });
 
 <template>
   <div class="animate-in fade-in duration-500 max-w-4xl mx-auto">
-    <div class="mb-10 flex items-center gap-4">
-      <a href="/" class="text-slate-400 hover:text-slate-900 transition-colors"
+    <div class="cityTitleContainer">
+      <a href="/" 
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -51,25 +51,25 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-arrow-left-icon w-5 h-5"
+          
         >
           <path d="m12 19-7-7 7-7"></path>
           <path d="M19 12H5"></path></svg
       ></a>
       <div>
-        <h1 class="text-3xl font-bold text-slate-900 tracking-tight">
+        <h1>
           Tokat Posta Kodları
         </h1>
-        <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">7 İLÇE</p>
+        <p>7 İLÇE</p>
       </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <!--[--><a
+    <div class="districts">
+      <a
         href="/tokat/almus"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Almus</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Almus</h3>
+          <p>
             133 mahalle
           </p>
         </div>
@@ -83,15 +83,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/tokat/artova"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Artova</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Artova</h3>
+          <p>
             37 mahalle
           </p>
         </div>
@@ -105,15 +105,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/tokat/basciftlik"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Başçiftlik</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Başçiftlik</h3>
+          <p>
             26 mahalle
           </p>
         </div>
@@ -127,15 +127,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/tokat/erbaa"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Erbaa</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Erbaa</h3>
+          <p>
             261 mahalle
           </p>
         </div>
@@ -149,15 +149,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/tokat/merkez"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Merkez</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Merkez</h3>
+          <p>
             163 mahalle
           </p>
         </div>
@@ -171,15 +171,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/tokat/niksar"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Niksar</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Niksar</h3>
+          <p>
             187 mahalle
           </p>
         </div>
@@ -193,15 +193,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/tokat/pazar"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Pazar</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Pazar</h3>
+          <p>
             31 mahalle
           </p>
         </div>
@@ -215,37 +215,37 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
-      ><!--]-->
+      >
     </div>
   </div>
   <!-- <div class="animate-in fade-in duration-500 max-w-4xl mx-auto">
-    <div class="mb-10 flex items-center gap-4">
-      <NuxtLink to="/" class="text-slate-400 hover:text-slate-900 transition-colors"
+    <div class="cityTitleContainer">
+      <NuxtLink to="/" 
         ><ArrowLeft class="w-5 h-5"
       /></NuxtLink>
       <div>
-        <h1 class="text-3xl font-bold text-slate-900 tracking-tight">
+        <h1>
           Tokat Posta Kodları
         </h1>
-        <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">
+        <p>
           {{ districts.length }} İLÇE
         </p>
       </div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="districts">
       <NuxtLink
         v-for="[distSlug, distItem] in districts"
         :key="distSlug"
         :to="`/tokat/${distSlug}`"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
       >
         <div>
-          <h3 class="font-bold text-slate-900 text-lg">{{ titleCase(distItem.name) }}</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>{{ titleCase(distItem.name) }}</h3>
+          <p>
             {{ distItem.count }} mahalle
           </p>
         </div>

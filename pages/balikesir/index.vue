@@ -23,8 +23,8 @@ import { slugify, titleCase } from "~/utils/slugify";
 //     a.name.localeCompare(b.name, "tr")
 //   );
 // });
-
-const pageTitle = "Balıkesir Posta Kodları";
+const currentYear = new Date().getFullYear();
+const pageTitle = `Balıkesir Posta Kodları ve İlçeleri ${currentYear}`;
 const pageDesc =
   "Balıkesir iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!";
 
@@ -61,499 +61,268 @@ usePageSeo({ title: pageTitle, description: pageDesc });
 
 <template>
   <div class="animate-in fade-in duration-500 max-w-4xl mx-auto">
-    <div class="mb-10 flex items-center gap-4">
-      <a href="/" class="text-slate-400 hover:text-slate-900 transition-colors"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-arrow-left-icon w-5 h-5"
-        >
+    <div class="cityTitleContainer">
+      <a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="m12 19-7-7 7-7"></path>
-          <path d="M19 12H5"></path></svg
-      ></a>
+          <path d="M19 12H5"></path>
+        </svg></a>
       <div>
-        <h1 class="text-3xl font-bold text-slate-900 tracking-tight">
-          Balıkesir Posta Kodları
+        <h1>
+          Balıkesir Posta Kodları ve İlçeleri
         </h1>
-        <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">20 İLÇE</p>
+        <p>20 İLÇE</p>
       </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <!--[--><a
-        href="/balikesir/altieylul"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Altıeylül</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+    <div class="districts">
+      <a href="/balikesir/altieylul">
+        <div>
+          <h3>Altıeylül</h3>
+          <p>
             95 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><a
-        href="/balikesir/ayvalik"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Ayvalık</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a><a href="/balikesir/ayvalik">
+        <div>
+          <h3>Ayvalık</h3>
+          <p>
             34 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><a
-        href="/balikesir/balya"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Balya</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a><a href="/balikesir/balya">
+        <div>
+          <h3>Balya</h3>
+          <p>
             46 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><a
-        href="/balikesir/bandirma"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Bandırma</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a><a href="/balikesir/bandirma">
+        <div>
+          <h3>Bandırma</h3>
+          <p>
             55 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><a
-        href="/balikesir/bigadic"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Bigadiç</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a><a href="/balikesir/bigadic">
+        <div>
+          <h3>Bigadiç</h3>
+          <p>
             80 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><a
-        href="/balikesir/burhaniye"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Burhaniye</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a><a href="/balikesir/burhaniye">
+        <div>
+          <h3>Burhaniye</h3>
+          <p>
             40 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><a
-        href="/balikesir/dursunbey"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Dursunbey</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a><a href="/balikesir/dursunbey">
+        <div>
+          <h3>Dursunbey</h3>
+          <p>
             110 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><a
-        href="/balikesir/edremit"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Edremit</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a><a href="/balikesir/edremit">
+        <div>
+          <h3>Edremit</h3>
+          <p>
             47 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><a
-        href="/balikesir/erdek"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Erdek</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a><a href="/balikesir/erdek">
+        <div>
+          <h3>Erdek</h3>
+          <p>
             28 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><a
-        href="/balikesir/gomec"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Gömeç</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a><a href="/balikesir/gomec">
+        <div>
+          <h3>Gömeç</h3>
+          <p>
             13 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><a
-        href="/balikesir/gonen"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Gönen</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a><a href="/balikesir/gonen">
+        <div>
+          <h3>Gönen</h3>
+          <p>
             101 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><a
-        href="/balikesir/havran"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Havran</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a><a href="/balikesir/havran">
+        <div>
+          <h3>Havran</h3>
+          <p>
             34 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><a
-        href="/balikesir/ivrindi"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">İvrindi</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a><a href="/balikesir/ivrindi">
+        <div>
+          <h3>İvrindi</h3>
+          <p>
             70 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><a
-        href="/balikesir/karesi"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Karesi</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a><a href="/balikesir/karesi">
+        <div>
+          <h3>Karesi</h3>
+          <p>
             70 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><a
-        href="/balikesir/kepsut"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Kepsut</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a><a href="/balikesir/kepsut">
+        <div>
+          <h3>Kepsut</h3>
+          <p>
             69 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><a
-        href="/balikesir/manyas"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Manyas</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a><a href="/balikesir/manyas">
+        <div>
+          <h3>Manyas</h3>
+          <p>
             50 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><a
-        href="/balikesir/marmara"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Marmara</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a><a href="/balikesir/marmara">
+        <div>
+          <h3>Marmara</h3>
+          <p>
             14 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><a
-        href="/balikesir/savastepe"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Savaştepe</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a><a href="/balikesir/savastepe">
+        <div>
+          <h3>Savaştepe</h3>
+          <p>
             50 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><a
-        href="/balikesir/sindirgi"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Sındırgı</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a><a href="/balikesir/sindirgi">
+        <div>
+          <h3>Sındırgı</h3>
+          <p>
             75 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><a
-        href="/balikesir/susurluk"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
-        ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Susurluk</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a><a href="/balikesir/susurluk">
+        <div>
+          <h3>Susurluk</h3>
+          <p>
             54 mahalle
           </p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-        >
-          <path d="m9 18 6-6-6-6"></path></svg></a
-      ><!--]-->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a>
     </div>
   </div>
   <!-- <div class="animate-in fade-in duration-500 max-w-4xl mx-auto">
-    <div class="mb-10 flex items-center gap-4">
-      <NuxtLink to="/" class="text-slate-400 hover:text-slate-900 transition-colors"
+    <div class="cityTitleContainer">
+      <NuxtLink to="/" 
         ><ArrowLeft class="w-5 h-5"
       /></NuxtLink>
       <div>
-        <h1 class="text-3xl font-bold text-slate-900 tracking-tight">
+        <h1>
           Balıkesir Posta Kodları
         </h1>
-        <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">
+        <p>
           {{ districts.length }} İLÇE
         </p>
       </div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="districts">
       <NuxtLink
         v-for="[distSlug, distItem] in districts"
         :key="distSlug"
         :to="`/balikesir/${distSlug}`"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
       >
         <div>
-          <h3 class="font-bold text-slate-900 text-lg">{{ titleCase(distItem.name) }}</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>{{ titleCase(distItem.name) }}</h3>
+          <p>
             {{ distItem.count }} mahalle
           </p>
         </div>

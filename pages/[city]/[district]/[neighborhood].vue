@@ -1,18 +1,21 @@
 <script setup lang="ts">
-import { inject, computed, ref } from "vue";
-import type { Ref } from "vue";
-import { ChevronRight, MapPin, Check, Copy, Info, Share2 } from "lucide-vue-next";
-import type { PostalData } from "~/types";
+import { computed, ref } from 'vue';
+import { ChevronRight, MapPin, Check, Copy, Share2 } from 'lucide-vue-next';
+import { buildCityItemFromJson } from '~/utils/cityJson';
 
 const route = useRoute();
-const postalData = inject<Ref<PostalData | null>>("postalData");
 const copied = ref(false);
 
 const citySlug = computed(() => route.params.city as string);
 const districtSlug = computed(() => route.params.district as string);
 const neighborhoodSlug = computed(() => route.params.neighborhood as string);
 
-const cityItem = computed(() => postalData?.value?.[citySlug.value]);
+const { data: cityJson } = await useAsyncData(
+  () => `city-data-${citySlug.value}`,
+  () => $fetch<any[]>(`/api/data/${citySlug.value}`)
+);
+
+const cityItem = computed(() => (cityJson.value ? buildCityItemFromJson(cityJson.value) : null));
 const districtItem = computed(() => cityItem.value?.districts[districtSlug.value]);
 const neighItem = computed(
   () => districtItem.value?.neighborhoods[neighborhoodSlug.value]
@@ -21,13 +24,13 @@ const neighItem = computed(
 const pageTitle = computed(() =>
   neighItem.value
     ? `${titleCase(neighItem.value.name)} Posta Kodu (${titleCase(
-        districtItem.value.name
-      )}/${titleCase(cityItem.value.name)})`
-    : "Posta Kodu Bulunamadı"
+        districtItem.value!.name
+      )}/${titleCase(cityItem.value!.name)})`
+    : 'Posta Kodu Bulunamadı'
 );
 const pageDesc = computed(() => {
   if (!cityItem.value || !districtItem.value || !neighItem.value)
-    return "Posta Kodu Rehberi";
+    return 'Posta Kodu Rehberi';
   return `${titleCase(cityItem.value.name)} ilinin ${titleCase(
     districtItem.value.name
   )} ilçesine bağlı ${titleCase(
@@ -36,36 +39,36 @@ const pageDesc = computed(() => {
 });
 useHead({
   title: pageTitle,
-  meta: [{ name: "description", content: pageDesc }],
+  meta: [{ name: 'description', content: pageDesc }],
   script: [
     computed(() => {
       if (!cityItem.value || !districtItem.value || !neighItem.value) return {};
       return {
-        type: "application/ld+json",
+        type: 'application/ld+json',
         children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
           itemListElement: [
             {
-              "@type": "ListItem",
+              '@type': 'ListItem',
               position: 1,
-              name: "Anasayfa",
+              name: 'Anasayfa',
               item: `https://pkodlari.com/`,
             },
             {
-              "@type": "ListItem",
+              '@type': 'ListItem',
               position: 2,
               name: titleCase(cityItem.value.name),
               item: `https://pkodlari.com/${citySlug.value}`,
             },
             {
-              "@type": "ListItem",
+              '@type': 'ListItem',
               position: 3,
               name: titleCase(districtItem.value.name),
               item: `https://pkodlari.com/${citySlug.value}/${districtSlug.value}`,
             },
             {
-              "@type": "ListItem",
+              '@type': 'ListItem',
               position: 4,
               name: titleCase(neighItem.value.name),
               item: `https://pkodlari.com/${citySlug.value}/${districtSlug.value}/${neighborhoodSlug.value}`,
@@ -77,16 +80,16 @@ useHead({
     computed(() => {
       if (!cityItem.value || !districtItem.value || !neighItem.value) return {};
       return {
-        type: "application/ld+json",
+        type: 'application/ld+json',
         children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
           mainEntity: [
             {
-              "@type": "Question",
+              '@type': 'Question',
               name: `${neighItem.value.zipCode} nerenin posta kodu?`,
               acceptedAnswer: {
-                "@type": "Answer",
+                '@type': 'Answer',
                 text: `${neighItem.value.zipCode} posta kodu ${titleCase(
                   cityItem.value.name
                 )} ${titleCase(districtItem.value.name)} ${titleCase(
@@ -116,8 +119,8 @@ const share = () => {
   if (navigator.share && neighItem.value) {
     navigator.share({
       title: `${titleCase(neighItem.value.name)} Posta Kodu`,
-      text: `${titleCase(cityItem.value.name)}, ${titleCase(
-        districtItem.value.name
+      text: `${titleCase(cityItem.value!.name)}, ${titleCase(
+        districtItem.value!.name
       )}, ${titleCase(neighItem.value.name)} mahallesinin posta kodu: ${
         neighItem.value.zipCode
       }`,
@@ -128,69 +131,69 @@ const share = () => {
 </script>
 
 <template>
-  <div v-if="isValid" class="animate-in fade-in duration-500 max-w-2xl mx-auto">
+  <div v-if="isValid" class="main-content-neighborhood animate-in fade-in">
     <!-- Breadcrumbs -->
     <nav
-      class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-8 overflow-x-auto whitespace-nowrap pb-2"
+      class="breadcrumb"
     >
       <NuxtLink to="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</NuxtLink>
       <ChevronRight class="w-3 h-3" />
       <NuxtLink :to="`/${citySlug}`" class="hover:text-slate-900 transition-colors"
-        >{{ titleCase(cityItem.name) }}
+        >{{ titleCase(cityItem!.name) }}
       </NuxtLink>
       <ChevronRight class="w-3 h-3" />
       <NuxtLink
         :to="`/${citySlug}/${districtSlug}`"
         class="hover:text-slate-900 transition-colors"
-        >{{ titleCase(districtItem.name) }}</NuxtLink
+        >{{ titleCase(districtItem!.name) }}</NuxtLink
       >
     </nav>
 
-    <div class="bg-white border border-slate-200 rounded-[2rem] p-8 md:p-12 shadow-sm">
-      <div class="text-center mb-10">
-        <div class="inline-flex p-3 bg-slate-50 rounded-2xl mb-6">
-          <MapPin class="w-6 h-6 text-slate-900" />
+    <div class="main-info-container">
+      <div class="main-info-title-container">
+        <div class="main-info-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
         </div>
-        <h1 class="text-4xl font-bold text-slate-900 mb-2 tracking-tight">
-          {{ titleCase(neighItem.name) }}
+        <h1>
+          {{ titleCase(neighItem!.name) }}
         </h1>
-        <p class="text-slate-500 font-medium uppercase tracking-widest text-sm">
-          {{ titleCase(districtItem.name) }}, {{ titleCase(cityItem.name) }}
+        <p class="main-info-subtitle">
+          {{ titleCase(districtItem!.name) }}, {{ titleCase(cityItem!.name) }}
         </p>
       </div>
 
-      <div class="bg-slate-50 rounded-3xl p-8 text-center relative overflow-hidden">
-        <div class="relative z-10">
-          <p class="text-xs font-bold text-slate-400 uppercase tracking-[0.3em] mb-4">
+      <div class="post-code-view-container">
+        <div class="sub-post-code-view-container">
+          <p>
             POSTA KODU
           </p>
-          <div class="mono text-7xl font-bold text-slate-900 mb-8">
-            {{ neighItem.zipCode }}
+          <div class="postCode">
+            {{ neighItem!.zipCode }}
           </div>
           <button
             @click="copyToClipboard"
-            class="flex items-center gap-2 mx-auto px-8 py-4 rounded-2xl font-bold text-sm transition-all active:scale-95"
+            class="copy-btn active:scale-95"
             :class="
               copied
-                ? 'bg-green-600 text-white'
-                : 'bg-slate-900 text-white hover:bg-slate-800'
+                ? 'green-btn'
+                : 'black-btn'
             "
           >
-            <Check v-if="copied" class="w-4 h-4" />
-            <Copy v-else class="w-4 h-4" />
+            <Check v-if="copied"/>
+            <Copy v-else />
             {{ copied ? "KOPYALANDI" : "KODU KOPYALA" }}
           </button>
         </div>
         <!-- Decorative background number -->
         <div
-          class="absolute -bottom-10 -right-10 mono text-[12rem] font-black text-slate-200/50 select-none"
+          class="btn-bg"
         >
-          {{ neighItem.zipCode.substring(0, 2) }}
+          {{ neighItem!.zipCode.substring(0, 2) }}
         </div>
       </div>
     </div>
 
-    <div class="mt-8 flex justify-center">
+    <div class="share-btn">
       <button
         @click="share"
         class="flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-colors font-bold text-xs uppercase tracking-widest"
@@ -200,60 +203,60 @@ const share = () => {
     </div>
 
     <div
-      v-if="neighItem.mapCode"
-      class="mt-12 bg-white border border-slate-200 rounded-[2rem] p-4 md:p-6 shadow-sm overflow-hidden"
+      v-if="neighItem!.mapCode"
+      class="map-container"
     >
-      <div class="mb-4 flex items-center gap-2 px-2">
+      <div class="map-title">
         <MapPin class="w-4 h-4 text-slate-400" />
-        <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wide">Konum</h3>
+        <h3>Konum</h3>
       </div>
       <div
-        v-if="neighItem.mapCode.trim().startsWith('<')"
-        v-html="neighItem.mapCode"
-        class="w-full aspect-video rounded-2xl overflow-hidden [&>iframe]:w-full [&>iframe]:h-full"
+        v-if="neighItem!.mapCode!.trim().startsWith('<')"
+        v-html="neighItem!.mapCode"
+        class="map"
       ></div>
       <iframe
         v-else
-        :src="neighItem.mapCode"
+        :src="neighItem!.mapCode"
         class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100"
         loading="lazy"
       ></iframe>
     </div>
 
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">
-        {{ neighItem.zipCode }} nerenin posta kodu?
+    <div class="page-text">
+      <h2>
+        {{ neighItem!.zipCode }} nerenin posta kodu?
       </h2>
-      <p class="text-slate-600">
-        {{ neighItem.zipCode }} posta kodu {{ titleCase(cityItem.name) }}
-        {{ titleCase(districtItem.name) }} {{ titleCase(neighItem.name) }}'ne aittir.
+      <p>
+        {{ neighItem!.zipCode }} posta kodu {{ titleCase(cityItem!.name) }}
+        {{ titleCase(districtItem!.name) }} {{ titleCase(neighItem!.name) }}'ne aittir.
       </p>
     </div>
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">
-        {{ titleCase(districtItem.name) }} {{ titleCase(neighItem.name) }} Posta Kodu
+    <div class="page-text">
+      <h2>
+        {{ titleCase(districtItem!.name) }} {{ titleCase(neighItem!.name) }} Posta Kodu
         Rehberi
       </h2>
-      <p class="text-slate-600">
-        {{ titleCase(cityItem.name) }} {{ titleCase(districtItem.name) }}
-        {{ titleCase(neighItem.name) }}'ne ait güncel posta kodu bilgileri aşağıda yer
+      <p>
+        {{ titleCase(cityItem!.name) }} {{ titleCase(districtItem!.name) }}
+        {{ titleCase(neighItem!.name) }}'ne ait güncel posta kodu bilgileri aşağıda yer
         almaktadır. Adres formlarında, kargo gönderilerinde ve resmi işlemlerde hata
         payını sıfıra indirmek için bu kodu kullanabilirsiniz.
       </p>
       <br />
       <p>
         <strong
-          >{{ titleCase(neighItem.name) }} Posta Kodu: {{ neighItem.zipCode }}</strong
+          >{{ titleCase(neighItem!.name) }} Posta Kodu: {{ neighItem!.zipCode }}</strong
         >
       </p>
     </div>
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">
+    <div class="page-text">
+      <h2>
         Adres Yazımında Posta Kodunun Önemi
       </h2>
-      <p class="text-slate-600">
+      <p>
         Posta kodu, bir adresin en spesifik bileşenidir.
-        {{ titleCase(neighItem.name) }} için tanımlanan {{ neighItem.zipCode }} numarasını
+        {{ titleCase(neighItem!.name) }} için tanımlanan {{ neighItem!.zipCode }} numarasını
         kullanmak şu avantajları sağlar:
       </p>
       <ul>
@@ -272,11 +275,11 @@ const share = () => {
         </li>
       </ul>
     </div>
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">Konum Ve Bölge Bilgileri</h2>
-      <p class="text-slate-600">
-        {{ titleCase(neighItem.name) }}, {{ titleCase(cityItem.name) }} ilinin
-        {{ titleCase(districtItem.name) }} ilçesine bağlıdır. Posta kodu yapısı
+    <div class="page-text">
+      <h2>Konum Ve Bölge Bilgileri</h2>
+      <p>
+        {{ titleCase(neighItem!.name) }}, {{ titleCase(cityItem!.name) }} ilinin
+        {{ titleCase(districtItem!.name) }} ilçesine bağlıdır. Posta kodu yapısı
         incelendiğinde ;
       </p>
       <ol>

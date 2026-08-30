@@ -108,67 +108,90 @@ const share = () => {
 </script>
 
 <template>
-  <div class="animate-in fade-in duration-500 max-w-2xl mx-auto">
-    <!-- Breadcrumbs -->
-    <nav
-      class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-8 overflow-x-auto whitespace-nowrap pb-2"
-    >
-      <NuxtLink to="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</NuxtLink>
-      <ChevronRight class="w-3 h-3" />
-      <NuxtLink to="/ankara" class="hover:text-slate-900 transition-colors">
-        {{ pageData.il }}
-      </NuxtLink>
-      <ChevronRight class="w-3 h-3" />
-      <NuxtLink to="/ankara/cankaya" class="hover:text-slate-900 transition-colors">
-        {{ pageData.ilce }}
-      </NuxtLink>
+  <div class="main-content-neighborhood animate-in fade-in">
+    <nav class="breadcrumb">
+      <a href="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</a
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-chevron-right-icon w-3 h-3"
+      >
+        <path d="m9 18 6-6-6-6"></path></svg
+      ><a href="/ankara" class="hover:text-slate-900 transition-colors">Ankara</a
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-chevron-right-icon w-3 h-3"
+      >
+        <path d="m9 18 6-6-6-6"></path></svg
+      ><a href="/ankara/cankaya" class="hover:text-slate-900 transition-colors"
+        >Çankaya</a
+      >
     </nav>
 
-    <div class="bg-white border border-slate-200 rounded-[2rem] p-8 md:p-12 shadow-sm">
-      <div class="text-center mb-10">
-        <div class="inline-flex p-3 bg-slate-50 rounded-2xl mb-6">
-          <MapPin class="w-6 h-6 text-slate-900" />
+    <div class="main-info-container">
+      <div class="main-info-title-container">
+        <div class="main-info-logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+            ></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
         </div>
-        <h1 class="text-4xl font-bold text-slate-900 mb-2 tracking-tight">
+        <h1>
           {{ pageData.mahalle }}
         </h1>
-        <p class="text-slate-500 font-medium uppercase tracking-widest text-sm">
-          {{ pageData.ilce }}, {{ pageData.il }}
-        </p>
+        <p class="main-info-subtitle">{{ pageData.ilce }}, {{ pageData.il }}</p>
       </div>
 
-      <div class="bg-slate-50 rounded-3xl p-8 text-center relative overflow-hidden">
-        <div class="relative z-10">
-          <p class="text-xs font-bold text-slate-400 uppercase tracking-[0.3em] mb-4">
-            POSTA KODU
-          </p>
-          <div class="mono text-7xl font-bold text-slate-900 mb-8">
+      <div class="post-code-view-container">
+        <div class="sub-post-code-view-container">
+          <p>POSTA KODU</p>
+          <div class="postCode">
             {{ pageData.postaKodu }}
           </div>
-          <button
-            @click="copyToClipboard"
-            class="flex items-center gap-2 mx-auto px-8 py-4 rounded-2xl font-bold text-sm transition-all active:scale-95 cursor-pointer"
-            :class="
-              copied
-                ? 'bg-green-600 text-white'
-                : 'bg-slate-900 text-white hover:bg-slate-800'
-            "
-          >
-            <Check v-if="copied" class="w-4 h-4" />
-            <Copy v-else class="w-4 h-4" />
+          <button @click="copyToClipboard" class="copy-btn active:scale-95" :class="copied
+              ? 'green-btn'
+              : 'black-btn'
+            ">
+            <Check v-if="copied" />
+            <Copy v-else />
             {{ copied ? "KOPYALANDI" : "KODU KOPYALA" }}
           </button>
         </div>
         <!-- Decorative background number -->
-        <div
-          class="absolute -bottom-10 -right-10 mono text-[12rem] font-black text-slate-200/50 select-none"
-        >
+        <div class="btn-bg">
           {{ pageData.postaKodu.substring(0, 2) }}
         </div>
       </div>
     </div>
 
-    <div class="mt-8 flex justify-center">
+    <div class="share-btn">
       <button
         @click="share"
         class="flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-colors font-bold text-xs uppercase tracking-widest cursor-pointer"
@@ -177,2743 +200,15 @@ const share = () => {
       </button>
     </div>
 
-    <div class="mt-10">
-      <h2 class="text-xl font-bold text-slate-900 mb-4">Bu ilçedeki diğer mahalleler</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <!--[--><a
-          href="/ankara/cankaya/100yil-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">100.Yıl Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06680
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/50yil-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">50.Yıl Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06590
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/ahlatlibel-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Ahlatlıbel Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06805
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/akarlar-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Akarlar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06705
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/akpinar-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Akpınar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06450
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/alacaatli-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Alacaatlı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06810
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/anittepe-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Anıttepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06570
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/arka-topraklik-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Arka Topraklık Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06590
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/asagi-imrahor-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Aşağı İmrahor Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06705
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/asagi-ovecler-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Aşağı Öveçler Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06460
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/asikpasa-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Aşıkpaşa Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06670
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/ata-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Ata Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06460
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/aydinlar-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Aydınlar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06460
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/ayranci-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Ayrancı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06690
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/aziziye-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Aziziye Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06690
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/bademlidere-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Bademlidere Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06670
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/bagcilar-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Bağcılar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06670
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/bahcelievler-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Bahçelievler Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06490
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/balgat-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Balgat Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06520
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/barbaros-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Barbaros Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06680
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/bayraktar-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Bayraktar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06670
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/beytepe-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Beytepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06800
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/birlik-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Birlik Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06610
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/boztepe-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Boztepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06670
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/buyukesat-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Büyükesat Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06680
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/cebeci-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Cebeci Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06590
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/cevizlidere-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Cevizlidere Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06520
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/cumhuriyet-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Cumhuriyet Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06420
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/camlitepe-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Çamlıtepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06590
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/cankaya-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Çankaya Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06690
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/cavuslu-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Çavuşlu Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06705
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/cayyolu-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Çayyolu Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06810
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/cigdem-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Çiğdem Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06530
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/cukurambar-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Çukurambar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06530
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/devlet-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Devlet Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06420
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/dilekler-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Dilekler Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06590
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/dodurga-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Dodurga Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06810
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/dogus-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Doğuş Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06660
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/dumlupinar-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Dumlupınar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06550
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/ehlibeyt-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Ehlibeyt Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06520
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/emek-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Emek Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06490
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/ertugrulgazi-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Ertuğrulgazi Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06590
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/erzurum-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Erzurum Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06590
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/esatoglu-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Esatoğlu Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06660
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/eti-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Eti Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06570
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/evciler-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Evciler Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06705
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/fakulteler-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Fakülteler Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06590
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/fidanlik-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Fidanlık Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06420
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/gaziosmanpasa-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Gaziosmanpaşa Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06680
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/gokkusagi-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Gökkuşağı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06450
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/gokturk-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Göktürk Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06670
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/guvenevler-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Güvenevler Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06690
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/guzelyurt-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Güzelyurt Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06690
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/harbiye-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Harbiye Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06460
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/hilal-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Hilal Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06550
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/huzur-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Huzur Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06460
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/ileri-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">İleri Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06590
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/ilkadim-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">İlkadım Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06450
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/ilkbahar-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">İlkbahar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06550
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/ilker-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">İlker Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06450
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/incesu-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">İncesu Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06590
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/isci-bloklari-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">İşçi Blokları Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06530
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/karahasanli-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Karahasanlı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06705
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/karapinar-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Karapınar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06450
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/karatas-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Karataş Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06705
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/kavaklidere-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kavaklıdere Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06680
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/kazim-ozalp-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kazım Özalp Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06680
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/keklik-pinari-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Keklik Pınarı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06450
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/kirkkonaklar-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kırkkonaklar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06610
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/kizilay-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kızılay Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06420
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/kizilirmak-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kızılırmak Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06530
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/kocatepe-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kocatepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06420
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/konutkent-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Konutkent Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06810
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/korkutreis-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Korkutreis Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06420
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/koru-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Koru Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06810
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/komurcu-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kömürcü Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06705
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/kucukesat-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Küçükesat Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06660
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/kultur-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kültür Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06420
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/malazgirt-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Malazgirt Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06450
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/maltepe-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Maltepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06570
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/mebusevleri-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Mebusevleri Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06570
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/mesrutiyet-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Meşrutiyet Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06420
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/metin-akkus-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Metin Akkuş Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06450
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/metin-oktay-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Metin Oktay Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06670
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/mimar-sinan-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Mimar Sinan Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06670
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/muhsin-ertugrul-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">
-              Muhsin Ertuğrul Mahallesi
-            </h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06660
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/murat-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Murat Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06670
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/mustafa-kemal-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Mustafa Kemal Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06530
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/mutlukent-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Mutlukent Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06800
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/mursel-uluc-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Mürsel Uluç Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06450
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/naci-cakir-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Naci Çakır Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06450
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/namik-kemal-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Namık Kemal Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06420
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/nasuh-akar-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Nasuh Akar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06520
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/oguzlar-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Oğuzlar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06520
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/oran-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Oran Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06550
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/orta-imrahor-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Orta İmrahor Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06705
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/osman-temiz-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Osman Temiz Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06450
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/on-cebeci-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Ön Cebeci Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06590
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/ovecler-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Öveçler Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06460
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/prof-dr-ahmet-taner-kislali-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">
-              Prof. Dr. Ahmet Taner Kışlalı Mahallesi
-            </h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06810
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/remzi-oguz-arik-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">
-              Remzi Oğuz Arık Mahallesi
-            </h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06680
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/saglik-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Sağlık Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06420
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/sancak-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Sancak Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06550
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/seyranbaglari-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Seyranbağları Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06660
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/sokullu-mehmet-pasa-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">
-              Sokullu Mehmet Paşa Mahallesi
-            </h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06460
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/sogutozu-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Söğütözü Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06530
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/sehit-cengiz-karaca-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">
-              Şehit Cengiz Karaca Mahallesi
-            </h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06460
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/sehit-cevdet-ozdemir-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">
-              Şehit Cevdet Özdemir Mahallesi
-            </h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06460
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/tinaztepe-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Tinaztepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06660
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/tohumlar-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Tohumlar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06705
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/topraklik-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Topraklık Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06590
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/umut-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Umut Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06670
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/umit-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Ümit Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06810
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/universiteler-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Üniversiteler Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06800
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/yakupabdal-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yakupabdal Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06705
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/yesilkent-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yeşilkent Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">06705</p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/yayla-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yayla Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06705
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/yildizevler-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yıldızevler Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06550
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/yukari-bahcelievler-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">
-              Yukarı Bahçelievler Mahallesi
-            </h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06490
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/yukari-dikmen-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yukarı Dikmen Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06550
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/yukari-ovecler-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yukarı Öveçler Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06460
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/yucetepe-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yücetepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06570
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><a
-          href="/ankara/cankaya/zafertepe-mahallesi"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-          ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Zafertepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
-              06670
-            </p>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
-          >
-            <path d="m9 18 6-6-6-6"></path></svg></a
-        ><!--]-->
-      </div>
-    </div>
-
-    <div
-      v-if="pageData.map"
-      class="mt-12 bg-white border border-slate-200 rounded-[2rem] p-4 md:p-6 shadow-sm overflow-hidden"
-    >
-      <div class="mb-4 flex items-center gap-2 px-2">
+    <div v-if="pageData.map" class="map-container">
+      <div class="map-title">
         <MapPin class="w-4 h-4 text-slate-400" />
-        <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wide">Konum</h3>
+        <h3>Konum</h3>
       </div>
       <div
         v-if="pageData.map.trim().startsWith('<')"
         v-html="pageData.map"
-        class="w-full aspect-video rounded-2xl overflow-hidden [&>iframe]:w-full [&>iframe]:h-full"
+        class="map"
       ></div>
       <iframe
         v-else
@@ -2923,20 +218,2362 @@ const share = () => {
       ></iframe>
     </div>
 
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">
-        {{ pageData.postaKodu }} nerenin posta kodu?
-      </h2>
-      <p class="text-slate-600">
+    <div class="mt-10">
+      <h2>Bu ilçedeki diğer mahalleler</h2>
+      <div class="neighborhoods-links-container">
+        <a
+          href="/ankara/cankaya/100yil-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>100.Yıl Mahallesi</h3>
+            <p>06680</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/50yil-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>50.Yıl Mahallesi</h3>
+            <p>06590</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/ahlatlibel-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Ahlatlıbel Mahallesi</h3>
+            <p>06805</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/akarlar-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Akarlar Mahallesi</h3>
+            <p>06705</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/akpinar-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Akpınar Mahallesi</h3>
+            <p>06450</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/alacaatli-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Alacaatlı Mahallesi</h3>
+            <p>06810</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/anittepe-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Anıttepe Mahallesi</h3>
+            <p>06570</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/arka-topraklik-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Arka Topraklık Mahallesi</h3>
+            <p>06590</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/asagi-imrahor-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Aşağı İmrahor Mahallesi</h3>
+            <p>06705</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/asagi-ovecler-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Aşağı Öveçler Mahallesi</h3>
+            <p>06460</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/asikpasa-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Aşıkpaşa Mahallesi</h3>
+            <p>06670</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/ata-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Ata Mahallesi</h3>
+            <p>06460</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/aydinlar-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Aydınlar Mahallesi</h3>
+            <p>06460</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/ayranci-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Ayrancı Mahallesi</h3>
+            <p>06690</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/aziziye-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Aziziye Mahallesi</h3>
+            <p>06690</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/bademlidere-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Bademlidere Mahallesi</h3>
+            <p>06670</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/bagcilar-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Bağcılar Mahallesi</h3>
+            <p>06670</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/bahcelievler-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Bahçelievler Mahallesi</h3>
+            <p>06490</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/balgat-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Balgat Mahallesi</h3>
+            <p>06520</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/barbaros-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Barbaros Mahallesi</h3>
+            <p>06680</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/bayraktar-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Bayraktar Mahallesi</h3>
+            <p>06670</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/beytepe-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Beytepe Mahallesi</h3>
+            <p>06800</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/birlik-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Birlik Mahallesi</h3>
+            <p>06610</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/boztepe-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Boztepe Mahallesi</h3>
+            <p>06670</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/buyukesat-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Büyükesat Mahallesi</h3>
+            <p>06680</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/cebeci-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Cebeci Mahallesi</h3>
+            <p>06590</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/cevizlidere-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Cevizlidere Mahallesi</h3>
+            <p>06520</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/cumhuriyet-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Cumhuriyet Mahallesi</h3>
+            <p>06420</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/camlitepe-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Çamlıtepe Mahallesi</h3>
+            <p>06590</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/cankaya-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Çankaya Mahallesi</h3>
+            <p>06690</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/cavuslu-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Çavuşlu Mahallesi</h3>
+            <p>06705</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/cayyolu-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Çayyolu Mahallesi</h3>
+            <p>06810</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/cigdem-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Çiğdem Mahallesi</h3>
+            <p>06530</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/cukurambar-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Çukurambar Mahallesi</h3>
+            <p>06530</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/devlet-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Devlet Mahallesi</h3>
+            <p>06420</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/dilekler-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Dilekler Mahallesi</h3>
+            <p>06590</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/dodurga-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Dodurga Mahallesi</h3>
+            <p>06810</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/dogus-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Doğuş Mahallesi</h3>
+            <p>06660</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/dumlupinar-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Dumlupınar Mahallesi</h3>
+            <p>06550</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/ehlibeyt-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Ehlibeyt Mahallesi</h3>
+            <p>06520</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/emek-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Emek Mahallesi</h3>
+            <p>06490</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/ertugrulgazi-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Ertuğrulgazi Mahallesi</h3>
+            <p>06590</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/erzurum-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Erzurum Mahallesi</h3>
+            <p>06590</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/esatoglu-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Esatoğlu Mahallesi</h3>
+            <p>06660</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/eti-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Eti Mahallesi</h3>
+            <p>06570</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/evciler-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Evciler Mahallesi</h3>
+            <p>06705</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/fakulteler-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Fakülteler Mahallesi</h3>
+            <p>06590</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/fidanlik-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Fidanlık Mahallesi</h3>
+            <p>06420</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/gaziosmanpasa-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Gaziosmanpaşa Mahallesi</h3>
+            <p>06680</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/gokkusagi-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Gökkuşağı Mahallesi</h3>
+            <p>06450</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/gokturk-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Göktürk Mahallesi</h3>
+            <p>06670</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/guvenevler-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Güvenevler Mahallesi</h3>
+            <p>06690</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/guzelyurt-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Güzelyurt Mahallesi</h3>
+            <p>06690</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/harbiye-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Harbiye Mahallesi</h3>
+            <p>06460</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/hilal-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Hilal Mahallesi</h3>
+            <p>06550</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/huzur-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Huzur Mahallesi</h3>
+            <p>06460</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/ileri-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>İleri Mahallesi</h3>
+            <p>06590</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/ilkadim-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>İlkadım Mahallesi</h3>
+            <p>06450</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/ilkbahar-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>İlkbahar Mahallesi</h3>
+            <p>06550</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/ilker-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>İlker Mahallesi</h3>
+            <p>06450</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/incesu-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>İncesu Mahallesi</h3>
+            <p>06590</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/isci-bloklari-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>İşçi Blokları Mahallesi</h3>
+            <p>06530</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/karahasanli-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Karahasanlı Mahallesi</h3>
+            <p>06705</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/karapinar-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Karapınar Mahallesi</h3>
+            <p>06450</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/karatas-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Karataş Mahallesi</h3>
+            <p>06705</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/kavaklidere-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Kavaklıdere Mahallesi</h3>
+            <p>06680</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/kazim-ozalp-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Kazım Özalp Mahallesi</h3>
+            <p>06680</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/keklik-pinari-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Keklik Pınarı Mahallesi</h3>
+            <p>06450</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/kirkkonaklar-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Kırkkonaklar Mahallesi</h3>
+            <p>06610</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/kizilay-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Kızılay Mahallesi</h3>
+            <p>06420</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/kizilirmak-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Kızılırmak Mahallesi</h3>
+            <p>06530</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/kocatepe-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Kocatepe Mahallesi</h3>
+            <p>06420</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/konutkent-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Konutkent Mahallesi</h3>
+            <p>06810</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/korkutreis-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Korkutreis Mahallesi</h3>
+            <p>06420</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/koru-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Koru Mahallesi</h3>
+            <p>06810</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/komurcu-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Kömürcü Mahallesi</h3>
+            <p>06705</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/kucukesat-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Küçükesat Mahallesi</h3>
+            <p>06660</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/kultur-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Kültür Mahallesi</h3>
+            <p>06420</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/malazgirt-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Malazgirt Mahallesi</h3>
+            <p>06450</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/maltepe-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Maltepe Mahallesi</h3>
+            <p>06570</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/mebusevleri-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Mebusevleri Mahallesi</h3>
+            <p>06570</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/mesrutiyet-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Meşrutiyet Mahallesi</h3>
+            <p>06420</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/metin-akkus-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Metin Akkuş Mahallesi</h3>
+            <p>06450</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/metin-oktay-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Metin Oktay Mahallesi</h3>
+            <p>06670</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/mimar-sinan-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Mimar Sinan Mahallesi</h3>
+            <p>06670</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/muhsin-ertugrul-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Muhsin Ertuğrul Mahallesi</h3>
+            <p>06660</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/murat-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Murat Mahallesi</h3>
+            <p>06670</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/mustafa-kemal-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Mustafa Kemal Mahallesi</h3>
+            <p>06530</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/mutlukent-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Mutlukent Mahallesi</h3>
+            <p>06800</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/mursel-uluc-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Mürsel Uluç Mahallesi</h3>
+            <p>06450</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/naci-cakir-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Naci Çakır Mahallesi</h3>
+            <p>06450</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/namik-kemal-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Namık Kemal Mahallesi</h3>
+            <p>06420</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/nasuh-akar-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Nasuh Akar Mahallesi</h3>
+            <p>06520</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/oguzlar-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Oğuzlar Mahallesi</h3>
+            <p>06520</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/oran-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Oran Mahallesi</h3>
+            <p>06550</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/orta-imrahor-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Orta İmrahor Mahallesi</h3>
+            <p>06705</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/osman-temiz-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Osman Temiz Mahallesi</h3>
+            <p>06450</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/on-cebeci-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Ön Cebeci Mahallesi</h3>
+            <p>06590</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/ovecler-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Öveçler Mahallesi</h3>
+            <p>06460</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/prof-dr-ahmet-taner-kislali-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Prof. Dr. Ahmet Taner Kışlalı Mahallesi</h3>
+            <p>06810</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/remzi-oguz-arik-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Remzi Oğuz Arık Mahallesi</h3>
+            <p>06680</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/saglik-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Sağlık Mahallesi</h3>
+            <p>06420</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/sancak-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Sancak Mahallesi</h3>
+            <p>06550</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/seyranbaglari-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Seyranbağları Mahallesi</h3>
+            <p>06660</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/sokullu-mehmet-pasa-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Sokullu Mehmet Paşa Mahallesi</h3>
+            <p>06460</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/sogutozu-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Söğütözü Mahallesi</h3>
+            <p>06530</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/sehit-cengiz-karaca-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Şehit Cengiz Karaca Mahallesi</h3>
+            <p>06460</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/sehit-cevdet-ozdemir-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Şehit Cevdet Özdemir Mahallesi</h3>
+            <p>06460</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/tinaztepe-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Tinaztepe Mahallesi</h3>
+            <p>06660</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/tohumlar-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Tohumlar Mahallesi</h3>
+            <p>06705</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/topraklik-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Topraklık Mahallesi</h3>
+            <p>06590</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/umut-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Umut Mahallesi</h3>
+            <p>06670</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/umit-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Ümit Mahallesi</h3>
+            <p>06810</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/universiteler-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Üniversiteler Mahallesi</h3>
+            <p>06800</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/yakupabdal-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Yakupabdal Mahallesi</h3>
+            <p>06705</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/yesilkent-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Yeşilkent Mahallesi</h3>
+            <p>06705</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/yayla-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Yayla Mahallesi</h3>
+            <p>06705</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/yildizevler-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Yıldızevler Mahallesi</h3>
+            <p>06550</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/yukari-bahcelievler-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Yukarı Bahçelievler Mahallesi</h3>
+            <p>06490</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/yukari-dikmen-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Yukarı Dikmen Mahallesi</h3>
+            <p>06550</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/yukari-ovecler-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Yukarı Öveçler Mahallesi</h3>
+            <p>06460</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/yucetepe-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Yücetepe Mahallesi</h3>
+            <p>06570</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg></a
+        ><a
+          href="/ankara/cankaya/zafertepe-mahallesi"
+          class="soft-card p-4 rounded-xl flex items-center justify-between"
+          ><div>
+            <h3>Zafertepe Mahallesi</h3>
+            <p>06670</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path></svg
+        ></a>
+      </div>
+    </div>
+
+    
+
+    <div class="page-text">
+      <h2>{{ pageData.postaKodu }} nerenin posta kodu?</h2>
+      <p>
         {{ pageData.postaKodu }} posta kodu {{ pageData.il }} {{ pageData.ilce }}
         {{ pageData.mahalle }}'ne aittir.
       </p>
     </div>
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">
-        {{ pageData.ilce }} {{ pageData.mahalle }} Posta Kodu Rehberi
-      </h2>
-      <p class="text-slate-600">
+    <div class="page-text">
+      <h2>{{ pageData.ilce }} {{ pageData.mahalle }} Posta Kodu Rehberi</h2>
+      <p>
         {{ pageData.il }} {{ pageData.ilce }} {{ pageData.mahalle }}'ne ait güncel posta
         kodu bilgileri aşağıda yer almaktadır. Adres formlarında, kargo gönderilerinde ve
         resmi işlemlerde hata payını sıfıra indirmek için bu kodu kullanabilirsiniz.
@@ -2946,11 +2583,9 @@ const share = () => {
         <strong>{{ pageData.mahalle }} Posta Kodu: {{ pageData.postaKodu }}</strong>
       </p>
     </div>
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">
-        Adres Yazımında Posta Kodunun Önemi
-      </h2>
-      <p class="text-slate-600">
+    <div class="page-text">
+      <h2>Adres Yazımında Posta Kodunun Önemi</h2>
+      <p>
         Posta kodu, bir adresin en spesifik bileşenidir.
         {{ pageData.mahalle }} için tanımlanan {{ pageData.postaKodu }} numarasını
         kullanmak şu avantajları sağlar:
@@ -2973,9 +2608,9 @@ const share = () => {
         </li>
       </ul>
     </div>
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">Konum Ve Bölge Bilgileri</h2>
-      <p class="text-slate-600">
+    <div class="page-text">
+      <h2>Konum Ve Bölge Bilgileri</h2>
+      <p>
         {{ pageData.mahalle }}, {{ pageData.il }} ilinin {{ pageData.ilce }} ilçesine
         bağlıdır. Posta kodu yapısı incelendiğinde;
       </p>

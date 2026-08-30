@@ -47,9 +47,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
 
 <template>
   <div class="animate-in fade-in duration-500 max-w-4xl mx-auto">
-    <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
-      <div class="flex items-center gap-4">
-        <a href="/izmir" class="text-slate-400 hover:text-slate-900 transition-colors"
+    <div class="header">
+      <div class="districtTitleContainer">
+        <a href="/izmir" 
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -60,19 +60,19 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-arrow-left-icon w-5 h-5"
+            
           >
             <path d="m12 19-7-7 7-7"></path>
             <path d="M19 12H5"></path></svg
         ></a>
         <div>
-          <h1 class="text-3xl font-bold text-slate-900 tracking-tight">
+          <h1>
             Konak Posta Kodları
           </h1>
-          <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">İzmir</p>
+          <p>İzmir</p>
         </div>
       </div>
-      <!-- <div class="relative w-full md:w-64">
+      <!-- <div class="neighborhood-search-container">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -90,17 +90,17 @@ usePageSeo({ title: pageTitle, description: pageDesc });
         ><input
           type="text"
           placeholder="Mahallelerde ara..."
-          class="w-full pl-9 pr-4 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-slate-400 transition-all text-sm"
+          
           value=""
         />
       </div> -->
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <!--[--><a
+    <div class="neighborhoods-links-container">
+      <a
         href="/izmir/konak/1kadriye-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             1.Kadriye Mahallesi
           </h4>
           <p
@@ -109,9 +109,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35270</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -129,9 +129,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/19-mayis-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             19 Mayıs Mahallesi
           </h4>
           <p
@@ -140,9 +140,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35270</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -160,9 +160,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/2kadriye-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             2.Kadriye Mahallesi
           </h4>
           <p
@@ -171,9 +171,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35270</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -191,9 +191,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/26-agustos-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             26 Ağustos Mahallesi
           </h4>
           <p
@@ -202,9 +202,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35190</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -222,9 +222,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/akarcali-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Akarcalı Mahallesi
           </h4>
           <p
@@ -233,9 +233,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -253,9 +253,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/akdeniz-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Akdeniz Mahallesi
           </h4>
           <p
@@ -264,9 +264,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35210</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -284,9 +284,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/akin-simav-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Akın Simav Mahallesi
           </h4>
           <p
@@ -295,9 +295,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35280</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -315,9 +315,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/akinci-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Akıncı Mahallesi
           </h4>
           <p
@@ -326,9 +326,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -346,9 +346,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/ali-reis-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Ali Reis Mahallesi
           </h4>
           <p
@@ -357,9 +357,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -377,9 +377,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/alsancak-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Alsancak Mahallesi
           </h4>
           <p
@@ -388,9 +388,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35220</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -408,18 +408,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/altay-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Altay Mahallesi</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Altay Mahallesi</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -437,9 +437,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/altinordu-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Altınordu Mahallesi
           </h4>
           <p
@@ -448,9 +448,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -468,9 +468,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/altintas-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Altıntaş Mahallesi
           </h4>
           <p
@@ -479,9 +479,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35260</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -499,9 +499,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/anadolu-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Anadolu Mahallesi
           </h4>
           <p
@@ -510,9 +510,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35190</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -530,9 +530,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/atamer-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Atamer Mahallesi
           </h4>
           <p
@@ -541,9 +541,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35190</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -561,9 +561,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/atilla-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Atilla Mahallesi
           </h4>
           <p
@@ -572,9 +572,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35270</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -592,9 +592,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/aziziye-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Aziziye Mahallesi
           </h4>
           <p
@@ -603,9 +603,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35270</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -623,9 +623,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/ballikuyu-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Ballıkuyu Mahallesi
           </h4>
           <p
@@ -634,9 +634,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35270</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -654,9 +654,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/barbaros-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Barbaros Mahallesi
           </h4>
           <p
@@ -665,9 +665,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35260</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -685,9 +685,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/bogazici-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Boğaziçi Mahallesi
           </h4>
           <p
@@ -696,9 +696,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35180</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -716,9 +716,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/bozkurt-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Bozkurt Mahallesi
           </h4>
           <p
@@ -727,9 +727,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35260</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -747,9 +747,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/cengiz-topel-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Cengiz Topel Mahallesi
           </h4>
           <p
@@ -758,9 +758,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35180</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -778,9 +778,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/cahabey-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Çahabey Mahallesi
           </h4>
           <p
@@ -789,9 +789,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35260</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -809,9 +809,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/cankaya-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Çankaya Mahallesi
           </h4>
           <p
@@ -820,9 +820,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35280</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -840,9 +840,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/cinarli-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Çınarlı Mahallesi
           </h4>
           <p
@@ -851,9 +851,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35170</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -871,9 +871,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/cinartepe-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Çınartepe Mahallesi
           </h4>
           <p
@@ -882,9 +882,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35190</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -902,9 +902,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/cimentepe-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Çimentepe Mahallesi
           </h4>
           <p
@@ -913,9 +913,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35270</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -933,9 +933,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/dayiemir-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Dayiemir Mahallesi
           </h4>
           <p
@@ -944,9 +944,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -964,9 +964,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/dolaplikuyu-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Dolaplıkuyu Mahallesi
           </h4>
           <p
@@ -975,9 +975,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -995,9 +995,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/duatepe-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Duatepe Mahallesi
           </h4>
           <p
@@ -1006,9 +1006,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35270</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1026,18 +1026,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/ege-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Ege Mahallesi</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Ege Mahallesi</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35230</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1055,9 +1055,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/emir-sultan-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Emir Sultan Mahallesi
           </h4>
           <p
@@ -1066,9 +1066,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35180</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1086,9 +1086,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/etiler-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Etiler Mahallesi
           </h4>
           <p
@@ -1097,9 +1097,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1117,9 +1117,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/faik-pasa-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Faik Paşa Mahallesi
           </h4>
           <p
@@ -1128,9 +1128,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1148,18 +1148,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/fatih-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Fatih Mahallesi</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Fatih Mahallesi</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35260</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1177,9 +1177,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/ferahli-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Ferahlı Mahallesi
           </h4>
           <p
@@ -1188,9 +1188,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35180</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1208,9 +1208,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/fevzi-pasa-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Fevzi Paşa Mahallesi
           </h4>
           <p
@@ -1219,9 +1219,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35260</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1239,9 +1239,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/goztepe-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Göztepe Mahallesi
           </h4>
           <p
@@ -1250,9 +1250,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35290</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1270,18 +1270,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/gunes-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Güneş Mahallesi</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Güneş Mahallesi</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35250</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1299,9 +1299,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/gunesli-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Güneşli Mahallesi
           </h4>
           <p
@@ -1310,9 +1310,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35270</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1330,18 +1330,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/guney-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Güney Mahallesi</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Güney Mahallesi</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35180</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1359,9 +1359,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/gungor-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Güngör Mahallesi
           </h4>
           <p
@@ -1370,9 +1370,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35260</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1390,9 +1390,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/guzelyali-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Güzelyalı Mahallesi
           </h4>
           <p
@@ -1401,9 +1401,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35290</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1421,9 +1421,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/guzelyurt-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Güzelyurt Mahallesi
           </h4>
           <p
@@ -1432,9 +1432,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35250</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1452,9 +1452,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/halkapinar-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Halkapınar Mahallesi
           </h4>
           <p
@@ -1463,9 +1463,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35170</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1483,9 +1483,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/hasan-ozdemir-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Hasan Özdemir Mahallesi
           </h4>
           <p
@@ -1494,9 +1494,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35270</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1514,18 +1514,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/hilal-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Hilal Mahallesi</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Hilal Mahallesi</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35170</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1543,9 +1543,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/hursidiye-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Hurşidiye Mahallesi
           </h4>
           <p
@@ -1554,9 +1554,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1574,18 +1574,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/huzur-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Huzur Mahallesi</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Huzur Mahallesi</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35190</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1603,9 +1603,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/imariye-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             İmariye Mahallesi
           </h4>
           <p
@@ -1614,9 +1614,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35270</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1634,9 +1634,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/ismet-kaptan-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             İsmet Kaptan Mahallesi
           </h4>
           <p
@@ -1645,9 +1645,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35210</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1665,9 +1665,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/ismet-pasa-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             İsmet Paşa Mahallesi
           </h4>
           <p
@@ -1676,9 +1676,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35180</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1696,9 +1696,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/kadifekale-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kadifekale Mahallesi
           </h4>
           <p
@@ -1707,9 +1707,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35270</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1727,9 +1727,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/kahraman-mescit-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kahraman Mescit Mahallesi
           </h4>
           <p
@@ -1738,9 +1738,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35260</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1758,9 +1758,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/kahramanlar-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kahramanlar Mahallesi
           </h4>
           <p
@@ -1769,9 +1769,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35230</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1789,9 +1789,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/kemal-reis-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kemal Reis Mahallesi
           </h4>
           <p
@@ -1800,9 +1800,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35280</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1820,9 +1820,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/kestelli-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kestelli Mahallesi
           </h4>
           <p
@@ -1831,9 +1831,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35250</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1851,9 +1851,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/kilic-reis-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kılıç Reis Mahallesi
           </h4>
           <p
@@ -1862,9 +1862,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35280</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1882,9 +1882,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/kocakapi-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kocakapı Mahallesi
           </h4>
           <p
@@ -1893,9 +1893,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1913,9 +1913,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/kocatepe-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kocatepe Mahallesi
           </h4>
           <p
@@ -1924,9 +1924,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35270</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1944,18 +1944,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/konak-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Konak Mahallesi</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Konak Mahallesi</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35250</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1973,9 +1973,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/kosova-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kosova Mahallesi
           </h4>
           <p
@@ -1984,9 +1984,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35270</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2004,9 +2004,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/kubilay-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kubilay Mahallesi
           </h4>
           <p
@@ -2015,9 +2015,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2035,9 +2035,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/kurtulus-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kurtuluş Mahallesi
           </h4>
           <p
@@ -2046,9 +2046,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2066,9 +2066,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/kucukada-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Küçükada Mahallesi
           </h4>
           <p
@@ -2077,9 +2077,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35180</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2097,9 +2097,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/kultur-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kültür Mahallesi
           </h4>
           <p
@@ -2108,9 +2108,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35220</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2128,18 +2128,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/lale-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Lale Mahallesi</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Lale Mahallesi</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35180</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2157,9 +2157,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/levent-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Levent Mahallesi
           </h4>
           <p
@@ -2168,9 +2168,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35180</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2188,9 +2188,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/mecidiye-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Mecidiye Mahallesi
           </h4>
           <p
@@ -2199,9 +2199,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35260</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2219,9 +2219,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/mehmet-akif-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Mehmet Akif Mahallesi
           </h4>
           <p
@@ -2230,9 +2230,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35190</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2250,9 +2250,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/mehmet-ali-akman-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Mehmet Ali Akman Mahallesi
           </h4>
           <p
@@ -2261,9 +2261,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35290</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2281,9 +2281,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/mehtap-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Mehtap Mahallesi
           </h4>
           <p
@@ -2292,9 +2292,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35180</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2312,9 +2312,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/mersinli-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Mersinli Mahallesi
           </h4>
           <p
@@ -2323,9 +2323,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35170</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2343,9 +2343,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/millet-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Millet Mahallesi
           </h4>
           <p
@@ -2354,9 +2354,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35190</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2374,9 +2374,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/mimar-sinan-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Mimar Sinan Mahallesi
           </h4>
           <p
@@ -2385,9 +2385,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35220</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2405,9 +2405,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/mirali-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Mirali Mahallesi
           </h4>
           <p
@@ -2416,9 +2416,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2436,9 +2436,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/mithatpasa-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Mithatpaşa Mahallesi
           </h4>
           <p
@@ -2447,9 +2447,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35280</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2467,18 +2467,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/murat-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Murat Mahallesi</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Murat Mahallesi</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35190</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2496,9 +2496,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/murat-reis-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Murat Reis Mahallesi
           </h4>
           <p
@@ -2507,9 +2507,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35280</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2527,9 +2527,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/namazgah-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Namazgah Mahallesi
           </h4>
           <p
@@ -2538,9 +2538,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2558,9 +2558,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/namik-kemal-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Namık Kemal Mahallesi
           </h4>
           <p
@@ -2569,9 +2569,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35260</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2589,9 +2589,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/odunkapi-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Odunkapı Mahallesi
           </h4>
           <p
@@ -2600,9 +2600,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35260</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2620,9 +2620,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/oguzlar-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Oğuzlar Mahallesi
           </h4>
           <p
@@ -2631,9 +2631,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35230</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2651,9 +2651,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/pazaryeri-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Pazaryeri Mahallesi
           </h4>
           <p
@@ -2662,9 +2662,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2682,9 +2682,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/piri-reis-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Piri Reis Mahallesi
           </h4>
           <p
@@ -2693,9 +2693,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35280</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2713,9 +2713,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/sakarya-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Sakarya Mahallesi
           </h4>
           <p
@@ -2724,9 +2724,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2744,18 +2744,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/saygi-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Saygı Mahallesi</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Saygı Mahallesi</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35190</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2773,9 +2773,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/selcuk-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Selçuk Mahallesi
           </h4>
           <p
@@ -2784,9 +2784,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2804,18 +2804,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/sumer-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Sümer Mahallesi</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Sümer Mahallesi</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35260</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2833,9 +2833,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/suvari-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Süvari Mahallesi
           </h4>
           <p
@@ -2844,9 +2844,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2864,9 +2864,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/sehit-nedim-tugaltay-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Şehit Nedim Tuğaltay Mahallesi
           </h4>
           <p
@@ -2875,9 +2875,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35260</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2895,18 +2895,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/tan-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Tan Mahallesi</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Tan Mahallesi</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35260</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2924,9 +2924,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/tinaztepe-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Tınaztepe Mahallesi
           </h4>
           <p
@@ -2935,9 +2935,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35270</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2955,9 +2955,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/trakya-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Trakya Mahallesi
           </h4>
           <p
@@ -2966,9 +2966,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35190</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2986,9 +2986,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/turgut-reis-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Turgut Reis Mahallesi
           </h4>
           <p
@@ -2997,9 +2997,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35280</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3017,18 +3017,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/tuzcu-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Tuzcu Mahallesi</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Tuzcu Mahallesi</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3046,9 +3046,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/turkyilmaz-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Türkyılmaz Mahallesi
           </h4>
           <p
@@ -3057,9 +3057,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35260</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3077,18 +3077,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/ugur-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Uğur Mahallesi</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Uğur Mahallesi</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35260</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3106,9 +3106,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/ulubatli-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Ulubatlı Mahallesi
           </h4>
           <p
@@ -3117,9 +3117,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35190</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3137,9 +3137,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/umurbey-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Umurbey Mahallesi
           </h4>
           <p
@@ -3148,9 +3148,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35230</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3168,18 +3168,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/ulku-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Ülkü Mahallesi</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Ülkü Mahallesi</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3197,9 +3197,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/veziraga-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Vezirağa Mahallesi
           </h4>
           <p
@@ -3208,9 +3208,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35270</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3228,9 +3228,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/yavuz-selim-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Yavuz Selim Mahallesi
           </h4>
           <p
@@ -3239,9 +3239,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35190</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3259,18 +3259,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/yeni-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Yeni Mahallesi</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Yeni Mahallesi</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3288,9 +3288,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/yenidogan-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Yenidoğan Mahallesi
           </h4>
           <p
@@ -3299,9 +3299,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35180</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3319,9 +3319,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/yenigun-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Yenigün Mahallesi
           </h4>
           <p
@@ -3330,9 +3330,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35250</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3350,9 +3350,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/yenisehir-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Yenişehir Mahallesi
           </h4>
           <p
@@ -3361,9 +3361,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35170</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3381,9 +3381,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/yesildere-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Yeşildere Mahallesi
           </h4>
           <p
@@ -3392,9 +3392,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35270</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3412,9 +3412,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/yesiltepe-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Yeşiltepe Mahallesi
           </h4>
           <p
@@ -3423,9 +3423,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35260</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3443,9 +3443,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/yildiz-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Yıldız Mahallesi
           </h4>
           <p
@@ -3454,9 +3454,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35260</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3474,9 +3474,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/zafertepe-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Zafertepe Mahallesi
           </h4>
           <p
@@ -3485,9 +3485,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35270</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3505,9 +3505,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/zeybek-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Zeybek Mahallesi
           </h4>
           <p
@@ -3516,9 +3516,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35190</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3536,9 +3536,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/izmir/konak/zeytinlik-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Zeytinlik Mahallesi
           </h4>
           <p
@@ -3547,9 +3547,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >35180</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3565,7 +3565,7 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           >
             <path d="m9 18 6-6-6-6"></path>
           </svg></div></a
-      ><!--]--><!---->
+      ><!---->
     </div>
   </div>
 </template>

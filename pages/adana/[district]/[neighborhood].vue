@@ -7,7 +7,7 @@ const route = useRoute();
 const copied = ref(false);
 
 const { data: adanaData } = await useAsyncData("adana-data", () =>
-  $fetch<any[]>("https://pkodlari.com/data/adana.json")
+  $fetch<any[]>("https://pkodlari.com/data/adana/all.json")
 );
 
 const districtSlug = computed(() => route.params.district as string);
@@ -27,15 +27,15 @@ const isValid = computed(() => !!neighData.value);
 const pageTitle = computed(() =>
   neighData.value
     ? `${titleCase(neighData.value.mahalle)} Posta Kodu (${titleCase(
-        neighData.value.ilce
-      )}/Adana)`
+      neighData.value.ilce
+    )}/Adana)`
     : "Posta Kodu Bulunamadı"
 );
 const pageDesc = computed(() =>
   neighData.value
     ? `Adana ilinin ${titleCase(neighData.value.ilce)} ilçesine bağlı ${titleCase(
-        neighData.value.mahalle
-      )}'nin posta kodunu öğrenmek için tıklayın!`
+      neighData.value.mahalle
+    )}'nin posta kodunu öğrenmek için tıklayın!`
     : "Posta Kodu Rehberi"
 );
 
@@ -142,150 +142,114 @@ const share = () => {
 </script>
 
 <template>
-  <div v-if="isValid" class="animate-in fade-in duration-500 max-w-2xl mx-auto">
-    <nav
-      class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-8 overflow-x-auto whitespace-nowrap pb-2"
-    >
+  <div v-if="isValid" class="main-content-neighborhood animate-in fade-in">
+    <nav class="breadcrumb">
       <NuxtLink to="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</NuxtLink>
       <ChevronRight class="w-3 h-3" />
-      <NuxtLink to="/adana" class="hover:text-slate-900 transition-colors"
-        >ADANA</NuxtLink
-      >
+      <NuxtLink to="/adana" class="hover:text-slate-900 transition-colors">ADANA</NuxtLink>
       <ChevronRight class="w-3 h-3" />
-      <NuxtLink
-        :to="`/adana/${districtSlug}`"
-        class="hover:text-slate-900 transition-colors"
-        >{{ titleCase(neighData.ilce) }}</NuxtLink
-      >
+      <NuxtLink :to="`/adana/${districtSlug}`" class="hover:text-slate-900 transition-colors">{{
+        titleCase(neighData.ilce) }}</NuxtLink>
     </nav>
 
-    <div class="bg-white border border-slate-200 rounded-[2rem] p-8 md:p-12 shadow-sm">
-      <div class="text-center mb-10">
-        <div class="inline-flex p-3 bg-slate-50 rounded-2xl mb-6">
-          <MapPin class="w-6 h-6 text-slate-900" />
+    <div class="main-info-container">
+      <div class="main-info-title-container">
+        <div class="main-info-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
         </div>
-        <h1 class="text-4xl font-bold text-slate-900 mb-2 tracking-tight">
-          {{ titleCase(neighData.mahalle) }}
-        </h1>
-        <p class="text-slate-500 font-medium uppercase tracking-widest text-sm">
-          {{ titleCase(neighData.ilce) }}, Adana
-        </p>
+        <h1>{{ titleCase(neighData.mahalle) }}</h1>
+        <p class="main-info-subtitle">{{ titleCase(neighData.ilce) }}, Adana</p>
       </div>
 
-      <div class="bg-slate-50 rounded-3xl p-8 text-center relative overflow-hidden">
-        <div class="relative z-10">
-          <p class="text-xs font-bold text-slate-400 uppercase tracking-[0.3em] mb-4">
-            POSTA KODU
-          </p>
-          <div class="mono text-7xl font-bold text-slate-900 mb-8">
+      <div class="post-code-view-container">
+        <div class="sub-post-code-view-container">
+          <p>POSTA KODU</p>
+          <div class="postCode">
             {{ neighData.postaKodu }}
           </div>
-          <button
-            @click="copyToClipboard"
-            class="flex items-center gap-2 mx-auto px-8 py-4 rounded-2xl font-bold text-sm transition-all active:scale-95"
-            :class="
-              copied
-                ? 'bg-green-600 text-white'
-                : 'bg-slate-900 text-white hover:bg-slate-800'
-            "
-          >
-            <Check v-if="copied" class="w-4 h-4" />
-            <Copy v-else class="w-4 h-4" />
+          <button @click="copyToClipboard"
+            class="copy-btn active:scale-95"
+            :class="copied
+              ? 'green-btn'
+              : 'black-btn'
+              ">
+            <Check v-if="copied"/>
+            <Copy v-else />
             {{ copied ? "KOPYALANDI" : "KODU KOPYALA" }}
           </button>
         </div>
-        <div
-          class="absolute -bottom-10 -right-10 mono text-[12rem] font-black text-slate-200/50 select-none"
-        >
+        <div class="btn-bg">
           {{ String(neighData.postaKodu).substring(0, 2) }}
         </div>
       </div>
     </div>
 
-    <div class="mt-8 flex justify-center">
-      <button
-        @click="share"
-        class="flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-colors font-bold text-xs uppercase tracking-widest"
-      >
-        <Share2 class="w-4 h-4" /> PAYLAŞ
+    <div class="share-btn">
+      <button @click="share">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line></svg> PAYLAŞ
       </button>
     </div>
 
-    <div v-if="otherNeighborhoods.length" class="mt-10">
-      <h2 class="text-xl font-bold text-slate-900 mb-4">Bu ilçedeki diğer mahalleler</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <NuxtLink
-          v-for="neigh in otherNeighborhoods"
-          :key="neigh.slug"
-          :to="`/adana/${districtSlug}/${neigh.slug}`"
-          class="soft-card p-4 rounded-xl flex items-center justify-between"
-        >
+    <div v-if="otherNeighborhoods.length" class="other-neighborhoods">
+      <h2>Bu ilçedeki diğer mahalleler</h2>
+      <div class="neighborhoods-links-container">
+        <a v-for="neigh in otherNeighborhoods" :key="neigh.slug" :to="`/adana/${districtSlug}/${neigh.slug}`"
+          >
           <div>
-            <h3 class="font-semibold text-slate-900 text-sm">
+            <h3>
               {{ titleCase(neigh.name) }}
             </h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <p>
               {{ neigh.zipCode }}
             </p>
           </div>
-          <ChevronRight class="w-5 h-5 text-slate-300" />
-        </NuxtLink>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+        </a>
       </div>
     </div>
 
-    <div
-      v-if="neighData.map"
-      class="mt-12 bg-white border border-slate-200 rounded-[2rem] p-4 md:p-6 shadow-sm overflow-hidden"
-    >
-      <div class="mb-4 flex items-center gap-2 px-2">
+    <div v-if="neighData.map"
+      class="map-container">
+      <div class="map-title">
         <MapPin class="w-4 h-4 text-slate-400" />
-        <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wide">Konum</h3>
+        <h3>Konum</h3>
       </div>
-      <div
-        v-if="neighData.map.trim().startsWith('<')"
-        v-html="neighData.map"
-        class="w-full aspect-video rounded-2xl overflow-hidden [&>iframe]:w-full [&>iframe]:h-full"
-      ></div>
-      <iframe
-        v-else
-        :src="neighData.map"
-        class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100"
-        loading="lazy"
-      ></iframe>
+      <div v-if="neighData.map.trim().startsWith('<')" v-html="neighData.map"
+        class="map"></div>
+      <iframe v-else :src="neighData.map" class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100"
+        loading="lazy"></iframe>
     </div>
 
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">
+    <div class="page-text mt-8 text-center mb-8">
+      <h2>
         {{ neighData.postaKodu }} nerenin posta kodu?
       </h2>
-      <p class="text-slate-600">
+      <p>
         {{ neighData.postaKodu }} posta kodu Adana {{ titleCase(neighData.ilce) }}
         {{ titleCase(neighData.mahalle) }}'ne aittir.
       </p>
     </div>
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">
+    <div class="page-text">
+      <h2>
         {{ titleCase(neighData.ilce) }} {{ titleCase(neighData.mahalle) }} Posta Kodu
         Rehberi
       </h2>
-      <p class="text-slate-600">
+      <p>
         Adana {{ titleCase(neighData.ilce) }} {{ titleCase(neighData.mahalle) }}'ne ait
         güncel posta kodu bilgileri aşağıda yer almaktadır. Adres formlarında, kargo
         gönderilerinde ve resmi işlemlerde kullanabilirsiniz.
       </p>
       <br />
       <p>
-        <strong
-          >{{ titleCase(neighData.mahalle) }} Posta Kodu:
-          {{ neighData.postaKodu }}</strong
-        >
+        <strong>{{ titleCase(neighData.mahalle) }} Posta Kodu:
+          {{ neighData.postaKodu }}</strong>
       </p>
     </div>
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">
+    <div class="page-text">
+      <h2>
         Adres Yazımında Posta Kodunun Önemi
       </h2>
-      <p class="text-slate-600">
+      <p>
         Posta kodu, bir adresin en spesifik bileşenidir.
         {{ titleCase(neighData.mahalle) }} için tanımlanan
         {{ neighData.postaKodu }} numarasını kullanmak şu avantajları sağlar:
@@ -305,9 +269,9 @@ const share = () => {
         </li>
       </ul>
     </div>
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">Konum Ve Bölge Bilgileri</h2>
-      <p class="text-slate-600">
+    <div class="page-text">
+      <h2>Konum Ve Bölge Bilgileri</h2>
+      <p>
         {{ titleCase(neighData.mahalle) }}, Adana ilinin
         {{ titleCase(neighData.ilce) }} ilçesine bağlıdır. Posta kodunun ilk 2 hanesi il
         plaka kodunu, son 3 hanesi ise ilçe ve mahalle dağıtım bölgesini temsil eder.
@@ -321,9 +285,7 @@ const share = () => {
       <p class="text-sm mb-4">
         Aradığınız mahalle bilgisine ulaşılamadı. Lütfen adresi kontrol edin.
       </p>
-      <NuxtLink to="/adana" class="mt-6 inline-block text-red-700 underline"
-        >Adana Sayfasına Dön</NuxtLink
-      >
+      <NuxtLink to="/adana" class="mt-6 inline-block text-red-700 underline">Adana Sayfasına Dön</NuxtLink>
     </div>
   </div>
 </template>

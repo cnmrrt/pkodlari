@@ -45,9 +45,9 @@ def update_neighborhood_pages(root_dir):
             # So I will use exactly that.
             
             html_block = f"""
-<div class="mt-8 text-center mb-8">
-    <h2 class="text-xl font-bold text-slate-900 mb-2">{{{{ neighItem.zipCode }}}} nerenin posta kodu?</h2>
-    <p class="text-slate-600">{{{{ neighItem.zipCode }}}} posta kodu {city_name_expr} {{{{ titleCase(districtItem.name) }}}} {{{{ titleCase(neighItem.name) }}}}'ne aittir.</p>
+<div class="page-text">
+    <h2>{{{{ neighItem.zipCode }}}} nerenin posta kodu?</h2>
+    <p>{{{{ neighItem.zipCode }}}} posta kodu {city_name_expr} {{{{ titleCase(districtItem.name) }}}} {{{{ titleCase(neighItem.name) }}}}'ne aittir.</p>
 </div>"""
             
             # Find the last closing div of the main container.

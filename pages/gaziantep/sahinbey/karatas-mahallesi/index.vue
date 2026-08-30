@@ -107,10 +107,10 @@ const share = () => {
 </script>
 
 <template>
-  <div class="animate-in fade-in duration-500 max-w-2xl mx-auto">
+  <div class="main-content-neighborhood animate-in fade-in">
     <!-- Breadcrumbs -->
     <nav
-      class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-8 overflow-x-auto whitespace-nowrap pb-2"
+      class="breadcrumb"
     >
       <a href="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</a
       ><svg
@@ -144,9 +144,9 @@ const share = () => {
         >Şahinbey</a
       >
     </nav>
-    <div class="bg-white border border-slate-200 rounded-[2rem] p-8 md:p-12 shadow-sm">
-      <div class="text-center mb-10">
-        <div class="inline-flex p-3 bg-slate-50 rounded-2xl mb-6">
+    <div class="main-info-container">
+      <div class="main-info-title-container">
+        <div class="main-info-logo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -165,42 +165,42 @@ const share = () => {
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
         </div>
-        <h1 class="text-4xl font-bold text-slate-900 mb-2 tracking-tight">
+        <h1>
           Karataş Mahallesi
         </h1>
-        <p class="text-slate-500 font-medium uppercase tracking-widest text-sm">
+        <p class="main-info-subtitle">
           Şahinbey, Gaziantep
         </p>
       </div>
-      <div class="bg-slate-50 rounded-3xl p-8 text-center relative overflow-hidden">
-        <div class="relative z-10">
-          <p class="text-xs font-bold text-slate-400 uppercase tracking-[0.3em] mb-4">
+      <div class="post-code-view-container">
+        <div class="sub-post-code-view-container">
+          <p>
             POSTA KODU
           </p>
-          <div class="mono text-7xl font-bold text-slate-900 mb-8">27470</div>
+          <div class="postCode">27470</div>
           <button
             @click="copyToClipboard"
-            class="flex items-center gap-2 mx-auto px-8 py-4 rounded-2xl font-bold text-sm transition-all active:scale-95"
+            class="copy-btn active:scale-95"
             :class="
               copied
-                ? 'bg-green-600 text-white'
-                : 'bg-slate-900 text-white hover:bg-slate-800'
+                ? 'green-btn'
+                : 'black-btn'
             "
           >
-            <Check v-if="copied" class="w-4 h-4" />
-            <Copy v-else class="w-4 h-4" />
+            <Check v-if="copied"/>
+            <Copy v-else />
             {{ copied ? "KOPYALANDI" : "KODU KOPYALA" }}
           </button>
         </div>
         <!-- Decorative background number -->
         <div
-          class="absolute -bottom-10 -right-10 mono text-[12rem] font-black text-slate-200/50 select-none"
+          class="btn-bg"
         >
           27
         </div>
       </div>
     </div>
-    <div class="mt-8 flex justify-center">
+    <div class="share-btn">
       <button
         class="flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-colors font-bold text-xs uppercase tracking-widest"
       >
@@ -226,14 +226,13 @@ const share = () => {
       </button>
     </div>
     <div class="mt-10">
-      <h2 class="text-xl font-bold text-slate-900 mb-4">Bu ilçedeki diğer mahalleler</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <!--[--><a
+<h2>Bu ilçedeki diğer mahalleler</h2>      <div class="neighborhoods-links-container">
+        <a
           href="/gaziantep/sahinbey/23-nisan-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">23 Nisan Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>23 Nisan Mahallesi</h3>
+            <p>
               27070
             </p>
           </div>
@@ -247,15 +246,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/25-aralik-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">25 Aralık Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>25 Aralık Mahallesi</h3>
+            <p>
               27100
             </p>
           </div>
@@ -269,15 +268,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/60yil-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">60.Yıl Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>60.Yıl Mahallesi</h3>
+            <p>
               27070
             </p>
           </div>
@@ -291,15 +290,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/75yil-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">75.Yıl Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>75.Yıl Mahallesi</h3>
+            <p>
               27470
             </p>
           </div>
@@ -313,15 +312,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/abdulhamid-han-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Abdülhamid Han Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Abdülhamid Han Mahallesi</h3>
+            <p>
               27470
             </p>
           </div>
@@ -335,15 +334,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/akbayir-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Akbayır Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Akbayır Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -357,15 +356,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/akbulut-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Akbulut Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Akbulut Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -379,15 +378,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/akkent-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Akkent Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Akkent Mahallesi</h3>
+            <p>
               27470
             </p>
           </div>
@@ -401,15 +400,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/akpinar-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Akpınar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Akpınar Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -423,15 +422,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/akyazi-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Akyazı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Akyazı Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -445,15 +444,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/akyol-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Akyol Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Akyol Mahallesi</h3>
+            <p>
               27220
             </p>
           </div>
@@ -467,15 +466,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/alaybey-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Alaybey Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Alaybey Mahallesi</h3>
+            <p>
               27220
             </p>
           </div>
@@ -489,15 +488,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/alibaba-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Alibaba Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Alibaba Mahallesi</h3>
+            <p>
               27300
             </p>
           </div>
@@ -511,15 +510,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/alleben-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Alleben Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Alleben Mahallesi</h3>
+            <p>
               27220
             </p>
           </div>
@@ -533,15 +532,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/almali-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Almalı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Almalı Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -555,15 +554,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/aydinbaba-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Aydınbaba Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Aydınbaba Mahallesi</h3>
+            <p>
               27300
             </p>
           </div>
@@ -577,15 +576,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/baglarbasi-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Bağlarbaşı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Bağlarbaşı Mahallesi</h3>
+            <p>
               27470
             </p>
           </div>
@@ -599,15 +598,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/bahcelievler-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Bahçelievler Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Bahçelievler Mahallesi</h3>
+            <p>
               27220
             </p>
           </div>
@@ -621,15 +620,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/barak-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Barak Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Barak Mahallesi</h3>
+            <p>
               27100
             </p>
           </div>
@@ -643,15 +642,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/bayramli-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Bayramlı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Bayramlı Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -665,15 +664,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/bekirbey-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Bekirbey Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Bekirbey Mahallesi</h3>
+            <p>
               27400
             </p>
           </div>
@@ -687,15 +686,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/bekisli-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Bekişli Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Bekişli Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -709,15 +708,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/belenkoy-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Belenköy Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Belenköy Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -731,15 +730,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/beskuyu-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Beşkuyu Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Beşkuyu Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -753,15 +752,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/bestepe-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Beştepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Beştepe Mahallesi</h3>
+            <p>
               27470
             </p>
           </div>
@@ -775,15 +774,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/bey-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Bey Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Bey Mahallesi</h3>
+            <p>
               27220
             </p>
           </div>
@@ -797,15 +796,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/beyazlar-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Beyazlar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Beyazlar Mahallesi</h3>
+            <p>
               27070
             </p>
           </div>
@@ -819,15 +818,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/beydilli-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Beydilli Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Beydilli Mahallesi</h3>
+            <p>
               27300
             </p>
           </div>
@@ -841,15 +840,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/binevler-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Binevler Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Binevler Mahallesi</h3>
+            <p>
               27070
             </p>
           </div>
@@ -863,15 +862,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/bostancik-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Bostancık Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Bostancık Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -885,15 +884,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/boyaci-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Boyacı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Boyacı Mahallesi</h3>
+            <p>
               27400
             </p>
           </div>
@@ -907,15 +906,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/bozca-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Bozca Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Bozca Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -929,15 +928,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/bozoklar-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Bozoklar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Bozoklar Mahallesi</h3>
+            <p>
               27100
             </p>
           </div>
@@ -951,15 +950,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/burc-esentepe-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Burç Esentepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Burç Esentepe Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -973,15 +972,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/burc-karakuyu-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Burç Karakuyu Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Burç Karakuyu Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -995,15 +994,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/bulbulzade-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Bülbülzade Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Bülbülzade Mahallesi</h3>
+            <p>
               27470
             </p>
           </div>
@@ -1017,15 +1016,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/cabi-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Cabi Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Cabi Mahallesi</h3>
+            <p>
               27400
             </p>
           </div>
@@ -1039,15 +1038,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/cebeler-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Cebeler Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Cebeler Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1061,15 +1060,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/cengiz-topel-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Cengiz Topel Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Cengiz Topel Mahallesi</h3>
+            <p>
               27300
             </p>
           </div>
@@ -1083,15 +1082,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/cevizli-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Cevizli Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Cevizli Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1105,15 +1104,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/cumhuriyet-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Cumhuriyet Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Cumhuriyet Mahallesi</h3>
+            <p>
               27200
             </p>
           </div>
@@ -1127,15 +1126,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/cagdas-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Çağdaş Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Çağdaş Mahallesi</h3>
+            <p>
               27070
             </p>
           </div>
@@ -1149,15 +1148,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/camlica-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Çamlıca Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Çamlıca Mahallesi</h3>
+            <p>
               27200
             </p>
           </div>
@@ -1171,15 +1170,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/camtepe-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Çamtepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Çamtepe Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1193,15 +1192,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/capali-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Çapalı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Çapalı Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1215,15 +1214,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/cevreli-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Çevreli Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Çevreli Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1237,15 +1236,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/cimenli-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Çimenli Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Çimenli Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1259,15 +1258,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/coreklik-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Çöreklik Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Çöreklik Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1281,15 +1280,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/cubukdiken-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Çubukdiken Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Çubukdiken Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1303,15 +1302,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/damlacik-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Damlacık Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Damlacık Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1325,15 +1324,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/deniz-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Deniz Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Deniz Mahallesi</h3>
+            <p>
               27070
             </p>
           </div>
@@ -1347,15 +1346,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/dereduzu-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Deredüzü Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Deredüzü Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1369,15 +1368,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/doganca-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Doğanca Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Doğanca Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1391,15 +1390,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/dokur-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Dokur Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Dokur Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1413,15 +1412,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/dumlupinar-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Dumlupınar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Dumlupınar Mahallesi</h3>
+            <p>
               27300
             </p>
           </div>
@@ -1435,15 +1434,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/durantas-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Durantaş Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Durantaş Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1457,15 +1456,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/duztepe-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Düztepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Düztepe Mahallesi</h3>
+            <p>
               27300
             </p>
           </div>
@@ -1479,15 +1478,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/ekinli-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Ekinli Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Ekinli Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1501,15 +1500,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/ertugrulgazi-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Ertuğrulgazi Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Ertuğrulgazi Mahallesi</h3>
+            <p>
               27470
             </p>
           </div>
@@ -1523,15 +1522,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/firat-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Fırat Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Fırat Mahallesi</h3>
+            <p>
               27100
             </p>
           </div>
@@ -1545,15 +1544,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/fidanlik-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Fidanlık Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Fidanlık Mahallesi</h3>
+            <p>
               27070
             </p>
           </div>
@@ -1567,15 +1566,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/gazitepe-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Gazitepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Gazitepe Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1589,15 +1588,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/geneyik-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Geneyik Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Geneyik Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1611,15 +1610,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/gercigin-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Gerciğin Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Gerciğin Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1633,15 +1632,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/geylani-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Geylani Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Geylani Mahallesi</h3>
+            <p>
               27470
             </p>
           </div>
@@ -1655,15 +1654,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/gulluce-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Güllüce Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Güllüce Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1677,15 +1676,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/gulpinar-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Gülpınar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Gülpınar Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1699,15 +1698,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/gumustekin-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Gümüştekin Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Gümüştekin Mahallesi</h3>
+            <p>
               27200
             </p>
           </div>
@@ -1721,15 +1720,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/gunes-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Güneş Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Güneş Mahallesi</h3>
+            <p>
               27470
             </p>
           </div>
@@ -1743,15 +1742,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/guneykent-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Güneykent Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Güneykent Mahallesi</h3>
+            <p>
               27470
             </p>
           </div>
@@ -1765,15 +1764,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/guzelvadi-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Güzelvadi Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Güzelvadi Mahallesi</h3>
+            <p>
               27300
             </p>
           </div>
@@ -1787,15 +1786,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/hacikopru-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Hacıköprü Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Hacıköprü Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1809,15 +1808,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/hacikoy-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Hacıköy Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Hacıköy Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1831,15 +1830,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/hosgor-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Hoşgör Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Hoşgör Mahallesi</h3>
+            <p>
               27200
             </p>
           </div>
@@ -1853,15 +1852,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/ibn-i-sina-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">İbn-İ Sina Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>İbn-İ Sina Mahallesi</h3>
+            <p>
               27470
             </p>
           </div>
@@ -1875,15 +1874,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/inonu-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">İnönü Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>İnönü Mahallesi</h3>
+            <p>
               27300
             </p>
           </div>
@@ -1897,15 +1896,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/istiklal-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">İstiklal Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>İstiklal Mahallesi</h3>
+            <p>
               27070
             </p>
           </div>
@@ -1919,15 +1918,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kabarcik-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kabarcık Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Kabarcık Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1941,15 +1940,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kahvelipinar-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kahvelipınar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Kahvelipınar Mahallesi</h3>
+            <p>
               27200
             </p>
           </div>
@@ -1963,15 +1962,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kale-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kale Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Kale Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -1985,15 +1984,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kaleboynu-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kaleboynu Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Kaleboynu Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2007,15 +2006,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kapcagiz-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kapçağız Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Kapçağız Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2029,15 +2028,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/karacomak-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Karaçomak Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Karaçomak Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2051,15 +2050,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/karagoz-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Karagöz Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Karagöz Mahallesi</h3>
+            <p>
               27400
             </p>
           </div>
@@ -2073,15 +2072,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/karayilan-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Karayılan Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Karayılan Mahallesi</h3>
+            <p>
               27300
             </p>
           </div>
@@ -2095,15 +2094,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kavaklik-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kavaklık Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Kavaklık Mahallesi</h3>
+            <p>
               27070
             </p>
           </div>
@@ -2117,15 +2116,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kavsak-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kavşak Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Kavşak Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2139,15 +2138,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kazikli-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kazıklı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Kazıklı Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2161,15 +2160,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kepenek-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kepenek Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Kepenek Mahallesi</h3>
+            <p>
               27400
             </p>
           </div>
@@ -2183,15 +2182,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kerer-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kerer Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Kerer Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2205,15 +2204,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kibris-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kıbrıs Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Kıbrıs Mahallesi</h3>
+            <p>
               27200
             </p>
           </div>
@@ -2227,15 +2226,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kilincoglu-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kılınçoğlu Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Kılınçoğlu Mahallesi</h3>
+            <p>
               27300
             </p>
           </div>
@@ -2249,15 +2248,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/killik-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Killik Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Killik Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2271,15 +2270,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kolejtepe-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kolejtepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Kolejtepe Mahallesi</h3>
+            <p>
               27070
             </p>
           </div>
@@ -2293,15 +2292,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/konak-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Konak Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Konak Mahallesi</h3>
+            <p>
               27070
             </p>
           </div>
@@ -2315,15 +2314,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kozluca-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kozluca Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Kozluca Mahallesi</h3>
+            <p>
               27400
             </p>
           </div>
@@ -2337,17 +2336,17 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kumruhamurkesen-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">
+            <h3>
               Kumruhamurkesen Mahallesi
             </h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <p>
               27010
             </p>
           </div>
@@ -2361,15 +2360,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kurbanbaba-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kurbanbaba Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Kurbanbaba Mahallesi</h3>
+            <p>
               27200
             </p>
           </div>
@@ -2383,15 +2382,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kuscu-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kuşçu Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Kuşçu Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2405,17 +2404,17 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kucukkizilhisar-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">
+            <h3>
               Küçükkızılhisar Mahallesi
             </h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <p>
               27470
             </p>
           </div>
@@ -2429,15 +2428,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kulecik-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Külecik Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Külecik Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2451,15 +2450,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/kurum-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Kürüm Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Kürüm Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2473,15 +2472,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/malazgirt-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Malazgirt Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Malazgirt Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2495,15 +2494,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/mavikent-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Mavikent Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Mavikent Mahallesi</h3>
+            <p>
               27470
             </p>
           </div>
@@ -2517,15 +2516,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/mimar-sinan-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Mimar Sinan Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Mimar Sinan Mahallesi</h3>
+            <p>
               27070
             </p>
           </div>
@@ -2539,15 +2538,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/morcali-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Morcalı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Morcalı Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2561,15 +2560,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/muhacirosman-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Muhacirosman Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Muhacirosman Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2583,15 +2582,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/narlica-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Narlıca Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Narlıca Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2605,15 +2604,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/narlitepe-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Narlıtepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Narlıtepe Mahallesi</h3>
+            <p>
               27100
             </p>
           </div>
@@ -2627,15 +2626,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/nuripazarbasi-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Nuripazarbaşı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Nuripazarbaşı Mahallesi</h3>
+            <p>
               27200
             </p>
           </div>
@@ -2649,15 +2648,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/ocaklar-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Ocaklar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Ocaklar Mahallesi</h3>
+            <p>
               27100
             </p>
           </div>
@@ -2671,15 +2670,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/onur-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Onur Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Onur Mahallesi</h3>
+            <p>
               27200
             </p>
           </div>
@@ -2693,15 +2692,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/ortaklar-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Ortaklar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Ortaklar Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2715,15 +2714,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/osmanli-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Osmanlı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Osmanlı Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2737,15 +2736,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/ozanli-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Ozanlı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Ozanlı Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2759,15 +2758,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/ogretmenevleri-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Öğretmenevleri Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Öğretmenevleri Mahallesi</h3>
+            <p>
               27070
             </p>
           </div>
@@ -2781,15 +2780,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/perilikaya-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Perilikaya Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Perilikaya Mahallesi</h3>
+            <p>
               27100
             </p>
           </div>
@@ -2803,15 +2802,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/sacakli-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Saçaklı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Saçaklı Mahallesi</h3>
+            <p>
               27300
             </p>
           </div>
@@ -2825,15 +2824,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/saribasak-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Sarıbaşak Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Sarıbaşak Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2847,15 +2846,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/sarikaya-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Sarıkaya Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Sarıkaya Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2869,15 +2868,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/sarisalkim-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Sarısalkım Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Sarısalkım Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2891,15 +2890,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/sarit-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Sarıt Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Sarıt Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2913,15 +2912,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/savcili-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Savcılı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Savcılı Mahallesi</h3>
+            <p>
               27200
             </p>
           </div>
@@ -2935,15 +2934,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/selcuklu-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Selçuklu Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Selçuklu Mahallesi</h3>
+            <p>
               27470
             </p>
           </div>
@@ -2957,15 +2956,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/serince-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Serince Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Serince Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -2979,15 +2978,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/serinevler-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Serinevler Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Serinevler Mahallesi</h3>
+            <p>
               27100
             </p>
           </div>
@@ -3001,15 +3000,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/sirasogut-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Sırasöğüt Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Sırasöğüt Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -3023,15 +3022,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/sultan-selim-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Sultan Selim Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Sultan Selim Mahallesi</h3>
+            <p>
               27300
             </p>
           </div>
@@ -3045,15 +3044,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/suyabatmaz-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Suyabatmaz Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Suyabatmaz Mahallesi</h3>
+            <p>
               27400
             </p>
           </div>
@@ -3067,15 +3066,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/sahinbey-mulk-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Şahinbey Mülk Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Şahinbey Mülk Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -3089,15 +3088,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/sahintepe-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Şahintepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Şahintepe Mahallesi</h3>
+            <p>
               27470
             </p>
           </div>
@@ -3111,15 +3110,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/sahveli-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Şahveli Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Şahveli Mahallesi</h3>
+            <p>
               27220
             </p>
           </div>
@@ -3133,15 +3132,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/senyurt-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Şenyurt Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Şenyurt Mahallesi</h3>
+            <p>
               27300
             </p>
           </div>
@@ -3155,15 +3154,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/tekstilkent-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Tekstilkent Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Tekstilkent Mahallesi</h3>
+            <p>
               27100
             </p>
           </div>
@@ -3177,15 +3176,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/tiyekli-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Tiyekli Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Tiyekli Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -3199,15 +3198,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/toreli-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Töreli Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Töreli Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -3221,15 +3220,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/turkmenler-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Türkmenler Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Türkmenler Mahallesi</h3>
+            <p>
               27300
             </p>
           </div>
@@ -3243,15 +3242,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/turkozu-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Türközü Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Türközü Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -3265,15 +3264,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/turktepe-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Türktepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Türktepe Mahallesi</h3>
+            <p>
               27400
             </p>
           </div>
@@ -3287,15 +3286,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/ufacik-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Ufacık Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Ufacık Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -3309,15 +3308,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/ugurtepe-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Uğurtepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Uğurtepe Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -3331,15 +3330,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/ulas-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Ulaş Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Ulaş Mahallesi</h3>
+            <p>
               27200
             </p>
           </div>
@@ -3353,15 +3352,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/ucoklar-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Üçoklar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Üçoklar Mahallesi</h3>
+            <p>
               27100
             </p>
           </div>
@@ -3375,15 +3374,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/unaldi-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Ünaldı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Ünaldı Mahallesi</h3>
+            <p>
               27300
             </p>
           </div>
@@ -3397,15 +3396,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/vatan-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Vatan Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Vatan Mahallesi</h3>
+            <p>
               27100
             </p>
           </div>
@@ -3419,15 +3418,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/yagdover-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yağdöver Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Yağdöver Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -3441,15 +3440,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/yamactepe-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yamaçtepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Yamaçtepe Mahallesi</h3>
+            <p>
               27470
             </p>
           </div>
@@ -3463,15 +3462,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/yavuzlar-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yavuzlar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Yavuzlar Mahallesi</h3>
+            <p>
               27300
             </p>
           </div>
@@ -3485,15 +3484,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/yayci-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yaycı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Yaycı Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -3507,15 +3506,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/yaylacik-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yaylacık Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Yaylacık Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -3529,15 +3528,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/yazibagi-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yazıbağı Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Yazıbağı Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -3551,15 +3550,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/yazicik-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yazıcık Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Yazıcık Mahallesi</h3>
+            <p>
               27400
             </p>
           </div>
@@ -3573,15 +3572,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/yeditepe-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yeditepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Yeditepe Mahallesi</h3>
+            <p>
               27470
             </p>
           </div>
@@ -3595,15 +3594,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/yenikoy-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yeniköy Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Yeniköy Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -3617,15 +3616,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/yesilevler-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yeşilevler Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Yeşilevler Mahallesi</h3>
+            <p>
               27070
             </p>
           </div>
@@ -3639,15 +3638,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/yesilkent-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yeşilkent Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Yeşilkent Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -3661,15 +3660,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/yesilkoy-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yeşilköy Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Yeşilköy Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -3683,15 +3682,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/yesilpinar-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yeşilpınar Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Yeşilpınar Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -3705,15 +3704,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/yesilyurt-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yeşilyurt Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Yeşilyurt Mahallesi</h3>
+            <p>
               27470
             </p>
           </div>
@@ -3727,15 +3726,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/yigmatepe-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yığmatepe Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Yığmatepe Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -3749,15 +3748,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/yoguntas-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yoğuntaş Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Yoğuntaş Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -3771,15 +3770,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/yukaribayir-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Yukarıbayır Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Yukarıbayır Mahallesi</h3>
+            <p>
               27200
             </p>
           </div>
@@ -3793,15 +3792,15 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
         ><a
           href="/gaziantep/sahinbey/zeytinli-mahallesi"
           class="soft-card p-4 rounded-xl flex items-center justify-between"
           ><div>
-            <h3 class="font-semibold text-slate-900 text-sm">Zeytinli Mahallesi</h3>
-            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <h3>Zeytinli Mahallesi</h3>
+            <p>
               27010
             </p>
           </div>
@@ -3815,16 +3814,16 @@ const share = () => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+            
           >
             <path d="m9 18 6-6-6-6"></path></svg></a
-        ><!--]-->
+        >
       </div>
     </div>
     <div
-      class="mt-12 bg-white border border-slate-200 rounded-[2rem] p-4 md:p-6 shadow-sm overflow-hidden"
+      class="map-container"
     >
-      <div class="mb-4 flex items-center gap-2 px-2">
+      <div class="map-title">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -3842,7 +3841,7 @@ const share = () => {
           ></path>
           <circle cx="12" cy="10" r="3"></circle>
         </svg>
-        <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wide">Konum</h3>
+        <h3>Konum</h3>
       </div>
       <div
         class="w-full aspect-video rounded-2xl overflow-hidden [&amp;&gt;iframe]:w-full [&amp;&gt;iframe]:h-full"
@@ -3858,17 +3857,17 @@ const share = () => {
         ></iframe>
       </div>
     </div>
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">27470 nerenin posta kodu?</h2>
-      <p class="text-slate-600">
+    <div class="page-text">
+      <h2>27470 nerenin posta kodu?</h2>
+      <p>
         27470 posta kodu Gaziantep Şahinbey Karataş Mahallesi'ne aittir.
       </p>
     </div>
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">
+    <div class="page-text">
+      <h2>
         Şahinbey Karataş Mahallesi Posta Kodu Rehberi
       </h2>
-      <p class="text-slate-600">
+      <p>
         Gaziantep Şahinbey Karataş Mahallesi'ne ait güncel posta kodu bilgileri aşağıda
         yer almaktadır. Adres formlarında, kargo gönderilerinde ve resmi işlemlerde hata
         payını sıfıra indirmek için bu kodu kullanabilirsiniz.
@@ -3876,11 +3875,11 @@ const share = () => {
       <br />
       <p><strong>Karataş Mahallesi Posta Kodu: 27470</strong></p>
     </div>
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">
+    <div class="page-text">
+      <h2>
         Adres Yazımında Posta Kodunun Önemi
       </h2>
-      <p class="text-slate-600">
+      <p>
         Posta kodu, bir adresin en spesifik bileşenidir. Karataş Mahallesi için tanımlanan
         27470 numarasını kullanmak şu avantajları sağlar:
       </p>
@@ -3900,9 +3899,9 @@ const share = () => {
         </li>
       </ul>
     </div>
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">Konum Ve Bölge Bilgileri</h2>
-      <p class="text-slate-600">
+    <div class="page-text">
+      <h2>Konum Ve Bölge Bilgileri</h2>
+      <p>
         Karataş Mahallesi, Gaziantep ilinin Şahinbey ilçesine bağlıdır. Posta kodu yapısı
         incelendiğinde ;
       </p>

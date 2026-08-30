@@ -112,7 +112,7 @@ usePageSeo({
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="districts">
       <div
         v-for="item in cityList"
         :key="item.name"
@@ -120,7 +120,7 @@ usePageSeo({
       >
         <div>
           <h2 class="font-semibold text-slate-900 text-sm">{{ item.name }}</h2>
-          <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-wider">
+          <p>
             Telefon kodu
           </p>
         </div>

@@ -1,56 +1,59 @@
 <script setup lang="ts">
-import { inject, computed, ref } from "vue";
-import type { Ref } from "vue";
-import { ArrowLeft, Search, ChevronRight, MapPin } from "lucide-vue-next";
-import type { PostalData } from "~/types";
+import { computed, ref } from 'vue';
+import { ArrowLeft, Search, ChevronRight, MapPin } from 'lucide-vue-next';
+import { buildCityItemFromJson } from '~/utils/cityJson';
 
 const route = useRoute();
-const postalData = inject<Ref<PostalData | null>>("postalData");
-const filter = ref("");
+const filter = ref('');
 
 const citySlug = computed(() => route.params.city as string);
 const districtSlug = computed(() => route.params.district as string);
 
-const cityItem = computed(() => postalData?.value?.[citySlug.value]);
+const { data: cityJson } = await useAsyncData(
+  () => `city-data-${citySlug.value}`,
+  () => $fetch<any[]>(`/api/data/${citySlug.value}`)
+);
+
+const cityItem = computed(() => (cityJson.value ? buildCityItemFromJson(cityJson.value) : null));
 const districtItem = computed(() => cityItem.value?.districts[districtSlug.value]);
 
 const pageTitle = computed(() =>
   districtItem.value
     ? `${titleCase(districtItem.value.name)} Posta Kodları`
-    : "İlçe Bulunamadı"
+    : 'İlçe Bulunamadı'
 );
 const pageDesc = computed(() => {
-  if (!cityItem.value || !districtItem.value) return "Posta Kodu Rehberi";
+  if (!cityItem.value || !districtItem.value) return 'Posta Kodu Rehberi';
   return `${titleCase(cityItem.value.name)} ilinin ${titleCase(
     districtItem.value.name
   )} ilçesine bağlı mahallelerin posta kodlarını görmek için tıklayın!`;
 });
 useHead({
   title: pageTitle,
-  meta: [{ name: "description", content: pageDesc }],
+  meta: [{ name: 'description', content: pageDesc }],
   script: [
     computed(() => {
       if (!cityItem.value || !districtItem.value) return {};
       return {
-        type: "application/ld+json",
+        type: 'application/ld+json',
         children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
           itemListElement: [
             {
-              "@type": "ListItem",
+              '@type': 'ListItem',
               position: 1,
-              name: "Anasayfa",
+              name: 'Anasayfa',
               item: `https://pkodlari.com/`,
             },
             {
-              "@type": "ListItem",
+              '@type': 'ListItem',
               position: 2,
               name: titleCase(cityItem.value.name),
               item: `https://pkodlari.com/${citySlug.value}`,
             },
             {
-              "@type": "ListItem",
+              '@type': 'ListItem',
               position: 3,
               name: titleCase(districtItem.value.name),
               item: `https://pkodlari.com/${citySlug.value}/${districtSlug.value}`,
@@ -70,50 +73,50 @@ const neighs = computed(() => {
   const items = Object.entries(districtItem.value!.neighborhoods);
   return items
     .filter(([, n]) =>
-      n.name.toLocaleLowerCase("tr").includes(filter.value.toLocaleLowerCase("tr"))
+      n.name.toLocaleLowerCase('tr').includes(filter.value.toLocaleLowerCase('tr'))
     )
-    .sort(([, a], [, b]) => a.name.localeCompare(b.name, "tr"));
+    .sort(([, a], [, b]) => a.name.localeCompare(b.name, 'tr'));
 });
 </script>
 
 <template>
   <div v-if="isValid" class="animate-in fade-in duration-500 max-w-4xl mx-auto">
-    <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
-      <div class="flex items-center gap-4">
+    <div class="header">
+      <div class="districtTitleContainer">
         <NuxtLink
           :to="`/${citySlug}`"
-          class="text-slate-400 hover:text-slate-900 transition-colors"
+          
           ><ArrowLeft class="w-5 h-5"
         /></NuxtLink>
         <div>
-          <h1 class="text-3xl font-bold text-slate-900 tracking-tight">
+          <h1>
             {{ titleCase(districtItem.name) }} Posta Kodları
           </h1>
-          <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">
+          <p>
             {{ titleCase(cityItem.name) }}
           </p>
         </div>
       </div>
-      <div class="relative w-full md:w-64">
-        <Search class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+      <div class="neighborhood-search-container">
+        <Search />
         <input
           type="text"
           placeholder="Mahallelerde ara..."
-          class="w-full pl-9 pr-4 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-slate-400 transition-all text-sm"
+          
           v-model="filter"
         />
       </div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div class="neighborhoods-links-container">
       <NuxtLink
         v-for="[nSlug, nItem] in neighs"
         :key="nSlug"
         :to="`/${citySlug}/${districtSlug}/${nSlug}`"
-        class="soft-card p-5 flex items-center justify-between group"
+        
       >
-        <div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        <div class="mahalle-name">
+          <h4>
             {{ titleCase(nItem.name) }}
           </h4>
           <p
@@ -122,13 +125,13 @@ const neighs = computed(() => {
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >{{ nItem.zipCode }}</span
           >
           <ChevronRight
-            class="w-4 h-4 text-slate-300 group-hover:text-slate-500 transition-colors"
+           
           />
         </div>
       </NuxtLink>
@@ -142,16 +145,16 @@ const neighs = computed(() => {
 
     <div
       v-if="districtItem.mapCode"
-      class="mt-12 bg-white border border-slate-200 rounded-[2rem] p-4 md:p-6 shadow-sm overflow-hidden"
+      class="map-container"
     >
-      <div class="mb-4 flex items-center gap-2 px-2">
+      <div class="map-title">
         <MapPin class="w-4 h-4 text-slate-400" />
-        <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wide">Konum</h3>
+        <h3>Konum</h3>
       </div>
       <div
         v-if="districtItem.mapCode.trim().startsWith('<')"
         v-html="districtItem.mapCode"
-        class="w-full aspect-video rounded-2xl overflow-hidden [&>iframe]:w-full [&>iframe]:h-full"
+        class="map"
       ></div>
       <iframe
         v-else

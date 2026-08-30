@@ -1,0 +1,37 @@
+[
+  {
+    "il": "İstanbul",
+    "ilce": "Adalar",
+    "mahalle": "Burgazada Mahallesi",
+    "postaKodu": "34975",
+    "semt": "Burgazada"
+  },
+  {
+    "il": "İstanbul",
+    "ilce": "Adalar",
+    "mahalle": "Heybeliada Mahallesi",
+    "postaKodu": "34973",
+    "semt": "Heybeliada"
+  },
+  {
+    "il": "İstanbul",
+    "ilce": "Adalar",
+    "mahalle": "Kınalıada Mahallesi",
+    "postaKodu": "34977",
+    "semt": "Kınalıada"
+  },
+  {
+    "il": "İstanbul",
+    "ilce": "Adalar",
+    "mahalle": "Maden Mahallesi",
+    "postaKodu": "34970",
+    "semt": "Büyükada"
+  },
+  {
+    "il": "İstanbul",
+    "ilce": "Adalar",
+    "mahalle": "Nizam Mahallesi",
+    "postaKodu": "34970",
+    "semt": "Büyükada"
+  }
+]

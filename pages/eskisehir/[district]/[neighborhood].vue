@@ -109,10 +109,10 @@ url: window.location.href,
 </script>
 
 <template>
-<div v-if="isValid" class="animate-in fade-in duration-500 max-w-2xl mx-auto">
+<div v-if="isValid" class="main-content-neighborhood animate-in fade-in">
 <!-- Breadcrumbs -->
 <nav
-class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-8 overflow-x-auto whitespace-nowrap pb-2">
+class="breadcrumb">
 <NuxtLink to="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</NuxtLink>
 <ChevronRight class="w-3 h-3" />
 <NuxtLink to="/eskisehir" class="hover:text-slate-900 transition-colors">ESKİŞEHİR</NuxtLink>
@@ -121,79 +121,79 @@ class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracki
 titleCase(neighData.ilce) }}</NuxtLink>
 </nav>
 
-<div class="bg-white border border-slate-200 rounded-[2rem] p-8 md:p-12 shadow-sm">
-<div class="text-center mb-10">
-<div class="inline-flex p-3 bg-slate-50 rounded-2xl mb-6">
-<MapPin class="w-6 h-6 text-slate-900" />
+<div class="main-info-container">
+<div class="main-info-title-container">
+<div class="main-info-logo">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
 </div>
-<h1 class="text-4xl font-bold text-slate-900 mb-2 tracking-tight">{{ titleCase(neighData.mahalle) }}</h1>
-<p class="text-slate-500 font-medium uppercase tracking-widest text-sm">{{ titleCase(neighData.ilce)
+<h1>{{ titleCase(neighData.mahalle) }}</h1>
+<p class="main-info-subtitle">{{ titleCase(neighData.ilce)
 }}, Eskişehir</p>
 </div>
 
-<div class="bg-slate-50 rounded-3xl p-8 text-center relative overflow-hidden">
-<div class="relative z-10">
-<p class="text-xs font-bold text-slate-400 uppercase tracking-[0.3em] mb-4">POSTA KODU</p>
-<div class="mono text-7xl font-bold text-slate-900 mb-8">{{ neighData.postaKodu }}</div>
+<div class="post-code-view-container">
+<div class="sub-post-code-view-container">
+<p>POSTA KODU</p>
+<div class="postCode">{{ neighData.postaKodu }}</div>
 <button @click="copyToClipboard"
-class="flex items-center gap-2 mx-auto px-8 py-4 rounded-2xl font-bold text-sm transition-all active:scale-95"
-:class="copied ? 'bg-green-600 text-white' : 'bg-slate-900 text-white hover:bg-slate-800'">
-<Check v-if="copied" class="w-4 h-4" />
-<Copy v-else class="w-4 h-4" />
+class="copy-btn active:scale-95"
+:class="copied ? 'green-btn' : 'black-btn'">
+<Check v-if="copied"/>
+<Copy v-else />
 {{ copied ? 'KOPYALANDI' : 'KODU KOPYALA' }}
 </button>
 </div>
 <!-- Decorative background number -->
-<div class="absolute -bottom-10 -right-10 mono text-[12rem] font-black text-slate-200/50 select-none">
+<div class="btn-bg">
 {{ neighData.postaKodu.substring(0, 2) }}
 </div>
 </div>
 </div>
 
-<div class="mt-8 flex justify-center">
-<button @click="share"
-class="flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-colors font-bold text-xs uppercase tracking-widest">
+<div class="share-btn">
+<button @click="share">
+
 <Share2 class="w-4 h-4" /> PAYLAŞ
 </button>
 </div>
 
 <div v-if="neighData.map"
-class="mt-12 bg-white border border-slate-200 rounded-[2rem] p-4 md:p-6 shadow-sm overflow-hidden">
-<div class="mb-4 flex items-center gap-2 px-2">
+class="map-container">
+<div class="map-title">
 <MapPin class="w-4 h-4 text-slate-400" />
-<h3 class="font-bold text-slate-900 text-sm uppercase tracking-wide">Konum</h3>
+<h3>Konum</h3>
 </div>
 <div v-if="neighData.map.trim().startsWith('<')" v-html="neighData.map"
-class="w-full aspect-video rounded-2xl overflow-hidden [&>iframe]:w-full [&>iframe]:h-full"></div>
+class="map"></div>
 <iframe v-else :src="neighData.map" class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100"
 loading="lazy"></iframe>
 </div>
 
-<div class="mt-8 text-center mb-8">
-<h2 class="text-xl font-bold text-slate-900 mb-2">{{ neighData.postaKodu }} nerenin posta kodu?</h2>
-<p class="text-slate-600">{{ neighData.postaKodu }} posta kodu Eskişehir {{
+<div class="page-text">
+<h2>{{ neighData.postaKodu }} nerenin posta kodu?</h2>
+<p>{{ neighData.postaKodu }} posta kodu Eskişehir {{
 titleCase(neighData.ilce) }} {{ titleCase(neighData.mahalle) }}'ne aittir.</p>
 </div>
-<div class="mt-8 text-center mb-8">
-<h2 class="text-xl font-bold text-slate-900 mb-2"> {{
+<div class="page-text">
+<h2> {{
 titleCase(neighData.ilce) }} {{ titleCase(neighData.mahalle) }} Posta Kodu Rehberi</h2>
-<p class="text-slate-600">Eskişehir {{
+<p>Eskişehir {{
 titleCase(neighData.ilce) }} {{ titleCase(neighData.mahalle) }}'ne ait güncel posta kodu bilgileri aşağıda yer almaktadır. Adres formlarında, kargo gönderilerinde ve resmi işlemlerde hata payını sıfıra indirmek için bu kodu kullanabilirsiniz.</p>
 <br>
 <p><strong>{{ titleCase(neighData.mahalle) }} Posta Kodu: {{ neighData.postaKodu }}</strong></p>
 </div>
-<div class="mt-8 text-center mb-8">
-<h2 class="text-xl font-bold text-slate-900 mb-2">Adres Yazımında Posta Kodunun Önemi</h2>
-<p class="text-slate-600">Posta kodu, bir adresin en spesifik bileşenidir. {{ titleCase(neighData.mahalle) }} için tanımlanan {{ neighData.postaKodu }} numarasını kullanmak şu aeskisehirtajları sağlar:</p>
+<div class="page-text">
+<h2>Adres Yazımında Posta Kodunun Önemi</h2>
+<p>Posta kodu, bir adresin en spesifik bileşenidir. {{ titleCase(neighData.mahalle) }} için tanımlanan {{ neighData.postaKodu }} numarasını kullanmak şu aeskisehirtajları sağlar:</p>
 <ul>
 <li><b>Sıralama Hızı:</b> PTT ve özel kargo şirketlerinin otomatik ayrıştırma makineleri, gönderinizi adresten önce posta koduna göre sınıflandırır.</li>
 <li><b>Yanlış Teslimat Önleme:</b> Türkiye genelinde aynı ismi taşıyan yüzlerce mahalle bulunmaktadır. Doğru kod, gönderinizin başka bir şehirdeki adaş mahalleye gitmesini engeller.</li>
 <li><b>Dijital Doğruluk:</b> Bankacılık ve e-devlet sistemlerinde adres teyidi yapılırken sistemler genellikle bu kodu baz alır.</li>
 </ul>
 </div>
-<div class="mt-8 text-center mb-8">
-<h2 class="text-xl font-bold text-slate-900 mb-2">Konum Ve Bölge Bilgileri</h2>
-<p class="text-slate-600">{{ titleCase(neighData.mahalle) }}, Eskişehir ilinin {{ titleCase(neighData.ilce) }} ilçesine bağlıdır. Posta kodu yapısı incelendiğinde                                                                                              ;</p>
+<div class="page-text">
+<h2>Konum Ve Bölge Bilgileri</h2>
+<p>{{ titleCase(neighData.mahalle) }}, Eskişehir ilinin {{ titleCase(neighData.ilce) }} ilçesine bağlıdır. Posta kodu yapısı incelendiğinde                                                                                              ;</p>
 <ol>
 <li>İlk 2 hane il plaka kodunu temsil eder.</li>
 <li>Son 3 hane ilçe içerisindeki dağıtım bölgesini ve mahallesini kapsar.</li>

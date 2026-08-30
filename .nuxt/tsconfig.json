@@ -1,6 +1,15 @@
 {
   "compilerOptions": {
     "paths": {
+      "vue-router": [
+        "../node_modules/vue-router"
+      ],
+      "vue-router/auto-routes": [
+        "../node_modules/vue-router/vue-router-auto-routes"
+      ],
+      "nuxt": [
+        "../node_modules/nuxt"
+      ],
       "@unhead/vue": [
         "../node_modules/@unhead/vue"
       ],
@@ -16,32 +25,8 @@
       "@vue/compiler-sfc": [
         "../node_modules/@vue/compiler-sfc"
       ],
-      "vue-router": [
-        "../node_modules/vue-router"
-      ],
-      "vue-router/auto-routes": [
-        "../node_modules/vue-router/vue-router-auto-routes"
-      ],
-      "unplugin-vue-router/client": [
-        "../node_modules/unplugin-vue-router/client"
-      ],
       "@nuxt/schema": [
-        "../node_modules/@nuxt/schema"
-      ],
-      "nuxt": [
-        "../node_modules/nuxt"
-      ],
-      "vite/client": [
-        "../node_modules/vite/client"
-      ],
-      "nitropack/types": [
-        "../node_modules/nitropack/types"
-      ],
-      "nitropack/runtime": [
-        "../node_modules/nitropack/runtime"
-      ],
-      "nitropack": [
-        "../node_modules/nitropack"
+        "../node_modules/nuxt/node_modules/@nuxt/schema"
       ],
       "defu": [
         "../node_modules/defu"
@@ -57,6 +42,21 @@
       ],
       "crossws": [
         "../node_modules/crossws"
+      ],
+      "unplugin-vue-router/client": [
+        "../node_modules/unplugin-vue-router/client"
+      ],
+      "nitropack": [
+        "../node_modules/nitropack"
+      ],
+      "vite/client": [
+        "../node_modules/vite/client"
+      ],
+      "nitropack/types": [
+        "../node_modules/nitropack/types"
+      ],
+      "nitropack/runtime": [
+        "../node_modules/nitropack/runtime"
       ],
       "~": [
         ".."
@@ -125,7 +125,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/d8c36e50-e76c-45ad-a038-fd5ef4423fb6.json"
+        "./manifest/meta/0a8025bf-c3c7-4c3d-9f49-244fcf39939e.json"
       ],
       "#components": [
         "./components"

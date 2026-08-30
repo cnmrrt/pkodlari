@@ -1,74 +1,360 @@
 <script setup lang="ts">
-import { ArrowLeft, ChevronRight } from 'lucide-vue-next';
-import { slugify, titleCase } from '~/utils/slugify';
+import { ArrowLeft, ChevronRight } from "lucide-vue-next";
+import { slugify, titleCase } from "~/utils/slugify";
 
-const { data: rizeData } = await useAsyncData('rize-data', () =>
-$fetch<any[]>('https://pkodlari.com/data/rize.json')
-)                                                                                                              ;
+const { data: rizeData } = await useAsyncData("rize-data", () =>
+  $fetch<any[]>("https://pkodlari.com/data/rize/all.json")
+);
 
 const districts = computed(() => {
-if (!rizeData.value) return []                                          ;
-const districtMap: Record<string, { name: string, count: number }> = {} ;
+  if (!rizeData.value) return [];
+  const districtMap: Record<string, { name: string; count: number }> = {};
 
-rizeData.value.forEach(item => {
-const distName = item.ilce || 'MERKEZ';
-const distSlug = slugify(distName)                   ;
-if (!districtMap[distSlug]) {
-districtMap[distSlug] = { name: distName, count: 0 } ;
-}
-districtMap[distSlug].count++                        ;
-})                                                   ;
+  rizeData.value.forEach((item) => {
+    const distName = item.ilce || "MERKEZ";
+    const distSlug = slugify(distName);
+    if (!districtMap[distSlug]) {
+      districtMap[distSlug] = { name: distName, count: 0 };
+    }
+    districtMap[distSlug].count++;
+  });
 
-return Object.entries(districtMap).sort(([, a], [, b]) => a.name.localeCompare(b.name, 'tr'));
-})                                                                                             ;
+  return Object.entries(districtMap).sort(([, a], [, b]) =>
+    a.name.localeCompare(b.name, "tr")
+  );
+});
 
 const pageTitle = "Rize Posta Kodları";
-const pageDesc = "Rize iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!";
+const pageDesc =
+  "Rize iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!";
 
 useHead({
-title: pageTitle,
-meta: [{ name: 'description', content: pageDesc }],
-script: [
-{
-type: 'application/ld+json',
-children: JSON.stringify({
-"@context": "https://schema.org",
-"@type": "BreadcrumbList",
-"itemListElement": [
-{ "@type": "ListItem", "position": 1, "name": "Anasayfa", "item": "https://pkodlari.com/" },
-{ "@type": "ListItem", "position": 2, "name": "Rize", "item": "https://pkodlari.com/rize" }
-]
-})
-}
-]
-})                                                                                           ;
+  title: pageTitle,
+  meta: [{ name: "description", content: pageDesc }],
+  script: [
+    {
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Anasayfa",
+            item: "https://pkodlari.com/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Rize",
+            item: "https://pkodlari.com/rize",
+          },
+        ],
+      }),
+    },
+  ],
+});
 
-usePageSeo({ title: pageTitle, description: pageDesc }) ;
+usePageSeo({ title: pageTitle, description: pageDesc });
 </script>
 
 <template>
-<div class="animate-in fade-in duration-500 max-w-4xl mx-auto">
-<div class="mb-10 flex items-center gap-4">
-<NuxtLink to="/" class="text-slate-400 hover:text-slate-900 transition-colors"><ArrowLeft class="w-5 h-5" /></NuxtLink>
-<div>
-<h1 class="text-3xl font-bold text-slate-900 tracking-tight">Rize Posta Kodları</h1>
-<p class="text-slate-500 text-sm font-medium uppercase tracking-wider">{{ districts.length }} İLÇE</p>
-</div>
-</div>
-
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-<NuxtLink
-v-for="([distSlug, distItem]) in districts"
-:key="distSlug"
-:to="`/rize/${distSlug}`"
-class="soft-card p-6 rounded-xl flex items-center justify-between"
->
-<div>
-<h3 class="font-bold text-slate-900 text-lg">{{ titleCase(distItem.name) }}</h3>
-<p class="text-xs text-slate-400 font-medium uppercase tracking-wider">{{ distItem.count }} mahalle</p>
-</div>
-<ChevronRight class="w-5 h-5 text-slate-300" />
-</NuxtLink>
-</div>
-</div>
+  <div class="animate-in fade-in duration-500 max-w-4xl mx-auto">
+    <div class="cityTitleContainer">
+      <a href="/" 
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          
+        >
+          <path d="m12 19-7-7 7-7"></path>
+          <path d="M19 12H5"></path></svg
+      ></a>
+      <div>
+        <h1>
+          Rize Posta Kodları
+        </h1>
+        <p>11 İLÇE</p>
+      </div>
+    </div>
+    <div class="districts">
+      <a
+        href="/rize/ardesen"
+        
+        ><div>
+          <h3>Ardeşen</h3>
+          <p>
+            180 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/rize/camlihemsin"
+        
+        ><div>
+          <h3>Çamlıhemşin</h3>
+          <p>
+            87 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      >
+      
+      <a
+        href="/rize/camlihemsin"
+        
+        ><div>
+          <h3>Çayeli</h3>
+          <p>
+            298 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      >
+      
+      <a
+        href="/rize/derepazari"
+        
+        ><div>
+          <h3>Derepazarı</h3>
+          <p>
+            18 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/rize/findikli"
+        
+        ><div>
+          <h3>Fındıklı</h3>
+          <p>
+            118 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/rize/guneysu"
+        
+        ><div>
+          <h3>Güneysu</h3>
+          <p>
+            53 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/rize/hemsin"
+        
+        ><div>
+          <h3>Hemşin</h3>
+          <p>
+            12 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/rize/ikizdere"
+        
+        ><div>
+          <h3>İkizdere</h3>
+          <p>
+            90 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/rize/iyidere"
+        
+        ><div>
+          <h3>İyidere</h3>
+          <p>
+            16 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/rize/kalkandere"
+        
+        ><div>
+          <h3>Kalkandere</h3>
+          <p>
+            58 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/rize/merkez"
+        
+        ><div>
+          <h3>Merkez</h3>
+          <p>
+            276 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      ><a
+        href="/rize/pazar"
+        
+        ><div>
+          <h3>Pazar</h3>
+          <p>
+            145 mahalle
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          
+        >
+          <path d="m9 18 6-6-6-6"></path></svg></a
+      >
+    </div>
+  </div>
 </template>

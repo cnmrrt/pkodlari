@@ -95,40 +95,40 @@ usePageSeo({ title: pageTitle, description: pageDesc });
 
 <template>
  <div v-if="isValid" class="animate-in fade-in duration-500 max-w-4xl mx-auto">
-    <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
-      <div class="flex items-center gap-4">
+    <div class="header">
+      <div class="districtTitleContainer">
         <NuxtLink
           to="/istanbul"
-          class="text-slate-400 hover:text-slate-900 transition-colors"
+          
           ><ArrowLeft class="w-5 h-5"
         /></NuxtLink>
         <div>
-          <h1 class="text-3xl font-bold text-slate-900 tracking-tight">
+          <h1>
             {{ titleCase(districtData.name) }} Posta Kodları
           </h1>
-          <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">İstanbul</p>
+          <p>İstanbul</p>
         </div>
       </div>
-      <div class="relative w-full md:w-64">
-        <Search class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+      <div class="neighborhood-search-container">
+        <Search />
         <input
           type="text"
           placeholder="Mahallelerde ara..."
-          class="w-full pl-9 pr-4 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-slate-400 transition-all text-sm"
+          
           v-model="filter"
         />
       </div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div class="neighborhoods-links-container">
       <NuxtLink
         v-for="nItem in neighs"
         :key="nItem.slug"
         :to="`/istanbul/${districtSlug}/${nItem.slug}`"
-        class="soft-card p-5 flex items-center justify-between group"
+        
       >
-        <div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        <div class="mahalle-name">
+          <h4>
             {{ titleCase(nItem.name) }}
           </h4>
           <p
@@ -137,13 +137,13 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >{{ nItem.zipCode }}</span
           >
           <ChevronRight
-            class="w-4 h-4 text-slate-300 group-hover:text-slate-500 transition-colors"
+           
           />
         </div>
       </NuxtLink>

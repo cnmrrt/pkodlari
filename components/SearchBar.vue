@@ -5,6 +5,7 @@ import type { PostalData, SearchResult } from '~/types';
 
 const props = defineProps<{
   data: PostalData | null
+  loading?: boolean
 }>();
 
 const query = ref('');
@@ -80,21 +81,21 @@ const onBlur = () => {
 </script>
 
 <template>
-  <div class="relative w-full max-w-xl mx-auto">
-    <div class="flex items-center gap-3 px-4 py-3 bg-white border rounded-xl transition-all" 
+  <div class="home-search-bar-container">
+    <div class="first-search-div" 
          :class="isFocused ? 'ring-2 ring-slate-900/5 border-slate-400' : 'border-slate-200'">
-      <Search class="w-5 h-5 text-slate-400" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
       <input 
         type="text" 
         placeholder="İl, ilçe veya mahalle ismi yazın..."
-        class="w-full bg-transparent outline-none text-slate-700 placeholder:text-slate-400"
         v-model="query"
         @focus="onFocus"
         @blur="onBlur"
+        :disabled="loading"
       />
     </div>
     
-    <div v-if="isFocused && query.length >= 2" class="absolute top-full left-0 right-0 mt-2 bg-white border border-slate-200 rounded-xl shadow-xl z-[60] overflow-hidden">
+    <div v-if="isFocused && query.length >= 2" class="search-detail-container">
       <div v-if="results.length > 0" class="divide-y divide-slate-100">
         <NuxtLink
           v-for="(res, i) in results"
@@ -102,16 +103,16 @@ const onBlur = () => {
           :to="res.type === 'city' ? `/${res.citySlug}` : res.type === 'district' ? `/${res.citySlug}/${res.districtSlug}` : `/${res.citySlug}/${res.districtSlug}/${res.neighborhoodSlug}`"
           class="flex items-center gap-4 p-4 hover:bg-slate-50 transition-colors"
         >
-          <div class="text-slate-400">
+          <div class="location-icon">
             <Map v-if="res.type === 'city'" class="w-4 h-4" />
             <Building2 v-else-if="res.type === 'district'" class="w-4 h-4" />
             <MapPin v-else class="w-4 h-4" />
           </div>
-          <div class="flex-1">
-            <div class="font-semibold text-sm text-slate-900">{{ titleCase(res.neighborhood || res.district || res.city) }}</div>
-            <div class="text-[10px] text-slate-400 uppercase font-medium">{{ [titleCase(res.city), titleCase(res.district)].filter(Boolean).join(' / ') }}</div>
+          <div class="location-info">
+            <div>{{ titleCase(res.neighborhood || res.district || res.city) }}</div>
+            <div>{{ [titleCase(res.city), titleCase(res.district)].filter(Boolean).join(' / ') }}</div>
           </div>
-          <div v-if="res.zipCode" class="mono text-xs font-bold text-slate-900 bg-slate-100 px-2 py-1 rounded">{{ res.zipCode }}</div>
+          <div v-if="res.zipCode" class="search-zip-code">{{ res.zipCode }}</div>
         </NuxtLink>
       </div>
       <div v-else class="p-8 text-center text-slate-400 text-sm">Sonuç bulunamadı</div>

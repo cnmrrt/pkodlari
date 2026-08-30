@@ -61,8 +61,8 @@ usePageSeo({ title: pageTitle, description: pageDesc });
 
 <template>
   <div class="animate-in fade-in duration-500 max-w-4xl mx-auto">
-    <div class="mb-10 flex items-center gap-4">
-      <a href="/" class="text-slate-400 hover:text-slate-900 transition-colors"
+    <div class="cityTitleContainer">
+      <a href="/" 
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -73,25 +73,25 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-arrow-left-icon w-5 h-5"
+          
         >
           <path d="m12 19-7-7 7-7"></path>
           <path d="M19 12H5"></path></svg
       ></a>
       <div>
-        <h1 class="text-3xl font-bold text-slate-900 tracking-tight">
+        <h1>
           Erzurum Posta Kodları
         </h1>
-        <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">20 İLÇE</p>
+        <p>20 İLÇE</p>
       </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <!--[--><a
+    <div class="districts">
+      <a
         href="/erzurum/askale"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Aşkale</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Aşkale</h3>
+          <p>
             76 mahalle
           </p>
         </div>
@@ -105,15 +105,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/erzurum/aziziye"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Aziziye</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Aziziye</h3>
+          <p>
             73 mahalle
           </p>
         </div>
@@ -127,15 +127,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/erzurum/cat"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Çat</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Çat</h3>
+          <p>
             45 mahalle
           </p>
         </div>
@@ -149,15 +149,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/erzurum/hinis"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Hınıs</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Hınıs</h3>
+          <p>
             98 mahalle
           </p>
         </div>
@@ -171,15 +171,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/erzurum/horasan"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Horasan</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Horasan</h3>
+          <p>
             87 mahalle
           </p>
         </div>
@@ -193,15 +193,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/erzurum/ispir"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">İspir</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>İspir</h3>
+          <p>
             101 mahalle
           </p>
         </div>
@@ -215,15 +215,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/erzurum/karacoban"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Karaçoban</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Karaçoban</h3>
+          <p>
             27 mahalle
           </p>
         </div>
@@ -237,15 +237,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/erzurum/karayazi"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Karayazı</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Karayazı</h3>
+          <p>
             75 mahalle
           </p>
         </div>
@@ -259,15 +259,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/erzurum/koprukoy"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Köprüköy</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Köprüköy</h3>
+          <p>
             42 mahalle
           </p>
         </div>
@@ -281,15 +281,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/erzurum/narman"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Narman</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Narman</h3>
+          <p>
             46 mahalle
           </p>
         </div>
@@ -303,15 +303,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/erzurum/oltu"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Oltu</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Oltu</h3>
+          <p>
             72 mahalle
           </p>
         </div>
@@ -325,15 +325,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/erzurum/olur"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Olur</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Olur</h3>
+          <p>
             43 mahalle
           </p>
         </div>
@@ -347,15 +347,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/erzurum/palandoken"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Palandöken</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Palandöken</h3>
+          <p>
             26 mahalle
           </p>
         </div>
@@ -369,15 +369,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/erzurum/pasinler"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Pasinler</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Pasinler</h3>
+          <p>
             72 mahalle
           </p>
         </div>
@@ -391,15 +391,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/erzurum/pazaryolu"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Pazaryolu</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Pazaryolu</h3>
+          <p>
             44 mahalle
           </p>
         </div>
@@ -413,15 +413,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/erzurum/senkaya"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Şenkaya</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Şenkaya</h3>
+          <p>
             71 mahalle
           </p>
         </div>
@@ -435,15 +435,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/erzurum/tekman"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Tekman</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Tekman</h3>
+          <p>
             71 mahalle
           </p>
         </div>
@@ -457,15 +457,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/erzurum/tortum"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Tortum</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Tortum</h3>
+          <p>
             58 mahalle
           </p>
         </div>
@@ -479,15 +479,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/erzurum/uzundere"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Uzundere</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Uzundere</h3>
+          <p>
             18 mahalle
           </p>
         </div>
@@ -501,15 +501,15 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
       ><a
         href="/erzurum/yakutiye"
-        class="soft-card p-6 rounded-xl flex items-center justify-between"
+        
         ><div>
-          <h3 class="font-bold text-slate-900 text-lg">Yakutiye</h3>
-          <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">
+          <h3>Yakutiye</h3>
+          <p>
             44 mahalle
           </p>
         </div>
@@ -523,10 +523,10 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-chevron-right-icon w-5 h-5 text-slate-300"
+          
         >
           <path d="m9 18 6-6-6-6"></path></svg></a
-      ><!--]-->
+      >
     </div>
   </div>
 </template>

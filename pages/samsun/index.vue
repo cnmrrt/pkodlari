@@ -58,24 +58,24 @@ usePageSeo({ title: pageTitle, description: pageDesc }) ;
 
 <template>
 <div class="animate-in fade-in duration-500 max-w-4xl mx-auto">
-<div class="mb-10 flex items-center gap-4">
-<NuxtLink to="/" class="text-slate-400 hover:text-slate-900 transition-colors"><ArrowLeft class="w-5 h-5" /></NuxtLink>
+<div class="cityTitleContainer">
+<NuxtLink to="/" ><ArrowLeft/></NuxtLink>
 <div>
-<h1 class="text-3xl font-bold text-slate-900 tracking-tight">Samsun Posta Kodları</h1>
-<p class="text-slate-500 text-sm font-medium uppercase tracking-wider">{{ districts.length }} İLÇE</p>
+<h1>Samsun Posta Kodları</h1>
+<p>{{ districts.length }} İLÇE</p>
 </div>
 </div>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="districts">
 <NuxtLink
 v-for="([distSlug, distItem]) in districts"
 :key="distSlug"
 :to="`/samsun/${distSlug}`"
-class="soft-card p-6 rounded-xl flex items-center justify-between"
+
 >
 <div>
-<h3 class="font-bold text-slate-900 text-lg">{{ titleCase(distItem.name) }}</h3>
-<p class="text-xs text-slate-400 font-medium uppercase tracking-wider">{{ distItem.count }} mahalle</p>
+<h3>{{ titleCase(distItem.name) }}</h3>
+<p>{{ distItem.count }} mahalle</p>
 </div>
 <ChevronRight class="w-5 h-5 text-slate-300" />
 </NuxtLink>

@@ -21,6 +21,7 @@ export function usePageSeo(options: {
   useHead({
     link: [{ rel: 'canonical', href: canonicalUrl }],
     meta: [
+      { property: 'google-adsense-account', content: 'ca-pub-5581015881313741'},
       { property: 'og:title', content: resolvedTitle },
       { property: 'og:description', content: resolvedDesc },
       { property: 'og:url', content: canonicalUrl },

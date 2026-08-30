@@ -107,9 +107,9 @@ const share = () => {
 </script>
 
 <template>
-  <div class="animate-in fade-in duration-500 max-w-2xl mx-auto">
+  <div class="main-content-neighborhood animate-in fade-in">
     <nav
-      class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-8 overflow-x-auto whitespace-nowrap pb-2"
+      class="breadcrumb"
     >
       <a href="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</a
       ><svg
@@ -141,9 +141,9 @@ const share = () => {
         <path d="m9 18 6-6-6-6"></path></svg
       ><a href="/izmir/konak" class="hover:text-slate-900 transition-colors">Konak</a>
     </nav>
-    <div class="bg-white border border-slate-200 rounded-[2rem] p-8 md:p-12 shadow-sm">
-      <div class="text-center mb-10">
-        <div class="inline-flex p-3 bg-slate-50 rounded-2xl mb-6">
+    <div class="main-info-container">
+      <div class="main-info-title-container">
+        <div class="main-info-logo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -162,41 +162,41 @@ const share = () => {
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
         </div>
-        <h1 class="text-4xl font-bold text-slate-900 mb-2 tracking-tight">
+        <h1>
           Mehmet Ali Akman Mahallesi
         </h1>
-        <p class="text-slate-500 font-medium uppercase tracking-widest text-sm">
+        <p class="main-info-subtitle">
           Konak, İzmir
         </p>
       </div>
-      <div class="bg-slate-50 rounded-3xl p-8 text-center relative overflow-hidden">
-        <div class="relative z-10">
-          <p class="text-xs font-bold text-slate-400 uppercase tracking-[0.3em] mb-4">
+      <div class="post-code-view-container">
+        <div class="sub-post-code-view-container">
+          <p>
             POSTA KODU
           </p>
-          <div class="mono text-7xl font-bold text-slate-900 mb-8">35290</div>
+          <div class="postCode">35290</div>
           <button
             @click="copyToClipboard"
             class="flex items-center gap-2 mx-auto px-8 py-4 rounded-2xl font-bold text-sm transition-all active:scale-95 cursor-pointer"
             :class="
               copied
-                ? 'bg-green-600 text-white'
-                : 'bg-slate-900 text-white hover:bg-slate-800'
+                ? 'green-btn'
+                : 'black-btn'
             "
           >
-            <Check v-if="copied" class="w-4 h-4" />
-            <Copy v-else class="w-4 h-4" />
+            <Check v-if="copied"/>
+            <Copy v-else />
             {{ copied ? "KOPYALANDI" : "KODU KOPYALA" }}
           </button>
         </div>
         <div
-          class="absolute -bottom-10 -right-10 mono text-[12rem] font-black text-slate-200/50 select-none"
+          class="btn-bg"
         >
           35
         </div>
       </div>
     </div>
-    <div class="mt-8 flex justify-center">
+    <div class="share-btn">
       <button
         class="flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-colors font-bold text-xs uppercase tracking-widest"
       >
@@ -222,9 +222,9 @@ const share = () => {
       </button>
     </div>
     <div
-      class="mt-12 bg-white border border-slate-200 rounded-[2rem] p-4 md:p-6 shadow-sm overflow-hidden"
+      class="map-container"
     >
-      <div class="mb-4 flex items-center gap-2 px-2">
+      <div class="map-title">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -242,7 +242,7 @@ const share = () => {
           ></path>
           <circle cx="12" cy="10" r="3"></circle>
         </svg>
-        <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wide">Konum</h3>
+        <h3>Konum</h3>
       </div>
       <div
         class="w-full aspect-video rounded-2xl overflow-hidden [&amp;&gt;iframe]:w-full [&amp;&gt;iframe]:h-full"
@@ -258,17 +258,17 @@ const share = () => {
         ></iframe>
       </div>
     </div>
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">35290 nerenin posta kodu?</h2>
-      <p class="text-slate-600">
+    <div class="page-text">
+      <h2>35290 nerenin posta kodu?</h2>
+      <p>
         35290 posta kodu İzmir Konak Mehmet Ali Akman Mahallesi'ne aittir.
       </p>
     </div>
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">
+    <div class="page-text">
+      <h2>
         Konak Mehmet Ali Akman Mahallesi Posta Kodu Rehberi
       </h2>
-      <p class="text-slate-600">
+      <p>
         İzmir Konak Mehmet Ali Akman Mahallesi'ne ait güncel posta kodu bilgileri aşağıda
         yer almaktadır. Adres formlarında, kargo gönderilerinde ve resmi işlemlerde
         kullanabilirsiniz.
@@ -276,11 +276,11 @@ const share = () => {
       <br />
       <p><strong>Mehmet Ali Akman Mahallesi Posta Kodu: 35290</strong></p>
     </div>
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">
+    <div class="page-text">
+      <h2>
         Adres Yazımında Posta Kodunun Önemi
       </h2>
-      <p class="text-slate-600">
+      <p>
         Posta kodu, bir adresin en spesifik bileşenidir. Mehmet Ali Akman Mahallesi için
         tanımlanan 35290 numarasını kullanmak şu avantajları sağlar:
       </p>
@@ -300,9 +300,9 @@ const share = () => {
         </li>
       </ul>
     </div>
-    <div class="mt-8 text-center mb-8">
-      <h2 class="text-xl font-bold text-slate-900 mb-2">Konum Ve Bölge Bilgileri</h2>
-      <p class="text-slate-600">
+    <div class="page-text">
+      <h2>Konum Ve Bölge Bilgileri</h2>
+      <p>
         Mehmet Ali Akman Mahallesi, İzmir ilinin Konak ilçesine bağlıdır. Posta kodu
         yapısı incelendiğinde ;
       </p>

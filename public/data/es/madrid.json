@@ -1,0 +1,28 @@
+[
+    {
+        "il": "Madrid",
+        "ilce": "Puente de Vallecas",
+        "mahalle": "Entrevías",
+        "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24315.308523876556!2d-3.6917385506101974!3d40.3775258077478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42267c97b12fa3%3A0xd3a6b77cc3a94708!2sEntrev%C3%ADas%2C%20Puente%20de%20Vallecas%2C%2028053%20Madrid%2C%20Spain!5e0!3m2!1sen!2str!4v1788097165450!5m2!1sen!2str\"width=\"600\"height=\"450\"style=\"border:0;\"allowfullscreen=\"\"loading=\"lazy\"referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "postaKodu": "28053"
+    },
+    {
+        "il": "Madrid",
+        "ilce": "Puente de Vallecas",
+        "mahalle": "Numancia",
+        "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29244.978696087102!2d-3.6753200518541163!3d40.39352024538921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4225e158b64a91%3A0x27dec6da328dba8f!2sNumancia%2C%20Puente%20de%20Vallecas%2C%2028038%20Madrid%2C%20Spain!5e0!3m2!1sen!2str!4v1788060131781!5m2!1sen!2str\"width=\"600\"height=\"450\"style=\"border:0;\"allowfullscreen=\"\"loading=\"lazy\"referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "postaKodu": "28038"
+    }
+
+
+
+
+    ,
+    {
+        "il": "Madrid",
+        "ilce": "Aravaca",
+        "mahalle": "Moncloa - Aravaca",
+        "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26521.8542263943!2d-3.8121827235675685!3d40.468725553659276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4187012b87a3f1%3A0xbe2eff30ec5efb79!2sAravaca%2C%20Moncloa%20-%20Aravaca%2C%2028023%20Madrid%2C%20Spain!5e0!3m2!1sen!2str!4v1788099807880!5m2!1sen!2str\"width=\"600\"height=\"450\"style=\"border:0;\"allowfullscreen=\"\"loading=\"lazy\"referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "postaKodu": "28023"
+    }
+]

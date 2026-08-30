@@ -49,9 +49,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
 
 <template>
   <div class="animate-in fade-in duration-500 max-w-4xl mx-auto">
-    <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
-      <div class="flex items-center gap-4">
-        <a href="/tokat" class="text-slate-400 hover:text-slate-900 transition-colors"
+    <div class="header">
+      <div class="districtTitleContainer">
+        <a href="/tokat" 
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -62,19 +62,19 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-arrow-left-icon w-5 h-5"
+            
           >
             <path d="m12 19-7-7 7-7"></path>
             <path d="M19 12H5"></path></svg
         ></a>
         <div>
-          <h1 class="text-3xl font-bold text-slate-900 tracking-tight">
+          <h1>
             Merkez Posta Kodları
           </h1>
-          <p class="text-slate-500 text-sm font-medium uppercase tracking-wider">Tokat</p>
+          <p>Tokat</p>
         </div>
       </div>
-      <!-- <div class="relative w-full md:w-64">
+      <!-- <div class="neighborhood-search-container">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -92,26 +92,26 @@ usePageSeo({ title: pageTitle, description: pageDesc });
         ><input
           type="text"
           placeholder="Mahallelerde ara..."
-          class="w-full pl-9 pr-4 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:border-slate-400 transition-all text-sm"
+          
           value=""
         />
       </div> -->
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <!--[--><a
+    <div class="neighborhoods-links-container">
+      <a
         href="/tokat/merkez/acipinar-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Acıpınar Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Acıpınar Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -129,18 +129,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/ahmetalan-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Ahmetalan Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Ahmetalan Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -158,9 +158,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/akdegirmen-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Akdeğirmen Mahallesi
           </h4>
           <p
@@ -169,9 +169,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -189,9 +189,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/akin-mahallesi-camlibel-beldesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Akın Mahallesi (Çamlıbel Beldesi)
           </h4>
           <p
@@ -200,9 +200,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60225</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -220,9 +220,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/aktepe-mahallesi-camlibel-beldesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Aktepe Mahallesi (Çamlıbel Beldesi)
           </h4>
           <p
@@ -231,9 +231,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60225</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -251,18 +251,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/akyamac-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Akyamaç Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Akyamaç Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -280,18 +280,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/akyurt-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Akyurt Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Akyurt Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -309,18 +309,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/alan-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Alan Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Alan Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -338,9 +338,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/alaybey-ciftligi-mahallesi-dereyaka-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Alaybey Çiftliği Mahallesi (Dereyaka Köyü)
           </h4>
           <p
@@ -349,9 +349,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -369,9 +369,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/ali-yucel-mahallesi-guryildiz-beldesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Ali Yücel Mahallesi (Güryıldız Beldesi)
           </h4>
           <p
@@ -380,9 +380,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -400,9 +400,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/alipasa-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Alipaşa Mahallesi
           </h4>
           <p
@@ -411,9 +411,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -431,18 +431,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/altintas-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Altıntaş Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Altıntaş Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -460,9 +460,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/altiyuzevler-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Altıyüzevler Mahallesi
           </h4>
           <p
@@ -471,9 +471,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -491,18 +491,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/aluc-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Aluç Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Aluç Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -520,9 +520,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/asagifirindere-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Aşağıfırındere Köyü
           </h4>
           <p
@@ -531,9 +531,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -551,9 +551,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/ataturk-mahallesi-kemalpasa-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Atatürk Mahallesi (Kemalpaşa Köyü)
           </h4>
           <p
@@ -562,9 +562,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -582,18 +582,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/avsaragzi-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Avşarağzı Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Avşarağzı Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -611,9 +611,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/aydinca-mahallesi-aydinca-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Aydınca Mahallesi (Aydınca Köyü)
           </h4>
           <p
@@ -622,9 +622,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -642,18 +642,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/aydogdu-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Aydoğdu Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Aydoğdu Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -671,9 +671,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/aydogdu-mahallesi-guzelce-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Aydoğdu Mahallesi (Güzelce Köyü)
           </h4>
           <p
@@ -682,9 +682,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -702,18 +702,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/bagbasi-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Bağbaşı Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Bağbaşı Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -731,9 +731,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/bahcelievler-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Bahçelievler Mahallesi
           </h4>
           <p
@@ -742,9 +742,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -762,9 +762,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/bahcelievler-mahallesi-buyukyildiz-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Bahçelievler Mahallesi (Büyükyıldız Köyü)
           </h4>
           <p
@@ -773,9 +773,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -793,9 +793,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/bahcelievler-mahallesi-emirseyit-beldesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Bahçelievler Mahallesi (Emirseyit Beldesi)
           </h4>
           <p
@@ -804,9 +804,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60235</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -824,9 +824,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/bahcelievler-mahallesi-guryildiz-beldesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Bahçelievler Mahallesi (Güryıldız Beldesi)
           </h4>
           <p
@@ -835,9 +835,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -855,18 +855,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/bakisli-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Bakışlı Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Bakışlı Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -884,9 +884,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/bakisli-mahallesi-bakisli-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Bakışlı Mahallesi (Bakışlı Köyü)
           </h4>
           <p
@@ -895,9 +895,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -915,9 +915,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/balibey-yaylasi-mahallesi-kizik-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Balıbey Yaylası Mahallesi (Kızık Köyü)
           </h4>
           <p
@@ -926,9 +926,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -946,18 +946,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/ballidere-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Ballıdere Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Ballıdere Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -975,18 +975,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/batmantas-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Batmantaş Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Batmantaş Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1004,9 +1004,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/bedestenlioglu-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Bedestenlioğlu Mahallesi
           </h4>
           <p
@@ -1015,9 +1015,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1035,9 +1035,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/bedestenliogluosb-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Bedestenlioğluosb Mahallesi
           </h4>
           <p
@@ -1046,9 +1046,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1066,18 +1066,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/bedirkale-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Bedirkale Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Bedirkale Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1095,9 +1095,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/behram-mahallesi-camlibel-beldesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Behram Mahallesi (Çamlıbel Beldesi)
           </h4>
           <p
@@ -1106,9 +1106,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60225</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1126,18 +1126,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/besoren-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Beşören Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Beşören Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1155,18 +1155,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/binecek-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Binecek Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Binecek Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1184,18 +1184,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/boyali-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Boyalı Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Boyalı Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1213,9 +1213,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/bozatalan-mahallesi-emirseyit-beldesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Bozatalan Mahallesi (Emirseyit Beldesi)
           </h4>
           <p
@@ -1224,9 +1224,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60235</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1244,18 +1244,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/bula-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Bula Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Bula Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1273,9 +1273,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/buyuk-beybagi-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Büyük Beybağı Mahallesi
           </h4>
           <p
@@ -1284,9 +1284,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1304,9 +1304,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/buyukbaglar-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Büyükbağlar Köyü
           </h4>
           <p
@@ -1315,9 +1315,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1335,9 +1335,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/camiikebir-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Camiikebir Mahallesi
           </h4>
           <p
@@ -1346,9 +1346,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1366,9 +1366,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/cemalettin-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Cemalettin Mahallesi
           </h4>
           <p
@@ -1377,9 +1377,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1397,9 +1397,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/cumhuriyet-mahallesi-cat-beldesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Cumhuriyet Mahallesi (Çat Beldesi)
           </h4>
           <p
@@ -1408,9 +1408,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60160</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1428,9 +1428,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/cumhuriyet-mahallesi-kemalpasa-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Cumhuriyet Mahallesi (Kemalpaşa Köyü)
           </h4>
           <p
@@ -1439,9 +1439,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1459,9 +1459,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/cumhuriyet-mahallesi-yagmurlu-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Cumhuriyet Mahallesi (Yağmurlu Köyü)
           </h4>
           <p
@@ -1470,9 +1470,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1490,18 +1490,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/camagzi-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Çamağzı Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Çamağzı Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1519,18 +1519,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/camalti-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Çamaltı Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Çamaltı Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1548,18 +1548,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/camdere-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Çamdere Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Çamdere Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1577,18 +1577,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/camlik-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Çamlık Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Çamlık Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1606,9 +1606,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/caputsuyu-mahallesi-tahtoba-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Çaputsuyu Mahallesi (Tahtoba Köyü)
           </h4>
           <p
@@ -1617,9 +1617,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1637,18 +1637,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/catalkaya-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Çatalkaya Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Çatalkaya Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1666,18 +1666,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/cay-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Çay Mahallesi</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Çay Mahallesi</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1695,18 +1695,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/cayoren-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Çayören Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Çayören Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1724,9 +1724,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/cekerek-mahallesi-camlibel-beldesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Çekerek Mahallesi (Çamlıbel Beldesi)
           </h4>
           <p
@@ -1735,9 +1735,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60225</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1755,18 +1755,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/cerci-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Çerçi Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Çerçi Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1784,18 +1784,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/cerdigin-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Çerdiğin Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Çerdiğin Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1813,9 +1813,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/cokelikkisla-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Çökelikkışla Köyü
           </h4>
           <p
@@ -1824,9 +1824,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1844,18 +1844,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/corduk-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Çördük Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Çördük Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1873,9 +1873,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/coregibuyuk-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Çöreğibüyük Köyü
           </h4>
           <p
@@ -1884,9 +1884,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1904,18 +1904,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/cubuklu-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Çubuklu Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Çubuklu Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1933,18 +1933,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/dayilihaci-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Dayılıhacı Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Dayılıhacı Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1962,9 +1962,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/dedeli-merkez-mahallesi-dedeli-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Dedeli Merkez Mahallesi (Dedeli Köyü)
           </h4>
           <p
@@ -1973,9 +1973,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1993,9 +1993,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/derbent-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Derbent Mahallesi
           </h4>
           <p
@@ -2004,9 +2004,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2024,9 +2024,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/dere-mevki-mahallesi-yakacik-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Dere Mevki Mahallesi (Yakacık Köyü)
           </h4>
           <p
@@ -2035,9 +2035,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2055,18 +2055,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/dereagzi-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Dereağzı Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Dereağzı Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2084,18 +2084,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/derekisla-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Derekişla Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Derekişla Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2113,9 +2113,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/devevormez-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Devevörmez Mahallesi
           </h4>
           <p
@@ -2124,9 +2124,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2144,18 +2144,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/dodurga-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Dodurga Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Dodurga Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2173,9 +2173,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/dogancibaglari-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Doğancıbağları Mahallesi
           </h4>
           <p
@@ -2184,9 +2184,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2204,9 +2204,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/dogukent-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Doğukent Mahallesi
           </h4>
           <p
@@ -2215,9 +2215,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2235,18 +2235,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/dolluk-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Döllük Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Döllük Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2264,18 +2264,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/efe-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Efe Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Efe Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2293,18 +2293,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/ekincilik-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Ekincilik Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Ekincilik Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2322,9 +2322,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/erenler-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Erenler Mahallesi
           </h4>
           <p
@@ -2333,9 +2333,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2353,9 +2353,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/esentepe-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Esentepe Mahallesi
           </h4>
           <p
@@ -2364,9 +2364,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2384,18 +2384,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/eski-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Eski Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Eski Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2413,9 +2413,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/eze-mahallesi-eze-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Eze Mahallesi (Eze Köyü)
           </h4>
           <p
@@ -2424,9 +2424,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2444,9 +2444,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/fatih-mahallesi-akbelen-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Fatih Mahallesi (Akbelen Köyü)
           </h4>
           <p
@@ -2455,9 +2455,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2475,9 +2475,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/gaziosmanpasa-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Gaziosmanpaşa Köyü
           </h4>
           <p
@@ -2486,9 +2486,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2506,9 +2506,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/gaziosmanpasa-universitesi-kampusu-mahallesi-tasliciftlik-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Gaziosmanpaşa Üniversitesi Kampüsü Mahallesi (Taşlıçiftlik Köyü)
           </h4>
           <p
@@ -2517,9 +2517,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2537,9 +2537,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/geyras-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Geyras Mahallesi
           </h4>
           <p
@@ -2548,9 +2548,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2568,9 +2568,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/gezirlik-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Gezirlik Mahallesi
           </h4>
           <p
@@ -2579,9 +2579,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2599,18 +2599,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/gokce-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Gökçe Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Gökçe Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2628,9 +2628,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/gokceyol-mahallesi-gokceyol-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Gökçeyol Mahallesi (Gökçeyol Köyü)
           </h4>
           <p
@@ -2639,9 +2639,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2659,18 +2659,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/gokdere-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Gökdere Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Gökdere Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2688,18 +2688,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/golcuk-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Gölcük Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Gölcük Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2717,18 +2717,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/gozova-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Gözova Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Gözova Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2746,9 +2746,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/gugumlu-merkez-mahallesi-gugumlu-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Güğümlü Merkez Mahallesi (Güğümlü Köyü)
           </h4>
           <p
@@ -2757,9 +2757,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2777,9 +2777,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/gulbaharhatun-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Gülbaharhatun Mahallesi
           </h4>
           <p
@@ -2788,9 +2788,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2808,18 +2808,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/gulpinar-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Gülpınar Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Gülpınar Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2837,9 +2837,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/gultepe-mahallesi-buyukyildiz-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Gültepe Mahallesi (Büyükyıldız Köyü)
           </h4>
           <p
@@ -2848,9 +2848,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2868,18 +2868,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/gumenek-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Gümenek Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Gümenek Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2897,9 +2897,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/gunesli-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Güneşli Mahallesi
           </h4>
           <p
@@ -2908,9 +2908,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2928,9 +2928,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/gunesli-mahallesi-emirseyit-beldesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Güneşli Mahallesi (Emirseyit Beldesi)
           </h4>
           <p
@@ -2939,9 +2939,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60235</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2959,18 +2959,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/gunevi-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Günevi Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Günevi Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2988,9 +2988,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/gunevi-mahallesi-gunevi-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Günevi Mahallesi (Günevi Köyü)
           </h4>
           <p
@@ -2999,9 +2999,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3019,18 +3019,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/guzeldere-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Güzeldere Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Güzeldere Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3048,18 +3048,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/hanpinar-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Hanpınar Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Hanpınar Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3077,18 +3077,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/hasanbaba-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Hasanbaba Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Hasanbaba Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3106,9 +3106,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/hasanbaba-mahallesi-hasanbaba-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Hasanbaba Mahallesi (Hasanbaba Köyü)
           </h4>
           <p
@@ -3117,9 +3117,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3137,9 +3137,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/hocaahmet-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Hocaahmet Mahallesi
           </h4>
           <p
@@ -3148,9 +3148,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3168,18 +3168,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/ihsaniye-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">İhsaniye Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>İhsaniye Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3197,9 +3197,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/inanli-mahallesi-kucukbaglar-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             İnanlı Mahallesi (Küçükbağlar Köyü)
           </h4>
           <p
@@ -3208,9 +3208,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3228,9 +3228,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/inonu-mahallesi-kemalpasa-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             İnönü Mahallesi (Kemalpaşa Köyü)
           </h4>
           <p
@@ -3239,9 +3239,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3259,9 +3259,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kabakbogazi-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kabakboğazı Köyü
           </h4>
           <p
@@ -3270,9 +3270,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3290,9 +3290,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kabe-i-mescid-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kabe-İ Mescid Mahallesi
           </h4>
           <p
@@ -3301,9 +3301,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3321,18 +3321,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kadivakfi-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Kadıvakfı Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Kadıvakfı Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3350,9 +3350,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kahvepinari-mahallesi-tahtoba-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kahvepınarı Mahallesi (Tahtoba Köyü)
           </h4>
           <p
@@ -3361,9 +3361,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3381,9 +3381,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kaleardi-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kaleardı Mahallesi
           </h4>
           <p
@@ -3392,9 +3392,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3412,9 +3412,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kanalalti-mahallesi-guryildiz-beldesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kanalaltı Mahallesi (Güryıldız Beldesi)
           </h4>
           <p
@@ -3423,9 +3423,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3443,18 +3443,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/karakaya-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Karakaya Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Karakaya Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3472,9 +3472,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/karasu-mahallesi-camlibel-beldesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Karasu Mahallesi (Çamlıbel Beldesi)
           </h4>
           <p
@@ -3483,9 +3483,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60225</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3503,18 +3503,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kargin-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Kargın Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Kargın Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3532,18 +3532,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kargincik-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Kargıncık Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Kargıncık Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3561,9 +3561,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/karsiyaka-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Karşıyaka Mahallesi
           </h4>
           <p
@@ -3572,9 +3572,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60200</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3592,9 +3592,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/karsiyaka-mahallesi-cat-beldesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Karşıyaka Mahallesi (Çat Beldesi)
           </h4>
           <p
@@ -3603,9 +3603,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60160</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3623,9 +3623,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/karsiyaka-mahallesi-yagmurlu-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Karşıyaka Mahallesi (Yağmurlu Köyü)
           </h4>
           <p
@@ -3634,9 +3634,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3654,9 +3654,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kasikcibaglari-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kaşıkcıbağları Mahallesi
           </h4>
           <p
@@ -3665,9 +3665,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3685,18 +3685,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kemer-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Kemer Mahallesi</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Kemer Mahallesi</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3714,9 +3714,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kervansaray-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kervansaray Köyü
           </h4>
           <p
@@ -3725,9 +3725,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3745,18 +3745,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/keslik-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Keşlik Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Keşlik Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3774,9 +3774,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kilicli-mahallesi-gumenek-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kılıçlı Mahallesi (Gümenek Köyü)
           </h4>
           <p
@@ -3785,9 +3785,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3805,9 +3805,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kisla-mahallesi-kizik-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kışla Mahallesi (Kızık Köyü)
           </h4>
           <p
@@ -3816,9 +3816,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3836,18 +3836,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kizilkaya-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Kızılkaya Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Kızılkaya Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3865,18 +3865,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kizilkoy-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Kızılköy Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Kızılköy Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3894,18 +3894,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kiziloz-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Kızılöz Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Kızılöz Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3923,9 +3923,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kizilyazi-mahallesi-tahtoba-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kızılyazı Mahallesi (Tahtoba Köyü)
           </h4>
           <p
@@ -3934,9 +3934,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3954,18 +3954,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/killik-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Killik Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Killik Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -3983,18 +3983,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kocacik-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Kocacık Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Kocacık Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4012,9 +4012,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kocapinar-mahallesi-tahtoba-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kocapınar Mahallesi (Tahtoba Köyü)
           </h4>
           <p
@@ -4023,9 +4023,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4043,18 +4043,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/komec-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Kömeç Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Kömeç Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4072,9 +4072,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/koyunkendisi-mahallesi-halilalan-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Köyünkendisi Mahallesi (Halilalan Köyü)
           </h4>
           <p
@@ -4083,9 +4083,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4103,9 +4103,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kurtulus-mahallesi-yagmurlu-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kurtuluş Mahallesi (Yağmurlu Köyü)
           </h4>
           <p
@@ -4114,9 +4114,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4134,9 +4134,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kucukbey-bagi-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Küçükbey Bağı Mahallesi
           </h4>
           <p
@@ -4145,9 +4145,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4165,9 +4165,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kucukyildiz-mahallesi-guryildiz-beldesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Küçükyıldız Mahallesi (Güryıldız Beldesi)
           </h4>
           <p
@@ -4176,9 +4176,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60240</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4196,9 +4196,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/kumbet-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Kümbet Mahallesi
           </h4>
           <p
@@ -4207,9 +4207,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4227,18 +4227,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/madas-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Madas Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Madas Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4256,9 +4256,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/mahmutpasa-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Mahmutpaşa Mahallesi
           </h4>
           <p
@@ -4267,9 +4267,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4287,9 +4287,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/mehmetpasa-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Mehmetpaşa Mahallesi
           </h4>
           <p
@@ -4298,9 +4298,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4318,9 +4318,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/merkez-mahallesi-aydinca-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Merkez Mahallesi (Aydınca Köyü)
           </h4>
           <p
@@ -4329,9 +4329,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4349,9 +4349,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/merkez-mahallesi-cat-beldesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Merkez Mahallesi (Çat Beldesi)
           </h4>
           <p
@@ -4360,9 +4360,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60160</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4380,9 +4380,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/merkez-mahallesi-dereyaka-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Merkez Mahallesi (Dereyaka Köyü)
           </h4>
           <p
@@ -4391,9 +4391,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4411,9 +4411,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/merkez-mahallesi-guncali-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Merkez Mahallesi (Günçalı Köyü)
           </h4>
           <p
@@ -4422,9 +4422,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4442,9 +4442,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/merkez-mahallesi-guzelce-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Merkez Mahallesi (Güzelce Köyü)
           </h4>
           <p
@@ -4453,9 +4453,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4473,9 +4473,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/merkez-mahallesi-kizik-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Merkez Mahallesi (Kızık Köyü)
           </h4>
           <p
@@ -4484,9 +4484,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4504,9 +4504,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/merkez-mahallesi-kucukbaglar-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Merkez Mahallesi (Küçükbağlar Köyü)
           </h4>
           <p
@@ -4515,9 +4515,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4535,9 +4535,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/merkez-mahallesi-tahtoba-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Merkez Mahallesi (Tahtoba Köyü)
           </h4>
           <p
@@ -4546,9 +4546,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4566,9 +4566,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/merkez-mahallesi-tasliciftlik-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Merkez Mahallesi (Taşlıçiftlik Köyü)
           </h4>
           <p
@@ -4577,9 +4577,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4597,9 +4597,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/merkez-mahallesi-yakacik-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Merkez Mahallesi (Yakacık Köyü)
           </h4>
           <p
@@ -4608,9 +4608,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4628,9 +4628,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/merkez-mahallesi-yelpe-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Merkez Mahallesi (Yelpe Köyü)
           </h4>
           <p
@@ -4639,9 +4639,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4659,9 +4659,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/musalla-mahallesi-akbelen-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Musalla Mahallesi (Akbelen Köyü)
           </h4>
           <p
@@ -4670,9 +4670,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4690,18 +4690,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/musullu-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Musullu Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Musullu Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4719,18 +4719,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/mulk-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Mülk Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Mülk Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4748,18 +4748,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/nebi-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Nebi Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Nebi Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4777,9 +4777,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/ogulbey-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Oğulbey Mahallesi
           </h4>
           <p
@@ -4788,9 +4788,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4808,18 +4808,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/ormanbeyli-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Ormanbeyli Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Ormanbeyli Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4837,9 +4837,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/orta-mahallesi-avlunlar-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Orta Mahallesi (Avlunlar Köyü)
           </h4>
           <p
@@ -4848,9 +4848,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60255</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4868,18 +4868,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/ortaoren-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Ortaören Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Ortaören Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4897,9 +4897,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/ortmelionu-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Örtmeliönü Mahallesi
           </h4>
           <p
@@ -4908,9 +4908,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4928,9 +4928,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/perakende-mahallesi"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Perakende Mahallesi
           </h4>
           <p
@@ -4939,9 +4939,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60100</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4959,18 +4959,18 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/pinarli-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">Pınarlı Köyü</h4>
+        
+        ><div class="mahalle-name">
+          <h4>Pınarlı Köyü</h4>
           <p
             class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
           >
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -4988,9 +4988,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           </svg></div></a
       ><a
         href="/tokat/merkez/saltik-mahallesi-corduk-koyu"
-        class="soft-card p-5 flex items-center justify-between group"
-        ><div class="min-w-0 pr-4">
-          <h4 class="font-semibold text-slate-900 truncate text-base">
+        
+        ><div class="mahalle-name">
+          <h4>
             Saltık Mahallesi (Çördük Köyü)
           </h4>
           <p
@@ -4999,9 +4999,9 @@ usePageSeo({ title: pageTitle, description: pageDesc });
             MAHALLE
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="mahalle-zip-code">
           <span
-            class="mono font-bold text-slate-900 bg-slate-100 px-3 py-1.5 rounded-lg text-sm"
+           
             >60010</span
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -5017,7 +5017,7 @@ usePageSeo({ title: pageTitle, description: pageDesc });
           >
             <path d="m9 18 6-6-6-6"></path>
           </svg></div></a
-      ><!--]--><!---->
+      ><!---->
     </div>
   </div>
 </template>

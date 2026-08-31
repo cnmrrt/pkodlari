@@ -3,7 +3,7 @@ import { ArrowLeft, ChevronRight } from 'lucide-vue-next';
 import { slugify, titleCase } from '~/utils/slugify';
 
 const { data: amasyaData } = await useAsyncData('amasya-data', () =>
-    $fetch<any[]>('https://pkodlari.com/data/amasya.json')
+    $fetch<any[]>('https://pkodlari.com/data/tr/amasya.json')
 );
 
 const districts = computed(() => {

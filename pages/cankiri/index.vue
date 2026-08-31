@@ -20,9 +20,10 @@ districtMap[distSlug].count++                        ;
 })                                                   ;
 
 return Object.entries(districtMap).sort(([, a], [, b]) => a.name.localeCompare(b.name, 'tr'));
-})                                                                                             ;
-
-const pageTitle = "Çankırı Posta Kodları";
+})       
+                                                                                      ;
+const currentYear = new Date().getFullYear();
+const pageTitle = `Çankırı Posta Kodları ve İlçeleri ${currentYear}`;
 const pageDesc = "Çankırı iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!";
 
 useHead({

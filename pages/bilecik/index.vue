@@ -3,7 +3,7 @@ import { ArrowLeft, ChevronRight } from 'lucide-vue-next';
 import { slugify, titleCase } from '~/utils/slugify';
 
 const { data: bilecikData } = await useAsyncData('bilecik-data', () =>
-    $fetch<any[]>('https://pkodlari.com/data/bilecik.json')
+    $fetch<any[]>('https://pkodlari.com/data/tr/bilecik.json')
 );
 
 const districts = computed(() => {

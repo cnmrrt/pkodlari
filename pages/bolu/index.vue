@@ -3,7 +3,7 @@ import { ArrowLeft, ChevronRight, MapPin } from 'lucide-vue-next';
 import { slugify, titleCase } from '~/utils/slugify';
 
 const { data: boluData } = await useAsyncData('bolu-data', () =>
-    $fetch<any[]>('https://pkodlari.com/data/bolu.json')
+    $fetch<any[]>('https://pkodlari.com/data/tr/bolu.json')
 );
 
 const districts = computed(() => {

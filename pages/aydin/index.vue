@@ -3,7 +3,7 @@ import { ArrowLeft, ChevronRight } from 'lucide-vue-next';
 import { slugify, titleCase } from '~/utils/slugify';
 
 const { data: aydinData } = await useAsyncData('aydin-data', () =>
-    $fetch<any[]>('https://pkodlari.com/data/aydin.json')
+    $fetch<any[]>('https://pkodlari.com/data/tr/aydin.json')
 );
 
 const districts = computed(() => {

@@ -7,7 +7,7 @@ const route = useRoute()  ;
 const copied = ref(false) ;
 
 const { data: aydinData } = await useAsyncData('aydin-data', () =>
-$fetch<any[]>('https://pkodlari.com/data/aydin.json')
+$fetch<any[]>('https://pkodlari.com/data/tr/aydin.json')
 )                                                                                                               ;
 
 const districtSlug = computed(() => route.params.district as string)         ;

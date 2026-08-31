@@ -3,7 +3,7 @@ import { ArrowLeft, ChevronRight } from 'lucide-vue-next';
 import { slugify, titleCase } from '~/utils/slugify';
 
 const { data: bartinData } = await useAsyncData('bartin-data', () =>
-    $fetch<any[]>('https://pkodlari.com/data/bartin.json')
+    $fetch<any[]>('https://pkodlari.com/data/tr/bartin.json')
 );
 
 const districts = computed(() => {

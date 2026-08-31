@@ -7,7 +7,7 @@ const route = useRoute()  ;
 const copied = ref(false) ;
 
 const { data: bartinData } = await useAsyncData('bartin-data', () =>
-$fetch<any[]>('https://pkodlari.com/data/bartin.json')
+$fetch<any[]>('https://pkodlari.com/data/tr/bartin.json')
 )                                                                                                               ;
 
 const districtSlug = computed(() => route.params.district as string)         ;

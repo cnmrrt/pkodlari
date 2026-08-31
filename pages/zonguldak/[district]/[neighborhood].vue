@@ -7,7 +7,7 @@ const route = useRoute();
 const copied = ref(false);
 
 const { data: zonguldakData } = await useAsyncData('zonguldak-data', () =>
-    $fetch<any[]>('https://pkodlari.com/data/zonguldak.json')
+    $fetch<any[]>('https://pkodlari.com/data/tr/zonguldak.json')
 );
 
 const districtSlug = computed(() => route.params.district as string);
@@ -138,14 +138,12 @@ const share = () => {
             </button>
         </div>
 
-        <div v-if="neighData.map"
-            class="map-container">
+        <div v-if="neighData.map" class="map-container">
             <div class="map-title">
                 <MapPin class="w-4 h-4 text-slate-400" />
                 <h3>Konum</h3>
             </div>
-            <div v-if="neighData.map.trim().startsWith('<')" v-html="neighData.map"
-                class="map"></div>
+            <div v-if="neighData.map.trim().startsWith('<')" v-html="neighData.map" class="map"></div>
             <iframe v-else :src="neighData.map" class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100"
                 loading="lazy"></iframe>
         </div>

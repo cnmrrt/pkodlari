@@ -38,9 +38,10 @@ const neighs = computed(() => {
   );
 });
 
+const currentYear = new Date().getFullYear();
 const pageTitle = computed(() =>
   districtData.value
-    ? `${cityName} ${titleCase(districtData.value.name)} Posta Kodları`
+    ? `${cityName} ${titleCase(districtData.value.name)} Posta Kodları ${currentYear}`
     : "İlçe Bulunamadı"
 );
 

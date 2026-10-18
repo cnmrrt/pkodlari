@@ -100,7 +100,7 @@ const onBlur = () => {
         <NuxtLink
           v-for="(res, i) in results"
           :key="i"
-          :to="res.type === 'city' ? `/${res.citySlug}` : res.type === 'district' ? `/${res.citySlug}/${res.districtSlug}` : `/${res.citySlug}/${res.districtSlug}/${res.neighborhoodSlug}`"
+          :to="res.type === 'city' ? `/${res.citySlug}.html` : res.type === 'district' ? `/${res.citySlug}/${res.districtSlug}.html` : `/${res.citySlug}/${res.districtSlug}/${res.neighborhoodSlug}.html`"
           class="flex items-center gap-4 p-4 hover:bg-slate-50 transition-colors"
         >
           <div class="location-icon">

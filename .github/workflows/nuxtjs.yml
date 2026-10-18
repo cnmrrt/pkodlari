@@ -1,4 +1,4 @@
-# Workflow for deploying pre-built Nuxt static files to GitHub Pages
+# Workflow for building and deploying the Nuxt static site to GitHub Pages
 name: Deploy pre-built Nuxt site to Pages
 
 on:
@@ -30,6 +30,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate client data
+        run: npm run generate:data-collection
+
+      - name: Generate static site
+        run: npx nuxt generate
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

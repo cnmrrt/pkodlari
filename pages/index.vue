@@ -39,7 +39,7 @@ const cities = computed(() =>
             <NuxtLink
                 v-for="[citySlug, cityItem] in cities"
                 :key="citySlug"
-                :to="`/${citySlug}`"
+                :to="`/${citySlug}.html`"
             >
                 <div>{{ titleCase(cityItem.name) }}</div>
                 <div>{{ Object.keys(cityItem.districts).length }} İLÇE</div>

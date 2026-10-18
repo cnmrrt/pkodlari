@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
+definePageMeta({ alias: '/telefon-kodlari.html' });
+
 const phoneCodes = [
   { name: "Adana", code: "322" },
   { name: "Adıyaman", code: "416" },

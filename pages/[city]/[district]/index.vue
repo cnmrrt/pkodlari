@@ -4,6 +4,8 @@ import { ArrowLeft, Search, ChevronRight, MapPin } from 'lucide-vue-next';
 import type { DistrictItem } from '~/types';
 import { buildCityItemFromJson, type CityJsonRow } from '~/utils/cityJson';
 
+definePageMeta({ alias: '/:city/:district.html' });
+
 type DistrictPageData = {
   cityName: string;
   district: DistrictItem;
@@ -75,13 +77,13 @@ useHead({
               '@type': 'ListItem',
               position: 2,
               name: titleCase(cityItem.value.name),
-              item: `https://pkodlari.com/${citySlug.value}`,
+              item: `https://pkodlari.com/${citySlug.value}.html`,
             },
             {
               '@type': 'ListItem',
               position: 3,
               name: titleCase(districtItem.value.name),
-              item: `https://pkodlari.com/${citySlug.value}/${districtSlug.value}`,
+              item: `https://pkodlari.com/${citySlug.value}/${districtSlug.value}.html`,
             },
           ],
         }),
@@ -109,7 +111,7 @@ const neighs = computed(() => {
     <div class="header">
       <div class="districtTitleContainer">
         <NuxtLink
-          :to="`/${citySlug}`"
+          :to="`/${citySlug}.html`"
           
           ><ArrowLeft class="w-5 h-5"
         /></NuxtLink>
@@ -137,7 +139,7 @@ const neighs = computed(() => {
       <NuxtLink
         v-for="[nSlug, nItem] in neighs"
         :key="nSlug"
-        :to="`/${citySlug}/${districtSlug}/${nSlug}`"
+        :to="`/${citySlug}/${districtSlug}/${nSlug}.html`"
         
       >
         <div class="mahalle-name">

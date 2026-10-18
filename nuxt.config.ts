@@ -32,15 +32,15 @@ if (fs.existsSync(collectionPath)) {
 
         const citySlug = slugify(row.il);
         if (!citySlug) continue;
-        prerenderRoutes.add(`/${citySlug}`);
+        prerenderRoutes.add(`/${citySlug}.html`);
 
         const districtSlug = slugify(row.ilce || 'MERKEZ');
         if (!districtSlug) continue;
-        prerenderRoutes.add(`/${citySlug}/${districtSlug}`);
+        prerenderRoutes.add(`/${citySlug}/${districtSlug}.html`);
 
         const neighborhoodSlug = slugify(row.mahalle || 'MERKEZ');
         if (neighborhoodSlug) {
-            prerenderRoutes.add(`/${citySlug}/${districtSlug}/${neighborhoodSlug}`);
+            prerenderRoutes.add(`/${citySlug}/${districtSlug}/${neighborhoodSlug}.html`);
         }
     }
 }
@@ -48,9 +48,13 @@ if (fs.existsSync(collectionPath)) {
 export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
     devtools: { enabled: true },
+    experimental: {
+        payloadExtraction: false
+    },
     nitro: {
         prerender: {
-            routes: [...prerenderRoutes]
+            routes: [...prerenderRoutes, '/telefon-kodlari.html'],
+            autoSubfolderIndex: false
         }
     },
     app: {

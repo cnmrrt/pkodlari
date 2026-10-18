@@ -18,6 +18,7 @@ export function usePageSeo(options: {
       })
     : computed(() => "https://pkodlari.com" + '/favicon.svg');
 
+    
   useHead({
     link: [{ rel: 'canonical', href: canonicalUrl }],
     meta: [

@@ -4,8 +4,6 @@ import { ArrowLeft, Search, ChevronRight, MapPin } from 'lucide-vue-next';
 import type { DistrictItem } from '~/types';
 import { buildCityItemFromJson, type CityJsonRow } from '~/utils/cityJson';
 
-definePageMeta({ alias: '/:city/:district.html' });
-
 type DistrictPageData = {
   cityName: string;
   district: DistrictItem;
@@ -77,13 +75,13 @@ useHead({
               '@type': 'ListItem',
               position: 2,
               name: titleCase(cityItem.value.name),
-              item: `https://pkodlari.com/${citySlug.value}.html`,
+              item: `https://pkodlari.com/${citySlug.value}`,
             },
             {
               '@type': 'ListItem',
               position: 3,
               name: titleCase(districtItem.value.name),
-              item: `https://pkodlari.com/${citySlug.value}/${districtSlug.value}.html`,
+              item: `https://pkodlari.com/${citySlug.value}/${districtSlug.value}`,
             },
           ],
         }),
@@ -111,16 +109,16 @@ const neighs = computed(() => {
     <div class="header">
       <div class="districtTitleContainer">
         <NuxtLink
-          :to="`/${citySlug}.html`"
+          :to="`/${citySlug}`"
           
           ><ArrowLeft class="w-5 h-5"
         /></NuxtLink>
         <div>
           <h1>
-            {{ titleCase(districtItem.name) }} Posta Kodları
+            {{ titleCase(districtItem!.name) }} Posta Kodları
           </h1>
           <p>
-            {{ titleCase(cityItem.name) }}
+            {{ titleCase(cityItem!.name) }}
           </p>
         </div>
       </div>
@@ -139,7 +137,7 @@ const neighs = computed(() => {
       <NuxtLink
         v-for="[nSlug, nItem] in neighs"
         :key="nSlug"
-        :to="`/${citySlug}/${districtSlug}/${nSlug}.html`"
+        :to="`/${citySlug}/${districtSlug}/${nSlug}`"
         
       >
         <div class="mahalle-name">
@@ -171,7 +169,7 @@ const neighs = computed(() => {
     </div>
 
     <div
-      v-if="districtItem.mapCode"
+      v-if="districtItem!.mapCode"
       class="map-container"
     >
       <div class="map-title">
@@ -179,13 +177,13 @@ const neighs = computed(() => {
         <h3>Konum</h3>
       </div>
       <div
-        v-if="districtItem.mapCode.trim().startsWith('<')"
-        v-html="districtItem.mapCode"
+        v-if="districtItem!.mapCode!.trim().startsWith('<')"
+        v-html="districtItem!.mapCode"
         class="map"
       ></div>
       <iframe
         v-else
-        :src="districtItem.mapCode"
+        :src="districtItem!.mapCode"
         class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100"
         loading="lazy"
       ></iframe>

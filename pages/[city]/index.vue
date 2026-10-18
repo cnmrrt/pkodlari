@@ -3,8 +3,6 @@ import { computed } from 'vue';
 import { ArrowLeft, ChevronRight, MapPin } from 'lucide-vue-next';
 import { buildCityItemFromJson, type CityJsonRow } from '~/utils/cityJson';
 
-definePageMeta({ alias: '/:city.html' });
-
 type CityPageData = {
   name: string;
   mapCode?: string;
@@ -75,7 +73,7 @@ useHead({
               '@type': 'ListItem',
               position: 2,
               name: titleCase(cityItem.value.name),
-              item: `https://pkodlari.com/${citySlug.value}.html`,
+              item: `https://pkodlari.com/${citySlug.value}`,
             },
           ],
         }),
@@ -115,7 +113,7 @@ const isValid = computed(() => !!cityItem.value);
       <NuxtLink
         v-for="[distSlug, distItem] in districts"
         :key="distSlug"
-        :to="`/${citySlug}/${distSlug}.html`"
+        :to="`/${citySlug}/${distSlug}`"
         
       >
         <div>

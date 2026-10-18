@@ -52,13 +52,13 @@ const generateSitemap = () => {
         const neighborhoodSlug = slugify(item.mahalle || 'MERKEZ');
 
         if (!citySlug) return;
-        addUrl(`${DOMAIN}/${citySlug}.html`, '0.8', 'weekly');
+        addUrl(`${DOMAIN}/${citySlug}`, '0.8', 'weekly');
 
         if (!districtSlug) return;
-        addUrl(`${DOMAIN}/${citySlug}/${districtSlug}.html`, '0.6', 'weekly');
+        addUrl(`${DOMAIN}/${citySlug}/${districtSlug}`, '0.6', 'weekly');
 
         if (neighborhoodSlug) {
-            addUrl(`${DOMAIN}/${citySlug}/${districtSlug}/${neighborhoodSlug}.html`, '0.5', 'monthly');
+            addUrl(`${DOMAIN}/${citySlug}/${districtSlug}/${neighborhoodSlug}`, '0.5', 'monthly');
         }
     });
 

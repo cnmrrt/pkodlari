@@ -25,4 +25,4 @@ The GitHub Actions workflow builds the static site from
 `public/data/collection.json` and deploys `.output/public` to GitHub Pages.
 Enable **GitHub Actions** as the Pages build and deployment source in repository settings.
 The workflow configures Nuxt's base URL for project sites as well as custom domains.
-Content pages are emitted as flat `.html` files because GitHub Pages redirects directory URLs to a trailing slash.
+Content pages use extensionless routes; GitHub Pages may redirect directory URLs to a trailing slash.

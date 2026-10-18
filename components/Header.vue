@@ -19,7 +19,7 @@ import { MapPin } from 'lucide-vue-next';
       </a>
       <nav>
         <a href="/">Şehirler</a>
-        <a href="/telefon-kodlari.html">Telefon Kodları</a>
+        <a href="/telefon-kodlari">Telefon Kodları</a>
         <a href="https://postakodu.ptt.gov.tr/" target="_blank">PTT Sorgulama</a>
       </nav>
     </div>
@@ -74,7 +74,7 @@ const isSpanish = computed(() => route.path.startsWith('/es'))
       </NuxtLink>
       <nav>
         <NuxtLink to="/">Şehirler</NuxtLink>
-        <NuxtLink to="/telefon-kodlari.html">Telefon Kodları</NuxtLink>
+        <NuxtLink to="/telefon-kodlari">Telefon Kodları</NuxtLink>
         <a href="https://postakodu.ptt.gov.tr/" target="_blank" rel="noopener">PTT Sorgulama</a>
       </nav>
     </div>

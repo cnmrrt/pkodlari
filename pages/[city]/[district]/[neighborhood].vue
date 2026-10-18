@@ -4,8 +4,6 @@ import { ChevronRight, MapPin, Check, Copy, Share2 } from 'lucide-vue-next';
 import type { NeighborhoodItem } from '~/types';
 import { buildCityItemFromJson, type CityJsonRow } from '~/utils/cityJson';
 
-definePageMeta({ alias: '/:city/:district/:neighborhood.html' });
-
 type NeighborhoodPageData = {
   cityName: string;
   districtName: string;
@@ -90,19 +88,19 @@ useHead({
               '@type': 'ListItem',
               position: 2,
               name: titleCase(cityItem.value.name),
-              item: `https://pkodlari.com/${citySlug.value}.html`,
+              item: `https://pkodlari.com/${citySlug.value}`,
             },
             {
               '@type': 'ListItem',
               position: 3,
               name: titleCase(districtItem.value.name),
-              item: `https://pkodlari.com/${citySlug.value}/${districtSlug.value}.html`,
+              item: `https://pkodlari.com/${citySlug.value}/${districtSlug.value}`,
             },
             {
               '@type': 'ListItem',
               position: 4,
               name: titleCase(neighItem.value.name),
-              item: `https://pkodlari.com/${citySlug.value}/${districtSlug.value}/${neighborhoodSlug.value}.html`,
+              item: `https://pkodlari.com/${citySlug.value}/${districtSlug.value}/${neighborhoodSlug.value}`,
             },
           ],
         }),
@@ -169,12 +167,12 @@ const share = () => {
     >
       <NuxtLink to="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</NuxtLink>
       <ChevronRight class="w-3 h-3" />
-      <NuxtLink :to="`/${citySlug}.html`" class="hover:text-slate-900 transition-colors"
+      <NuxtLink :to="`/${citySlug}`" class="hover:text-slate-900 transition-colors"
         >{{ titleCase(cityItem!.name) }}
       </NuxtLink>
       <ChevronRight class="w-3 h-3" />
       <NuxtLink
-        :to="`/${citySlug}/${districtSlug}.html`"
+        :to="`/${citySlug}/${districtSlug}`"
         class="hover:text-slate-900 transition-colors"
         >{{ titleCase(districtItem!.name) }}</NuxtLink
       >

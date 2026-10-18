@@ -258,6 +258,7 @@ const share = () => {
         loading="lazy"
       ></iframe>
     </div>
+    
 
     <section
       v-if="sameDistrictNeighborhoods.length"

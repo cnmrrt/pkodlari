@@ -1,21 +1,46 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { ArrowLeft, Search, ChevronRight, MapPin } from 'lucide-vue-next';
-import { buildCityItemFromJson } from '~/utils/cityJson';
+import type { DistrictItem } from '~/types';
+import { buildCityItemFromJson, type CityJsonRow } from '~/utils/cityJson';
+
+type DistrictPageData = {
+  cityName: string;
+  district: DistrictItem;
+};
 
 const route = useRoute();
 const filter = ref('');
 
 const citySlug = computed(() => route.params.city as string);
 const districtSlug = computed(() => route.params.district as string);
+const dataBaseURL = useRuntimeConfig().app.baseURL;
 
-const { data: cityJson } = await useAsyncData(
-  () => `city-data-${citySlug.value}`,
-  () => $fetch<any[]>(`/api/data/${citySlug.value}`)
+const { data: pageData } = await useAsyncData<DistrictPageData | null>(
+  () => `district-page-data-${citySlug.value}-${districtSlug.value}`,
+  async () => {
+    const cityJson = await $fetch<CityJsonRow[]>(
+      import.meta.server
+        ? `/api/data/${encodeURIComponent(citySlug.value)}`
+        : `${dataBaseURL}data/cities/${encodeURIComponent(citySlug.value)}.json`
+    );
+    const city = buildCityItemFromJson(cityJson);
+    const district = city?.districts[districtSlug.value];
+    if (!city || !district) return null;
+
+    return {
+      cityName: city.name,
+      district: {
+        name: district.name,
+        mapCode: district.mapCode,
+        neighborhoods: district.neighborhoods,
+      },
+    };
+  }
 );
 
-const cityItem = computed(() => (cityJson.value ? buildCityItemFromJson(cityJson.value) : null));
-const districtItem = computed(() => cityItem.value?.districts[districtSlug.value]);
+const cityItem = computed(() => (pageData.value ? { name: pageData.value.cityName } : null));
+const districtItem = computed(() => pageData.value?.district);
 
 const pageTitle = computed(() =>
   districtItem.value

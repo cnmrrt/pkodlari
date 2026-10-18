@@ -1,17 +1,46 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { ArrowLeft, ChevronRight, MapPin } from 'lucide-vue-next';
-import { buildCityItemFromJson } from '~/utils/cityJson';
+import { buildCityItemFromJson, type CityJsonRow } from '~/utils/cityJson';
+
+type CityPageData = {
+  name: string;
+  mapCode?: string;
+  districts: Record<string, { name: string; neighborhoodCount: number }>;
+};
 
 const route = useRoute();
 const citySlug = computed(() => route.params.city as string);
-
-const { data: cityJson } = await useAsyncData(
-  () => `city-data-${citySlug.value}`,
-  () => $fetch<any[]>(`/api/data/${citySlug.value}`)
+const dataBaseURL = useRuntimeConfig().app.baseURL;
+const cityDataUrl = computed(
+  () =>
+    import.meta.server
+      ? `/api/data/${encodeURIComponent(citySlug.value)}`
+      : `${dataBaseURL}data/cities/${encodeURIComponent(citySlug.value)}.json`
 );
 
-const cityItem = computed(() => (cityJson.value ? buildCityItemFromJson(cityJson.value) : null));
+const { data: cityItem } = await useAsyncData<CityPageData | null>(
+  () => `city-page-data-${citySlug.value}`,
+  async () => {
+    const cityJson = await $fetch<CityJsonRow[]>(cityDataUrl.value);
+    const city = buildCityItemFromJson(cityJson);
+    if (!city) return null;
+
+    return {
+      name: city.name,
+      mapCode: city.mapCode,
+      districts: Object.fromEntries(
+        Object.entries(city.districts).map(([slug, district]) => [
+          slug,
+          {
+            name: district.name,
+            neighborhoodCount: Object.keys(district.neighborhoods).length,
+          },
+        ])
+      ),
+    };
+  }
+);
 
 const pageTitle = computed(() =>
   cityItem.value ? `${titleCase(cityItem.value.name)} Posta Kodları` : 'Şehir Bulunamadı'
@@ -90,7 +119,7 @@ const isValid = computed(() => !!cityItem.value);
         <div>
           <h3>{{ titleCase(distItem.name) }}</h3>
           <p>
-            {{ Object.keys(distItem.neighborhoods || {}).length }} mahalle
+            {{ distItem.neighborhoodCount }} mahalle
           </p>
         </div>
         <ChevronRight class="w-5 h-5 text-slate-300" />

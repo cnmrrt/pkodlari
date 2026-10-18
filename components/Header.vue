@@ -39,7 +39,7 @@ const isSpanish = computed(() => route.path.startsWith('/es'))
   <header>
     <!-- Spanish Header -->
     <div v-if="isSpanish" class="header-content">
-      <a href="/es" class="header-logo-link">
+      <NuxtLink to="/es" class="header-logo-link">
         <div class="header-logo">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -50,9 +50,9 @@ const isSpanish = computed(() => route.path.startsWith('/es'))
           </svg>
         </div>
         <span class="header-logo-text">Guía de Códigos Postales</span>
-      </a>
+      </NuxtLink>
       <nav>
-        <a href="/es">Ciudades</a>
+        <NuxtLink to="/es">Ciudades</NuxtLink>
         <!-- <a href="/es/codigos-telefonicos">Códigos Telefónicos</a> -->
         <!-- <a href="https://postakodu.ptt.gov.tr/" target="_blank" rel="noopener">Consulta PTT</a> -->
       </nav>
@@ -60,7 +60,7 @@ const isSpanish = computed(() => route.path.startsWith('/es'))
 
     <!-- Default (Turkish/Other) Header -->
     <div v-else class="header-content">
-      <a href="/" class="header-logo-link">
+      <NuxtLink to="/" class="header-logo-link">
         <div class="header-logo">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -71,10 +71,10 @@ const isSpanish = computed(() => route.path.startsWith('/es'))
           </svg>
         </div>
         <span class="header-logo-text">Posta Kodu Rehberi</span>
-      </a>
+      </NuxtLink>
       <nav>
-        <a href="/">Şehirler</a>
-        <a href="/telefon-kodlari">Telefon Kodları</a>
+        <NuxtLink to="/">Şehirler</NuxtLink>
+        <NuxtLink to="/telefon-kodlari">Telefon Kodları</NuxtLink>
         <a href="https://postakodu.ptt.gov.tr/" target="_blank" rel="noopener">PTT Sorgulama</a>
       </nav>
     </div>

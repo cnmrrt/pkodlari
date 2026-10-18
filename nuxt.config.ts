@@ -1,7 +1,58 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const transliteration: Record<string, string> = {
+    'ı': 'i',
+    'ğ': 'g',
+    'ü': 'u',
+    'ş': 's',
+    'ö': 'o',
+    'ç': 'c'
+};
+const slugify = (value: string) =>
+    String(value)
+        .toLocaleLowerCase('tr')
+        .replace(/[ıığüşöç]/g, (character) => transliteration[character])
+        .replace(/[^a-z0-9\s-]/g, '')
+        .trim()
+        .replace(/\s+/g, '-');
+
+const projectRoot = path.dirname(fileURLToPath(import.meta.url));
+const collectionPath = path.join(projectRoot, 'public/data/collection.json');
+const prerenderRoutes = new Set<string>();
+
+if (fs.existsSync(collectionPath)) {
+    const collection: Array<{ il?: string; ilce?: string; mahalle?: string }> =
+        JSON.parse(fs.readFileSync(collectionPath, 'utf8'));
+
+    for (const row of collection) {
+        if (!row.il) continue;
+
+        const citySlug = slugify(row.il);
+        if (!citySlug) continue;
+        prerenderRoutes.add(`/${citySlug}`);
+
+        const districtSlug = slugify(row.ilce || 'MERKEZ');
+        if (!districtSlug) continue;
+        prerenderRoutes.add(`/${citySlug}/${districtSlug}`);
+
+        const neighborhoodSlug = slugify(row.mahalle || 'MERKEZ');
+        if (neighborhoodSlug) {
+            prerenderRoutes.add(`/${citySlug}/${districtSlug}/${neighborhoodSlug}`);
+        }
+    }
+}
+
 export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
     devtools: { enabled: true },
+    nitro: {
+        prerender: {
+            routes: [...prerenderRoutes]
+        }
+    },
     app: {
         head: {
             htmlAttrs: {

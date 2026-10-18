@@ -89,16 +89,31 @@ useHead({
   meta: [
     {
       name: "description",
-      content: "İl bazında Türkiye telefon alan kodlarını kolayca görüntüleyin.",
+      content: "İl bazında Türkiye telefon alan kodlarını kolayca görüntüleyin. 81 ilin telefon kodlarını listelediğimiz sayfayı görmek için hemen tıklayın!",
     },
   ],
 });
 
 usePageSeo({
   title: "Türkiye Telefon Kodları",
-  description: "İl bazında Türkiye telefon alan kodlarını kolayca görüntüleyin.",
+  description: "İl bazında Türkiye telefon alan kodlarını kolayca görüntüleyin. 81 ilin telefon kodlarını listelediğimiz sayfayı görmek için hemen tıklayın!",
 });
 </script>
+
+<style scoped>
+
+.soft-card{  
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .02);
+    transition: all .2s ease;
+    padding: 1rem;
+    border-radius: .75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+</style>
 
 <template>
   <div class="animate-in fade-in duration-500">
@@ -112,7 +127,7 @@ usePageSeo({
       </p>
     </div>
 
-    <div class="districts">
+    <div class="districts" style="margin-top: 2rem;">
       <div
         v-for="item in cityList"
         :key="item.name"

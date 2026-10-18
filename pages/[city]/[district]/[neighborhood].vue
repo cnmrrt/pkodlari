@@ -1,7 +1,15 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { ChevronRight, MapPin, Check, Copy, Share2 } from 'lucide-vue-next';
-import { buildCityItemFromJson } from '~/utils/cityJson';
+import type { NeighborhoodItem } from '~/types';
+import { buildCityItemFromJson, type CityJsonRow } from '~/utils/cityJson';
+
+type NeighborhoodPageData = {
+  cityName: string;
+  districtName: string;
+  districtMapCode?: string;
+  neighborhood: NeighborhoodItem;
+};
 
 const route = useRoute();
 const copied = ref(false);
@@ -9,17 +17,38 @@ const copied = ref(false);
 const citySlug = computed(() => route.params.city as string);
 const districtSlug = computed(() => route.params.district as string);
 const neighborhoodSlug = computed(() => route.params.neighborhood as string);
+const dataBaseURL = useRuntimeConfig().app.baseURL;
 
-const { data: cityJson } = await useAsyncData(
-  () => `city-data-${citySlug.value}`,
-  () => $fetch<any[]>(`/api/data/${citySlug.value}`)
+const { data: pageData } = await useAsyncData<NeighborhoodPageData | null>(
+  () =>
+    `neighborhood-page-data-${citySlug.value}-${districtSlug.value}-${neighborhoodSlug.value}`,
+  async () => {
+    const cityJson = await $fetch<CityJsonRow[]>(
+      import.meta.server
+        ? `/api/data/${encodeURIComponent(citySlug.value)}`
+        : `${dataBaseURL}data/cities/${encodeURIComponent(citySlug.value)}.json`
+    );
+    const city = buildCityItemFromJson(cityJson);
+    const district = city?.districts[districtSlug.value];
+    const neighborhood = district?.neighborhoods[neighborhoodSlug.value];
+    if (!city || !district || !neighborhood) return null;
+
+    return {
+      cityName: city.name,
+      districtName: district.name,
+      districtMapCode: district.mapCode,
+      neighborhood,
+    };
+  }
 );
 
-const cityItem = computed(() => (cityJson.value ? buildCityItemFromJson(cityJson.value) : null));
-const districtItem = computed(() => cityItem.value?.districts[districtSlug.value]);
-const neighItem = computed(
-  () => districtItem.value?.neighborhoods[neighborhoodSlug.value]
+const cityItem = computed(() => (pageData.value ? { name: pageData.value.cityName } : null));
+const districtItem = computed(() =>
+  pageData.value
+    ? { name: pageData.value.districtName, mapCode: pageData.value.districtMapCode }
+    : null
 );
+const neighItem = computed(() => pageData.value?.neighborhood);
 
 const pageTitle = computed(() =>
   neighItem.value
@@ -309,17 +338,6 @@ const share = () => {
           }})
         </p>
         <p><strong>Neighborhood Request:</strong> "{{ neighborhoodSlug }}"</p>
-        <div v-if="districtItem">
-          <p><strong>Available Neighborhoods (First 5):</strong></p>
-          <ul>
-            <li
-              v-for="key in Object.keys(districtItem.neighborhoods).slice(0, 5)"
-              :key="key"
-            >
-              {{ key }}
-            </li>
-          </ul>
-        </div>
       </div>
 
       <NuxtLink to="/" class="mt-6 inline-block text-red-700 underline"

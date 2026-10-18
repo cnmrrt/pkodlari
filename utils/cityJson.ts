@@ -1,7 +1,7 @@
 import type { CityItem, DistrictItem, NeighborhoodItem } from '~/types';
 import { slugify, findMapValue } from '~/utils/slugify';
 
-type CityJsonRow = {
+export type CityJsonRow = {
   il?: string;
   ilce?: string;
   mahalle?: string;

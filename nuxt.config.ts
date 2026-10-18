@@ -20,6 +20,8 @@ const slugify = (value: string) =>
         .replace(/\s+/g, '-');
 
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
+const appBasePath = process.env.NUXT_APP_BASE_URL || '/';
+const normalizedBasePath = appBasePath.endsWith('/') ? appBasePath : `${appBasePath}/`;
 const collectionPath = path.join(projectRoot, 'public/data/collection.json');
 const prerenderRoutes = new Set<string>();
 
@@ -61,6 +63,9 @@ export default defineNuxtConfig({
             },
             title: 'Posta Kodu Rehberi',
             script: [
+                {
+                    innerHTML: `(()=>{const basePath=${JSON.stringify(normalizedBasePath)};const {pathname,search,hash}=window.location;if(pathname!==basePath&&pathname.endsWith('/'))window.history.replaceState(window.history.state,'',pathname.slice(0,-1)+search+hash)})();`
+                },
                 //{ src: 'https://cdn.tailwindcss.com' },
                 {
                     innerHTML: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

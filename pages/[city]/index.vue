@@ -41,15 +41,15 @@ const { data: cityItem } = await useAsyncData<CityPageData | null>(
     };
   }
 );
-
+const currentYear = new Date().getFullYear();
 const pageTitle = computed(() =>
-  cityItem.value ? `${titleCase(cityItem.value.name)} Posta Kodları` : 'Şehir Bulunamadı'
+  cityItem.value ? `${titleCase(cityItem.value.name)} Posta Kodları ve İlçeleri ${currentYear}` : 'Şehir Bulunamadı'
 );
 const pageDesc = computed(() => {
   if (!cityItem.value) return 'Posta Kodu Rehberi';
   return `${titleCase(
     cityItem.value.name
-  )} iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın!`;
+  )} iline bağlı ilçe ve mahallelerin posta kodlarını görmek için tıklayın! Güncel ${currentYear} verileri ile ${titleCase(cityItem.value.name)} posta kodları ve ilçeleri listesi.`;
 });
 useHead({
   title: pageTitle,

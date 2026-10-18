@@ -9,6 +9,7 @@ type NeighborhoodPageData = {
   districtName: string;
   districtMapCode?: string;
   neighborhood: NeighborhoodItem;
+  neighborhoods: Record<string, NeighborhoodItem>;
 };
 
 const route = useRoute();
@@ -38,6 +39,7 @@ const { data: pageData } = await useAsyncData<NeighborhoodPageData | null>(
       districtName: district.name,
       districtMapCode: district.mapCode,
       neighborhood,
+      neighborhoods: district.neighborhoods,
     };
   }
 );
@@ -49,6 +51,11 @@ const districtItem = computed(() =>
     : null
 );
 const neighItem = computed(() => pageData.value?.neighborhood);
+const sameDistrictNeighborhoods = computed(() =>
+  Object.entries(pageData.value?.neighborhoods || {})
+    .filter(([slug]) => slug !== neighborhoodSlug.value)
+    .sort(([, a], [, b]) => a.name.localeCompare(b.name, 'tr'))
+);
 
 const pageTitle = computed(() =>
   neighItem.value
@@ -251,6 +258,33 @@ const share = () => {
         loading="lazy"
       ></iframe>
     </div>
+
+    <section
+      v-if="sameDistrictNeighborhoods.length"
+      class="mt-8"
+    >
+      <h2 class="text-lg font-semibold text-slate-900 mb-4">
+        {{ titleCase(districtItem!.name) }} İlçesindeki Diğer Mahalleler
+      </h2>
+      <div class="neighborhoods-links-container">
+        <NuxtLink
+          v-for="[slug, neighborhood] in sameDistrictNeighborhoods"
+          :key="slug"
+          :to="`/${citySlug}/${districtSlug}/${slug}`"
+        >
+          <div class="mahalle-name">
+            <h3>{{ titleCase(neighborhood.name) }}</h3>
+            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5">
+              MAHALLE
+            </p>
+          </div>
+          <div class="mahalle-zip-code">
+            <span>{{ neighborhood.zipCode }}</span>
+            <ChevronRight />
+          </div>
+        </NuxtLink>
+      </div>
+    </section>
 
     <div class="page-text">
       <h2>

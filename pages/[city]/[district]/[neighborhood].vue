@@ -261,7 +261,7 @@ const share = () => {
 
     <section
       v-if="sameDistrictNeighborhoods.length"
-      class="mt-8"
+      class="mt-8 other-neighborhoods"
     >
       <h2 class="text-lg font-semibold text-slate-900 mb-4">
         {{ titleCase(districtItem!.name) }} İlçesindeki Diğer Mahalleler

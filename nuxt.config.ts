@@ -64,7 +64,7 @@ export default defineNuxtConfig({
             title: 'Posta Kodu Rehberi',
             script: [
                 {
-                    innerHTML: `(()=>{const basePath=${JSON.stringify(normalizedBasePath)};const {pathname,search,hash}=window.location;if(pathname!==basePath&&pathname.endsWith('/'))window.history.replaceState(window.history.state,'',pathname.slice(0,-1)+search+hash)})();`
+                    innerHTML: `(()=>{const basePath=${JSON.stringify(normalizedBasePath)};const {pathname,search,hash}=window.location;if(pathname.startsWith(basePath)&&pathname!==basePath&&pathname.endsWith('/'))window.history.replaceState(window.history.state,'',pathname.slice(0,-1)+search+hash)})();`
                 },
                 //{ src: 'https://cdn.tailwindcss.com' },
                 {

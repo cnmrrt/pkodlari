@@ -50,10 +50,15 @@ if (fs.existsSync(collectionPath)) {
 export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
     devtools: { enabled: true },
+    router: {
+        options: {
+            strict: true // Rotaların katı bir şekilde eşleşmesini sağlar
+        }
+    },
     nitro: {
         prerender: {
             routes: [...prerenderRoutes, '/telefon-kodlari'],
-            autoSubfolderIndex: true
+            autoSubfolderIndex: false // DİKKAT: true yerine false yapıldı. Alt sayfaların sonuna slash ekleyerek klasörleştirmeyi engeller.
         }
     },
     app: {

@@ -1,4 +1,5 @@
 import { readFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
 
 export default defineCachedEventHandler(async (event) => {
     const city = getRouterParam(event, 'city');
@@ -10,7 +11,7 @@ export default defineCachedEventHandler(async (event) => {
     }
 
     try {
-        const cityDataPath = new URL(`../../../public/data/cities/${city}.json`, import.meta.url);
+        const cityDataPath = resolve(process.cwd(), 'public/data/cities', `${city}.json`);
         return JSON.parse(await readFile(cityDataPath, 'utf8'));
     } catch (error) {
         if (

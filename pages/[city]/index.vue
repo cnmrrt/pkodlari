@@ -123,7 +123,8 @@ const isValid = computed(() => !!cityItem.value);
 
     <div v-if="route.path === '/aksaray'">
       <br /><br />
-      <p style="line-height: 1.6; margin-top: 4rem;">Aksaray, Cumhuriyet döneminde ilk kez <b>1920</b> yılında il olmuş,
+      <h2 style="margin-top: 4rem;">Aksaray Ne Zaman İl Oldu?</h2>
+      <p style="line-height: 1.6;">Aksaray, Cumhuriyet döneminde ilk kez <b>1920</b> yılında il olmuş,
         <b>1933</b> yılında ilçe yapılmış ve <b>15 Haziran 1989</b> tarihli ve 3578 sayılı kanunla Niğde'den ayrılarak
         yeniden il statüsü kazanmıştır.</p>
 

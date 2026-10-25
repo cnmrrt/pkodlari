@@ -96,9 +96,9 @@ const isValid = computed(() => !!cityItem.value);
 <template>
   <div v-if="isValid" class="animate-in fade-in duration-500 max-w-4xl mx-auto">
     <div class="cityTitleContainer">
-      <NuxtLink to="/" 
-        ><ArrowLeft class="w-5 h-5"
-      /></NuxtLink>
+      <NuxtLink to="/">
+        <ArrowLeft class="w-5 h-5" />
+      </NuxtLink>
       <div>
         <h1>
           {{ titleCase(cityItem.name) }} Posta Kodları
@@ -110,12 +110,7 @@ const isValid = computed(() => !!cityItem.value);
     </div>
 
     <div class="districts">
-      <NuxtLink
-        v-for="[distSlug, distItem] in districts"
-        :key="distSlug"
-        :to="`/${citySlug}/${distSlug}`"
-        
-      >
+      <NuxtLink v-for="[distSlug, distItem] in districts" :key="distSlug" :to="`/${citySlug}/${distSlug}`">
         <div>
           <h3>{{ titleCase(distItem.name) }}</h3>
           <p>
@@ -126,25 +121,22 @@ const isValid = computed(() => !!cityItem.value);
       </NuxtLink>
     </div>
 
-    <div
-      v-if="cityItem.mapCode"
-      class="map-container"
-    >
-      <div class="map-title">
-        <MapPin class="w-4 h-4 text-slate-400" />
-        <h3>Konum</h3>
-      </div>
-      <div
-        v-if="cityItem.mapCode.trim().startsWith('<')"
-        v-html="cityItem.mapCode"
-        class="map"
-      ></div>
-      <iframe
-        v-else
-        :src="cityItem.mapCode"
-        class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100"
-        loading="lazy"
-      ></iframe>
+    <div v-if="route.path === '/aksaray'">
+      <br /><br />
+      <p style="line-height: 1.6; margin-top: 4rem;">Aksaray, Cumhuriyet döneminde ilk kez <b>1920</b> yılında il olmuş,
+        <b>1933</b> yılında ilçe yapılmış ve <b>15 Haziran 1989</b> tarihli ve 3578 sayılı kanunla Niğde'den ayrılarak
+        yeniden il statüsü kazanmıştır.</p>
+
+      <ul style="margin-top: 2rem; padding-left: 1.5rem;">
+        <li style="list-style: disc; margin: .5rem 0;"><b>1920</b>: Kurtuluş Savaşı sürecinde mutasarrıflıktan vilayete
+          (il) dönüştürülmüştür.</li>
+        <li style="list-style: disc; margin: .5rem 0;"><b>1933</b>: 20 Mayıs 1933 tarihli ve 2197 sayılı kanunla il
+          statüsü kaldırılarak Niğde'ye bağlı bir ilçe haline getirilmiştir.</li>
+        <li style="list-style: disc; margin: .5rem 0;"><b>1989</b>: 56 yıl ilçe olarak kaldıktan sonra, 15 Haziran
+          1989'da çıkarılan 3578 sayılı yasa ile tekrar bağımsız bir il olmuştur.</li>
+      </ul>
     </div>
+
+
   </div>
 </template>

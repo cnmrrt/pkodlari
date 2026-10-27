@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { ArrowLeft, ChevronRight, MapPin } from 'lucide-vue-next';
-import { buildCityItemFromJson, type CityJsonRow } from '~/utils/cityJson';
+import { buildCityItemFromJson } from '~/utils/cityJson';
+import { fetchTurkishCityData } from '~/utils/turkishCityData';
 
 type CityPageData = {
   name: string;
@@ -12,17 +13,11 @@ type CityPageData = {
 const route = useRoute();
 const citySlug = computed(() => route.params.city as string);
 const dataBaseURL = useRuntimeConfig().app.baseURL;
-const cityDataUrl = computed(
-  () =>
-    import.meta.server
-      ? `/api/data/${encodeURIComponent(citySlug.value)}`
-      : `${dataBaseURL}data/cities/${encodeURIComponent(citySlug.value)}.json`
-);
 
 const { data: cityItem } = await useAsyncData<CityPageData | null>(
   () => `city-page-data-${citySlug.value}`,
   async () => {
-    const cityJson = await $fetch<CityJsonRow[]>(cityDataUrl.value);
+    const cityJson = await fetchTurkishCityData(citySlug.value, dataBaseURL, import.meta.server);
     const city = buildCityItemFromJson(cityJson);
     if (!city) return null;
 

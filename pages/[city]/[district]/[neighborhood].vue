@@ -2,7 +2,8 @@
 import { computed, ref } from 'vue';
 import { ChevronRight, MapPin, Check, Copy, Share2 } from 'lucide-vue-next';
 import type { NeighborhoodItem } from '~/types';
-import { buildCityItemFromJson, type CityJsonRow } from '~/utils/cityJson';
+import { buildCityItemFromJson } from '~/utils/cityJson';
+import { fetchTurkishCityData } from '~/utils/turkishCityData';
 
 type NeighborhoodPageData = {
   cityName: string;
@@ -24,11 +25,7 @@ const { data: pageData } = await useAsyncData<NeighborhoodPageData | null>(
   () =>
     `neighborhood-page-data-${citySlug.value}-${districtSlug.value}-${neighborhoodSlug.value}`,
   async () => {
-    const cityJson = await $fetch<CityJsonRow[]>(
-      import.meta.server
-        ? `/api/data/${encodeURIComponent(citySlug.value)}`
-        : `${dataBaseURL}data/cities/${encodeURIComponent(citySlug.value)}.json`
-    );
+    const cityJson = await fetchTurkishCityData(citySlug.value, dataBaseURL, import.meta.server);
     const city = buildCityItemFromJson(cityJson);
     const district = city?.districts[districtSlug.value];
     const neighborhood = district?.neighborhoods[neighborhoodSlug.value];
@@ -60,8 +57,8 @@ const sameDistrictNeighborhoods = computed(() =>
 const pageTitle = computed(() =>
   neighItem.value
     ? `${titleCase(neighItem.value.name)} Posta Kodu (${titleCase(
-        districtItem.value!.name
-      )}/${titleCase(cityItem.value!.name)})`
+      districtItem.value!.name
+    )}/${titleCase(cityItem.value!.name)})`
     : 'Posta Kodu Bulunamadı'
 );
 const pageDesc = computed(() => {
@@ -157,9 +154,8 @@ const share = () => {
       title: `${titleCase(neighItem.value.name)} Posta Kodu`,
       text: `${titleCase(cityItem.value!.name)}, ${titleCase(
         districtItem.value!.name
-      )}, ${titleCase(neighItem.value.name)} mahallesinin posta kodu: ${
-        neighItem.value.zipCode
-      }`,
+      )}, ${titleCase(neighItem.value.name)} mahallesinin posta kodu: ${neighItem.value.zipCode
+        }`,
       url: window.location.href,
     });
   }
@@ -169,26 +165,26 @@ const share = () => {
 <template>
   <div v-if="isValid" class="main-content-neighborhood animate-in fade-in">
     <!-- Breadcrumbs -->
-    <nav
-      class="breadcrumb"
-    >
+    <nav class="breadcrumb">
       <NuxtLink to="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</NuxtLink>
       <ChevronRight class="w-3 h-3" />
-      <NuxtLink :to="`/${citySlug}`" class="hover:text-slate-900 transition-colors"
-        >{{ titleCase(cityItem!.name) }}
+      <NuxtLink :to="`/${citySlug}`" class="hover:text-slate-900 transition-colors">{{ titleCase(cityItem!.name) }}
       </NuxtLink>
       <ChevronRight class="w-3 h-3" />
-      <NuxtLink
-        :to="`/${citySlug}/${districtSlug}`"
-        class="hover:text-slate-900 transition-colors"
-        >{{ titleCase(districtItem!.name) }}</NuxtLink
-      >
+      <NuxtLink :to="`/${citySlug}/${districtSlug}`" class="hover:text-slate-900 transition-colors">{{
+        titleCase(districtItem!.name) }}</NuxtLink>
     </nav>
 
     <div class="main-info-container">
       <div class="main-info-title-container">
         <div class="main-info-logo">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+            </path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
         </div>
         <h1>
           {{ titleCase(neighItem!.name) }}
@@ -206,73 +202,52 @@ const share = () => {
           <div class="postCode">
             {{ neighItem!.zipCode }}
           </div>
-          <button
-            @click="copyToClipboard"
-            class="copy-btn active:scale-95"
-            :class="
-              copied
-                ? 'green-btn'
-                : 'black-btn'
-            "
-          >
-            <Check v-if="copied"/>
+          <button @click="copyToClipboard" class="copy-btn active:scale-95" :class="copied
+            ? 'green-btn'
+            : 'black-btn'
+            ">
+            <Check v-if="copied" />
             <Copy v-else />
             {{ copied ? "KOPYALANDI" : "KODU KOPYALA" }}
           </button>
         </div>
         <!-- Decorative background number -->
-        <div
-          class="btn-bg"
-        >
+        <div class="btn-bg">
           {{ neighItem!.zipCode.substring(0, 2) }}
         </div>
       </div>
     </div>
 
     <div class="share-btn">
-      <button
-        @click="share"
-        class="flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-colors font-bold text-xs uppercase tracking-widest"
-      >
+      <button @click="share"
+        class="flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-colors font-bold text-xs uppercase tracking-widest">
         <Share2 class="w-4 h-4" /> PAYLAŞ
       </button>
     </div>
 
-    <div
-      v-if="neighItem!.mapCode"
-      class="map-container"
-    >
+    <div v-if="neighItem!.mapCode" class="map-container">
       <div class="map-title">
         <MapPin class="w-4 h-4 text-slate-400" />
         <h3>Konum</h3>
       </div>
-      <div
-        v-if="neighItem!.mapCode!.trim().startsWith('<')"
-        v-html="neighItem!.mapCode"
-        class="map"
-      ></div>
-      <iframe
-        v-else
-        :src="neighItem!.mapCode"
-        class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100"
-        loading="lazy"
-      ></iframe>
+      <div v-if="neighItem!.mapCode!.trim().startsWith('<')" v-html="neighItem!.mapCode" class="map"></div>
+      <iframe v-else :src="neighItem!.mapCode" class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100"
+        loading="lazy"></iframe>
     </div>
-    
 
-    <section
-      v-if="sameDistrictNeighborhoods.length"
-      class="mt-8 other-neighborhoods"
-    >
+    <div v-if="route.path === '/istanbul/sile/haci-kasim-mahallesi'">
+      <br /><br />
+      <p><a href="https://musttoseeplaces.substack.com/p/sile-castle" target="_blank">Şile Kalesi (Ocaklı Kalesi)</a>
+      </p>
+    </div>
+
+    <section v-if="sameDistrictNeighborhoods.length" class="mt-8 other-neighborhoods">
       <h2 class="text-lg font-semibold text-slate-900 mb-4">
         {{ titleCase(districtItem!.name) }} İlçesindeki Diğer Mahalleler
       </h2>
       <div class="neighborhoods-links-container">
-        <NuxtLink
-          v-for="[slug, neighborhood] in sameDistrictNeighborhoods"
-          :key="slug"
-          :to="`/${citySlug}/${districtSlug}/${slug}`"
-        >
+        <NuxtLink v-for="[slug, neighborhood] in sameDistrictNeighborhoods" :key="slug"
+          :to="`/${citySlug}/${districtSlug}/${slug}`">
           <div class="mahalle-name">
             <h3>{{ titleCase(neighborhood.name) }}</h3>
             <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5">
@@ -309,9 +284,7 @@ const share = () => {
       </p>
       <br />
       <p>
-        <strong
-          >{{ titleCase(neighItem!.name) }} Posta Kodu: {{ neighItem!.zipCode }}</strong
-        >
+        <strong>{{ titleCase(neighItem!.name) }} Posta Kodu: {{ neighItem!.zipCode }}</strong>
       </p>
     </div>
     <div class="page-text">
@@ -360,9 +333,7 @@ const share = () => {
         Aradığınız mahalle bilgisine ulaşılamadı. Lütfen adresi kontrol edin.
       </p>
 
-      <div
-        class="text-left text-xs font-mono bg-white p-4 rounded border border-red-100 overflow-auto max-h-64"
-      >
+      <div class="text-left text-xs font-mono bg-white p-4 rounded border border-red-100 overflow-auto max-h-64">
         <p><strong>URL Params:</strong> {{ route.params }}</p>
         <p>
           <strong>City Valid:</strong> {{ !!cityItem ? "YES" : "NO" }} ({{ citySlug }})
@@ -375,9 +346,7 @@ const share = () => {
         <p><strong>Neighborhood Request:</strong> "{{ neighborhoodSlug }}"</p>
       </div>
 
-      <NuxtLink to="/" class="mt-6 inline-block text-red-700 underline"
-        >Ana Sayfaya Dön</NuxtLink
-      >
+      <NuxtLink to="/" class="mt-6 inline-block text-red-700 underline">Ana Sayfaya Dön</NuxtLink>
     </div>
   </div>
 </template>

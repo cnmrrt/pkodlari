@@ -75,6 +75,7 @@ const isSpanish = computed(() => route.path.startsWith('/es'))
       <nav>
         <NuxtLink to="/">Şehirler</NuxtLink>
         <NuxtLink to="/telefon-kodlari">Telefon Kodları</NuxtLink>
+        <NuxtLink to="/plaka-kodlari">Plaka Kodları</NuxtLink>
         <a href="https://postakodu.ptt.gov.tr/" target="_blank" rel="noopener">PTT Sorgulama</a>
       </nav>
     </div>

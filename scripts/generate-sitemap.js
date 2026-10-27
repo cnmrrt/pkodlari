@@ -9,6 +9,7 @@ const __dirname = path.dirname(__filename);
 const DOMAIN = 'https://pkodlari.com';
 const SITEMAP_PATH = path.join(__dirname, '../public/sitemap.xml');
 const COLLECTION_PATH = path.join(__dirname, '../public/data/collection.json');
+const SPANISH_DATA_PATH = path.join(__dirname, '../public/data/es.json');
 
 // Replicating utils/slugify.ts logic exactly
 const slugify = (s) => {
@@ -33,6 +34,10 @@ const generateSitemap = () => {
     if (!Array.isArray(data) || data.length === 0) {
         throw new Error('Postal data collection must be a non-empty JSON array');
     }
+    const spanishData = JSON.parse(fs.readFileSync(SPANISH_DATA_PATH, 'utf8'));
+    if (!Array.isArray(spanishData) || spanishData.length === 0) {
+        throw new Error('Spanish postal data must be a non-empty JSON array');
+    }
 
     const uniqueUrls = new Set();
     const urls = [];
@@ -43,24 +48,31 @@ const generateSitemap = () => {
     };
 
     addUrl(`${DOMAIN}/`, '1.0', 'daily');
+    addUrl(`${DOMAIN}/plaka-kodlari`, '0.7', 'monthly');
+    addUrl(`${DOMAIN}/es`, '0.8', 'weekly');
 
-    data.forEach(item => {
-        if (!item?.il) return;
+    const addDataUrls = (rows, localePrefix = '') => {
+        rows.forEach(item => {
+            if (!item?.il) return;
 
-        const citySlug = slugify(item.il);
-        const districtSlug = slugify(item.ilce || 'MERKEZ');
-        const neighborhoodSlug = slugify(item.mahalle || 'MERKEZ');
+            const citySlug = slugify(item.il);
+            const districtSlug = slugify(item.ilce || 'MERKEZ');
+            const neighborhoodSlug = slugify(item.mahalle || 'MERKEZ');
 
-        if (!citySlug) return;
-        addUrl(`${DOMAIN}/${citySlug}`, '0.8', 'weekly');
+            if (!citySlug) return;
+            addUrl(`${DOMAIN}${localePrefix}/${citySlug}`, '0.8', 'weekly');
 
-        if (!districtSlug) return;
-        addUrl(`${DOMAIN}/${citySlug}/${districtSlug}`, '0.6', 'weekly');
+            if (!districtSlug) return;
+            addUrl(`${DOMAIN}${localePrefix}/${citySlug}/${districtSlug}`, '0.6', 'weekly');
 
-        if (neighborhoodSlug) {
-            addUrl(`${DOMAIN}/${citySlug}/${districtSlug}/${neighborhoodSlug}`, '0.5', 'monthly');
-        }
-    });
+            if (neighborhoodSlug) {
+                addUrl(`${DOMAIN}${localePrefix}/${citySlug}/${districtSlug}/${neighborhoodSlug}`, '0.5', 'monthly');
+            }
+        });
+    };
+
+    addDataUrls(data);
+    addDataUrls(spanishData, '/es');
 
     // 3. Generate XML
     let xmlUrls = '';

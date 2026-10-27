@@ -2,7 +2,8 @@
 import { computed, ref } from 'vue';
 import { ArrowLeft, Search, ChevronRight, MapPin } from 'lucide-vue-next';
 import type { DistrictItem } from '~/types';
-import { buildCityItemFromJson, type CityJsonRow } from '~/utils/cityJson';
+import { buildCityItemFromJson } from '~/utils/cityJson';
+import { fetchTurkishCityData } from '~/utils/turkishCityData';
 
 type DistrictPageData = {
   cityName: string;
@@ -19,11 +20,7 @@ const dataBaseURL = useRuntimeConfig().app.baseURL;
 const { data: pageData } = await useAsyncData<DistrictPageData | null>(
   () => `district-page-data-${citySlug.value}-${districtSlug.value}`,
   async () => {
-    const cityJson = await $fetch<CityJsonRow[]>(
-      import.meta.server
-        ? `/api/data/${encodeURIComponent(citySlug.value)}`
-        : `${dataBaseURL}data/cities/${encodeURIComponent(citySlug.value)}.json`
-    );
+    const cityJson = await fetchTurkishCityData(citySlug.value, dataBaseURL, import.meta.server);
     const city = buildCityItemFromJson(cityJson);
     const district = city?.districts[districtSlug.value];
     if (!city || !district) return null;
@@ -108,11 +105,9 @@ const neighs = computed(() => {
   <div v-if="isValid" class="animate-in fade-in duration-500 max-w-4xl mx-auto">
     <div class="header">
       <div class="districtTitleContainer">
-        <NuxtLink
-          :to="`/${citySlug}`"
-          
-          ><ArrowLeft class="w-5 h-5"
-        /></NuxtLink>
+        <NuxtLink :to="`/${citySlug}`">
+          <ArrowLeft class="w-5 h-5" />
+        </NuxtLink>
         <div>
           <h1>
             {{ titleCase(districtItem!.name) }} Posta Kodları
@@ -124,69 +119,53 @@ const neighs = computed(() => {
       </div>
       <div class="neighborhood-search-container">
         <Search />
-        <input
-          type="text"
-          placeholder="Mahallelerde ara..."
-          
-          v-model="filter"
-        />
+        <input type="text" placeholder="Mahallelerde ara..." v-model="filter" />
       </div>
     </div>
 
     <div class="neighborhoods-links-container">
-      <NuxtLink
-        v-for="[nSlug, nItem] in neighs"
-        :key="nSlug"
-        :to="`/${citySlug}/${districtSlug}/${nSlug}`"
-        
-      >
+      <NuxtLink v-for="[nSlug, nItem] in neighs" :key="nSlug" :to="`/${citySlug}/${districtSlug}/${nSlug}`">
         <div class="mahalle-name">
           <h4>
             {{ titleCase(nItem.name) }}
           </h4>
-          <p
-            class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5"
-          >
+          <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5">
             MAHALLE
           </p>
         </div>
         <div class="mahalle-zip-code">
-          <span
-           
-            >{{ nItem.zipCode }}</span
-          >
-          <ChevronRight
-           
-          />
+          <span>{{ nItem.zipCode }}</span>
+          <ChevronRight />
         </div>
       </NuxtLink>
-      <div
-        v-if="neighs.length === 0"
-        class="col-span-full p-12 text-center text-slate-400 text-sm"
-      >
+      <div v-if="neighs.length === 0" class="col-span-full p-12 text-center text-slate-400 text-sm">
         Sonuç bulunamadı
       </div>
     </div>
 
-    <div
-      v-if="districtItem!.mapCode"
-      class="map-container"
-    >
-      <div class="map-title">
-        <MapPin class="w-4 h-4 text-slate-400" />
-        <h3>Konum</h3>
-      </div>
-      <div
-        v-if="districtItem!.mapCode!.trim().startsWith('<')"
-        v-html="districtItem!.mapCode"
-        class="map"
-      ></div>
-      <iframe
-        v-else
-        :src="districtItem!.mapCode"
-        class="w-full aspect-video rounded-2xl overflow-hidden bg-slate-100"
-        loading="lazy"
-      ></iframe>
+    <div v-if="route.path === '/istanbul/kagithane'">
+      <br /><br />
+      <p>Kağıthane ilçesine bağlı 19 mahalle yer almaktadır.</p>
+      <ul>
+        <li><a href="https://www.kagithane.bel.tr" target="_blank">Kağıthane Belediyesi Resmi İnternet Sitesi</a></li>
+        <li><a href="https://www.kagithane.gov.tr/" target="_blank">Kağıthane Kaymakamlığı Resmi İnternet Sitesi</a>
+        </li>
+      </ul>
     </div>
+
+
+
+    <div v-if="route.path === '/balikesir/manyas'">
+      <br /><br />
+      <p>Manyas ilçesine bağlı 50 mahalle yer almaktadır.</p>
+      <ul>
+        <li><a href="https://manyas.bel.tr/" target="_blank">Manyas Belediyesi Resmi İnternet Sitesi</a></li>
+        <li><a href="https://www.manyas.gov.tr/" target="_blank">Manyas Kaymakamlığı Resmi İnternet Sitesi</a>
+        </li>
+      </ul>
+    </div>
+
+
+
   </div>
 </template>

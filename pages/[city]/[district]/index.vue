@@ -145,10 +145,12 @@ const neighs = computed(() => {
 
     <div v-if="route.path === '/istanbul/kagithane'">
       <br /><br />
-      <p>Kağıthane ilçesine bağlı 19 mahalle yer almaktadır.</p>
-      <ul>
-        <li><a href="https://www.kagithane.bel.tr" target="_blank">Kağıthane Belediyesi Resmi İnternet Sitesi</a></li>
-        <li><a href="https://www.kagithane.gov.tr/" target="_blank">Kağıthane Kaymakamlığı Resmi İnternet Sitesi</a>
+      <p style="line-height:1.6;margin-top:1rem;">Kağıthane ilçesine bağlı 19 mahalle yer almaktadır.</p>
+      <ul style="margin-top:2rem; padding-left:1.5rem;">
+        <li style="list-style:disc; margin:.5rem 0;"><a href="https://www.kagithane.bel.tr" target="_blank">Kağıthane
+            Belediyesi Resmi İnternet Sitesi</a></li>
+        <li style="list-style:disc; margin:.5rem 0;"><a href="https://www.kagithane.gov.tr/" target="_blank">Kağıthane
+            Kaymakamlığı Resmi İnternet Sitesi</a>
         </li>
       </ul>
     </div>
@@ -157,10 +159,12 @@ const neighs = computed(() => {
 
     <div v-if="route.path === '/balikesir/manyas'">
       <br /><br />
-      <p>Manyas ilçesine bağlı 50 mahalle yer almaktadır.</p>
-      <ul>
-        <li><a href="https://manyas.bel.tr/" target="_blank">Manyas Belediyesi Resmi İnternet Sitesi</a></li>
-        <li><a href="https://www.manyas.gov.tr/" target="_blank">Manyas Kaymakamlığı Resmi İnternet Sitesi</a>
+      <p style="line-height:1.6;margin-top:1rem;">Manyas ilçesine bağlı 50 mahalle yer almaktadır.</p>
+      <ul style="margin-top:2rem; padding-left:1.5rem;">
+        <li style="list-style:disc; margin:.5rem 0;"><a href="https://manyas.bel.tr/" target="_blank">Manyas Belediyesi
+            Resmi İnternet Sitesi</a></li>
+        <li style="list-style:disc; margin:.5rem 0;"><a href="https://www.manyas.gov.tr/" target="_blank">Manyas
+            Kaymakamlığı Resmi İnternet Sitesi</a>
         </li>
       </ul>
     </div>

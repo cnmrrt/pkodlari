@@ -26,5 +26,12 @@
     "mahalle": "Portazgo",
     "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12155.397010450873!2d-3.6572372816112018!3d40.39003354119428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4225c1590f79f5%3A0x1a588a188af316fe!2sPortazgo%2C%20Puente%20de%20Vallecas%2C%20Madrid%2C%20Spain!5e0!3m2!1sen!2str!4v1790652162629!5m2!1sen!2str\"width=\"600\"height=\"450\"style=\"border:0;\"allowfullscreen=\"\"loading=\"lazy\"referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
     "postaKodu": "28038"
+  },
+  {
+    "il": "Madrid",
+    "ilce": "Villa de Vallecas",
+    "mahalle": "Santa Eugenia",
+    "map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12156.449802151592!2d-3.6204669900470954!3d40.38420028052927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42251acd98cf11%3A0xbf36747e3ffbe4df!2sSanta%20Eugenia%2C%20Villa%20de%20Vallecas%2C%2028031%20Madrid%2C%20Spain!5e0!3m2!1sen!2str!4v1793751096571!5m2!1sen!2str\"width=\"600\"height=\"450\"style=\"border:0;\"allowfullscreen=\"\"loading=\"lazy\"referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+    "postaKodu": "28031"
   }
 ]

@@ -319,10 +319,10 @@ const share = () => {
         {{ titleCase(districtItem!.name) }} ilçesine bağlıdır. Posta kodu yapısı
         incelendiğinde ;
       </p>
-      <ol>
-        <li>İlk 2 hane il plaka kodunu temsil eder.</li>
-        <li>Son 3 hane ilçe içerisindeki dağıtım bölgesini ve mahallesini kapsar.</li>
-      </ol>
+      <ul style="margin-top:2rem;padding-left:1.5rem;">
+        <li style="list-style:disc;margin:.5rem 0;">İlk 2 hane il plaka kodunu temsil eder.</li>
+        <li style="list-style:disc;margin:.5rem 0;">Son 3 hane ilçe içerisindeki dağıtım bölgesini ve mahallesini kapsar.</li>
+      </ul>
     </div>
   </div>
 

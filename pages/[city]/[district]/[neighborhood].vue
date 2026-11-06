@@ -166,13 +166,12 @@ const share = () => {
   <div v-if="isValid" class="main-content-neighborhood animate-in fade-in">
     <!-- Breadcrumbs -->
     <nav class="breadcrumb">
-      <NuxtLink to="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</NuxtLink>
+      <a to="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</a>
       <ChevronRight class="w-3 h-3" />
-      <NuxtLink :to="`/${citySlug}`" class="hover:text-slate-900 transition-colors">{{ titleCase(cityItem!.name) }}
-      </NuxtLink>
+      <a :to="`/${citySlug}`" class="hover:text-slate-900 transition-colors">{{ titleCase(cityItem!.name) }}</a>
       <ChevronRight class="w-3 h-3" />
-      <NuxtLink :to="`/${citySlug}/${districtSlug}`" class="hover:text-slate-900 transition-colors">{{
-        titleCase(districtItem!.name) }}</NuxtLink>
+      <a :to="`/${citySlug}/${districtSlug}`" class="hover:text-slate-900 transition-colors">{{
+        titleCase(districtItem!.name) }}</a>
     </nav>
 
     <div class="main-info-container">
@@ -246,8 +245,8 @@ const share = () => {
         {{ titleCase(districtItem!.name) }} İlçesindeki Diğer Mahalleler
       </h2>
       <div class="neighborhoods-links-container">
-        <NuxtLink v-for="[slug, neighborhood] in sameDistrictNeighborhoods" :key="slug"
-          :to="`/${citySlug}/${districtSlug}/${slug}`">
+        <a v-for="[slug, neighborhood] in sameDistrictNeighborhoods" :key="slug"
+          :href="`/${citySlug}/${districtSlug}/${slug}`">
           <div class="mahalle-name">
             <h3>{{ titleCase(neighborhood.name) }}</h3>
             <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5">
@@ -258,7 +257,7 @@ const share = () => {
             <span>{{ neighborhood.zipCode }}</span>
             <ChevronRight />
           </div>
-        </NuxtLink>
+        </a>
       </div>
     </section>
 
@@ -346,7 +345,7 @@ const share = () => {
         <p><strong>Neighborhood Request:</strong> "{{ neighborhoodSlug }}"</p>
       </div>
 
-      <NuxtLink to="/" class="mt-6 inline-block text-red-700 underline">Ana Sayfaya Dön</NuxtLink>
+      <a to="/" class="mt-6 inline-block text-red-700 underline">Ana Sayfaya Dön</a>
     </div>
   </div>
 </template>

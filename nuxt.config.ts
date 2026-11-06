@@ -64,6 +64,9 @@ if (fs.existsSync(spanishDataPath)) {
 export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
     devtools: { enabled: true },
+    experimental: {
+        payloadExtraction: false
+    },
     router: {
         options: {
             strict: true // Rotaların katı bir şekilde eşleşmesini sağlar

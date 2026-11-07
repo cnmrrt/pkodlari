@@ -166,11 +166,11 @@ const share = () => {
   <div v-if="isValid" class="main-content-neighborhood animate-in fade-in">
     <!-- Breadcrumbs -->
     <nav class="breadcrumb">
-      <a to="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</a>
+      <a href="/" class="hover:text-slate-900 transition-colors">TÜRKİYE</a>
       <ChevronRight class="w-3 h-3" />
-      <a :to="`/${citySlug}`" class="hover:text-slate-900 transition-colors">{{ titleCase(cityItem!.name) }}</a>
+      <a href="`/${citySlug}`" class="hover:text-slate-900 transition-colors">{{ titleCase(cityItem!.name) }}</a>
       <ChevronRight class="w-3 h-3" />
-      <a :to="`/${citySlug}/${districtSlug}`" class="hover:text-slate-900 transition-colors">{{
+      <a href="`/${citySlug}/${districtSlug}`" class="hover:text-slate-900 transition-colors">{{
         titleCase(districtItem!.name) }}</a>
     </nav>
 

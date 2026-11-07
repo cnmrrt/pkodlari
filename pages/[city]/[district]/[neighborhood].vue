@@ -245,8 +245,7 @@ const share = () => {
         {{ titleCase(districtItem!.name) }} İlçesindeki Diğer Mahalleler
       </h2>
       <div class="neighborhoods-links-container">
-        <a v-for="[slug, neighborhood] in sameDistrictNeighborhoods" :key="slug"
-          :href="`/${citySlug}/${districtSlug}/${slug}`">
+        <a v-for="[slug, neighborhood] in sameDistrictNeighborhoods" :key="slug" href="`/${citySlug}/${districtSlug}/${slug}`">
           <div class="mahalle-name">
             <h3>{{ titleCase(neighborhood.name) }}</h3>
             <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5">
